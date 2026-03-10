@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: folder_con_archivos_qmd
+  output-dir: docs
 
 website:
   twitter-card: no se que hace
@@ -14,7 +14,7 @@ website:
       # Si se pone [texto](enlace) se hace un enlace directo
       - section: "Exercise 1"
         contents:
-          - function1.qmd
+          - bg_info.qmd 
           - function2.qmd 
           #Si hacemos un apartado por funcion, pues las funciones que sean, cada una en un qmd del tipo html, con su encabezado, sus explicaciones y sus cosas
       - section: "Exercise 2"
