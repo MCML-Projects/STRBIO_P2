@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: folder_con_archivos_qmd
+
+website:
+  twitter-card: no se que hace
+  title: "Structural Bioinformatics: P2"
+  side bar:
+    style: "docked"
+
+    search: true #no se que es esto
+    contents:
+      - index.qmd #para el es el about que sale al principio, seria nuestros nombres, la asignatura, el nombre del trabajo y el curso y dentro del about, de lo que va el trabajo
+      # Si se pone [texto](enlace) se hace un enlace directo
+      - section: "Exercise 1"
+        contents:
+          - function1.qmd
+          - function2.qmd 
+          #Si hacemos un apartado por funcion, pues las funciones que sean, cada una en un qmd
+      - section: "Exercise 2"
+        contents:
+          -funcion2_1.qmd
+
+    tools:
+      - icon: envelope-paper #para que salga el icono del correo
+        href: mailto:nuestro correo
+  
+  page-footer: #para el pie de página
+    left: #nuestros nombres
+    rigth: #se pueden poner iconos con links
+  
+bibliography: references.bib
+
+fotmat:
+  html:
+    theme: cosmo #el suyo
+    css:
+    - styles.css #doc con estilo de texto, fuente, tamaño, justificacion...
+    - include/webex.css #include es una carpeta del repo y webex son más cosas de texto, se le podría copiar y modificar algo si no nos gusta y ver que pone exactamente porque hay cosas raras
