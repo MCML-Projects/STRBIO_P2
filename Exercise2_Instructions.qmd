@@ -42,3 +42,19 @@ Consider alternative quaternary structures in order to obtain the best holoprote
 ## 3.3 Sequence 3: Your favourite protein
 
 You may select any protein sequence that does not have a structure available in PDB or AlphafoldDB. If the structure of your protein is already available, you can choose a related paralog or ortholog. It can also be a mutant or rare variant of a known protein structure.
+
+
+
+# TENGO DE LO QUE DIJO EN CLASE:
+
+Competición para hacer modelos / estructuras de proteínas usando diferentes métodos. Poemos usar los métodos que queramos pero al meno uno de los basadso en Deep learning y comparralo con homologái. Tmb ligandos uqe pueda tener la proteína (biografía) y diferente estructura cuaternaria. Lo que tmb es importante es que, si estamos usando diferentes modelos y difernetes algoritmos para obtener las estructuras y cada uno tiene su scroe diferente – hay que usar una evaluación universal (ej. swissmodelo tiene el qmeandsico) luego podeos usar ese para modelos e laphafold por ejemplo
+•	Idealmente mas de un parámetro con el que hayamso mirado todos los modelos
+
+
+Prots a utilizar hay que hacer tres:
+-	Canal ca
+-	Son elementos moviels – proteínas uqe no existen en las bbdd una estructura buena
+-	3 – la q queramos (puede ser otra d elas opciones de la 2
+Hay que contar las deicisones que tomamos: pq con esta proteína es imp el modelado por homologia / pq con esta otra no sirve y uso AF – justificarlo
+Los modelos finales compararlos- h acerlos en pymol………. Muy currado
+30 marzo – 3 abril
