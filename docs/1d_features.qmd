@@ -1,5 +1,5 @@
 ---
-title: Background information
+title: 1D Features
 format:
   html:
     embed-resources: true
@@ -12,11 +12,11 @@ authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos
 date: 10/03/2026
 ---
 
-# Background information
+# 1D Features
 
 ## Protein 1
 
-The **** protein has X ligand ...
+The **** protein has *** secondary structure
 
 ## Protein 2
 

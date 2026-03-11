@@ -1,5 +1,5 @@
 ---
-title: Background information
+title: PyMOL Visualization
 format:
   html:
     embed-resources: true
@@ -12,11 +12,13 @@ authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos
 date: 10/03/2026
 ---
 
-# Background information
+# PyMOL
 
 ## Protein 1
 
-The **** protein has X ligand ...
+The **** protein PyMOL figure
+
+![](figure_name.jpg "Protein name") #Juraria
 
 ## Protein 2
 

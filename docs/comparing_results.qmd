@@ -1,5 +1,5 @@
 ---
-title: Background information
+title: Results
 format:
   html:
     embed-resources: true
@@ -12,16 +12,4 @@ authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos
 date: 10/03/2026
 ---
 
-# Background information
-
-## Protein 1
-
-The **** protein has X ligand ...
-
-## Protein 2
-
-The *** protein has---
-
-## Protein 3
-
-We choose the *** protein
+# Results

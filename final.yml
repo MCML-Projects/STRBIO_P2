@@ -4,7 +4,7 @@ project:
 
 website:
   twitter-card: no se que hace
-  title: "Structural Bioinformatics: P2"
+  title: "Structural Bioinformatics: Exercise 2"
   side bar:
     style: "docked"
 
@@ -12,18 +12,25 @@ website:
     contents:
       - index.qmd #para el es el about que sale al principio, seria nuestros nombres, la asignatura, el nombre del trabajo y el curso y dentro del about, de lo que va el trabajo
       # Si se pone [texto](enlace) se hace un enlace directo
-      - section: "Exercise 1"
+      - section: "Proteins background"
         contents:
           - bg_info.qmd 
-          - function2.qmd 
-          #Si hacemos un apartado por funcion, pues las funciones que sean, cada una en un qmd del tipo html, con su encabezado, sus explicaciones y sus cosas
-      - section: "Methodology"
+          - 1d_features.qmd
+      - section: "Protein modeling"
         contents:
-          -funcion2_1.qmd
+          - model_selection.qmd
+          - seq1_protocols.qmd
+          - seq2_protocols.qmd
+          - seq3_protocols.qmd
+      - section: "Results"
+        contents:
+          - comparing_results.qmd
+          - pymol_figure.qmd
+          #Si hacemos un apartado por funcion, pues las funciones que sean, cada una en un qmd del tipo html, con su encabezado, sus explicaciones y sus cosas
 
     tools:
       - icon: envelope-paper #para que salga el icono del correo
-        href: mailto:nuestro correo
+        href: mailto:nuestro correo ###CAMBIAR####
   
   page-footer: #para el pie de página
     left: #nuestros nombres
