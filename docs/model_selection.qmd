@@ -43,7 +43,7 @@ With template_mode: pdb100, structural templates from the Protein Data Bank were
 For evolutionary information, msa_mode: mmseqs2_uniref_env was used, which is the standard method to generate MSA.
 The parameter pair_mode: unpaired_paired was selected because it performs well for homooligomeric complexes.
 The option model_type: alphafold2_multimer_v3 was used because it is specifically designed to predict protein complexes and inter-chain interactions.
-The number of internal refinement cycles was set to num_recycles = 12, as higher values significantly increase computation time.
+The number of internal refinement cycles was set to num_recycles = 6, as higher values significantly increase computation time.
 The parameter recycle_early_stop_tolerance = 0.5 allows the refinement process to stop early when structural improvements become minimal.
 For the final relaxation step, relax_max_iterations = 200 was used to improve geometry without unnecessarily increasing computational cost.
 The pairing_strategy: greedy option was used to efficiently pair sequences during the alignment process.
