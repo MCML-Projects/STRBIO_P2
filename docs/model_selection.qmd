@@ -14,7 +14,27 @@ date: 10/03/2026
 
 # Model selection
 
-## Protein 1
+## Protein 1 - ORAI1
+
+Selected models:
+
+- AlphaFold 3
+
+In differente to AF2, AF3 works better with complex interactions: ORAI1 does not work alone, its apperture depends on the interaccion with the protein STIM1.
+AF3 can predicts with more accuracy hoq the hexamer ensambles and how calcium iones interact inside the pore.
+--> devuelve FOTO ESTÁTICA
+
+- SWISS-MODEL (Homology based)
+
+This model is the gold standard when there are experimental templates (Cryo-EM and X-Ray cristalografy).
+With SWISS-MODEL we can introduce directly the experimental templates (more confidence for drug design or radicals of the amino acids...)
+
+- RosettaMP
+
+ORAI1 is a membrane protein, and is is rounded by lipids, so changes drastically its conformation.
+RosettaMP its specifically design for energit limitations of lipid bilayer and ables to explore the protein flexibility
+It is the perfect option to understand the different states: open vs. close; and calculates the neccesary energy that enables the movement of the helix and enables the calcium crossing.
+
 
 ## Protein 2
 
