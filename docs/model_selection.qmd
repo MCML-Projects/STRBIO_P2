@@ -8,7 +8,7 @@ format:
     toc-location: left
     code-fold: true
     number-sections: true
-authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"<
+authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
 date: 10/03/2026
 ---
 
@@ -16,20 +16,97 @@ date: 10/03/2026
 
 ## Protein 1 - ORAI1
 
+Sequence to model:
+>sp|Q96D31|ORAI1_HUMAN Calcium release-activated calcium channel protein 1 OS=Homo sapiens OX=9606 GN=ORAI1 PE=1 SV=2
+MHPEPAPPPSRSSPELPPSGGSTTSGSRRSRRRSGDGEPPGAPPPPPSAVTYPDWIGQSYSEVMSLNEHSMQALSWRKLYLSRAKLKASSRTSALLSGFAMVAMVEVQLDADHDYPPGLLIAFSACTTVLVAVHLFALMISTCILPNIEAVSNVHNLNSVKESPHERMHRHIELAWAFSTVIGTLLFLAEVVLLCWVKFLPLKKQPGQPRPTSKPPASGAAANVSTSGITPGQAAAIASTTIMVPFGLIFIVFAVHFYRSLVSHKTDRQFQELNELAEFARLQDQLDHRGDHPLTPGSHYA
+
 Selected models:
 
-- AlphaFold 3
+### Deep Learning (AlphaFold2-Multimer) 
 
-In differente to AF2, AF3 works better with complex interactions: ORAI1 does not work alone, its apperture depends on the interaccion with the protein STIM1.
-AF3 can predicts with more accuracy hoq the hexamer ensambles and how calcium iones interact inside the pore.
---> devuelve FOTO ESTÁTICA
+https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW
 
-- SWISS-MODEL (Homology based)
+#### Justification of the method
 
-This model is the gold standard when there are experimental templates (Cryo-EM and X-Ray cristalografy).
-With SWISS-MODEL we can introduce directly the experimental templates (more confidence for drug design or radicals of the amino acids...)
+To model the oligomeric structure of ORAI1, we used **AlphaFold2 Multimer** implemented through *ColabFold*. 
+AlphaFold2 Multimer is specifically designed to predict protein–protein interactions and multimeric assemblies, making it suitable for modeling the hexameric arrangement of ORAI1 subunits. 
+ColabFold provides an efficient and accessible implementation of AlphaFold2 Multimer with optimized multiple sequence alignment generation and accelerated inference, allowing reliable prediction of protein complexes with reduced computational cost. 
+Therefore, this approach enables the structural modeling of the ORAI1 hexamer and the analysis of the interactions that stabilize the channel pore.
+However, the resulting model represents a **static structural snapshot** of the predicted complex rather than the full conformational dynamics of the channel.
 
-- RosettaMP
+#### Methods
+
+**MA: igual esto sobra un poco y es too much, pero como dijo lo de la reproducibilidad he puesto todos los parámetros que he usado**
+Since ORAI1 forms a hexameric channel, the sequence corresponding to the alpha isoform was entered six times, separated by “:”.
+The parameter num_relax = 5 was used to perform several rounds of structural relaxation, helping to correct geometric strains in the predicted structure.
+With template_mode: pdb100, structural templates from the Protein Data Bank were allowed so that AlphaFold could use homologous proteins during modeling.
+For evolutionary information, msa_mode: mmseqs2_uniref_env was used, which is the standard method to generate MSA.
+The parameter pair_mode: unpaired_paired was selected because it performs well for homooligomeric complexes.
+The option model_type: alphafold2_multimer_v3 was used because it is specifically designed to predict protein complexes and inter-chain interactions.
+The number of internal refinement cycles was set to num_recycles = 12, as higher values significantly increase computation time.
+The parameter recycle_early_stop_tolerance = 0.5 allows the refinement process to stop early when structural improvements become minimal.
+For the final relaxation step, relax_max_iterations = 200 was used to improve geometry without unnecessarily increasing computational cost.
+The pairing_strategy: greedy option was used to efficiently pair sequences during the alignment process.
+In the sampling settings, max_msa: auto allows the system to automatically determine the optimal MSA size.
+Finally, num_seeds = 1 was used since a single model is usually sufficient for an initial prediction, and use_dropout was kept disabled to obtain a more stable prediction.
+
+#### Results
+
+First, a Sequence Coverage Plot is obtained, which helps evaluate the expected reliability of the model. 
+
+![Sequence Coverage Plot](../pics/ORAI1/ORAI1_AF2multimer_SeqCoverage.png)
+
+The black line represents the number of sequences aligned at each position. It shows that the transmembrane domains of ORAI1 are highly conserved, while the N-terminal and C-terminal regions display lower coverage, consistent with their flexibility.
+
+The color scale indicates sequence similarity: blue corresponds to highly similar sequences, whereas red indicates lower sequence identity.
+
+Overall, the plot shows deep coverage in the protein core, meaning that AlphaFold2 Multimer has sufficient evolutionary information to accurately predict the folding of the helices and the channel interfaces. Consequently, the resulting model is expected to be reliable, with high predicted confidence (pLDDT) in the central region of the protein and lower confidence at the termini, consistent with the drop in sequence coverage.
+
+@@@@@no me genera más resultados OK
+
+
+### SWISS-MODEL (Homology based)
+
+https://swissmodel.expasy.org/interactive
+
+#### Justification of the method
+
+SWISS-MODEL was chosen as a second modeling approach to apply a classical homology-based methodology using high-resolution experimental templates. This platform allows the prediction to be anchored on known structures of orthologous proteins, which is essential to validate the overall architecture of the channel and the geometry of the pore. 
+Additionally, SWISS-MODEL provides automated template selection, quality assessment scores, and model refinement, ensuring reliable and interpretable models. 
+Also, this approach is considered the gold standard when high-resolution experimental templates (Cryo-EM or X-ray crystallography) are available (like for ORAI1).
+
+#### Methods
+
+For SWISS-MODEL, only the protein sequence was submitted once, since the server automatically handles oligomeric assemblies through the selected templates. In the “Search for Templates” step, we looked for high-resolution experimental structures to serve as references for homology modeling.
+
+Once the results appeared, we focused on templates with the highest sequence identity and selected the hexameric oligomeric state to model the complete channel. Among the available templates, the top hit was Q96D31.1.A, which corresponds to an existing AlphaFold model. We did not use this entry because it represents a monomer rather than the full hexameric channel.
+
+Instead, we chose a true experimental template obtained by X-ray crystallography. We selected 4HKS.1.B, which has a resolution of 3.4 Å, is a homo-hexamer, and includes calcium ions, making it ideal for comparison with the AlphaFold model to assess whether the channel pore and ion-binding sites are correctly preserved.
+Template used to build models:
+>>4hks.1.B Calcium release-activated calcium channel protein 1
+>>Calcium release-activated calcium (CRAC) channel ORAI, K163W mutant
+
+#### Results
+
+The homology model generated using SWISS-MODEL was based on the crystal structure of the Orai protein from Drosophila melanogaster (PDB ID: 4HKS), which shares 62.43% sequence identity with the human protein. 
+
+![ORAI1 model SwissModel](../pics/ORAI1/ORAI1_SWISSMODEL_Captura.png)
+
+@@@@revisar contenido de esta tabla no sé si está bien!!!!
+
+| Parameter             | Value        | Technical Interpretation                                                                      |
+|-----------------------|-------------|------------------------------------------------------------------------------------------------|
+| **Template**          | 4HKS.1.B     | X-ray crystallography structure of Drosophila (wild-type).                                    |
+| **Oligomeric State**  | Homo-hexamer | Matches the biologically functional assembly of the channel.                                  |
+| **Sequence Identity** | 62.43%       | High; ensures reliable folding of the transmembrane core.                                     |
+| **GMQE**              | 0.37         | Low, due to incomplete coverage of the flexible N- and C-terminal regions.                    |
+| **QMEANDisCo Global** | 0.59 ± 0.05  | Moderate-to-good quality for a membrane protein with intrinsically disordered regions (IDRs). |
+
+Although the GMQE (0.37) and QMEANDisCo (0.59) scores may appear moderate, they accurately reflect the structural characteristics of human Orai1. The selected template (4HKS.1.A) primarily covers the transmembrane domains, leaving out the N- and C-terminal regions, which are intrinsically disordered in humans. The high sequence identity in the channel core (62.43%) ensures that the pore architecture is accurately modeled, while the lower global scores are a common artifact in membrane proteins with long cytoplasmic segments lacking defined secondary structure.
+
+
+
+### RosettaMP
 
 ORAI1 is a membrane protein, and is is rounded by lipids, so changes drastically its conformation.
 RosettaMP its specifically design for energit limitations of lipid bilayer and ables to explore the protein flexibility

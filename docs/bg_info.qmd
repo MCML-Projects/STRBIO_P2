@@ -18,17 +18,24 @@ date: 10/03/2026
 
 **PDB_entry**: [ORAI1](https://www.uniprot.org/uniprotkb/Q96D31/entry)
 
-The ORAI1 protein, serves as the essential pore-forming subunit of the calcium release-activated calcium (CRAC) channel and is a critical target for structural bioinformatics studies due to its complex regulatory mechanism. This entry corresponds to the human version; however, there is a high degree of evolutionary conservation with numerous orthologs present in both vertebrates and invertebrates.. It is vital to consider its quaternary structure, as ORAI1 does not function as a monomer but assembles into hexameric homomers to form the CRAC channel or heteropentamers with ORAI3 to form arachidonate-regulated calcium (ARC) channels. The protein’s topology consists of four transmembrane helical segments with both the N-terminus and C-terminus located in the cytoplasm, which is a key consideration for docking since these terminal regions are the primary binding sites for regulatory proteins like STIM1 and STIM2. 
+The ORAI1 protein, serves as the essential pore-forming subunit of the calcium release-activated calcium (CRAC) channel and is a critical target for structural bioinformatics studies due to its complex regulatory mechanism. This entry corresponds to the human version; however, there is a high degree of evolutionary conservation with numerous orthologs present in both vertebrates and invertebrates.. It is vital to consider its quaternary structure, as ORAI1 does not function as a monomer but assembles into **hexameric homomers** to form the CRAC channel or **heteropentamers with ORAI3** to form arachidonate-regulated calcium (ARC) channels. The protein’s topology consists of **four transmembrane helical segments** with both the **N-terminus and C-terminus located in the cytoplasm**, which is a key consideration for docking since these **terminal regions are the primary binding sites for regulatory proteins like STIM1 and STIM2**. 
+>>its biological activity depends on the correct assembly of multiple subunits rather than on the structure of a single monomer.
+The protein undergoes several **post-translational modifications (PTMs)**, such as N-glycosylation at D223, which regulates its functional activity, and oxidation at C195, which serves as a channel inactivation mechanism. Also, N-glycosylation inhibits channel activity in T cells
 
-The protein undergoes several post-translational modifications (PTMs), such as N-glycosylation at D223, which regulates its functional activity, and oxidation at C195, which serves as a channel inactivation mechanism. Also, N-glycosylation inhibits channel activity in T cells
+There are **two known isoforms** of this protein, **alpha** and **beta**; while the alpha isoform acts as a pore-forming subunit for both CRAC and ARC channels, the beta isoform is exclusively involved in forming CRAC channels.
 
-There are two known isoforms of this protein, alpha and beta; while the alpha isoform acts as a pore-forming subunit for both CRAC and ARC channels, the beta isoform is exclusively involved in forming CRAC channels.
-
+Ligands: Calcium ion (Ca2+)
 !["Methods of resolution and quatilty"](../pics/MethodsResolution.png)
+
+The canonical isoform is the alpha isoform, which will be used for the structural modeling.
+
+
 
 ***From a modeling perspective, the initial N-terminal region (residues 1-51) is predicted to be disordered, potentially requiring specialized ab initio modeling or extended molecular dynamics to achieve a stable conformation.***
 
 **CdlCR: Creo que esto no es tán importante porque no tiene que ver mucho con el modelaje, tipo si tiene que ver pero lo dejaria como indicado con bbl y ya así solo tendríamos que elegir un estado del ambiente y de ahí modelarlo como abierto o cerrado. No se que sería mejor si el estado oxidado y el reducido o tambien intentar simularlo en presencia de colesterol. Sinceramente yo no lo pondría, indicaría que la presencia de colesterol y pip2 afecta pero no modelaria. ponemos bbl de eso y ya. Me he repetido una barbaridad pero que no haria 25 modelajes en las distintas condiciones, indicaria los ligandos que afectan a la actividad.**
+**MA: opino igual, nos dejamos de chorradas je**
+
 
 ### Activity regulation
 
@@ -47,22 +54,14 @@ Seq2.1: MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQK
 blastp de >MBE6593352.1 100% de identidad y 100% query coverage con: https://www.ncbi.nlm.nih.gov/protein/MBE6593352.1?report=genbank&log$=prottop&blast_rank=1&RID=V2GKFU6A014 Es la que más info tiene asique cogería esta, nos quitamos de justificar en la ultima porque una u otra y en la de cluster19 es una hypothetical protein multispecie. Lo que os querais complicar en buscar info y demás
 
 --> la 2.1 no tiene estructura resuelta en AF ni en PDB (buscador avanzado por secuencia), aunque en PDB salen algunas opciones con un 50% de identidad
+--> tampoco en uniprot porque si haces un blastp te hace match con: 
 
-Seq 2.2:
-MSITNRITGPLYDERIKNILMGADHEYKRLANTSTSLLELLPPHYDLSSMFSYEQKGIVFRIKLIKPEIKISRHQLLFSTHFLEPEFLHAYKEHLSKALHKTIKLCVKKYSQKIKIKHAILDYLSSSPRNSSCYDLHKIVLQTGYYEEVRRIKKRIQDDRLLDKLTLDGPLTNISRYMREDHTKIIDHIESCTCKIVEKSRKNPYIFNSSIISGRKTNITGVLFFLSELISNLHINPTEINNISTAIILSIVYSVLQYLQSGRETEKDKDKDKDKASPALDFIPTIIAPHVFYLAKREKSSQYKYIEKEYLLGQLLTFLMYKTAYYAMHKTNVSHKLFYNDINNELPIDELKDNKLLSRNFIQSTDNLAVDVIEAGIKEISTLINQRKVLFFSFLPL
-
-blastp de >cluster19, 100% de identidad y 100% query coverage con: https://www.ncbi.nlm.nih.gov/protein/WP_125124323.1?report=genbank&log$=prottop&blast_rank=1&RID=V2GFX4UT014 
-
--> no hay resultados ni en AF ni en PDB (ningun resultado)
-
-Seq 2.3:
-MDWEDLLHSLRDLLAQRGSTESEKHVLDLLKERTTDNELYSRGQTLDDWQLDQAKIVACDILRDHPDLLDIIRNLELKSLCDRHKAAHLPAHKTRNREQLLQSVNVLVSSGKLVAAEELLEEELAENEDPELLDLLGRVYILQNRPKQAAALMQQAFLAKRQQSAFLDLSPEVDVVSERDDETITATDLEYITADASVFVGLDPFPCLRDEVYETVILPVPLSVTEDTRVISANERETLSLARACKPVDVASTAQGPKTLVSHAPHFKVVPSHSTQVSVTVDDVLCEAIPQLPQTPKEAIIDYQWPSGSESYYSDSHIQELVGGIDFCDPHEFALDFEGYQVNQPDSYEPEDDFFDNDEILVEQDDLYFGVADELDIHDDQNDDEFAAYAFDPDDVYDSQGSFDSDTELFDERLSREDRALQKAVELISRAGWSLSMLPLVQQIFVMNGWGATRLALEREIDKGMSPDELILAAHVKALWAENDYYWIAYDRNGSSNLSQYVMSWPTALMLIRAFESLPQIEEIEQFIESLFEYWYDRSSLRRAFRSFNRFLWFRICNLPGCLPASLPFNFCSPHELPVEEYSDLGISDLLVIEQTTKLRAYGVFQTKHPQEPSCYASDKPIPVDAYSMATQTSKEIPIDV
-
--> tampoco tiene resultados ni en AF ni en PDB
-
-blast de >cluster_2488, hace o 100% de query coverage con 99.06 de identidad o 99.65 con 89% de query coverage
-
+hypothetical protein [Oscillospiraceae bacterium]
+Sequence ID: MBE6593352.1
+Score	Expect	Method	Identities	Positives	Gaps
+1288 bits(3334)	0.0	Compositional matrix adjust.	624/624(100%)	624/624(100%)	0/624(0%)
+PERO Como pone hypothetical protein es que no tiene estructura crsitalizada
 
 ## Protein 3
 
-We choose the *** protein
+We choose the *** protein   @carlota mete aquí tu proteína
