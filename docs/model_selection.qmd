@@ -38,7 +38,7 @@ However, the resulting model represents a **static structural snapshot** of the 
 
 **MA: igual esto sobra un poco y es too much, pero como dijo lo de la reproducibilidad he puesto todos los parámetros que he usado**
 Since ORAI1 forms a hexameric channel, the sequence corresponding to the alpha isoform was entered six times, separated by “:”.
-The parameter num_relax = 5 was used to perform several rounds of structural relaxation, helping to correct geometric strains in the predicted structure.
+The parameter num_relax = 1 to only get one structural relaxation, helping to correct geometric strains in the predicted structure.
 With template_mode: pdb100, structural templates from the Protein Data Bank were allowed so that AlphaFold could use homologous proteins during modeling.
 For evolutionary information, msa_mode: mmseqs2_uniref_env was used, which is the standard method to generate MSA.
 The parameter pair_mode: unpaired_paired was selected because it performs well for homooligomeric complexes.
