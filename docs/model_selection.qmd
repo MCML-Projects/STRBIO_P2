@@ -24,6 +24,8 @@ Selected models:
 
 ### Deep Learning (AlphaFold2-Multimer) 
 
+Estoy probando con: https://alphafoldserver.com/ 
+
 https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW
 
 #### Justification of the method
@@ -146,3 +148,10 @@ Following the generation of the structures, we opted for Model 1 (based on the 6
 It is crucial to highlight that this QMEANDisCo value, considered low-to-moderate, does not reflect a procedural error, but rather the inherent limitations of homology modeling when lacking high sequence identity templates (all below 25%). This result fully justifies our decision to integrate advanced Deep Learning methods (such as AlphaFold and RoseTTAFold/ESMFold) to resolve the structure with a higher degree of confidence.
 
 ## Protein 3
+>tr|G4ML89|G4ML89_PYRO7 Septin like spn2 OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=MGG_06726 PE=3 SV=1
+MAAMPAATIYPQSHVGFDSITSQIERKLLKRGFQFNVICVGQTGLGKSTLINTIFASHLI
+ETKGRHHPDEVIRSTTEIHPVSHIIEENGVRLRLNIVDTPGYGDLINNDRCWDPIVKYIK
+DQHSAYLRKELTAQRERYIQDTRIHCCLFFIQPSGHSLKPIDIVVLKKLSDVVNVVPVIA
+KADSLTLEERQAFKERIKEEFAFHNLKMYPYDNDDLDEDERSHNQQIKATVPFAVVGSEK
+SIIVNGKQVRGRQNRWGVINVEDEEHCEFVHLRNFLLRTHLQDLIETTSQIHYETFRTKQ
+LLALKDPSAQGHSSRPISPAAEREMSRSSQRMTMNGY
