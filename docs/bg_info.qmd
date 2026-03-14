@@ -97,3 +97,11 @@ Sequence outside 56 624
 ## Protein 3
 
 We choose the *** protein   @carlota mete aquí tu proteína
+
+He modelado otra pero era de unas proteinas que interacciona con otras, salía bien pero prefiero esta otra, a ver que sale. Que es monomero y no depende de más proteinas. 
+
+https://fungi.ensembl.org/Magnaporthe_oryzae/Gene/Summary?g=MGG_01822;r=2:4976476-4978094;t=MGG_01822T0;db=core
+https://www.uniprot.org/uniprotkb/Q9UV51/entry#sequences 
+
+>sp|Q9UV51|HOG1_PYRO7 Mitogen-activated protein kinase HOG1 OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=HOG1 PE=1 SV=1
+MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ
