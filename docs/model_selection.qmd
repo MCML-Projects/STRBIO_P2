@@ -116,4 +116,33 @@ It is the perfect option to understand the different states: open vs. close; and
 ## Protein 2
 https://swissmodel.expasy.org/interactive/EPauqp/models/ #Es solo para tenerlo a mano (Son los modelos generados por homología - Swiss model)
 
+### Initial de novo modeling using AlphaFold2 (Monomer)
+For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed via the ColabFold environment. To maintain reproducibility and consistency with the rest of the project (see the modeling of the ORAI1 channel), the same general execution parameters were kept (num_relax = 1, template_mode: pdb100, msa_mode: mmseqs2_uniref_env, relax_max_iterations = 200, max_msa: auto, num_seeds = 1, use_dropout = false).
+
+However, since no information regarding the quaternary structure was available at this initial stage and the protein was assumed to act individually, the following strategic modifications were applied:
+
+- Sequence input: The sequence was entered only once.
+
+- model_type: The multimer version was replaced by alphafold2_ptm. This option is optimized for the folding of single chains (monomers) and allows for the accurate calculation of the Predicted Aligned Error (PAE) for individual domains.
+
+- num_recycles: This parameter was increased from 3 to 6. The rationale for this increase lies in the results of our prior 1D topological analysis. Having detected an intrinsically disordered region (IDR) acting as a linker (residues 60-85) following the signal peptide, more refinement cycles were granted to the neural network to facilitate the structural convergence of these highly flexible zones. Being a single chain, this increase did not compromise computational feasibility.
+
+### Homology Modeling and the Discovery of Quaternary Structure (SWISS-MODEL)
+In parallel with the de novo modeling, homology modeling was performed using the SWISS-MODEL server. Rather than automating the process, a manual template search (Search for Templates) was conducted to evaluate the availability of evolutionarily related crystallographic structures.
+
+During the analysis of the templates returned by the database (PDB), a crucial biological discovery was made: all the top-scoring templates exhibited a homo-trimeric oligomeric state. This marked a turning point in our methodological approach, allowing us to deduce that the functional enzyme in nature is not a monomer, but a complex formed by three identical assembled subunits.
+
+To build the models, three strategic templates were manually selected based on their balance of coverage, even though they fell into the "Twilight Zone" of sequence identity (~17-22%):
+
+- 6tgf.1.A: Due to its high coverage and its annotation as a phage tail protein, supporting our evolutionary hypothesis.
+
+- 8iq9.1.A: Because it crystallized alongside oligosaccharide ligands, the expected substrate for a pectate lyase.
+
+- 6eu4.1.A: For including a coordinated Zinc ion, providing information about potential metallic cofactors.
+
+Final Homology Model Selection:
+Following the generation of the structures, we opted for Model 1 (based on the 6tgf.1.A template). The justification for this choice is twofold: first, it conserved the discovered homo-trimer architecture; and second, it obtained the best evaluation metrics from the server, with a GMQE of 0.28 and a universal QMEANDisCo Global score of 0.47.
+
+It is crucial to highlight that this QMEANDisCo value, considered low-to-moderate, does not reflect a procedural error, but rather the inherent limitations of homology modeling when lacking high sequence identity templates (all below 25%). This result fully justifies our decision to integrate advanced Deep Learning methods (such as AlphaFold and RoseTTAFold/ESMFold) to resolve the structure with a higher degree of confidence.
+
 ## Protein 3
