@@ -114,5 +114,6 @@ It is the perfect option to understand the different states: open vs. close; and
 
 
 ## Protein 2
+https://swissmodel.expasy.org/interactive/EPauqp/models/ #Es solo para tenerlo a mano (Son los modelos generados por homología - Swiss model)
 
 ## Protein 3
