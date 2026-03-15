@@ -1,0 +1,23 @@
+De todos los archivos de esta carpeta:
+
+- Los Modelos (.cif):
+
+model_0, model_1, etc.: Son las estructuras 3D que ha predicho la IA. 
+El model_0 es siempre el mejor según la métrica de confianza de AlphaFold (ignoramos el resto)
+
+- Los datos de confianza (.json):
+
+    - summary_confidences_0.json: Aquí están los números de ese modelo. 
+                                  Contiene el pLDDT medio (la nota de 0 a 100 del modelo) y el pTM (qué tan bien está la topología global).
+
+    - full_data_0.json: Contiene datos técnicos brutos de la predicción. 
+                        (No se necesita a no ser que hagamos gráficos de error muy avanzados.)
+
+- Las MSAs (Multiple Sequence Alignments):
+
+Son los alineamientos de secuencias que la IA encontró en las bases de datos:
+- "Unpaired" son secuencias individuales encontradas y "paired" son secuencias que evolucionan juntas (clave para saber cómo se pegan las 6 cadenas del hexámero).
+
+- Templates:
+
+Son las estructuras de la base de datos (PDB) que la IA usó como referencia. 
