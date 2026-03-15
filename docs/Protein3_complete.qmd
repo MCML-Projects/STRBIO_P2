@@ -77,3 +77,7 @@ https://www.rcsb.org/structure/7W5C
 https://www.rcsb.org/structure/6RFP
 
 https://www.rcsb.org/structure/2B9F 
+
+
+
+La otra opcion si esto os da pereza es usar OmegaFold (utiliza PLMs), es menor preciso encuanto a cofactores y cosas con las que interactue la proteina y además no se pueden elegir los moldes, pero viendo los problemas de modeller, creo que va a ser lo más sencillo. es un notebook igual que alphafold y ESMfold. 
