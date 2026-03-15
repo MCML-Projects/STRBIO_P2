@@ -69,6 +69,8 @@ For AlphaFold3, the predicted models and the results extracted from the output f
 
 : Structural quality metrics obtained for the predicted ORAI1 hexameric model. {#tbl-orai1-af3}
 
+<h1 style="color:red;">ESTO DE ABAJO SI LO VEIS TOO MUCH SE QUTIA (en teoria solo hay que hacer una estructura por proteína pero es q sino es todo analisis de los outputs de estadisticas ns)</h1>
+
 The predicted model by AF3 with the highest quality is shown in @fig-orai1-AF3structure.
 
 ![ORAI1 predicted structure by AF3](../pics/ORAI1/AF3_model0_Pymol.png){#fig-orai1-AF3structure}
@@ -153,15 +155,32 @@ Due to the memory limitations (900 residue limit), a reduced oligomeric model wa
 
 For this reason, the sequence was analysed using three copies (`copies: 3`) and three recycling cycles (`num_recycles: 3`), which improves the refinement of inter-chain contacts while keeping the computational cost manageable.
 
+To visualize the predicted models, the hexameric assembly was manually reconstructed by duplicating the predicted trimer and positioning it to form the full complex.
+
 #### Results
 
-En primer lugar, ESM fold te 
-@@@confidence plot que te da ESMFold:
-(trimero)
+ESMFold provides a confidence plot (@fig-confidenceplot-ESMFold) composed of three complementary panels that allow evaluation of both the structural reliability and the predicted inter-chain interactions.
 
-![ORAI1 Confidence Plot](../pics/ORAI1/ORAI1_confidenceplot_ESMFold.png)
+![ORAI1 Confidence Plot](../pics/ORAI1/ORAI1_confidenceplot_ESMFold.png){#fig-confidenceplot-ESMFold}
 
-@@modelo ya subido!
-@@@@analizar modelo
+<h1 style="color:red;">ESTO DE ABAJO tmb se puede quitar como arriba</h1>
+
+The predicted model by ESMFold is shown in @fig-orai1-ESMfold-structure.
+
+::: {#fig-orai1-ESMfold-structure layout-ncol=2}
+
+![Predicted trimer](../pics/ORAI1/ESMFold_trimero.png){#fig-panel-a-ESMstructure}
+
+![Hexameric assembly manually reconstructed](../pics/ORAI1/ESMFold_hexamer.png){#fig-panel-b-ESMstructure}
+
+ESMFold structural predictions for ORAI1.
+:::
 
 #### Interpretation of results (Discussion)
+
+First, in the confidence plot (@fig-confidenceplot-ESMFold) is shown that the pLDDT profile has three similar patterns, corresponding to the three copies of the sequence analyzed in the trimeric assembly. Each pattern displays four prominent peaks of high confidence, which correspond to the four transmembrane helices of each ORAI1 subunit. 
+Second, the Predicted Aligned Error (PAE) matrix shows a clear diagonal, reflecting high confidence in the internal structure. In addition, off-diagonal blocks reveal stable contacts between helices belonging to different subunits.
+Finally, the contact map further supports this organization by highlighting recurrent contacts between the transmembrane helices, again suggesting a stable packing of the helices within the trimeric assembly.
+
+In adittion, the manual reconstruction of the hexamer from two independent ESMFold trimers (@fig-panel-b-ESMstructure) supports the structural stability of the complex. The transmembrane helices align well between subunits, forming a symmetric central pore characteristic of the ORAI1 channel. 
+This suggests that, despite the sequence length limitations of the ESMFold server, the structural information captured by the language model is sufficient to predict the key interfaces required for assembly of the functional channel.
