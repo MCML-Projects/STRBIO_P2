@@ -181,4 +181,9 @@ Assign Templates (Option V): The automated LOMETS threading meta-server was used
 ### Modeller
 Lo ultimo que me dice es usar Modeller. Se puede instalar o usar onlinen
 Lo unico que tenemos que buscar nosotras los homólogos en PDB. bien porque seguro que la proteina está estudiada en otros organismos 
-![PsiBlast MoHog1](.\pics\PsiBlast_MoHog1_Homologs.png)
+
+El modelo que ya hay con SWISS-MODEL usa https://www.rcsb.org/structure/3P5K como template, si sehace blastP de MoHog1 contra esta proteina, 380 bits(977)	2e-136	Compositional matrix adjust.	175/342(51%)	239/342(69%)	6/342(1%)
+
+![BlastResult_3P5K](../pics/MoHog1_MMusculus_3P5K.png)
+
+Mejor usar 3P5K porque tiene mejor resolucoin que 3p4k (ambas tienen mutaciones de labo asique como esta tiene mejo resolucion, usamos esta)
