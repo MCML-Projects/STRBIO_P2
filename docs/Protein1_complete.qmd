@@ -8,7 +8,7 @@ format:
     toc-location: left
     code-fold: true
     number-sections: true
-authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"<
+authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
 date: 10/03/2026
 ---
 
@@ -20,51 +20,72 @@ MHPEPAPPPSRSSPELPPSGGSTTSGSRRSRRRSGDGEPPGAPPPPPSAVTYPDWIGQSYSEVMSLNEHSMQALSWRKLY
 
 Selected models:
 
-### Deep Learning (AlphaFold2-Multimer) 
+### Deep Learning (AlphaFold2-Multimer + AlphaFold3) 
 
-Estoy probando con: https://alphafoldserver.com/ 
+https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW - AF2
 
-https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW
+https://alphafoldserver.com/ - AF3
 
 #### Justification of the method
 
-To model the oligomeric structure of ORAI1, we used **AlphaFold2 Multimer** implemented through *ColabFold*. 
+To model the oligomeric structure of ORAI1, we used AlphaFold2 Multimer implemented through *ColabFold*. 
 AlphaFold2 Multimer is specifically designed to predict protein–protein interactions and multimeric assemblies, making it suitable for modeling the hexameric arrangement of ORAI1 subunits. 
 ColabFold provides an efficient and accessible implementation of AlphaFold2 Multimer with optimized multiple sequence alignment generation and accelerated inference, allowing reliable prediction of protein complexes with reduced computational cost. 
 Therefore, this approach enables the structural modeling of the ORAI1 hexamer and the analysis of the interactions that stabilize the channel pore.
-However, the resulting model represents a **static structural snapshot** of the predicted complex rather than the full conformational dynamics of the channel.
+However, the resulting model represents a static structural snapshot of the predicted complex rather than the full conformational dynamics of the channel.
+
+Despite the hardware limitations imposed by the computational requirements of AlphaFold2 , we also employed AlphaFold3, which allows for more efficient modeling of large multimeric assemblies. The main drawback of AF3 is its “black box” nature, which limits direct control over intermediate modeling steps. 
+However, AF3 offers significant advantages, such as faster processing times, the ability to handle larger complexes, and improved refinement of inter-chain interactions, providing reliable structural insights even under restricted computational resources.
 
 #### Methods
+For AlphaFold2-Multimer:
+For predicting the hexameric ORAI1 channel, the alpha isoform sequence was repeated six times. AlphaFold2 Multimer v3 was used with templates from the PDB (`template_mode: pdb100`) and evolutionary information from `msa_mode: mmseqs2_uniref_env`. Parameters were optimized for homo-oligomeric complexes, including `pair_mode: unpaired_paired`, `num_recycles: 3` to refine the structure internally, `recycle_early_stop_tolerance: 0.5` to allow early termination when improvements become minimal, `num_relax: 1`, and `relax_max_iteration: 200` for final structural relaxation. 
+Sequence pairing used a greedy strategy, MSA size was set to automatic (`max_msa: auto`), and a single model (`num_seeds: 1`) was generated-
 
-**MA: igual esto sobra un poco y es too much, pero como dijo lo de la reproducibilidad he puesto todos los parámetros que he usado**
-Since ORAI1 forms a hexameric channel, the sequence corresponding to the alpha isoform was entered six times, separated by “:”.
-The parameter num_relax = 1 to only get one structural relaxation, helping to correct geometric strains in the predicted structure.
-With template_mode: pdb100, structural templates from the Protein Data Bank were allowed so that AlphaFold could use homologous proteins during modeling.
-For evolutionary information, msa_mode: mmseqs2_uniref_env was used, which is the standard method to generate MSA.
-The parameter pair_mode: unpaired_paired was selected because it performs well for homooligomeric complexes.
-The option model_type: alphafold2_multimer_v3 was used because it is specifically designed to predict protein complexes and inter-chain interactions.
-The number of internal refinement cycles was set to num_recycles = 3, as higher values significantly increase computation time.
-The parameter recycle_early_stop_tolerance = 0.5 allows the refinement process to stop early when structural improvements become minimal.
-For the final relaxation step, relax_max_iterations = 200 was used to improve geometry without unnecessarily increasing computational cost.
-The pairing_strategy: greedy option was used to efficiently pair sequences during the alignment process.
-In the sampling settings, max_msa: auto allows the system to automatically determine the optimal MSA size.
-Finally, num_seeds = 1 was used since a single model is usually sufficient for an initial prediction, and use_dropout was kept disabled to obtain a more stable prediction.
+For AlphaFold3:
+The sequence was entered (`copies: 6`) to represent the hexameric assembly. 
+
 
 #### Results
 
-First, a Sequence Coverage Plot is obtained, which helps evaluate the expected reliability of the model. 
+Using AlphaFold2-Multimer, a Sequence Coverage Plot is obtained to help evaluate the expected reliability of the model (@fig-orai1-AFSeqCoverage).
 
-![Sequence Coverage Plot](../pics/ORAI1/ORAI1_AF2multimer_SeqCoverage.png)
+![Sequence Coverage Plot](../pics/ORAI1/ORAI1_AF2multimer_SeqCoverage.png){#fig-orai1-AFSeqCoverage}
+
+<!-- SPACE FOR AF2-Multimer RESULTS -->
+
+For AlphaFold3, the predicted models and the results extracted from the output files are summarized in @tbl-orai1-af3.
+
+| Parameter | Value | Description |
+|-----------|-------|--------------------------|
+| **Ranking Score** | 0.81 | Overall confidence score of the model |
+| **ipTM** | 0.65 | Interface predicted TM-score |
+| **pTM** | 0.66 | Predicted TM-score for the global topology |
+| **Fraction Disordered** | 0.32 | Fraction of residues predicted as disordered |
+| **Has Clash** | 0.0 | Number of steric clashes detected |
+| **Recycles** | 10.0 | Number of internal refinement cycles used |
+
+: Structural quality metrics obtained for the predicted ORAI1 hexameric model. {#tbl-orai1-af3}
+
+INTERPRETATION?
+IPTM
+It suggests that the interactions between the six chains are generally consistent, although slightly higher values (>0.7) would indicate stronger confidence.
+PTM
+, indicating that the overall folding of the channel is correctly predicted.
+FRACTION DISORDERED 
+bout 32% of the protein is predicted to be disordered. This supports the idea that the N- and C-terminal regions of :contentReference[oaicite:0]{index=0} are intrinsically flexible.
+HAS CLASH
+No steric clashes are detected, indicating that the atomic geometry of the model is physically plausible.
+
+RECYCLES
+, allowing additional refinement to better adjust the hexameric assembly.
+The model used an increased number of recycling steps (default is usually ~3)
+#### Interpretation of results (Discussion)
+
 
 The black line represents the number of sequences aligned at each position. It shows that the transmembrane domains of ORAI1 are highly conserved, while the N-terminal and C-terminal regions display lower coverage, consistent with their flexibility.
 
-The color scale indicates sequence similarity: blue corresponds to highly similar sequences, whereas red indicates lower sequence identity.
-
 Overall, the plot shows deep coverage in the protein core, meaning that AlphaFold2 Multimer has sufficient evolutionary information to accurately predict the folding of the helices and the channel interfaces. Consequently, the resulting model is expected to be reliable, with high predicted confidence (pLDDT) in the central region of the protein and lower confidence at the termini, consistent with the drop in sequence coverage.
-
-@@@@@no me genera más resultados OK
-
-
 ### SWISS-MODEL (Homology based)
 
 https://swissmodel.expasy.org/interactive
@@ -83,24 +104,25 @@ Once the results appeared, we focused on templates with the highest sequence ide
 
 Instead, we chose a true experimental template obtained by X-ray crystallography. We selected 4HKS.1.B, which has a resolution of 3.4 Å, is a homo-hexamer, and includes calcium ions, making it ideal for comparison with the AlphaFold model to assess whether the channel pore and ion-binding sites are correctly preserved.
 Template used to build models:
->>4hks.1.B Calcium release-activated calcium channel protein 1
->>Calcium release-activated calcium (CRAC) channel ORAI, K163W mutant
+>>4hks.1.A Calcium release-activated calcium channel protein 1
+>>Calcium release-activated calcium (CRAC) channel ORAI
 
 #### Results
 
-The homology model generated using SWISS-MODEL was based on the crystal structure of the Orai protein from Drosophila melanogaster (PDB ID: 4HKS), which shares 62.43% sequence identity with the human protein. 
+The homology model generated using SWISS-MODEL (@fig-orai1-swissmodel) was based on the crystal structure of the Orai protein from Drosophila melanogaster (PDB ID: 4HKS), which shares 62.43% sequence identity with the human protein.
+The results of the model, including the quality metrics, are summarized in @tbl-orai1-swissmodel.
 
-![ORAI1 model SwissModel](../pics/ORAI1/ORAI1_SWISSMODEL_Captura.png)
+![ORAI1 model SwissModel](../pics/ORAI1/ORAI1_SWISSMODEL_Captura.png){#fig-orai1-swissmodel}
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | **Template** | 4HKS.1.A | X-ray crystallography structure of *Drosophila* (3.35 Å) |
-| **Oligomeric State** | Homo-hexamer | Matches the biologically functional assembly of the channel. |
-| **Sequence Identity** | 62.43% | Ensures reliable folding of the transmembrane core. |
-| **GMQE** | 0.37 | Low, due to N- and C-terminal regions. |
-| **QMEANDisCo Global** | 0.59 ± 0.05 | Moderate quality for a membrane protein. |
+| **Oligomeric State** | Homo-hexamer | Biologically functional assembly of the channel |
+| **Sequence Identity** | 62.43% | Sequence identity with human ORAI1 |
+| **GMQE** | 0.37 | Global Model Quality Estimation |
+| **QMEANDisCo Global** | 0.59 ± 0.05 | QMEANDisCo score for overall structural quality |
 
-: Key parameters of the homology model generated with SWISS-MODEL.
+: Key parameters of the homology model generated with SWISS-MODEL. {#tbl-orai1-swissmodel}
 
 #### Interpretation of results (Discussion)
 
@@ -135,6 +157,9 @@ For this reason, the sequence was analysed using three copies (copies = 3) and t
 
 #### Results
 
+@@@confidence plot que te da ESMFold:
 
+![ORAI1 Confidence Plot](../pics/ORAI1/ORAI1_confidenceplot_ESMFold.png)
 
+@@modelo ya subido!
 #### Interpretation of results (Discussion)
