@@ -24,11 +24,11 @@ Selected models:
 
 https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW - AF2
 
-https://alphafoldserver.com/ - AF3
+
 
 #### Justification of the method
 
-To model the oligomeric structure of ORAI1, we used AlphaFold2 Multimer implemented through *ColabFold*. 
+To model the oligomeric structure of ORAI1, we used AlphaFold2 Multimer implemented through ColabFold. 
 AlphaFold2 Multimer is specifically designed to predict protein–protein interactions and multimeric assemblies, making it suitable for modeling the hexameric arrangement of ORAI1 subunits. 
 ColabFold provides an efficient and accessible implementation of AlphaFold2 Multimer with optimized multiple sequence alignment generation and accelerated inference, allowing reliable prediction of protein complexes with reduced computational cost. 
 Therefore, this approach enables the structural modeling of the ORAI1 hexamer and the analysis of the interactions that stabilize the channel pore.
