@@ -181,3 +181,4 @@ Assign Templates (Option V): The automated LOMETS threading meta-server was used
 ### Modeller
 Lo ultimo que me dice es usar Modeller. Se puede instalar o usar onlinen
 Lo unico que tenemos que buscar nosotras los homólogos en PDB. bien porque seguro que la proteina está estudiada en otros organismos 
+![PsiBlast MoHog1](.\pics\PsiBlast_MoHog1_Homologs.png)
