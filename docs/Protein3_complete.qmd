@@ -44,6 +44,9 @@ Assign Restraints (Option IV): The choice was made to leave this section blank (
 
 Assign Templates (Option V): The automated LOMETS threading meta-server was used by default to select structural templates. This ensures that the program selects the most appropriate and high-quality kinase structures from the PDB based on sequence-structure alignments, rather than being forced to use a specific, potentially less-optimal template chosen by the user.
 
+
+**Link de la solucion de I-tasser**: https://aideepmed.com/I-TASSER/output/S822579/
+
 ### Modeller
 Lo ultimo que me dice es usar Modeller. Se puede instalar o usar onlinen
 Lo unico que tenemos que buscar nosotras los homólogos en PDB. bien porque seguro que la proteina está estudiada en otros organismos 
@@ -52,10 +55,25 @@ para ello vamos a buscar 5 templates que tengan la mejor calidad, el mejor aline
 
 Vamos a buscar 5 templates para que no haya sesgos por el uso de un único template ni mucho ruido por un alto numero de templates (más dificil de encontrar mñas templates igual de buenos que aporten más de lo que ensucian). Vamos a hacer un **modelado multitemplate**
 
-#### Template 1. 3P5K, Anstrongs: 2.09A
+#### Templates para Modeller (están las instrucciones en **InstruccionesChimera.txt**)
 
 El modelo que ya hay con SWISS-MODEL usa https://www.rcsb.org/structure/3P5K como template, si sehace blastP de MoHog1 contra esta proteina, 380 bits(977)	2e-136	Compositional matrix adjust.	175/342(51%)	239/342(69%)	6/342(1%)
 
 ![BlastResult_3P5K](../pics/MoHog1_MMusculus_3P5K.png)
 
 Mejor usar 3P5K porque tiene mejor resolucoin que 3p4k (ambas tienen mutaciones de labo asique como esta tiene mejo resolucion, usamos esta)
+
+
+Proteinsa con más del 30% (y de 40%) de identidad con estructura resuelta de manera experimental:
+
+https://www.rcsb.org/structure/3P5K
+
+https://www.rcsb.org/structure/3K3I
+
+https://www.rcsb.org/structure/8H59
+
+https://www.rcsb.org/structure/7W5C
+
+https://www.rcsb.org/structure/6RFP
+
+https://www.rcsb.org/structure/2B9F 
