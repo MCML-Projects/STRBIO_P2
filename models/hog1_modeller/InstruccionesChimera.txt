@@ -1,0 +1,31 @@
+
+Cargar proteinas en Chimera.
+File > Fetch by ID > PDB : 3P5K, 3K3I, 8H59, 7W5C, 6RFP, 2B9F
+
+
+Limpiar proteinas: 
+Select > Residue > All nonstandard
+Se ponen en verde (ligandos, aguas y demás)
+Actions > Atoms/Bonds > Delete
+
+Alineamiento de estructuras (antes me dijo que hiciera otra cosa pero tampoco funcionó)
+Tools > Structure Comparison > Match -> Align
+
+Cargar secuencia MoHog1:
+Edit > Add Sequence > From File > MoHog1.fasta
+"Best-aligning pair of chains".
+
+En Multalign Viewer Window 
+Edit > Realign Sequence
+
+Multalign Viewer Window > Sequence > Structure > Association > Cada proteina con su fasta 
+(Menos MoHog1 que tiene que aparecer y no estar asociada a nda)
+
+
+Structure > Modeller (homology) > Local > password de Gema para academicos : MODELIRAN
+Local (subo el .exe)
+
+Secuencia con moldes:
+Multalign Viewer Window >  Edit > Add Sequence > From Structure > Seleccion > Apply
+
+MoHog1 esté asociada a "None"
