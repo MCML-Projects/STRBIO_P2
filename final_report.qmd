@@ -1,0 +1,19 @@
+---
+title: "Structural Bioinformatics: Exercise 2"
+format: html
+---
+
+# Proteins background
+
+{{< include docs/bg_info.qmd >}}
+
+# Protein modeling
+
+{{< include docs/Protein1_complete.qmd >}}
+
+{{< include docs/Protein2_complete.qmd >}}
+{{< include docs/Protein3_complete.qmd >}}
+
+
+# Results
+

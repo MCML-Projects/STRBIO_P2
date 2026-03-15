@@ -3,9 +3,8 @@ project:
   output-dir: docs
 
 website:
-  twitter-card: no se que hace
   title: "Structural Bioinformatics: Exercise 2"
-  side bar:
+  sidebar:
     style: "docked"
 
     search: true #no se que es esto
@@ -34,11 +33,11 @@ website:
   
   page-footer: #para el pie de página
     left: #nuestros nombres
-    rigth: #se pueden poner iconos con links
+    right: #se pueden poner iconos con links
   
 bibliography: references.bib
 
-fotmat:
+format:
   html:
     theme: cosmo #el suyo
     css:

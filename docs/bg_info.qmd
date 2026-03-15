@@ -25,7 +25,10 @@ The protein undergoes several **post-translational modifications (PTMs)**, such 
 There are **two known isoforms** of this protein, **alpha** and **beta**; while the alpha isoform acts as a pore-forming subunit for both CRAC and ARC channels, the beta isoform is exclusively involved in forming CRAC channels.
 
 Ligands: Calcium ion (Ca2+)
-!["Methods of resolution and quatilty"](../pics/MethodsResolution.png)
+
+@@@ para citar esta foto: @fig-resolution-quality
+
+!["Methods of resolution and qualityy"](../pics/MethodsResolution.png){#fig-resolution-quality}
 
 The canonical isoform is the alpha isoform, which will be used for the structural modeling.
 
