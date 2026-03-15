@@ -2,7 +2,6 @@
 Cargar proteinas en Chimera.
 File > Fetch by ID > PDB : 3P5K, 3K3I, 8H59, 7W5C, 6RFP, 2B9F
 
-
 Limpiar proteinas: 
 Select > Residue > All nonstandard
 Se ponen en verde (ligandos, aguas y demás)
