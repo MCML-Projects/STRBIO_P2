@@ -38,6 +38,7 @@ Despite the hardware limitations imposed by the computational requirements of Al
 However, AF3 offers significant advantages, such as faster processing times, the ability to handle larger complexes, and improved refinement of inter-chain interactions, providing reliable structural insights even under restricted computational resources.
 
 #### Methods
+
 For AlphaFold2-Multimer:
 For predicting the hexameric ORAI1 channel, the alpha isoform sequence was repeated six times. AlphaFold2 Multimer v3 was used with templates from the PDB (`template_mode: pdb100`) and evolutionary information from `msa_mode: mmseqs2_uniref_env`. Parameters were optimized for homo-oligomeric complexes, including `pair_mode: unpaired_paired`, `num_recycles: 3` to refine the structure internally, `recycle_early_stop_tolerance: 0.5` to allow early termination when improvements become minimal, `num_relax: 1`, and `relax_max_iteration: 200` for final structural relaxation. 
 Sequence pairing used a greedy strategy, MSA size was set to automatic (`max_msa: auto`), and a single model (`num_seeds: 1`) was generated-
@@ -45,6 +46,7 @@ Sequence pairing used a greedy strategy, MSA size was set to automatic (`max_msa
 For AlphaFold3:
 The sequence was entered (`copies: 6`) to represent the hexameric assembly. 
 
+Additionally, to visualize the predicted models, PyMOL was used to color the structures according to per-residue confidence scores (pLDDT) using the `spectrum b, red_white_blue, minimum=50, maximum=90` command.
 
 #### Results
 
@@ -52,7 +54,7 @@ Using AlphaFold2-Multimer, a Sequence Coverage Plot is obtained to help evaluate
 
 ![Sequence Coverage Plot](../pics/ORAI1/ORAI1_AF2multimer_SeqCoverage.png){#fig-orai1-AFSeqCoverage}
 
-<!-- SPACE FOR AF2-Multimer RESULTS -->
+<!-- ################################ SPACE FOR AF2-Multimer RESULTS ################################ -->
 
 For AlphaFold3, the predicted models and the results extracted from the output files are summarized in @tbl-orai1-af3.
 
@@ -67,25 +69,23 @@ For AlphaFold3, the predicted models and the results extracted from the output f
 
 : Structural quality metrics obtained for the predicted ORAI1 hexameric model. {#tbl-orai1-af3}
 
-INTERPRETATION?
-IPTM
-It suggests that the interactions between the six chains are generally consistent, although slightly higher values (>0.7) would indicate stronger confidence.
-PTM
-, indicating that the overall folding of the channel is correctly predicted.
-FRACTION DISORDERED 
-bout 32% of the protein is predicted to be disordered. This supports the idea that the N- and C-terminal regions of :contentReference[oaicite:0]{index=0} are intrinsically flexible.
-HAS CLASH
-No steric clashes are detected, indicating that the atomic geometry of the model is physically plausible.
+The predicted model by AF3 with the highest quality is shown in @fig-orai1-AF3structure.
 
-RECYCLES
-, allowing additional refinement to better adjust the hexameric assembly.
-The model used an increased number of recycling steps (default is usually ~3)
+![ORAI1 predicted structure by AF3](../pics/ORAI1/AF3_model0_Pymol.png){#fig-orai1-AF3structure}
+
 #### Interpretation of results (Discussion)
 
+The black line in the Sequence Coverage Plot (Figure @fig-orai1-AFSeqCoverage) represents the number of sequences aligned at each residue position. This shows that the transmembrane domains of ORAI1 are highly conserved, whereas the N-terminal and C-terminal regions display lower coverage, consistent with their intrinsic flexibility. Overall, the plot indicates deep evolutionary coverage in the protein core, suggesting that AlphaFold2 Multimer has sufficient information to accurately predict the folding.
 
-The black line represents the number of sequences aligned at each position. It shows that the transmembrane domains of ORAI1 are highly conserved, while the N-terminal and C-terminal regions display lower coverage, consistent with their flexibility.
+<!-- ################################ SPACE FOR AF2-Multimer DISCUSSION ################################ -->
 
-Overall, the plot shows deep coverage in the protein core, meaning that AlphaFold2 Multimer has sufficient evolutionary information to accurately predict the folding of the helices and the channel interfaces. Consequently, the resulting model is expected to be reliable, with high predicted confidence (pLDDT) in the central region of the protein and lower confidence at the termini, consistent with the drop in sequence coverage.
+Regarding the results obtained from AF3 (@tbl-orai1-af3), the ranking score of 0.81 indicates high confidence in the overall architecture of the hexamer. 
+The ipTM value of 0.65 suggests that the interactions between the six chains are generally consistent, supporting the formation of a coherent central pore, although it is slightly below the ideal threshold for maximum interface confidence. In the same line, the pTM score of 0.66 reflects that the global folding of the hexameric channel is correctly predicted, indicating that the overall topology of the assembly is reliable. 
+Approximately 32% of residues are predicted to be disordered, consistent with the intrinsically flexible cytoplasmic N- and C-terminal regions of human ORAI1. Also, no steric clashes were detected, confirming that the atomic geometry of the model is physically plausible. 
+Nevertheless, the model used an increased number of recycling cycles (Recycles = 10), allowing additional refinement to improve inter-chain contacts and better adjust the hexameric assembly.
+
+Concerning the structure shown in Figure @fig-orai1-AF3structure, dark blue regions (high-quality regions) correspond to the four transmembrane helices (TM1–TM4) of each subunit, confirming the architecture of the channel pore. Cyan to white regions indicate good confidence in the connecting loops. Finally, the cytoplasmic N- and C-terminal tails are shown in red to orange, reflecting high flexibility and structural uncertainty, consistent with their nature as intrinsically disordered regions.
+
 ### SWISS-MODEL (Homology based)
 
 https://swissmodel.expasy.org/interactive
@@ -124,20 +124,18 @@ The results of the model, including the quality metrics, are summarized in @tbl-
 
 : Key parameters of the homology model generated with SWISS-MODEL. {#tbl-orai1-swissmodel}
 
+Additionally, the QMEANDisCo Local Score can also be analyzed (@fig-orai1-qmeandisco-local) to assess the per-residue confidence across the ORAI1 structure.
+
+![ORAI1 QMEANDisCo Local](../pics/ORAI1/ORAI1_QMEANDisCO_Local.png){#fig-orai1-qmeandisco-local}
+
 #### Interpretation of results (Discussion)
 
-Although the GMQE (0.37) and QMEANDisCo (0.59) scores may appear moderate, they accurately reflect the structural characteristics of human Orai1. The selected template (4HKS.1.A) primarily covers the transmembrane domains, leaving out the N- and C-terminal regions, which are intrinsically disordered in humans. The high sequence identity in the channel core (62.43%) ensures that the pore architecture is accurately modeled, while the lower global scores are a common artifact in membrane proteins with long cytoplasmic segments lacking defined secondary structure.
+Although the GMQE (0.37) and QMEANDisCo (0.59) scores may appear moderate, as seen in @tbl-orai1-swissmodel, they accurately reflect the structural characteristics of human ORAI1. The selected template (4HKS.1.A) primarily covers the transmembrane domains, leaving out the N- and C-terminal regions, which are intrinsically disordered in humans. The high sequence identity in the channel core (62.43%) ensures that the pore architecture is accurately modeled, while the lower global scores are a common artifact in membrane proteins with long cytoplasmic segments lacking defined secondary structure.
 
-This observation can be further supported by analysing the QMEANDisCo Local score.
-
-![ORAI1 QMEANDisCo Local](../pics/ORAI1/ORAI1_QMEANDisCO_Local.png)
-
-The plot above shows the per-residue confidence provided by the QMEANDisCo Local score: Four distinct peaks of high confidence (values between 0.6 and 0.8) are clearly visible. These peaks correspond to the four transmembrane helices (TM1–TM4) described previously.
-
+Additionaly, focusing on the per-residue confidence (@fig-orai1-qmeandisco-local), four distinct peaks of high confidence (values between 0.6 and 0.8) are clearly visible. These peaks correspond to the four transmembrane helices (TM1–TM4) described previously.
 In contrast, the pronounced drops in confidence coincide with extracellular and intracellular loop regions(N- and C-terminal regions), which are typically more flexible and therefore more difficult to model accurately.
-
 Overall, this pattern confirms that the structural core of the channel—formed by the transmembrane helices—is predicted with relatively high reliability, whereas the flexible terminal and loop regions reduce the global quality score.
-
+It is also shown in the modeled structure, @fig-orai1-swissmodel.
 
 ### ESMFold
 
@@ -153,13 +151,17 @@ This approach can be particularly advantageous for proteins such as ORAI1, whose
 
 Due to the memory limitations (900 residue limit), a reduced oligomeric model was generated in ESMFold (trimer). Instead of modelling the full complex, a smaller multimeric assembly was used to explore whether the predicted structure could correctly reproduce the protein–protein interface and the relative orientation of the transmembrane helices. This serves as an intermediate structural validation between the monomeric model and the functional hexameric assembly obtained with the other methods.
 
-For this reason, the sequence was analysed using three copies (copies = 3) and three recycling cycles (num_recycles = 3), which improves the refinement of inter-chain contacts while keeping the computational cost manageable.
+For this reason, the sequence was analysed using three copies (`copies: 3`) and three recycling cycles (`num_recycles: 3`), which improves the refinement of inter-chain contacts while keeping the computational cost manageable.
 
 #### Results
 
+En primer lugar, ESM fold te 
 @@@confidence plot que te da ESMFold:
+(trimero)
 
 ![ORAI1 Confidence Plot](../pics/ORAI1/ORAI1_confidenceplot_ESMFold.png)
 
 @@modelo ya subido!
+@@@@analizar modelo
+
 #### Interpretation of results (Discussion)
