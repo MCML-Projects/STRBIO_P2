@@ -94,18 +94,29 @@ The homology model generated using SWISS-MODEL was based on the crystal structur
 
 ![ORAI1 model SwissModel](../pics/ORAI1/ORAI1_SWISSMODEL_Captura.png)
 
-@@@@revisar contenido de esta tabla no sé si está bien!!!!
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| **Template** | 4HKS.1.A | X-ray crystallography structure of *Drosophila* (3.35 Å) |
+| **Oligomeric State** | Homo-hexamer | Matches the biologically functional assembly of the channel. |
+| **Sequence Identity** | 62.43% | Ensures reliable folding of the transmembrane core. |
+| **GMQE** | 0.37 | Low, due to N- and C-terminal regions. |
+| **QMEANDisCo Global** | 0.59 ± 0.05 | Moderate quality for a membrane protein. |
 
-| Parameter             | Value        | Technical Interpretation                                                                      |
-|-----------------------|-------------|------------------------------------------------------------------------------------------------|
-| **Template**          | 4HKS.1.B     | X-ray crystallography structure of Drosophila (wild-type).                                    |
-| **Oligomeric State**  | Homo-hexamer | Matches the biologically functional assembly of the channel.                                  |
-| **Sequence Identity** | 62.43%       | High; ensures reliable folding of the transmembrane core.                                     |
-| **GMQE**              | 0.37         | Low, due to incomplete coverage of the flexible N- and C-terminal regions.                    |
-| **QMEANDisCo Global** | 0.59 ± 0.05  | Moderate-to-good quality for a membrane protein with intrinsically disordered regions (IDRs). |
+: Key parameters of the homology model generated with SWISS-MODEL.
+
+#### Interpretation of results (Discussion)
 
 Although the GMQE (0.37) and QMEANDisCo (0.59) scores may appear moderate, they accurately reflect the structural characteristics of human Orai1. The selected template (4HKS.1.A) primarily covers the transmembrane domains, leaving out the N- and C-terminal regions, which are intrinsically disordered in humans. The high sequence identity in the channel core (62.43%) ensures that the pore architecture is accurately modeled, while the lower global scores are a common artifact in membrane proteins with long cytoplasmic segments lacking defined secondary structure.
 
+This observation can be further supported by analysing the QMEANDisCo Local score.
+
+![ORAI1 Local QMEANDisCo](../pics/ORAI1/ORAI1_QMEANDisCO_Local.png)
+
+The plot above shows the per-residue confidence provided by the QMEANDisCo Local score: Four distinct peaks of high confidence (values between 0.6 and 0.8) are clearly visible. These peaks correspond to the four transmembrane helices (TM1–TM4) described previously.
+
+In contrast, the pronounced drops in confidence coincide with extracellular and intracellular loop regions(N- and C-terminal regions), which are typically more flexible and therefore more difficult to model accurately.
+
+Overall, this pattern confirms that the structural core of the channel—formed by the transmembrane helices—is predicted with relatively high reliability, whereas the flexible terminal and loop regions reduce the global quality score.
 
 
 ### RosettaMP
