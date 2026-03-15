@@ -182,6 +182,12 @@ Assign Templates (Option V): The automated LOMETS threading meta-server was used
 Lo ultimo que me dice es usar Modeller. Se puede instalar o usar onlinen
 Lo unico que tenemos que buscar nosotras los homólogos en PDB. bien porque seguro que la proteina está estudiada en otros organismos 
 
+para ello vamos a buscar 5 templates que tengan la mejor calidad, el mejor alineamiento haciendo dos rondas de iteracion de psi-bast (run PSI-Blast iteration 2). Todo el rato hace blast 50% de Identidad con QCoverage de 9*%. 
+
+Vamos a buscar 5 templates para que no haya sesgos por el uso de un único template ni mucho ruido por un alto numero de templates (más dificil de encontrar mñas templates igual de buenos que aporten más de lo que ensucian). Vamos a hacer un **modelado multitemplate**
+
+#### Template 1. 3P5K, Anstrongs: 2.09A
+
 El modelo que ya hay con SWISS-MODEL usa https://www.rcsb.org/structure/3P5K como template, si sehace blastP de MoHog1 contra esta proteina, 380 bits(977)	2e-136	Compositional matrix adjust.	175/342(51%)	239/342(69%)	6/342(1%)
 
 ![BlastResult_3P5K](../pics/MoHog1_MMusculus_3P5K.png)
