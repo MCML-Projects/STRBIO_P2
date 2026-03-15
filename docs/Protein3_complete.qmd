@@ -1,0 +1,61 @@
+---
+title: Protein *** Protocols
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    toc: true
+    toc-location: left
+    code-fold: true
+    number-sections: true
+authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"<
+date: 10/03/2026
+---
+
+
+## Protein 3
+
+>sp|Q9UV51|HOG1_PYRO7 Mitogen-activated protein kinase HOG1 OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=HOG1 PE=1 SV=1
+MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ
+
+### AlphaFold3
+
+Primera estrategia:
+Generación del modelo: Usa AlphaFold 3 para obtener la estructura inicial (es excepcional modelando el dominio de quinasa).
+
+Refinamiento: Pasa ese modelo por el servidor RosettaRelax.
+
+### I-Tasser
+
+Análisis: Utiliza un software llamado C-I-TASSER. Es un algoritmo "menos común" que el AlphaFold estándar; utiliza una técnica de ensamblaje de fragmentos mediante enhebrado (threading). Es famoso por ser mucho más lento pero muy robusto para proteínas que tienen funciones catalíticas como las quinasas.
+
+Lo he mandado a hacer a I-TASSER, todo por defecto porque gema dice que:
+Gemini ha dicho
+Here is the description of the parameters and their justifications in text format, ready for your report or to guide your submission:
+
+I-TASSER Configuration and Justifications
+Amino Acid Sequence: The complete primary sequence of the MoHog1 protein (352 residues) was provided. This sequence serves as the foundation for the threading process and the subsequent fragment assembly.
+
+Exclude Homologous Templates (Option II): This parameter was kept at its default setting (None). By not excluding any homologous templates, we allowed the server to access all available structures in the Protein Data Bank (PDB). For a protein kinase like Hog1, utilizing high-identity templates (such as the well-characterized yeast Hog1 or human p38 orthologs) is crucial to achieving a high-resolution model with a biologically relevant fold.
+
+Specify Secondary Structure (Option III): No manual secondary structure constraints were uploaded, leaving this to the default automated prediction. The server utilizes PSSpred, a highly robust tool that generates secondary structure profiles from multiple sequence alignments. Letting the algorithm handle this ensures that the predicted alpha-helices and beta-strands are consistent with the latest evolutionary data.
+
+Assign Restraints (Option IV): The choice was made to leave this section blank (Default). Avoiding manual spatial restraints ensures that the Monte Carlo simulations can explore the protein’s energy landscape without bias. This is the best approach for MoHog1, as it allows the algorithm to find the most thermodynamically stable conformation for the catalytic domain and the flexible loops.
+
+Assign Templates (Option V): The automated LOMETS threading meta-server was used by default to select structural templates. This ensures that the program selects the most appropriate and high-quality kinase structures from the PDB based on sequence-structure alignments, rather than being forced to use a specific, potentially less-optimal template chosen by the user.
+
+### Modeller
+Lo ultimo que me dice es usar Modeller. Se puede instalar o usar onlinen
+Lo unico que tenemos que buscar nosotras los homólogos en PDB. bien porque seguro que la proteina está estudiada en otros organismos 
+
+para ello vamos a buscar 5 templates que tengan la mejor calidad, el mejor alineamiento haciendo dos rondas de iteracion de psi-bast (run PSI-Blast iteration 2). Todo el rato hace blast 50% de Identidad con QCoverage de 9*%. 
+
+Vamos a buscar 5 templates para que no haya sesgos por el uso de un único template ni mucho ruido por un alto numero de templates (más dificil de encontrar mñas templates igual de buenos que aporten más de lo que ensucian). Vamos a hacer un **modelado multitemplate**
+
+#### Template 1. 3P5K, Anstrongs: 2.09A
+
+El modelo que ya hay con SWISS-MODEL usa https://www.rcsb.org/structure/3P5K como template, si sehace blastP de MoHog1 contra esta proteina, 380 bits(977)	2e-136	Compositional matrix adjust.	175/342(51%)	239/342(69%)	6/342(1%)
+
+![BlastResult_3P5K](../pics/MoHog1_MMusculus_3P5K.png)
+
+Mejor usar 3P5K porque tiene mejor resolucoin que 3p4k (ambas tienen mutaciones de labo asique como esta tiene mejo resolucion, usamos esta)
