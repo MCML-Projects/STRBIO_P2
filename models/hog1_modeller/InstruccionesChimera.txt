@@ -21,8 +21,8 @@ Multalign Viewer Window > Sequence > Structure > Association > Cada proteina con
 (Menos MoHog1 que tiene que aparecer y no estar asociada a nda)
 
 
-Structure > Modeller (homology) > Local > password de Gema para academicos : MODELIRAN
-Local (subo el .exe)
+Structure > Modeller (homology) > Web > password de Gema para academicos : MODELIRANJE
+COnfiguración avanzada -> número de modelos
 
 Secuencia con moldes:
 Multalign Viewer Window >  Edit > Add Sequence > From Structure > Seleccion > Apply

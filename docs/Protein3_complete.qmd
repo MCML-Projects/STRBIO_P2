@@ -95,3 +95,24 @@ https://www.rcsb.org/structure/2B9F
 
 
 La otra opcion si esto os da pereza es usar OmegaFold (utiliza PLMs), es menor preciso encuanto a cofactores y cosas con las que interactue la proteina y además no se pueden elegir los moldes, pero viendo los problemas de modeller, creo que va a ser lo más sencillo. es un notebook igual que alphafold y ESMfold. 
+
+@@@martaA:
+Para poder hacer el modeller (y escribirlo en métodos) exactamente he seguido las intsrucciones de carlota del .txt, y luego he seleccionado como template todas las estructuras.
+Correr en web y contraseña: MODELIRANJE
+he hecho el modeller y me da cinco modelos (captura:)
+
+![capturamodeller](../pics/Protein3/catpuraModeller_todoslosmodelos.png) 
+
+
+(esa foto es pa quitarla pero bueno para q la veas carlota)
+
+me dice gemini que hay que seleccionar por el zDOPE (que es la unica metrica que tenemos realmente)
+a zDOPE más negativo mejor modelo (más estable es la estructura físicamente)
+
+ Busca el valor más negativo (por ejemplo, -1.2 es mejor que -0.8). Cuanto más bajo sea, más estable es la estructura físicamente.
+ asi q selecciono el 6.4 (-1.45 de zDOPE)
+
+*OJO, aun así ya he aprendido a hacerlo y solo le he pedido 5 modelos, se podrían pedir más si eso (se tarda aprox 20 mins desde q empiezas a abrir chimerax y meter todas las cosas)
+
+he dejado el modelo guardado en:
+(../models/hog1_modeller/finalmodel/structure_modeller.pdb)
