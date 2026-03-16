@@ -1,0 +1,13 @@
+
+
+
+ESMFold_monomer -> Red
+
+SwissModel_trimer -> Magenta
+
+AF3_trimer -> tv_green
+
+AF2_monomer -> deepteal
+
+
+The trimers, individually had their chains coloured differently with colors deep_blue (chain A), hotpink (chain B) and green (chain C)
