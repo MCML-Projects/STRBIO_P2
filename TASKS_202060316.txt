@@ -1,0 +1,7 @@
+Características 1D de proteina 1
+Características 1D de proteina 3 (estoy en ello soy C)
+justificar seleccion de algoritmos de modelado
+Analizar estructuras de la proteina3
+Luego hacer lo de evaluación de los modelos lo q ha hecho lucia de la 2 extenderlo a la 1 y la 3 y añadir algún programa rollo voromqa
+Borrar lo de af2 multimer de la 1
+Hacer las estructuras bien con pymol de los modelos elegidos de lastre
