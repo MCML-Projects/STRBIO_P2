@@ -1,0 +1,22 @@
+---
+title: 1D Features
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    toc: true
+    toc-location: left
+    code-fold: true
+    number-sections: true
+authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"<
+date: 10/03/2026
+---
+
+## Protein 3
+
+## Comprobar bbl
+
+
+The primary sequence of MoHog1 (351 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity (Motoyama et al., 2014). Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family (Dixon et al., 1999). The activation of this motif through dual phosphorylation has been experimentally validated under osmotic and oxidative stress conditions, as well as in response to fungicide exposure (Kojima et al., 2009).
+
+Key residues for ATP binding and catalysis were identified at positions K52 (VAK motif) and D149 (HRDLK motif), which are essential for the phosphotransferase mechanism and subsequent pexophagy regulation during infection (Li et al., 2020). Furthermore, the C-terminal region contains a docking site (CD domain) with conserved aspartic acids (D309/D312) predicted to mediate interactions with regulatory partners and substrates, a feature linked to the maintenance of cell wall integrity (He et al., 2017; Tanoue et al., 2000).
