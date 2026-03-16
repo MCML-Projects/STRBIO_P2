@@ -1,0 +1,30 @@
+Características 1D de proteina 1
+Características 1D de proteina 3 (estoy en ello soy C)
+justificar seleccion de algoritmos de modelado
+Analizar estructuras de la proteina3
+Luego hacer lo de evaluación de los modelos lo q ha hecho lucia de la 2 extenderlo a la 1 y la 3 y añadir algún programa rollo voromqa
+Borrar lo de af2 multimer de la 1
+Hacer las estructuras bien con pymol de los modelos elegidos de lastre
+
+
+Soy **Carlota**, me tengo que ir al fisio pero tengo apuntados los siguientes pasos:
+
+1. Mirar con ProtSA o PROFacc la accesibilidad al solvente de la secuencia. 
+En este caso, si hay algún resíduo clave para la fosforilacion tienen que estar los resíduos clave
+para la fosforilacion no enterrados (lo pone en 1d fearures de la p3)
+
+2. AF3 modela con IA, Modeller modela por Homolgía (creo que escribir eso tengo que hcaerlo yo porque es un poco jaleo) y I-tasser modela por threading, ab/initio
+2.1 hacer la tabla de las homologias para modeller (lo hago yo, C)
+2.2 Buscar el modeller ocn menor DOPE score (6.4 con DOPEScore de -1.45)
+2.3 Analizar el AF3 (segu el plDDT)
+
+3. Comparar por superposicion
+3.1 por superposicoin, el RMSD tiene que ser menor que 2A (esto lo ha dicho gema, hay que mirarlo)
+3.2 esto se puede hacer con modeller, align > MatchMaker y salen cositas
+
+4. Validación externa, omparar con VoroMQA (o como se llame) mirando lo que hemos dado en clase
+4.1 otra manera con con ramachandran plot (el modelo que tenga mayor numero de resíduos en favored regions será mejor)
+
+A todo esto, gema me ha dicho que I-tasser sirve para decidir sobre lo que digan AF3 y Modeller, como que no se pueden comparar los tres :/
+no sería grave en el sentido de que no se ha perdido tiempo modelando con I-tasser pero si que habría que mirar otra manera de modelar
+
