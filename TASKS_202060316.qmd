@@ -16,7 +16,7 @@ para la fosforilacion no enterrados (lo pone en 1d fearures de la p3)
 2. AF3 modela con IA, Modeller modela por Homolgía (creo que escribir eso tengo que hcaerlo yo porque es un poco jaleo) y I-tasser modela por threading, ab/initio
 2.1 hacer la tabla de las homologias para modeller (lo hago yo, C)
 2.2 Buscar el modeller ocn menor DOPE score (6.4 con DOPEScore de -1.45)
-2.3 Analizar el AF3 (segu el plDDT)
+2.3 Analizar el AF3 (segu el plDDT) -> Hay un documento de como se analiza
 
 3. Comparar por superposicion
 3.1 por superposicoin, el RMSD tiene que ser menor que 2A (esto lo ha dicho gema, hay que mirarlo)
