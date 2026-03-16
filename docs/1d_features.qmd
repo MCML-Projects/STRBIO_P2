@@ -24,4 +24,4 @@ The *** protein has---
 
 ## Protein 3
 
-We choose the *** protein
+The primary sequence of MoHog1 (351 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity. Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family. Key residues for ATP binding and catalysis were identified at positions K52 (VAK motif) and D149 (HRDLK motif). Furthermore, the C-terminal region contains a docking site (CD domain) with conserved aspartic acids (D309/D312) predicted to mediate interactions with regulatory partners and substrates

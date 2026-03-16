@@ -106,5 +106,17 @@ By homology with the well-studied Hog1 protein from Saccharomyces cerevisiae, it
 In summary, Osm1 is a core component of the signaling pathway that enables M. oryzae to sense and adapt to changes in osmotic pressure, a capability that is crucial during the infection process. A null mutation of OSM1 was generated in M. grisea by targeted gene replacement, and the resulting mutants were sensitive to osmotic stress and showed morphological defects when grown under hyperosmotic conditions (Dixon et al., 1999). Furthermore, while Osm1 is indispensable for osmoregulation, it also plays a specialized role in the development of infection structures, as mutants exhibit reduced virulence and altered stress-related growth patterns (Motoyama et al., 2014)
 
 
-Doi ref: 10.1094/MPMI-09-13-0271-R -> 
-Doi ref: https://doi.org/10.1105/tpc.11.10.2045 -> Dixon et al, 1999
+Zhang et al 2014
+
+Zhang, H., Zhao, Q., Guo, X., Guo, M., Qi, Z., Tang, W., Dong, Y., Ye, W., Zheng, X., Wang, P., & Zhang, Z. (2014). Pleiotropic function of the putative zinc-finger protein MoMsn2 in Magnaporthe oryzae. Molecular plant-microbe interactions : MPMI, 27(5), 446–460. https://doi.org/10.1094/MPMI-09-13-0271-R
+
+Dixon etal 1999
+
+Katherine P. Dixon, Jin-Rong Xu, Nicholas Smirnoff, Nicholas J. Talbot, Independent Signaling Pathways Regulate Cellular Turgor during Hyperosmotic Stress and Appressorium-Mediated Plant Infection by Magnaporthe grisea, The Plant Cell, Volume 11, Issue 10, October 1999, Pages 2045–2058, https://doi.org/10.1105/tpc.11.10.2045
+
+Motoyama 2008
+Motoyama, T., Ochiai, N., Morita, M. et al. Involvement of putative response regulator genes of the rice blast fungus Magnaporthe oryzae in osmotic stress response, fungicide action, and pathogenicity. Curr Genet 54, 185–195 (2008). https://doi.org/10.1007/s00294-008-0211-0
+
+Zhang et al 2024
+
+Zhang, H., Yang, J., Liu, M. et al. Early molecular events in the interaction between Magnaporthe oryzae and rice. Phytopathol Res 6, 9 (2024). https://doi.org/10.1186/s42483-024-00226-z
