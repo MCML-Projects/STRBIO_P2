@@ -14,9 +14,15 @@ date: 10/03/2026
 
 ## Protein 3
 
-## Comprobar bbl
 
+The primary sequence of MoHog1 (351 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity. Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family (Dixon et al., 1999). The activation of this motif through dual phosphorylation has been experimentally validated under osmotic and oxidative stress conditions, as well as in response to fungicide exposure (Motoyama et al., 2008).
 
-The primary sequence of MoHog1 (351 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity (Motoyama et al., 2014). Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family (Dixon et al., 1999). The activation of this motif through dual phosphorylation has been experimentally validated under osmotic and oxidative stress conditions, as well as in response to fungicide exposure (Kojima et al., 2009).
+Key residues for ATP binding and catalysis were identified at positions K52 (VAK motif) and D149 (HRDLK motif), which are essential for the phosphotransferase mechanism and subsequent pexophagy regulation during infection. Furthermore, the C-terminal region contains a docking site (CD domain) with conserved aspartic acids (D309/D312) predicted to mediate interactions with regulatory partners and substrates, a feature linked to the maintenance of cell wall integrity.
 
-Key residues for ATP binding and catalysis were identified at positions K52 (VAK motif) and D149 (HRDLK motif), which are essential for the phosphotransferase mechanism and subsequent pexophagy regulation during infection (Li et al., 2020). Furthermore, the C-terminal region contains a docking site (CD domain) with conserved aspartic acids (D309/D312) predicted to mediate interactions with regulatory partners and substrates, a feature linked to the maintenance of cell wall integrity (He et al., 2017; Tanoue et al., 2000).
+https://doi.org/10.7554/eLife.61605 
+
+https://doi.org/10.3390/biology14111545
+
+Zhang, H., Yang, J., Liu, M. et al. Early molecular events in the interaction between Magnaporthe oryzae and rice. Phytopathol Res 6, 9 (2024). https://doi.org/10.1186/s42483-024-00226-z
+
+Motoyama, T., Ochiai, N., Morita, M. et al. Involvement of putative response regulator genes of the rice blast fungus Magnaporthe oryzae in osmotic stress response, fungicide action, and pathogenicity. Curr Genet 54, 185–195 (2008). https://doi.org/10.1007/s00294-008-0211-0

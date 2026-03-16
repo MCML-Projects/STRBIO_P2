@@ -105,6 +105,11 @@ By homology with the well-studied Hog1 protein from Saccharomyces cerevisiae, it
 
 In summary, Osm1 is a core component of the signaling pathway that enables M. oryzae to sense and adapt to changes in osmotic pressure, a capability that is crucial during the infection process. A null mutation of OSM1 was generated in M. grisea by targeted gene replacement, and the resulting mutants were sensitive to osmotic stress and showed morphological defects when grown under hyperosmotic conditions (Dixon et al., 1999). Furthermore, while Osm1 is indispensable for osmoregulation, it also plays a specialized role in the development of infection structures, as mutants exhibit reduced virulence and altered stress-related growth patterns (Motoyama et al., 2014)
 
+Webs de interes:
+https://fungi.ensembl.org/Multi/Search/Results?species=all;idx=;q=MGG_01822;site=ensemblunit
+https://www.uniprot.org/uniprotkb/Q9UV51/entry#family_and_domains
+
+
 
 Zhang et al 2014
 
