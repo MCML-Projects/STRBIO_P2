@@ -99,12 +99,12 @@ Sequence outside 56 624
 
 ## Protein 3
 
-We choose the *** protein   @carlota mete aquí tu proteína
+The third selected sequence corresponds to the Osm1 protein (also referred to as MoHog1) from the rice blast fungus Magnaporthe oryzae (strain 70-15), identified by the locus tag MGG_01822. This protein is characterized by a highly conserved kinase domain that spans almost the entire sequence length, indicating its primary role in the phosphorylation of specific downstream substrates.
 
-He modelado otra pero era de unas proteinas que interacciona con otras, salía bien pero prefiero esta otra, a ver que sale. Que es monomero y no depende de más proteinas. 
+By homology with the well-studied Hog1 protein from Saccharomyces cerevisiae, it has been established that Osm1 is a Mitogen-Activated Protein Kinase (MAPK) essential for hyperosmotic stress response and pathogenicity (Dixon et al., 1999; Motoyama et al., 2014). Similar to its yeast ortholog, UniProt and sequence analysis indicate the presence of the signature TXY motif (specifically TGY in many fungal MAPKs). This motif contains the critical threonine and tyrosine residues whose dual phosphorylation activates the MAPK. Consequently, this motif is expected to be structurally conserved in our target sequence to allow for functional activation, despite the fact that the experimental structure for this specific protein remains unsolved.
 
-https://fungi.ensembl.org/Magnaporthe_oryzae/Gene/Summary?g=MGG_01822;r=2:4976476-4978094;t=MGG_01822T0;db=core
-https://www.uniprot.org/uniprotkb/Q9UV51/entry#sequences 
+In summary, Osm1 is a core component of the signaling pathway that enables M. oryzae to sense and adapt to changes in osmotic pressure, a capability that is crucial during the infection process. A null mutation of OSM1 was generated in M. grisea by targeted gene replacement, and the resulting mutants were sensitive to osmotic stress and showed morphological defects when grown under hyperosmotic conditions (Dixon et al., 1999). Furthermore, while Osm1 is indispensable for osmoregulation, it also plays a specialized role in the development of infection structures, as mutants exhibit reduced virulence and altered stress-related growth patterns (Motoyama et al., 2014)
 
->sp|Q9UV51|HOG1_PYRO7 Mitogen-activated protein kinase HOG1 OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=HOG1 PE=1 SV=1
-MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ
+
+Doi ref: 10.1094/MPMI-09-13-0271-R -> 
+Doi ref: https://doi.org/10.1105/tpc.11.10.2045 -> Dixon et al, 1999
