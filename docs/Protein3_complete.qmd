@@ -35,6 +35,8 @@ Selected models:
 
 https://alphafoldserver.com/ - AF3
 
+![AF3 parameters](../pics/Protein3/PF3_Osm1_Dimer_Y173_P.png){#fig-params-Osm1-AF3dimer}
+
 #### Justification of the method
 
 We also employed AlphaFold3, which we had used previously, to model this protein. Our first strategy involved generating the initial structure with AF3, which performs exceptionally well in modeling the kinase domain, followed by refinement using the RosettaRelax server.
