@@ -1,17 +1,3 @@
----
-title: Protein *** Protocols
-format:
-  html:
-    embed-resources: true
-    theme: cosmo
-    toc: true
-    toc-location: left
-    code-fold: true
-    number-sections: true
-authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
-date: 10/03/2026
----
-
 ## Protein 3
 
 Sequence to model:
