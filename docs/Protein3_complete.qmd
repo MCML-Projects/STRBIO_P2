@@ -105,6 +105,10 @@ para ello vamos a buscar 6 templates que tengan la mejor calidad, el mejor aline
 | 6RFP | 47.95 % | 93 % | 3e-167 | *Rattus norvegicus* | X-ray diffraction | 1.74 | - |
 | 2B9F | 45.27 % | 92 % | 3e-154 | *Saccharomyces cerevisiae* | X-ray diffraction | 1.80 | TEY |
 
+PONER EN INGLES*** fix me
+
+Analizando el sitio TXY de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
+
 : Summary of templates used for MoOsm1/MoHog1 comparative modeling. {#tbl-templates}
 Vamos a buscar 5 templates para que no haya sesgos por el uso de un único template ni mucho ruido por un alto numero de templates (más dificil de encontrar mñas templates igual de buenos que aporten más de lo que ensucian). Vamos a hacer un **modelado multitemplate**
 
