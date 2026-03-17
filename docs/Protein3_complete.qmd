@@ -19,6 +19,16 @@ Sequence to model:
 >sp|Q9UV51|HOG1_PYRO7 Mitogen-activated protein kinase HOG1 OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=HOG1 PE=1 SV=1
 MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ
 
+Previous analysis:
+ProtSA
+Solvent radius ($\text{\AA}$)Parámetro: 1.4Por qué: Es el radio estándar de una molécula de agua. Se utiliza para simular una esfera que "rueda" sobre la superficie de la proteína; el área que esta esfera puede tocar es el Área de Superficie Accesible (SASA). Si usaras un valor distinto, tus resultados no serían comparables con el umbral del 16% de PROFacc.
+
+Unfolded conformations to generate
+Parámetro: 2000
+
+Por qué: ProtSA calcula la accesibilidad relativa comparando tu modelo (estado plegado) con un estado teóricamente desplegado. Para que ese estado desplegado sea estadísticamente fiable, necesita generar miles de conformaciones al azar (Monte Carlo). 2000 es el número sugerido para que el cálculo sea robusto sin que el servidor tarde horas.
+
+
 Selected models:
 
 ### Deep Learning (AlphaFold3)
