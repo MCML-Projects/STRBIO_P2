@@ -13,8 +13,6 @@ Parámetro: 2000
 
 Por qué: ProtSA calcula la accesibilidad relativa comparando tu modelo (estado plegado) con un estado teóricamente desplegado. Para que ese estado desplegado sea estadísticamente fiable, necesita generar miles de conformaciones al azar (Monte Carlo). 2000 es el número sugerido para que el cálculo sea robusto sin que el servidor tarde horas. No me llega el correo de que hestá hecho :/
 
-El NetSurf no indica regiones desordenadas, no ecuentro la secuencia de nucleotidos ACCGGATAT (el TGY en nucleotidos)
-
 
 Selected models:
 
