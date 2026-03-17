@@ -1,0 +1,38 @@
+## Protein 2. MAG: hypothetical protein E7642_05100 [Oscillospiraceae bacterium]
+
+**NCBI_entry**: [MBE6593352.1](https://www.ncbi.nlm.nih.gov/protein/MBE6593352.1)
+
+The second protein to study is annotated as a hypothetical protein of Oscillospiraceae bacterium family, also commonly called Ruminococcaceae. This protein sequence comes from a Metagenome-Assembled Genome (MAG) not yet characterized from a metagenomic analysis of goat gut microbiomes.
+
+This bacterial group is highly present in herbivore gut microbiomes as they are key contributors to lignocellulose degradation and fermentation processes contributing to the production of short-chain fatty acids that are essential for host metabolism (Peng et al 2021).
+Metagenomic studies stands that members of the Oscillospiraceae family remain uncharacterized. This is the reason because this sequence is annotated as a hypothetical proteins. 
+
+Proteins are annotated as hypothetical when an open reading frame is found through computational gene prediction (like in MAGs), but no experimental evidence or significant similarity to proteins with known function is avaiable for the the protein (Naveed et al 2018, Sivashankari et al 2006).
+
+
+**FALTA:**
+
+- Actividad de la proteína
+- Interés del estudio de la proteína
+- Necesidad del modelado (no hay estructura experimental descrita y contar improtancia de predecir la estructura)
+
+
+Peng, X., Wilken, S.E., Lankiewicz, T.S. et al. Genomic and functional analyses of fungal and bacterial consortia that enable lignocellulose breakdown in goat gut microbiomes. Nat Microbiol 6, 499–511 (2021). https://doi.org/10.1038/s41564-020-00861-0
+
+Naveed M, Chaudhry Z, Ali Z, Amjad M, Zulfiqar F, Numan A (2018). Annotation and curation of hypothetical proteins: prioritizing targets for experimental study. Adv. Life Sci. 5(3): 73-87
+
+Sivashankari S, Shanmughavel P. Functional annotation of hypothetical proteins - A review. Bioinformation. 2006 Dec 29;1(8):335-8. doi: 10.6026/97320630001335. PMID: 17597916; PMCID: PMC1891709.
+
+
+Seq2.1: MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANTGSYVVSTMSELRALEPRESSALVVLKGYHSANDGGGGTFYYDAASELEPDGALVIKCESTGGRFVRDREENYVNVKWFGAKGDGKTDDTAALQAAISSLGTGGGTVSLPGGNYAISAPLTIGDGDSGEKVSSTHGVKLIGMGGGFSHNVAAATTIKATAEIDNMLVLRGRISDCEIGGIYFNANNKAKTCLSLNSFSGCYFHNVKAMGFTDIGIKAIAGTAPTGNYNIYNRFESVNVTCLSDKTTGILFDGHYGDHNDTWLTVLSDCRFDTAQSENSVAAHFKFVDSISFYRCHFNTYKESSTGAVFDALDNHNFPCGMAFHDCSMTSHDVWEDSTHTIRKQYFYGFGTYDNEQIPTHPKLIGMTDMGDFFNIDAIDLLLSGNKGEDGTEEDNGEFTLPAKSGRVDTDNSTGASEHHNLKNGDKLAVLVNAKNKLVGGSFYLSSYDNSIGTIKFDVYKWDTDYATTVAGEILASDTALNFKDNSQFEAKFDGLSSGYYLIVISGTAPDDDFGVAVWTRGKSMTSVTFKNGNRIEAGLRGQFITE
+
+blastp de >MBE6593352.1 100% de identidad y 100% query coverage con: https://www.ncbi.nlm.nih.gov/protein/MBE6593352.1?report=genbank&log$=prottop&blast_rank=1&RID=V2GKFU6A014 Es la que más info tiene asique cogería esta, nos quitamos de justificar en la ultima porque una u otra y en la de cluster19 es una hypothetical protein multispecie. Lo que os querais complicar en buscar info y demás
+
+--> la 2.1 no tiene estructura resuelta en AF ni en PDB (buscador avanzado por secuencia), aunque en PDB salen algunas opciones con un 50% de identidad
+--> tampoco en uniprot porque si haces un blastp te hace match con: 
+
+hypothetical protein [Oscillospiraceae bacterium]
+Sequence ID: MBE6593352.1
+Score	Expect	Method	Identities	Positives	Gaps
+1288 bits(3334)	0.0	Compositional matrix adjust.	624/624(100%)	624/624(100%)	0/624(0%)
+PERO Como pone hypothetical protein es que no tiene estructura crsitalizada

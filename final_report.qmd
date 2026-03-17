@@ -1,6 +1,17 @@
 ---
 title: "Structural Bioinformatics: Exercise 2"
-format: html
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    toc: true
+    toc-location: left
+    code-fold: true
+    number-sections: true
+authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
+date: 10/03/2026
+bibliography: bibliografia.bib
+csl: vancouver.csl  
 ---
 
 # Proteins background
@@ -9,6 +20,7 @@ format: html
 
 # Protein modeling
 
+{{< include docs/Protein1_1Dfeatures.qmd >}}
 {{< include docs/Protein1_complete.qmd >}}
 
 {{< include docs/Protein2_complete.qmd >}}
@@ -17,3 +29,4 @@ format: html
 
 # Results
 
+# References
