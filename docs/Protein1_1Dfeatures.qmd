@@ -59,3 +59,7 @@ Additional structural features were analysed using NetSurfP to evaluate solvent 
 These positions also display very high α-helix probabilities, confirming that the segments previously predicted as transmembrane helices correspond to stable α-helical structures. Between these helices, short regions with increased solvent accessibility are observed, which likely correspond to extracellular and intracellular loops connecting the transmembrane segments. Finally, the C-terminal region again shows higher accessibility and lower helix propensity, supporting its role as a cytoplasmic and flexible regulatory domain.
 
 !["Ora1 solvent accesibility prediction by NetSurfP"](../pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
+
+
+**Conclusion (Se puede quitar)**
+The combined 1D analysis reveals that ORAI1 contains four transmembrane α-helices supported by topology, secondary structure, and accessibility predictions, forming a structured membrane-embedded core. In contrast, the N- and C-terminal regions show higher disorder and solvent exposure, indicating flexible cytoplasmic domains. Overall, this organization is consistent with the typical architecture of ORAI calcium channels.
