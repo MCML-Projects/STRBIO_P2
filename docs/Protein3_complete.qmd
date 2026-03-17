@@ -31,7 +31,13 @@ Por qué: ProtSA calcula la accesibilidad relativa comparando tu modelo (estado 
 
 Selected models:
 
+To capture the dual nature of MoHog1—which alternates between a monomeric inactive state and a dimeric active state regulated by Y173 phosphorylation—a multi-platform approach was employed. AlphaFold 3 was selected for its superior accuracy in predicting the activation loop's local environment, while Modeller allowed for template-driven constraints to explore the monomeric interface based on experimental homologs.
+
+ I-TASSER was selected due to its hybrid methodology, which combines threading and ab initio modeling. While MoHog1/MoOsm1 has several homologs that have been experimentally resolved, the sequence identities generally hover around 40%. Although this level of identity is acceptable for generating reliable models via classical homology modeling, we decided to employ a threading-based approach to gain an independent structural perspective. By integrating fragment-based ab initio folding, I-TASSER can better resolve regions where evolutionary divergence might lead to local structural variations that traditional homology modeling might overlook. Furthermore, I-TASSER was also employed to determine solvent accessibility (ASA), providing a comparative baseline against ProtSA and NetSurfP-3.0 results. Furthermore, as I-TASSER reports the specific Multiple Sequence Alignment (MSA) used during the threading process, it allows for a detailed verification of whether the main residues (TGY motif) are conserved across the selected templates, ensuring the structural integrity of the functional domains in the final model. 
+
 ### Deep Learning (AlphaFold3)
+
+Although the structural analysis could have been performed using AlphaFold 2 by employing phosphomimetic mutations—such as the Y173D substitution used in in vivo experiments to demonstrate the impact of phosphorylation—this approach has inherent limitations. While aspartic acid partially mimics the negative charge of a phosphorylated tyrosine, it remains a surrogate that does not fully capture the specific steric and chemical properties of a true phosphate group. Consequently, AlphaFold 3 was selected for this study, as it has been specifically trained on datasets containing Post-Translational Modifications (PTMs). This allows for a more biophysically accurate representation of the monomeric state of MoOsm1, providing deeper insights into the precise structural hindrances and conformational changes triggered by actual phosphorylation at the Y173 position.
 
 https://alphafoldserver.com/ - AF3
 
@@ -48,13 +54,19 @@ The sequence was entered (`copies: 6`) to represent the hexameric assembly.
 
 ### I-Tasser
 
-@@@@@@@carlota, es esta pagina?
-https://aideepmed.com/I-TASSER/
 
 #### Justification of the method
 
 I-TASSER is a less commonly used algorithm. This method uses a fragment assembly approach guided by threading techniques, which allows it to predict protein structures even when close homologs are limited. Although it is considerably slower than AlphaFold, it is highly robust for proteins with catalytic functions, such as kinases, due to its careful modeling of active sites and functional domains. 
 Moreover, C-I-TASSER provides confidence scores and structural templates that help validate the predicted models, making it particularly suitable for challenging targets where accuracy in functional regions is critical.
+
+
+BBL del I-tasser.
+web: https://aideepmed.com/I-TASSER/
+Please cite the following articles when you use the I-TASSER server:
+- Wei Zheng, Chengxin Zhang, Yang Li, Robin Pearce, Eric W. Bell, Yang Zhang. Folding non-homology proteins by coupling deep-learning contact maps with I-TASSER assembly simulations. Cell Reports Methods, 1: 100014 (2021).
+- Chengxin Zhang, Peter L. Freddolino, and Yang Zhang. COFACTOR: improved protein function prediction by combining structure, sequence and protein-protein interaction information. Nucleic Acids Research, 45: W291-299 (2017).
+- Jianyi Yang, Yang Zhang. I-TASSER server: new development for protein structure and function predictions, Nucleic Acids Research, 43: W174-W181, 2015.
 
 #### Methods
 
