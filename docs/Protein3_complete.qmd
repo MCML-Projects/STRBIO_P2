@@ -1,6 +1,6 @@
 ## Protein 3
 
--- BORRAR HASTA
+-- FIX ME HASTA
 Previous analysis:
 ProtSA
 Solvent radius ($\text{\AA}$)Parámetro: 1.4Por qué: Es el radio estándar de una molécula de agua. Se utiliza para simular una esfera que "rueda" sobre la superficie de la proteína; el área que esta esfera puede tocar es el Área de Superficie Accesible (SASA). Si usaras un valor distinto, tus resultados no serían comparables con el umbral del 16% de PROFacc.
@@ -29,7 +29,8 @@ When analyzing these models, two key structural requirements must be met. First,
 As previously detailed, structural modeling was performed for both the monomeric and dimeric states of the MoOsm1/MoHog1 protein, considering both their phosphorylated and unphosphorylated forms. Given that the most critical post-translational modification (PTM) affecting the structural integrity and regulation of the complex is the phosphorylation of Tyrosine 173 (Y173), this specific PTM was explicitly defined within the AlphaFold 3 (AF3) input parameters for that position. This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of the phosphate group in the activation loop
 
 https://alphafoldserver.com/ - AF3
-
+ 
+--FIX ME--
 ![AF3 parameters](../pics/Protein3/PF3_Osm1_Dimer_Y173_P.png){#fig-params-Osm1-AF3dimer}
 
 #### Justification of the method
