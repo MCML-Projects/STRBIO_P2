@@ -6,13 +6,14 @@
 
 **caracteristicas 1D**:
 
-- proteina 1
+- proteina 1 -- HECHO 
 - proteina 3 (estoy en ello soy C)
 
 **docs proteinaX_complete**
 - justificar seleccion de algoritmos de modelado (MA: fijarse en la proteína 1 si quereis más o menos hecho / o sino cambiar lo q pone en la 1 total libertad )
 - Analizar estructuras de la proteina3
-¿prot2??
+
+¿prot2?? @lucia
 
 **evaluacion modelos - comparación de los tres**:
 - visual + RMSD? (lucia) de la 2 extender a la 1

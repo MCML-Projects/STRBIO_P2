@@ -14,11 +14,15 @@ date: 10/03/2026
 
 ## Protein 3
 
-The primary sequence of MoHog1 (351 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity. Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family (Dixon et al., 1999). The activation of this motif through dual phosphorylation has been experimentally validated under osmotic and oxidative stress conditions, as well as in response to fungicide exposure (Motoyama et al., 2008).
+The primary sequence of MoHog1 (351 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity. Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family (Dixon et al., 1999, Liu et al., 2020). The activation of this motif through dual phosphorylation has been experimentally validated under osmotic and oxidative stress conditions, as well as in response to fungicide exposure (Motoyama et al., 2008). 
+
+Building upon previous structural studies of p38 MAPKs, which demonstrated the formation of dimers through the swapping of activation segments (Rothweiler et al., 2011), the oligomeric state of MoOsm1 was experimentally evaluated. Functional assays confirmed that MoHog1/MoOsm1 exists in both monomeric and dimeric forms. However, the ability to dimerize is strictly regulated by the phosphorylation state of the activation loop.
 
 Key residues for ATP binding and catalysis were identified at positions K52 (VAK motif) and D149 (HRDLK motif), which are essential for the phosphotransferase mechanism and subsequent pexophagy regulation during infection. Furthermore, the C-terminal region contains a docking site (CD domain) with conserved aspartic acids (D309/D312) predicted to mediate interactions with regulatory partners and substrates, a feature linked to the maintenance of cell wall integrity.
 
-https://doi.org/10.7554/eLife.61605 
+Rothweiler et al., 2011 -> https://doi.org/10.1016/j.jmb.2011.06.013 
+
+Liu et al., 2020 -> https://doi.org/10.7554/eLife.61605 
 
 https://doi.org/10.3390/biology14111545
 
