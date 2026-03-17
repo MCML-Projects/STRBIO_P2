@@ -1,0 +1,45 @@
+---
+title: Background information
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    toc: true
+    toc-location: left
+    code-fold: true
+    number-sections: true
+authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
+date: 10/03/2026
+---
+
+# 1d features of protein 2
+
+Before initiating the 3D modeling protocols, a comprehensive 1D sequence analysis was performed to understand the structural context of the protein and anticipate potential modeling challenges.
+
+Transmembrane Domains and Signal Peptides: Analysis using a topological predictor (DeepTMHMM) revealed a complete absence of Transmembrane Regions (TMRs). Instead, a well-defined N-terminal signal peptide was identified spanning residues 1 to 55. This strongly suggests that the target is not a membrane-resident protein, but rather a secreted molecule that functions in the extracellular or periplasmic space after the cleavage of its signal peptide.
+
+Intrinsically Disordered Regions (IDRs): To assess local flexibility, the sequence was evaluated using IUPred3. The prediction highlighted two main regions of intrinsic disorder. The most prominent peak (score > 0.8) occurs between residues 60 and 85, immediately following the signal peptide cleavage site. This region likely acts as a highly flexible linker. A secondary disordered loop was predicted around residues 470-500. Identifying these IDRs is crucial for the subsequent model assessment, as these specific regions are expected to display low confidence scores (e.g., low pLDDT) in Deep Learning models, reflecting their natural structural flexibility rather than an algorithm failure.
+
+> Functional Annotation and Evolutionary Insights
+To infer the biological role of this uncharacterized protein, domain scanning was conducted using InterProScan. The analysis yielded highly informative matches:
+
+Catalytic Core: A highly stable, structured central domain (residues 152-392) was confidently annotated as belonging to the Pectate Lyase family (Pectate_lyase_3 / Pectin lyase-like).
+
+Evolutionary Link: Interestingly, InterProScan also reported structural domain matches corresponding to Phage tail proteins (Phage_tail_b).
+
+> Biological Hypothesis
+The integration of these findings provides a cohesive functional and evolutionary hypothesis. Pectate lyases and phage tail spike proteins frequently share a similar structural architecture, specifically the parallel beta-helix fold, which is highly efficient at binding and cleaving complex carbohydrates. Given that the source organism, Oscillospiraceae, is a known resident of the mammalian gut microbiome, we hypothesize that this target is a secreted enzyme. It is likely utilized by the bacterium to degrade complex plant polysaccharides (such as pectin from the host's diet) to obtain nutrients. The structural similarity to phage tail proteins suggests a fascinating evolutionary history, potentially involving a horizontal gene transfer event where a viral carbohydrate-degrading structural gene was co-opted by the bacterium for metabolic purposes.
+
+#### Predicted Topology (DeepTMHMM)
+Predicted Topologies
+>Sequence | SP
+MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANTGSYVVSTMSELRALEPRESSALVVLKGYHSANDGGGGTFYYDAASELEPDGALVIKCESTGGRFVRDREENYVNVKWFGAKGDGKTDDTAALQAAISSLGTGGGTVSLPGGNYAISAPLTIGDGDSGEKVSSTHGVKLIGMGGGFSHNVAAATTIKATAEIDNMLVLRGRISDCEIGGIYFNANNKAKTCLSLNSFSGCYFHNVKAMGFTDIGIKAIAGTAPTGNYNIYNRFESVNVTCLSDKTTGILFDGHYGDHNDTWLTVLSDCRFDTAQSENSVAAHFKFVDSISFYRCHFNTYKESSTGAVFDALDNHNFPCGMAFHDCSMTSHDVWEDSTHTIRKQYFYGFGTYDNEQIPTHPKLIGMTDMGDFFNIDAIDLLLSGNKGEDGTEEDNGEFTLPAKSGRVDTDNSTGASEHHNLKNGDKLAVLVNAKNKLVGGSFYLSSYDNSIGTIKFDVYKWDTDYATTVAGEILASDTALNFKDNSQFEAKFDGLSSGYYLIVISGTAPDDDFGVAVWTRGKSMTSVTFKNGNRIEAGLRGQFITE
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+
+
+##gff-version 3
+# Sequence Length: 624
+# Sequence Number of predicted TMRs: 0
+Sequence signal 1 55
+Sequence outside 56 624
