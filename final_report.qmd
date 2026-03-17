@@ -1,6 +1,8 @@
 ---
 title: "Structural Bioinformatics: Exercise 2"
 format: html
+bibliography: bibliografia.bib
+csl: vancouver.csl  
 ---
 
 # Proteins background
@@ -9,6 +11,7 @@ format: html
 
 # Protein modeling
 
+{{< include docs/Protein1_1Dfeatures.qmd >}}
 {{< include docs/Protein1_complete.qmd >}}
 
 {{< include docs/Protein2_complete.qmd >}}
@@ -17,3 +20,4 @@ format: html
 
 # Results
 
+# Referencias 
