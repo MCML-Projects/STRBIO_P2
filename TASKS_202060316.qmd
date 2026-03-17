@@ -2,7 +2,7 @@
 
 - proteína 1
 - proteína 2
-- proteína 3
+- proteína 3 (Falta colocar la bbl, que tengo que mirar con Gema como se pone en los qmd)
 
 **caracteristicas 1D**:
 
@@ -23,7 +23,7 @@
 
 - MA: lucía, para swissmodel elegiste una única template para modelar? la proteína 1 está modelada con solo una template ns!!!!!
 
-**modelo final**: Hacer las estructuras bien con pymol de los modelos elegidos de lastre 
+**modelo final**: Hacer las estructuras bien con pymol de los modelos elegidos de las tres 
 - prot1
 - prot2
 - prot3
