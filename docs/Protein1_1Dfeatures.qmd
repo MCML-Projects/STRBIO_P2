@@ -24,7 +24,7 @@ In order to predict the transmembrane topology of ORAI1 the server of DeepTMHMM 
 
 The analysis classified ORAI1 as a transmembrane protein containing four transmembrane helices, consistent with the topology described for CRAC chanel subunits. Specifically, the helices were located at residues 92-105, 120-140, 175-196 and 234-255. 
 In adittion, both the N-terminal (residues 92-105) and the C-terminal (residues 256-301) regions, and the loop connecting TM2-TM3, are located in the cytoplasmic side, whereas the loops that links TM1-TM2 an TM3-TM4 are predicted to be located in the extracellular side.
-This topology matches with the known organization of ORAI1 in the membrane and is related with its function as the pore of the CRAC channel <span style="color:red">**(Prakriya et al., 2006; Hou et al., 2012)**</span>.
+This topology matches with the known organization of ORAI1 in the membrane and is related with its function as the pore of the CRAC channel <span style="color:red">(Prakriya et al., 2006; Hou et al., 2012)</span>.
 
 The high posterior probabilities observed for all transmembrane segments (@fig-DeepTMHMM-ORAI1) indicate a good prediction, this means that this regions are likely to be prediced with higher confidence than the loops regions.
 
@@ -42,7 +42,15 @@ Finally, the C-terminal region is also predicted to adopt mainly coil conformati
 
 ## Intrinsic disorder prediction (IUPred3)
 
+To predict the propensity of each amino acid to be located in intrinsically disordered regions, IUPred3 was used. The results are shown in @fig-IUPred3-ORAI1.
 
+The N-terminal region (residues 1–50) shows high disorder scores, indicating that it is a highly flexible segment. This is consistent with its cytosolic localization predicted by DeepTMHMM and the coil conformation predicted by PSIPRED.
+
+In the central part of the protein, alternating intervals of structured regions (low disorder scores) and peaks of higher disorder are observed. This pattern is compatible with the presence of transmembrane domains linked by flexible loops.
+
+Finally, the C-terminal region displays moderately high disorder scores (~0.5–0.6), suggesting partial flexibility. This is consistent with its proposed role as a regulatory cytoplasmic domain in Orai1.
+
+!["Orai1 intrinsic disorder prediction by IUPred3"](../pics/ORAI1/ORAI1_IUPred3.png){#fig-IUPred3-ORAI1}
 
 ## Solvent accessibility (NetSurfP)
 
@@ -50,4 +58,4 @@ Additional structural features were analysed using NetSurfP to evaluate solvent 
 
 These positions also display very high α-helix probabilities, confirming that the segments previously predicted as transmembrane helices correspond to stable α-helical structures. Between these helices, short regions with increased solvent accessibility are observed, which likely correspond to extracellular and intracellular loops connecting the transmembrane segments. Finally, the C-terminal region again shows higher accessibility and lower helix propensity, supporting its role as a cytoplasmic and flexible regulatory domain.
 
-!["ORA1 solvent accesibility prediction using NetSurfP"](../pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
+!["Ora1 solvent accesibility prediction by NetSurfP"](../pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
