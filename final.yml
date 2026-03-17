@@ -35,7 +35,8 @@ website:
     left: #nuestros nombres
     right: #se pueden poner iconos con links
   
-bibliography: references.bib
+bibliography: bibliografia.bib
+csl: vancouver.csl  
 
 format:
   html:
