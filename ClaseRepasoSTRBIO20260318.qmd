@@ -13,3 +13,9 @@ Describe homologia de proteina y como se haría el modelado
 (Docking 4/20)
 Miriam ha cambidao casi todas las preguntas
 Razonamientos 
+
+
+Diferencia entre SCOP y CATH:Modesto dice que son Redundantes, hay algun grupo de proteinas mejor anotado en una o en otra. Depende si vas a usar API (la de cath funcoina mejor)
+
+En cuanto a las DBs, saber donde puedo buscar cada cosa, estructuras en PDB, homologia...
+
