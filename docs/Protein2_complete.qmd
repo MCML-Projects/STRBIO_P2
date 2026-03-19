@@ -34,7 +34,15 @@ However, since no information regarding the quaternary structure was available a
 
 #### Results 
 
-***AÑADIR .PNG AF2 monomero
+::: {#fig-Trimer-Protein2 layout-ncol=3}
+
+![](/pics/Protein2/Pics_P2_Pymol/p2_trimmer_bottom_consensus.png){#fig-p2-trimerbottom}
+![](/pics/Protein2/Pics_P2_Pymol/p2_trimmer_top_consensus.png){#fig-p2-trimertop}
+![](/pics/Protein2/Pics_P2_Pymol/p2_trimmer_side_consensus.png){#fig-p2-trimerside}
+
+**View of the structural modeling of protein 2 trimer conformation.** **A.** Protein 2 trimer conformation bottom view. **B.** Protein 2 trimer conformation top view. **C.** Protein 2 trimer conformation side view.
+
+:::
 
 To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1).
 
