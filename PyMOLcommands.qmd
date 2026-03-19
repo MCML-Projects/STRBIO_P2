@@ -1,0 +1,42 @@
+COmandos pymol:
+
+# Comando para cargar los modelos donde el * indica los modelos del 0 al 4
+load fold_*.cif, Osm1_quarternarystate_PTMs_*
+
+# Agruparlos bajo un solo nombre para gestionarlos mejor
+group quarternarystate_PTMs, Osm1_quarternarystate_PTMs_0 Osm1_quarternarystate_PTMs_1 Osm1_quarternarystate_PTMs_2 Osm1_quarternarystate_PTMs_3 Osm1_quarternarystate_PTMs_4
+
+# Donde * en este caso es los modelos del 1 al 4
+align Osm1_quarternarystate_PTMs_*, Osm1_quarternarystate_PTMs_0
+
+# Centrar la vista en el conjunto
+zoom Osm1_quarternarystate_PTMs
+
+# Colorear modelos (IMPORTANTE EL ORDEN)
+
+# Color para Baja Confianza (< 50)
+color orange, (Osm1Mono_bothP and b < 50)
+# Color para Confianza Media (50 a 70)
+color yellow, (Osm1Mono_bothP and b > 50)
+# Color para Confianza Alta (70 a 90)
+color lightteal, (Osm1Mono_bothP and b > 70)
+# Color para confianza muy alta
+color marine, (Osm1Mono_bothP and b > 90)
+
+# TGY MOTIF 
+select Osm1Mono_bothP_TGY, Osm1Mono_bothP and resi 171+173
+show sticks, Osm1Mono_bothP_TGY
+color lightgreen, Osm1Mono_bothP_TGY
+show spheres, (Osm1Mono_bothP_TGY and name P)
+set sphere_scale, 0.3, (Osm1Mono_bothP_TGY and name P)
+
+# Para que la figura sea más mona
+
+bg_color white             # Fondo blanco
+set ray_shadows, 0         # Quitar sombras oscuras para que se vea más limpio
+set cartoon_fancy_helices, 1
+ray 1200, 1200
+
+# Para exportar la figura  (no me deja por no tener licencia)
+
+png Osm1Mono_ModelComparision.png, dpi=300, ray=1
