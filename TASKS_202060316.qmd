@@ -2,16 +2,16 @@
 
 - proteína 1
 - proteína 2
-- proteína 3 (Falta colocar la bbl, que tengo que mirar con Gema como se pone en los qmd)
+- proteína 3 -- HECHO
 
 **caracteristicas 1D**:
 
 - proteina 1 -- HECHO 
-- proteina 3 -- HECHO (falta colocar bbl)
+- proteina 3 -- HECHO 
 
 **docs proteinaX_complete**
 - justificar seleccion de algoritmos de modelado (MA: fijarse en la proteína 1 si quereis más o menos hecho / o sino cambiar lo q pone en la 1 total libertad )
-- Justificar seleccion de modelos P3 (Hecho)
+- Justificar seleccion de modelos P3 -- HECHO
 - Analizar estructuras de la proteina3 AlpaFold -> zips subidos falta comparar dimero non-P y monomero P (dimero-P tambien es interesante)
 - Analizar estructuras de la proteina 3 Modeller -> resultado subido, mirar el de menor DOPE score
 - Analizar estructuas de la proteina 3 I-tasser -> Muestra TGY como escondido, no fiarnos mucho porque tiene que estar expuesto, mirar con que proteina compara en el MSA y si estas proteinas tienen el TXY.
@@ -36,11 +36,9 @@
 Soy **Carlota**, me tengo que ir al fisio pero tengo apuntados los siguientes pasos:
 
 1. Mirar con ProtSA o PROFacc la accesibilidad al solvente de la secuencia. 
-Al final se ha mirado con ProtSA (no me llega el correo de que se haya acabado y la web no se actualiza) y con NetSurfer (no encuentro los nucleotidos que corresponden)
-En este caso, si hay algún resíduo clave para la fosforilacion tienen que estar los resíduos clave
-para la fosforilacion no enterrados (lo pone en 1d fearures de la p3)
+Al final se ha mirado con ProtSA (no me llega el correo de que se haya acabado y la web no se actualiza) y con NetSurfer. En este caso, si hay algún resíduo clave para la fosforilacion tienen que estar los resíduos clave para la fosforilacion no enterrados (lo pone en 1d fearures de la p3)
 
-2. AF3 modela con IA, Modeller modela por Homolgía (creo que escribir eso tengo que hcaerlo yo porque es un poco jaleo) y I-tasser modela por threading, ab/initio
+2. AF3 modela con IA, Modeller modela por Homolgía (creo que escribir eso tengo que hcaerlo yo porque es un poco jaleo, ESTOY EN ELLO) y I-tasser modela por threading, ab/initio
 2.1 hacer la tabla de las homologias para modeller (lo hago yo, C)
 2.2 Buscar el modeller ocn menor DOPE score (6.4 con DOPEScore de -1.45)
 2.3 Analizar el AF3 (segu el plDDT) -> Hay un documento de como se analiza

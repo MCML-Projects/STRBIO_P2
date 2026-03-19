@@ -1,0 +1,28 @@
+[{
+ "name": "Osm1_Monomer_BothP",
+ "modelSeeds": [
+  "259058416"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ",
+    "modifications": [
+     {
+      "ptmType": "CCD_TPO",
+      "ptmPosition": 171
+     },
+     {
+      "ptmType": "CCD_PTR",
+      "ptmPosition": 173
+     }
+    ],
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]

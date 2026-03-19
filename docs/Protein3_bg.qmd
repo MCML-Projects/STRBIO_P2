@@ -1,28 +1,8 @@
 ## Protein 3
 
-The third selected sequence corresponds to the Osm1 protein (also referred to as MoHog1) from the rice blast fungus Magnaporthe oryzae (strain 70-15), identified by the locus tag MGG_01822. This protein is characterized by a highly conserved kinase domain that spans almost the entire sequence length, indicating its primary role in the phosphorylation of specific downstream substrates.
+The third selected sequence corresponds to the Osm1 protein (also referred to as MoHog1) from the rice blast fungus Magnaporthe oryzae (strain 70-15), identified by the locus tag MGG_01822. This protein is characterized by a highly conserved kinase domain that spans almost the entire sequence length, indicating its primary role in the phosphorylation of specific downstream substrates(@ensembl_mgg01822, @uniprot_q9uv51).
 
-By homology with the well-studied Hog1 protein from Saccharomyces cerevisiae, it has been established that Osm1 is a Mitogen-Activated Protein Kinase (MAPK) essential for hyperosmotic stress response and pathogenicity (Dixon et al., 1999; Motoyama et al., 2008). Similar to its yeast ortholog, UniProt and sequence analysis indicate the presence of the signature TXY motif (specifically TGY in many fungal MAPKs). This motif contains the critical threonine and tyrosine residues whose dual phosphorylation activates the MAPK. Consequently, this motif is expected to be structurally conserved in our target sequence to allow for functional activation, despite the fact that the experimental structure for this specific protein remains unsolved.
+By homology with the well-studied Hog1 protein from Saccharomyces cerevisiae, it has been established that Osm1 is a Mitogen-Activated Protein Kinase (MAPK) essential for hyperosmotic stress response and pathogenicity (@dixon1999, @motoyama2008, @biology2025). Similar to its yeast ortholog, UniProt and sequence analysis indicate the presence of the signature TXY motif (specifically TGY in many fungal MAPKs). This motif contains the critical threonine and tyrosine residues whose dual phosphorylation activates the MAPK. Consequently, this motif is expected to be structurally conserved in our target sequence to allow for functional activation, despite the fact that the experimental structure for this specific protein remains unsolved.
 
-In summary, Osm1 is a core component of the signaling pathway that enables M. oryzae to sense and adapt to changes in osmotic pressure, a capability that is crucial during the infection process. A null mutation of OSM1 was generated in M. grisea by targeted gene replacement, and the resulting mutants were sensitive to osmotic stress and showed morphological defects when grown under hyperosmotic conditions (Dixon et al., 1999). Furthermore, while Osm1 is indispensable for osmoregulation, it also plays a specialized role in the development of infection structures, as mutants exhibit reduced virulence and altered stress-related growth patterns (Motoyama et al., 2008)
+In summary, Osm1 is a core component of the signaling pathway that enables M. oryzae to sense and adapt to changes in osmotic pressure, a capability that is crucial during the infection process. A null mutation of OSM1 was generated in M. grisea by targeted gene replacement, and the resulting mutants were sensitive to osmotic stress and showed morphological defects when grown under hyperosmotic conditions (@dixon1999). Furthermore, while Osm1 is indispensable for osmoregulation, it also plays a specialized role in the development of infection structures, as mutants exhibit reduced virulence and altered stress-related growth patterns (@motoyama2008)
 
-Webs de interes:
-https://fungi.ensembl.org/Multi/Search/Results?species=all;idx=;q=MGG_01822;site=ensemblunit
-https://www.uniprot.org/uniprotkb/Q9UV51/entry#family_and_domains
-
-
-
-Zhang et al 2014
-
-Zhang, H., Zhao, Q., Guo, X., Guo, M., Qi, Z., Tang, W., Dong, Y., Ye, W., Zheng, X., Wang, P., & Zhang, Z. (2014). Pleiotropic function of the putative zinc-finger protein MoMsn2 in Magnaporthe oryzae. Molecular plant-microbe interactions : MPMI, 27(5), 446–460. https://doi.org/10.1094/MPMI-09-13-0271-R
-
-Dixon etal 1999
-
-Katherine P. Dixon, Jin-Rong Xu, Nicholas Smirnoff, Nicholas J. Talbot, Independent Signaling Pathways Regulate Cellular Turgor during Hyperosmotic Stress and Appressorium-Mediated Plant Infection by Magnaporthe grisea, The Plant Cell, Volume 11, Issue 10, October 1999, Pages 2045–2058, https://doi.org/10.1105/tpc.11.10.2045
-
-Motoyama 2008
-Motoyama, T., Ochiai, N., Morita, M. et al. Involvement of putative response regulator genes of the rice blast fungus Magnaporthe oryzae in osmotic stress response, fungicide action, and pathogenicity. Curr Genet 54, 185–195 (2008). https://doi.org/10.1007/s00294-008-0211-0
-
-Zhang et al 2024
-
-Zhang, H., Yang, J., Liu, M. et al. Early molecular events in the interaction between Magnaporthe oryzae and rice. Phytopathol Res 6, 9 (2024). https://doi.org/10.1186/s42483-024-00226-z
