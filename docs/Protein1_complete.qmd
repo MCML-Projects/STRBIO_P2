@@ -47,7 +47,7 @@ The predicted models and the results extracted from the output files are summari
 
 #### Interpretation of results (Discussion)
 
-Concerning the structure shown in Figure @fig-orai1-AF3structure, dark blue regions (high-quality regions) correspond to the four transmembrane helices of each subunit, confirming the architecture of the channel pore. Cyan to white regions indicate good confidence in the connecting loops. Finally, the cytoplasmic N- and C-terminal tails are shown in red, reflecting high flexibility and structural uncertainty, consistent with their nature as intrinsically disordered regions. 
+Concerning the structure shown in @fig-ORAI1-alignmentAF3, blue regions (high-quality regions) correspond to the four transmembrane helices of each subunit, confirming the architecture of the channel pore. Cyan to yellow regions indicate good confidence in the connecting loops. Finally, the cytoplasmic N- and C-terminal tails are shown in orange, reflecting high flexibility and structural uncertainty, consistent with their nature as intrinsically disordered regions. 
 This observations are consistent with the statistical confidence metrics provided by AlphaFold for these regions.
 
 Regarding the results obtained (@tbl-orai1-af3), the ranking score of 0.81 indicates high confidence in the overall architecture of the hexamer. 

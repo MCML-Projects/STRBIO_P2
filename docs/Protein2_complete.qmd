@@ -35,7 +35,6 @@ However, since no information regarding the quaternary structure was available a
 #### Results 
 Using AlphaFold2, several diagnostic plots were obtained to help evaluate the expected reliability of the monomeric model (@fig-seq2-AFSeqCoverage, @fig-seq2-AFpLDDT, @fig-seq2-AFPAE). The predicted 3D structure of the monomer, colored by local confidence (pLDDT), is shown in @fig-seq2-af2-structure.
 
-<<<<<<< HEAD
 ::: {#fig-Trimer-Protein2 layout-ncol=3}
 
 ![](/pics/Protein2/Pics_P2_Pymol/p2_trimmer_bottom_consensus.png){#fig-p2-trimerbottom}
@@ -48,12 +47,7 @@ Using AlphaFold2, several diagnostic plots were obtained to help evaluate the ex
 
 To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1).
 
-The alignments of models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 1.49 Å (ranging from 1.04 Å to 1.99 Å). Out of the 14,244 total atoms in each model, an average of approximately 9,751 atoms were used for the final calculation.
-
 Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.
-=======
-{#fig-seq2-af2-structure}
->>>>>>> 40ed3b8 (p2 analysis)
 
 Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.The comprehensive assessment results, including the Local Quality Estimate, the QMEAN Z-score comparison, and the Ramachandran plot, are detailed in @fig-seq2-af2-assessment.
 
@@ -69,7 +63,12 @@ Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was ev
 
 Structural assessment metrics for the AF2 monomeric model obtained via the SWISS-MODEL assessment tool.
 
-To evaluate the quaternary structure, AlphaFold3 was utilized to predict the trimeric complex. The output metrics extracted from the JSON files are summarized in @tbl-seq2-af3. The predicted 3D structure of the trimer, vividly displaying the confidence and flexibility of the assembled complex, is shown in @fig-seq2-af3-structure.
+To evaluate the quaternary structure, AlphaFold3 was utilized to predict the trimeric complex. 
+The alignments of models 1 through 4 against the top-ranked model 0 (@fig-p2-alignmentAF3) exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 1.50 Å (ranging from 1.04 Å to 1.99 Å). Out of the 14,244 total atoms aligned in each model, an average of approximately 9,751 atoms were used for the final calculation.
+
+![Structure of protein 2 modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](pics/Protein2/Alignment_models0-4_AF4_P2.png){#fig-p2-alignmentAF3}
+
+The output metrics extracted from the JSON files are summarized in @tbl-seq2-af3. The predicted 3D structure of the trimer, vividly displaying the confidence and flexibility of the assembled complex, is shown in @fig-seq2-af3-structure.
 
 | Parameter | Value | Description |
 |-----------|-------|--------------------------|

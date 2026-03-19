@@ -30,7 +30,7 @@
 - prot2
 - prot3
 
-**falta en la proteína 2 añadir lo de alingment de AF3 de los mdoelos**
+**falta en la proteína 2 añadir lo de alingment de AF3 de los mdoelos** -- HECHO
 
 Soy **Carlota**, me tengo que ir al fisio pero tengo apuntados los siguientes pasos:
 
