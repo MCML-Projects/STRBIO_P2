@@ -65,7 +65,7 @@ For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alig
 
 The dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a bifurcated behavior in their convergence; while the first two subsequent models showed high structural similarity to Model 0 with a mean RMSD of 0.54 Å, the final two models displayed a drastic divergence, reaching an RMSD of nearly 30 Å.
 
-![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](../pics/Protein3/Dimer_171P/models012_dimerT171_AFcolorcode.png){#fig_P3_dimer_171P_AFcolored}
+![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](../pics/Protein3/Dimer_171P/dimer_T171P_red.png.png){#fig_P3_dimer_171P_AFcolored}
 
 The top-ranked Model 0 was selected as the reference structure based on its superior convergence and global scoring. The key validation parameters, are summarized in @tbl-prot3-af3.
 
@@ -80,6 +80,18 @@ The top-ranked Model 0 was selected as the reference structure based on its supe
 
 : Structural quality metrics obtained by AlphaFold3 for de monomer and the dimer. {#tbl-prot3-af3}
 
+To analyze the effect of phosphorylation on the dimerization interface, the distance between specific residues across the chains was quantified. We employed the command `distance dist_171P, (Osm1Dimer_171P_0 and chain A and resi 171 and element P), (Osm1Dimer_171P_0 and chain B and resi 171 and element P)` to measure the inter-chain separation between the phosphorus atoms of residue 171. Similar measurements were performed for residue 173 by adjusting the residue index accordingly.
+
+These calculations were applied to both dimeric states: the mono-phosphorylated dimer (pT171) and the dual-phosphorylated dimer (pT171/pY173). The resulting data, presented in @tbl-distances-171P-173P, are expected to reveal a greater distance between residues 173 in the phosphorylated state compared to the non-phosphorylated state. Furthermore, if the distance between the pT171 residues is significantly higher in the dual-phosphorylated dimer, it would suggest that the presence of the phosphate group on residue 173 induces additional structural tension or steric repulsion at the dimeric interface.
+
+| Distance between residues of both chains | Osm1 Dimer 171P | Osm1 Dimer 171P and 173P | 
+|-----------|-------|--------------------------|
+| **171** | 28.8 | 0.3 | 
+| **173** | 24.8 | 0.22 | 
+
+: Phosphorilated residues distance on dimer structures of the Osm1 modeled structure.
+{#tbl-distances-171P-173}
+
 #### Interpretation of results (Discussion)
 
 The alignment of the models of the dual-phosphorylated monomer (@fig_P3_monomer_AFcolored_bothP) indicates a highly robust and virtually identical conformational landscape across all iterations, suggesting a stable and well-defined fold for the activation loop in this state. 
@@ -89,7 +101,7 @@ In contrast, the dimeric models (@fig_P3_dimer_AFcolored_171P) exhibited a signi
 Regarding the results obtained (@tbl-prot3-af3), the ranking score of 0.89 for the monomer indicates very high confidence in the predicted structure. In contrast, the dimer shows a much lower ranking score (0.30), suggesting that the overall prediction is significantly less robust in the oligomeric state. The pTM value of 0.87 for the monomer further supports the reliability of the global fold. In the same line, the ipTM value of 0.22 for the dimer indicates weak confidence in the predicted interface between the two subunits, suggesting that the inter-chain interactions are not consistently resolved by the algorithm.
 It is also noteworthy that the fraction of disordered residues is very low in both cases (0.04 for the monomer and 0.03 for the dimer), indicating that most of the structure is predicted to adopt a stable folded conformation. In addition, no steric clashes were detected in either model, confirming that the atomic geometry of the structures is physically plausible.
 
-@martix lo del rosetta server?  -> @@@carlota no hay rosetta server je
+
 
 ### I-Tasser
 

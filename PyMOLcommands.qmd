@@ -17,18 +17,18 @@ zoom Osm1_quarternarystate_PTMs
 # Color para Baja Confianza (< 50)
 color orange, (Osm1Mono_bothP and b < 50)
 # Color para Confianza Media (50 a 70)
-color yellow, (Osm1Mono_bothP and b > 50)
+color yellow, (Osm1Dimer_171P and b > 50)
 # Color para Confianza Alta (70 a 90)
-color lightteal, (Osm1Mono_bothP and b > 70)
+color lightteal, (Osm1Dimer_171P and b > 70)
 # Color para confianza muy alta
-color marine, (Osm1Mono_bothP and b > 90)
+color marine, (Osm1Dimer_171P and b > 90)
 
 # TGY MOTIF 
-select Osm1Mono_bothP_TGY, Osm1Mono_bothP and resi 171+173
-show sticks, Osm1Mono_bothP_TGY
-color lightgreen, Osm1Mono_bothP_TGY
-show spheres, (Osm1Mono_bothP_TGY and name P)
-set sphere_scale, 0.3, (Osm1Mono_bothP_TGY and name P)
+select Osm1Dimer_171P_TGY, Osm1Dimer_171P and resi 171+173
+show sticks, Osm1Dimer_171P_TGY
+color red, Osm1Dimer_171P_TGY
+show spheres, (Osm1Dimer_171P_TGY and element P)
+set sphere_scale, 1.0, (Osm1Dimer_171P_TGY and element P)
 
 # Para que la figura sea más mona
 
