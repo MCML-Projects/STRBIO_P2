@@ -57,6 +57,10 @@ For publication-quality figure export, the following environment settings and hi
 
 #### Results 
 
+| ipTM | Monomer | Dimer |
+| 171P | 0.18 | 0.22 |
+|
+
 For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
 ![Monomer structure modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig_P3_Osm1Mono_bothP_AFcolored}
@@ -81,7 +85,6 @@ The top-ranked Model 0 was selected as the reference structure based on its supe
 To analyze the effect of phosphorylation on the dimerization interface, the distance between specific residues across the chains was quantified. We employed the command `distance dist_171P, (Osm1Dimer_171P_0 and chain A and resi 171 and element P), (Osm1Dimer_171P_0 and chain B and resi 171 and element P)` to measure the inter-chain separation between the phosphorus atoms of residue 171. Similar measurements were performed for residue 173 by adjusting the residue index accordingly.
 
 These calculations were applied to both dimeric states: the mono-phosphorylated dimer (pT171) and the dual-phosphorylated dimer (pT171/pY173). The resulting data, presented in @tbl-distances-171P-173P, are expected to reveal a greater distance between residues 173 in the phosphorylated state compared to the non-phosphorylated state. Furthermore, if the distance between the pT171 residues is significantly higher in the dual-phosphorylated dimer, it would suggest that the presence of the phosphate group on residue 173 induces additional structural tension or steric repulsion at the dimeric interface.
-
 
 --FIX ME si hay tiempo
 
