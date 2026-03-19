@@ -16,7 +16,9 @@ csl: vancouver.csl
 
 # Proteins background
 
-{{< include docs/bg_info.qmd >}}
+{{< include docs/Protein1_bg.qmd >}}
+{{< include docs/Protein2_bg.qmd >}}
+{{< include docs/Protein3_bg.qmd >}}
 
 # Protein modeling
 
