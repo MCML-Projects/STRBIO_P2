@@ -32,8 +32,6 @@
 - prot2
 - prot3
 
-**cambios proteina 1** he añadido una cosa al final del doc de bg que hay que tener en cuenta sobre ORAI1 
-
 
 Soy **Carlota**, me tengo que ir al fisio pero tengo apuntados los siguientes pasos:
 

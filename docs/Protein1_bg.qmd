@@ -36,29 +36,3 @@ The functional state of the channel is heavily influenced by specific chemical e
 Nota de modesto: Consider alternative quaternary structures in order to obtain the best holoprotein channel.
 
 The **** protein has X ligand ...
-
-
-CUIDADO TENER EN CUENTA(es de gema pero hay que añadirlo o considerarlo en el análisis)
-
-1. La transición de Dímero a Hexámero
-Aunque el canal activo en la membrana plasmática es un hexámero, las unidades básicas de ensamblaje son dímeros.
-
-Dinámica de ensamblaje: En reposo, ORAI1 puede existir en estados de oligomerización menores.
-
-Interacción con STIM1: Es la unión con la proteína STIM1 (del retículo endoplásmico) la que estabiliza y "fuerza" la conformación hexamérica final para abrir el poro. Estudiar configuraciones intermedias ayuda a entender la eficiencia de la apertura.
-
-2. Heterooligómeros (Orai1 + Orai2/Orai3)
-Aquí es donde la "estructura cuaternaria alternativa" se pone interesante. ORAI1 no siempre trabaja solo:
-
-Ajuste de la conductancia: En muchos tejidos humanos, ORAI1 se mezcla con sus hermanos ORAI2 y ORAI3.
-
-Propiedades del canal: Un heterohexámero (por ejemplo, 4 unidades de Orai1 y 2 de Orai2) tiene una sensibilidad al calcio y una tasa de inactivación distinta a la del homohexámero puro.
-
-El "Mejor" Holoproteína: Dependiendo del contexto celular (sistema inmune vs. músculo), el "mejor" canal podría no ser el homohexámero de Orai1, sino una combinación que evite la toxicidad por exceso de calcio.
-
-3. Variantes de Splicing y Mutaciones
-Existen isoformas como Orai1 alpha y Orai1 beta.
-
-La versión beta carece de un dominio N-terminal largo.
-
-Si intentas modelar o cristalizar el canal, la proporción de estas variantes en el complejo cuaternario altera drásticamente la arquitectura del poro y su regulación por fosforilación.
