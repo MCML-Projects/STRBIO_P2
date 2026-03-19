@@ -1,8 +1,6 @@
 ## Protein 2
 
-**NCBI_entry**: [MBE6593352.1](https://www.ncbi.nlm.nih.gov/protein/MBE6593352.1)
-
-The second protein analyzed is annotated as a hypothetical protein from an Oscillospiraceae family bacterium. 
+The analyzed is annotated as a hypothetical protein from an Oscillospiraceae family bacterium: [MBE6593352.1](https://www.ncbi.nlm.nih.gov/protein/MBE6593352.1). 
 This protein sequence comes from a Metagenome-Assembled Genome (MAG) not yet characterized from a metagenomic study of goat gut microbiomes.
 
 This anaerobic bacterial group is abundant in herbivore gut microbiomes, where they are key contributors to lignocellulose degradation and fermentation processes, contributing to the production of short-chain fatty acids that are essential for host metabolism @peng2021. 
