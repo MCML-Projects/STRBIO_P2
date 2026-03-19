@@ -108,7 +108,6 @@ It is also noteworthy that the fraction of disordered residues is very low in bo
 
 ### I-Tasser
 
-
 #### Justification of the method
 
 [I-TASSER](https://aideepmed.com/I-TASSER/) was selected for its robust fragment assembly approach guided by threading techniques, a methodology that enables the prediction of protein structures even when close homologs are limited (@Zheng2021, @Zhang2017, @Yang2015). While the computational process is more time-intensive than AlphaFold, it offers significant advantages for proteins with catalytic functions, such as kinases, due to its specialized modeling of active sites and functional domains. Furthermore, the integration of C-I-TASSER provides essential confidence scores and structural templates that validate the predicted models, making it a highly reliable tool for challenging targets where precision in functional regions is critical. 
