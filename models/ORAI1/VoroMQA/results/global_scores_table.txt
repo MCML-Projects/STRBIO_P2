@@ -1,0 +1,4 @@
+model                 global_score  residues  atoms  interface_score  interface_atoms  interface_contacts  interface_area  interface_energy
+ORAI1_AF3.cif         0.432051      1806      13812  0.583897         3557             6182                15073.8         -10669.8
+ORAI1_ESMfold.pdb     0.360814      903       6903   0.543786         1317             2299                5629.27         -3540.43
+ORAI1_SwissModel.pdb  0.467169      1260      9714   0.588563         3207             6004                14604.8         -10441.9
