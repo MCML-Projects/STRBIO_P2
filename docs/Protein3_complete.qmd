@@ -21,26 +21,34 @@ I-TASSER was selected due to its hybrid methodology, which combines threading an
 
 Although the structural analysis could have been performed using AlphaFold 2 by employing phosphomimetic mutations—such as the Y173D substitution used in in vivo experiments to demonstrate the impact of phosphorylation—this approach has inherent limitations. While aspartic acid partially mimics the negative charge of a phosphorylated tyrosine, it remains a surrogate that does not fully capture the specific steric and chemical properties of a true phosphate group. Consequently, AlphaFold 3 was selected for this study, as it has been specifically trained on datasets containing Post-Translational Modifications (PTMs). This allows for a more biophysically accurate representation of the monomeric state of MoOsm1, providing deeper insights into the precise structural hindrances and conformational changes triggered by actual phosphorylation at the Y173 position.
 
-Consequently, we opted to model both the monomeric and dimeric states in their phosphorylated and unphosphorylated forms. In a biological context, MoOsm1/MoHog1 naturally exists as a phosphorylated monomer (inactive/signaling state) or an unphosphorylated dimer (active state). The phosphorylated dimer model was specifically generated to analyze the steric hindrance caused by the phosphate group, which prevents stable dimerization in vivo. Conversely, the unphosphorylated monomer was modeled to establish the baseline localization of the TGY motif in its basal state.
+Consequently, we opted to model both the monomeric (`copies: 1`) and dimeric (`copies: 2`) states in their phosphorylated and unphosphorylated forms. In a biological context, MoOsm1/MoHog1 naturally exists as a phosphorylated monomer (inactive/signaling state) or an unphosphorylated dimer (active state). The phosphorylated dimer model was specifically generated to analyze the steric hindrance caused by the phosphate group, which prevents stable dimerization in vivo. Conversely, the unphosphorylated monomer was modeled to establish the baseline localization of the TGY motif in its basal state.
 
 When analyzing these models, two key structural requirements must be met. First, in the phosphorylated monomer, the activation site must be solvent-accessible to allow for its upstream kinase to perform the phosphorylation. In addition, in the unphosphorylated dimer, the TGY motif is expected to be located within the buried interface of the complex, specifically at the protein-protein interaction site. This configuration would explain why phosphorylation at this position prevents dimerization, as the addition of a bulky, negatively charged phosphate group would physically and energetically disrupt the assembly of the dimeric interface."
  
 #### Justification of the method
 
-We also employed AlphaFold3, which we had used previously, to model this protein. Our first strategy involved generating the initial structure with AF3, which performs exceptionally well in modeling the kinase domain, followed by refinement using the RosettaRelax server.
+We also employed [AlphaFold 3 server](https://alphafoldserver.com/), which we had used previously, to model this protein. Our first strategy involved generating the initial structure with AF3, which performs exceptionally well in modeling the kinase domain.
 
 #### Methods
 
-**PARAMS AF3**@@@citar los parámetros de AF3 (prot1)
+Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed for both the monomeric and dimeric states of the MoOsm1/MoHog1 protein, considering both their phosphorylated and unphosphorylated forms. Given that the most critical post-translational modification (PTM) affecting the structural integrity and regulation of the complex is the phosphorylation of Tyrosine 173 (Y173), this specific PTM was explicitly defined within the AlphaFold 3 (AF3) input parameters for that position (@fig-params-AFServer-Osm1). This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of the phosphate group in the activation loop.
 
-Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed for both the monomeric and dimeric states of the MoOsm1/MoHog1 protein, considering both their phosphorylated and unphosphorylated forms. Given that the most critical post-translational modification (PTM) affecting the structural integrity and regulation of the complex is the phosphorylation of Tyrosine 173 (Y173), this specific PTM was explicitly defined within the AlphaFold 3 (AF3) input parameters for that position. This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of the phosphate group in the activation loop
+::: {#fig-params-AFServer-Osm1 layout-ncol=1}
 
---FIX ME--
-![AF3 parameters](../pics/Protein3/PF3_Osm1_Dimer_Y173_P.png){#fig-params-Osm1-AF3dimer}
+![](../pics/Protein3/ParamsAF3/Osm1_Monomer_171P.png){#fig-params-Osm1-AF3monomer1P height=250px}
 
-FIXME
+![](../pics/Protein3/ParamsAF3/Osm1_Monomer_BothP.png){#fig-params-Osm1-AF3monomer2P height=250px}
+
+![](../pics/Protein3/ParamsAF3/Osm1_Dimer_171P.png){#fig-params-Osm1-AF3dimer1P height=250px}
+
+![](../pics/Protein3/ParamsAF3/Osm1_Dimer_BothP.png){#fig-params-Osm1-AF3dimer2P height=250px}
+
+**AlphaFold Server parameters selected for the structural modeling of MoOsm1 conformations.** **A.** Parameters used for the pT171 mono-phosphorylated monomer. **B.** Parameters used for the pT171/pY173 dual-phosphorylated monomer. **C.** Parameters used for the pT171 mono-phosphorylated dimer. **D.** Parameters used for the pT171/pY173 dual-phosphorylated dimer.
+
+:::
 
 The structural consistency of the models generated by AF3 was evaluated by comparing the five independent ranked outputs for both the dual-phosphorylated monomer (pT171/pY173) and the phosphorylated dimer (pT171), using a Root Mean Square Deviation (RMSD) threshold of < 1 Å to define high-confidence convergence. 
+
 @@@@martaA: yo pondría q se ha hecho vía Pymol y si has usado algún código para hacerlo lo incluiría. y sino poner directamente que vía Pymol y punx
 
 #### Results 
@@ -96,6 +104,8 @@ Please cite the following articles when you use the I-TASSER server:
 #### Methods
 
 @@@@@@@@@@carlota esto te lo dijo gemini pero, es lo que tuviste que poner en la web??? yo pondría lo de la web
+
+--FIX ME
 
 The sequence was submitted and I-TASSER used multiple threading programs to identify templates from PDB. To detect templates default parameters were applied (`maximum of templates per threading program: 10`, `E-value cutoff: 1e-5`).
 Structural fragments from the selected templates were assembled into full-length models. The simulations were run with 10 independent trajectories to ensure convergence, using a Monte Carlo-based fragment assembly protocol.
