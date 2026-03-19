@@ -147,10 +147,9 @@ The predicted normalized B-factor profile (@fig-pnorm-Bfactor-p3) indicates high
 
 ### Modeller
 
-Lo ultimo que me dice es usar Modeller. Se puede instalar o usar onlinen
-Lo unico que tenemos que buscar nosotras los homólogos en PDB. bien porque seguro que la proteina está estudiada en otros organismos.
+Due to the lack of an experimental structure for the target protein, the Modeller algorithm was selected for structural prediction. To ensure the highest modeling accuracy, six high-quality templates were identified based on sequence similarity and high coverage, as detailed in @tbl-PDB-codes-homology. These templates correspond to X-ray diffraction-resolved structures from various organisms. To enhance alignment resolution and similarity detection, a specialized template search was conducted using two iterations of PSI-BLAST. The selection process strictly prioritized templates maintaining at least 50% Sequence Identity and a Query Coverage (QCoverage) exceeding 90%, ensuring a robust structural foundation for the homology modeling process.
 
-para ello vamos a buscar 6 templates que tengan la mejor calidad, el mejor alineamiento haciendo dos rondas de iteracion de psi-bast (run PSI-Blast iteration 2). Todo el rato hace blast 50% de Identidad con QCoverage de 9*%. Como se ve en la tabla:
+. Como se ve en la tabla (@tbl-PDB-codes-homology):
 
 | PDB code | % identity | % coverage | e-value | Organism | Resolution method | Resolution (Å) | TXY site presence |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -161,6 +160,9 @@ para ello vamos a buscar 6 templates que tengan la mejor calidad, el mejor aline
 | 6RFP | 47.95 % | 93 % | 3e-167 | *Rattus norvegicus* | X-ray diffraction | 1.74 | - |
 | 2B9F | 45.27 % | 92 % | 3e-154 | *Saccharomyces cerevisiae* | X-ray diffraction | 1.80 | TEY |
 
+: PDB codes of homologous sequences of Osm1 sequence obtained by BlastP.
+{#tbl-PDB-codes-homology}
+
 PONER EN INGLES*** fix me
 
 Analizando el sitio TXY de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
@@ -170,13 +172,11 @@ Vamos a buscar 5 templates para que no haya sesgos por el uso de un único templ
 
 #### Templates para Modeller (están las instrucciones en **InstruccionesChimera.txt**)
 
-El modelo que ya hay con SWISS-MODEL usa https://www.rcsb.org/structure/3P5K como template, si sehace blastP de MoHog1 contra esta proteina, 380 bits(977)	2e-136	Compositional matrix adjust.	175/342(51%)	239/342(69%)	6/342(1%)
+Subsequently, the structural data for the six selected templates—[3P5K](https://www.rcsb.org/structure/3P5K), [3K3I](https://www.rcsb.org/structure/3K3I), [8H59](https://www.rcsb.org/structure/8H59), [7W5C](https://www.rcsb.org/structure/7W5C), [6RFP](https://www.rcsb.org/structure/6RFP), [2B9F](https://www.rcsb.org/structure/2B9F)—were retrieved from the RCSB PDB database using the 'Fetch by ID' tool in ChimeraX. To ensure a clean structural environment for modeling, all non-standard residues, including ligands and water molecules, were identified and deleted (Actions > Atoms/Bonds > Delete). A structural superposition was then performed using the Match->Align tool to achieve a preliminary spatial orientation of the templates.
 
-![BlastResult_3P5K](../pics/MoHog1_MMusculus_3P5K.png)
+The target sequence, MoHog1, was imported from a .fasta file and integrated into the alignment using the 'Best-aligning pair of chains' protocol. Within the Multalign Viewer, a sequence realignment was executed to optimize the residues' positioning. Every template structure was then manually associated with its corresponding sequence in the alignment, ensuring that the MoHog1 sequence remained unassociated ('None') as the target for homology.
 
-Mejor usar 3P5K porque tiene mejor resolucoin que 3p4k (ambas tienen mutaciones de labo asique como esta tiene mejo resolucion, usamos esta)
-
-
+For the modeling phase, all six structures were selected as templates. The homology modeling was performed via the Modeller (homology) interface, utilizing the academic web service (Key: MODELIRANJE). Advanced configuration parameters were adjusted to define the total number of models to be generated, ensuring a robust sampling of the conformational space for the final MoHog1 structure.
 Proteinsa con más del 30% (y de 40%) de identidad con estructura resuelta de manera experimental:
 
 https://www.rcsb.org/structure/3P5K
@@ -192,8 +192,6 @@ https://www.rcsb.org/structure/6RFP
 https://www.rcsb.org/structure/2B9F 
 
 
-
-La otra opcion si esto os da pereza es usar OmegaFold (utiliza PLMs), es menor preciso encuanto a cofactores y cosas con las que interactue la proteina y además no se pueden elegir los moldes, pero viendo los problemas de modeller, creo que va a ser lo más sencillo. es un notebook igual que alphafold y ESMfold. 
 
 @@@martaA:
 Para poder hacer el modeller (y escribirlo en métodos) exactamente he seguido las intsrucciones de carlota del .txt, y luego he seleccionado como template todas las estructuras.
