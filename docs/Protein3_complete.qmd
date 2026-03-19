@@ -195,9 +195,11 @@ The structural integrity of the best-ranking MoHog1 model was validated using th
 
 #### Results
 
+The structural integrity of the unphosphorylated MoHog1 monomer was validated through a comprehensive alignment against the six experimental templates used in the homology modeling process. The structural convergence was highly consistent across all templates, with Root Mean Square Deviation (RMSD) values ranging from 0.759 Å to 1.113 Å. Specifically, the closest structural proximity was observed with template 6RFP (0.759 Å over 1,743 atoms), while the maximum deviation was found with 3P5K (1.113 Å over 1,910 atoms). These low RMSD values, calculated over a significant fraction of the 2,897 total atoms in the predicted monomer, demonstrate a high degree of conformational conservation and confirm that the modeled kinase core strictly maintains the canonical architecture observed in homologous X-ray structures.
+
 PONER EN INGLES*** FIX ME
 
-Analizando el sitio TXY de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
+**Analizando el sitio TXY** de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
 
 ¿Por qué NO es un análisis sesgado?
 El modelado por homología se basa en la premisa de que "estructura se conserva más que secuencia". Si tu modelo se parece mucho a los templates en el "core" (el núcleo de la proteína), significa que Modeller ha hecho bien su trabajo de mantener la arquitectura plegada.
@@ -205,6 +207,15 @@ El modelado por homología se basa en la premisa de que "estructura se conserva 
 Lo que buscas: Que el esqueleto (backbone) coincida en las hélices alfa y láminas beta.
 
 Donde esperas diferencias: En los loops (bucles). Si tu modelo es idéntico a los templates en los loops, ahí sí podría haber un sesgo (Modeller simplemente copió algo que quizás en tu proteína es distinto).
+
+numero de atomos total de la estructura predicha:  2897 atoms
+
+8H59_2_0: 0.930 (1863 to 1863 atoms)
+2B9F_5_0: 0.811 (1723 to 1723 atoms)
+3K3I_1_0: 0.972 (1908 to 1908 atoms
+6RFP_4_0: 0.759 (1743 to 1743 atoms)
+7W5C_3_0: 1.023 (1886 to 1886 atoms)
+3P5K_0_0: 1.113 (1910 to 1910 atoms)
 
 #### Interpretation of the results (Discussion)
 
