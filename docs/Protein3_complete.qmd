@@ -57,11 +57,11 @@ For publication-quality figure export, the following environment settings and hi
 
 #### Results 
 
-For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alignment of models 1 through 4 against the top-ranked Model 0 demonstrated a mean RMSD of 0.37 Å.
+For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
 ![Monomer structure modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig_P3_Osm1Mono_bothP_AFcolored}
 
-The dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a bifurcated behavior in their convergence; while the first two subsequent models showed high structural similarity to Model 0 with a mean RMSD of 0.54 Å, the final two models displayed a drastic divergence, reaching an RMSD of nearly 30 Å.
+The dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.
 
 ![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](/pics/Protein3/Dimer_171P/dimer_T171P_red.png.png){#fig_P3_dimer_171P_AFcolored}
 
