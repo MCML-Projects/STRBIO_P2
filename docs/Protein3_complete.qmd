@@ -111,34 +111,37 @@ It is also noteworthy that the fraction of disordered residues is very low in bo
 
 #### Justification of the method
 
-I-TASSER is a less commonly used algorithm. This method uses a fragment assembly approach guided by threading techniques, which allows it to predict protein structures even when close homologs are limited. Although it is considerably slower than AlphaFold, it is highly robust for proteins with catalytic functions, such as kinases, due to its careful modeling of active sites and functional domains. 
-Moreover, C-I-TASSER provides confidence scores and structural templates that help validate the predicted models, making it particularly suitable for challenging targets where accuracy in functional regions is critical.
-
-
-BBL del I-tasser.
-web: https://aideepmed.com/I-TASSER/
-Please cite the following articles when you use the I-TASSER server:
-- Wei Zheng, Chengxin Zhang, Yang Li, Robin Pearce, Eric W. Bell, Yang Zhang. Folding non-homology proteins by coupling deep-learning contact maps with I-TASSER assembly simulations. Cell Reports Methods, 1: 100014 (2021).
-- Chengxin Zhang, Peter L. Freddolino, and Yang Zhang. COFACTOR: improved protein function prediction by combining structure, sequence and protein-protein interaction information. Nucleic Acids Research, 45: W291-299 (2017).
-- Jianyi Yang, Yang Zhang. I-TASSER server: new development for protein structure and function predictions, Nucleic Acids Research, 43: W174-W181, 2015.
+[I-TASSER](https://aideepmed.com/I-TASSER/) was selected for its robust fragment assembly approach guided by threading techniques, a methodology that enables the prediction of protein structures even when close homologs are limited (@Zheng2021, @Zhang2017, @Yang2015). While the computational process is more time-intensive than AlphaFold, it offers significant advantages for proteins with catalytic functions, such as kinases, due to its specialized modeling of active sites and functional domains. Furthermore, the integration of C-I-TASSER provides essential confidence scores and structural templates that validate the predicted models, making it a highly reliable tool for challenging targets where precision in functional regions is critical. 
 
 #### Methods
 
-@@@@@@@@@@carlota esto te lo dijo gemini pero, es lo que tuviste que poner en la web??? yo pondría lo de la web
-
---FIX ME
-
-The sequence was submitted and I-TASSER used multiple threading programs to identify templates from PDB. To detect templates default parameters were applied (`maximum of templates per threading program: 10`, `E-value cutoff: 1e-5`).
-Structural fragments from the selected templates were assembled into full-length models. The simulations were run with 10 independent trajectories to ensure convergence, using a Monte Carlo-based fragment assembly protocol.
-The generated models were further refined using the C-I-TASSER built-in refinement protocol.
-Model selection and validation: The top-ranked models were selected based on the C-score, a confidence score provided by C-I-TASSER, and analyzed for structural consistency with known kinase domains.
-
+"The structural modeling of the protein was conducted using the I-TASSER suite under its default parameters, allowing for an unbiased exploration of the conformational space. The process integrated LOMETS meta-threading for template identification with iterative Monte Carlo simulations for fragment assembly. By adhering to the server’s standardized protocols, the final models were refined through FG-MD and REMO, ensuring a high-confidence structural ensemble validated by their respective C-scores and estimated TM-scores
 
 #### Results
 
 **Link de la solucion de I-tasser**: https://aideepmed.com/I-TASSER/output/S822579/
 
+The I-TASSER structural prediction for MoOsm1 yielded high-confidence results, particularly for the top two models. Model 2 exhibited the highest convergence (C-score = 0.44), closely followed by Model 1 (C-score = 0.35). The estimated TM-score of 0.76 ± 0.10 for the primary model confirms a high topological accuracy, significantly exceeding the 0.5 threshold for correct global folding. Given the sharp decline in confidence scores for Models 3 and 4, subsequent structural analysis was focused exclusively on the high-ranking models to ensure biological relevance.
+
+The local reliability of I-TASSER structural models is represented by the ResQ (Residue-specific Quality)  by providing a statistical estimation of the distance error (in Ångströms) for each residue relative to its native position(which is estimated based on model convergence, consistency with structural templates, and threading uncertainty). Therefore, low values indicate high precision and confidence, while high values signal regions of greater structural uncertainty. Although ResQ and AlphaFold's pLDDT are different metrics, a similar color scale has been implemented for visual consistency: marine (dark blue) represents the areas of highest reliability and orange indicates lower modeling quality (@fig-Itasser_ResQ). To apply this representation in PyMOL, the following commands were used: `color marine, Itasser_model1`, `color lightteal, Itasser_model1 and b > 3`, `color yellow, Itasser_model1 and b > 5.5`, `color orange, Itasser_model1 and b > 9`, and `color red, resi 171` to specifically highlight the position of interest.
+
+The B-factor measures the inherent thermal mobility of residues, here reported as a normalized profile ($B = (B' - \mu) / \sigma$) to identify regions of relative flexibility or stability throughout the protein sequence (@fig-pnorm-Bfactor-p3).
+
+::: {#fig-pnorm-Bfactor-p3 layout-ncol=1}
+![](/pics/Protein3/I-tasser/Itasser_colored_byResQ.png){#fig-Itasser_ResQ height=250px}
+![](/models/Hog1/S822579_results_Itasser/RSQ_1.png){#fig-Itasser_ResQ_graph height=250px}
+![](/pics/Protein3/I-tasser/Predicted_Normalized_Bfactor.png){#fig-pnorm-Bfactor-p3 height=250px}
+
+**I-tasser result** **A.** High quality model colored by ResQ values. **B.** Residue-Specific Quality of the best model **C.**Predicted normalized B-factor
+:::
+
+##FIX ME faltaria la parte de cofactores y demás
+
 #### Interpretation of results (discusion)
+
+The structural analysis of the MoOsm1 model, color-coded according to ResQ values, reveals a high-confidence catalytic core characterized by a predominance of marine and lightteal hues, indicating an estimated distance error below 3–4 Å and validating the precision of the global fold. While the kinase's main body shows robust structural stability supported by model convergence and template consistency, peripheral regions such as the N-terminal tail and specific surface loops exhibit yellow and orange colors (with estimated errors > 9 Å), reflecting greater statistical uncertainty due to the lack of rigid experimental templates in these intrinsically flexible areas. Residue 171, highlighted in red for its biological relevance, is located precisely within one of these transitional regions of lower local precision, which is consistent with its function in the activation loop where structural plasticity is required to accommodate conformational changes during phosphorylation events. Overall, the model’s reliability is confirmed by a C-score of 0.90 and an estimated TM-score of 0.84, placing this prediction in an excellent accuracy category despite the detected local quality variations.
+
+The predicted normalized B-factor profile (@fig-pnorm-Bfactor-p3) indicates high overall structural stability for the monomer, as evidenced by the prevalence of negative values throughout the chain. However, a detailed analysis of the 170–175 residue range reveals positive normalized B-factor values, indicating enhanced local flexibility. This observed mobility in the 171 and 173 positions is consistent with their biological role as key phosphorylation sites, where structural plasticity is required to accommodate the transition between different activation states
 
 ### Modeller
 
