@@ -37,6 +37,6 @@ set ray_shadows, 0         # Quitar sombras oscuras para que se vea más limpio
 set cartoon_fancy_helices, 1
 ray 1200, 1200
 
-# Para exportar la figura 
+# Para exportar la figura  (no me deja por no tener licencia)
 
 png Osm1Mono_ModelComparision.png, dpi=300, ray=1
