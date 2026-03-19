@@ -1,4 +1,4 @@
-## Protein 2
+## Protein 2: MBE6593352.1
 
 The analyzed is annotated as a hypothetical protein from an Oscillospiraceae family bacterium: [MBE6593352.1](https://www.ncbi.nlm.nih.gov/protein/MBE6593352.1). 
 This protein sequence comes from a Metagenome-Assembled Genome (MAG) not yet characterized from a metagenomic study of goat gut microbiomes.

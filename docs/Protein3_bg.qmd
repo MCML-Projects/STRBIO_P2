@@ -1,4 +1,4 @@
-## Protein 3
+## Protein 3: Osm1 (MoHog1)
 
 The third selected sequence corresponds to the Osm1 protein (also referred to as MoHog1) from the rice blast fungus Magnaporthe oryzae (strain 70-15), identified by the locus tag MGG_01822. This protein is characterized by a highly conserved kinase domain that spans almost the entire sequence length, indicating its primary role in the phosphorylation of specific downstream substrates(@ensembl_mgg01822, @uniprot_q9uv51).
 

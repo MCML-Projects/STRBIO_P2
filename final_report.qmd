@@ -14,7 +14,11 @@ bibliography: bibliografia.bib
 csl: vancouver.csl  
 ---
 
-# Proteins background
+# Goal of the project
+
+This is a CASP-like exercise. The objective of this contest is to achieve the best possible predicted structure for at least three sequences using state-of-the-art protein modeling methodologies. For each sequence, you must utilize three or more different protocols for model generation and select the most optimal model.
+
+# Background information of the selected proteins
 
 {{< include docs/Protein1_bg.qmd >}}
 {{< include docs/Protein2_bg.qmd >}}
