@@ -31,11 +31,10 @@ We also employed AlphaFold3, which we had used previously, to model this protein
 
 #### Methods
 
-**PARAMS AF3**
-As previously detailed, structural modeling was performed for both the monomeric and dimeric states of the MoOsm1/MoHog1 protein, considering both their phosphorylated and unphosphorylated forms. Given that the most critical post-translational modification (PTM) affecting the structural integrity and regulation of the complex is the phosphorylation of Tyrosine 173 (Y173), this specific PTM was explicitly defined within the AlphaFold 3 (AF3) input parameters for that position. This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of the phosphate group in the activation loop
+**PARAMS AF3**@@@citar los parámetros de AF3 (prot1)
 
-https://alphafoldserver.com/ - AF3
- 
+Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed for both the monomeric and dimeric states of the MoOsm1/MoHog1 protein, considering both their phosphorylated and unphosphorylated forms. Given that the most critical post-translational modification (PTM) affecting the structural integrity and regulation of the complex is the phosphorylation of Tyrosine 173 (Y173), this specific PTM was explicitly defined within the AlphaFold 3 (AF3) input parameters for that position. This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of the phosphate group in the activation loop
+
 --FIX ME--
 ![AF3 parameters](../pics/Protein3/PF3_Osm1_Dimer_Y173_P.png){#fig-params-Osm1-AF3dimer}
 
@@ -51,7 +50,7 @@ In contrast, the dimeric models (@fig_P3_dimer_AFcolored_171P) exhibited a bifur
 
 ![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](../pics/Protein3/Dimer_171P/models012_dimerT171_AFcolorcode.png){#fig_P3_dimer_AFcolored_171P}
 
-@martix lo del rosetta server?
+@martix lo del rosetta server? 
 
 ### I-Tasser
 
