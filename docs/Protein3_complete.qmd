@@ -164,7 +164,11 @@ The predicted normalized B-factor profile (@fig-pnorm-Bfactor-p3) indicates high
 
 ### Modeller
 
-Due to the lack of an experimental structure for the target protein, the Modeller algorithm was selected for structural prediction. To ensure the highest modeling accuracy, six high-quality templates were identified based on sequence similarity and high coverage, as detailed in @tbl-PDB-codes-homology. These templates correspond to X-ray diffraction-resolved structures from various organisms. To enhance alignment resolution and similarity detection, a specialized template search was conducted using two iterations of PSI-BLAST. The selection process strictly prioritized templates maintaining at least 50% Sequence Identity and a Query Coverage (QCoverage) exceeding 90%, ensuring a robust structural foundation for the homology modeling process.
+#### Justification of the method
+Due to the lack of an experimental structure for the target protein, the Modeller algorithm was selected for structural prediction. 
+
+#### Methods
+To ensure the highest modeling accuracy, six high-quality templates were identified based on sequence similarity and high coverage, as detailed in @tbl-PDB-codes-homology. These templates correspond to X-ray diffraction-resolved structures from various organisms. To enhance alignment resolution and similarity detection, a specialized template search was conducted using two iterations of PSI-BLAST. The selection process strictly prioritized templates maintaining at least 50% Sequence Identity and a Query Coverage (QCoverage) exceeding 90%, ensuring a robust structural foundation for the homology modeling process.
 
 . Como se ve en la tabla (@tbl-PDB-codes-homology):
 
@@ -180,53 +184,33 @@ Due to the lack of an experimental structure for the target protein, the Modelle
 : PDB codes of homologous sequences of Osm1 sequence obtained by BlastP.
 {#tbl-PDB-codes-homology}
 
-PONER EN INGLES*** fix me
-
-Analizando el sitio TXY de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
-
-: Summary of templates used for MoOsm1/MoHog1 comparative modeling. {#tbl-templates}
-Vamos a buscar 5 templates para que no haya sesgos por el uso de un único template ni mucho ruido por un alto numero de templates (más dificil de encontrar mñas templates igual de buenos que aporten más de lo que ensucian). Vamos a hacer un **modelado multitemplate**
-
-#### Templates para Modeller (están las instrucciones en **InstruccionesChimera.txt**)
 
 Subsequently, the structural data for the six selected templates—[3P5K](https://www.rcsb.org/structure/3P5K), [3K3I](https://www.rcsb.org/structure/3K3I), [8H59](https://www.rcsb.org/structure/8H59), [7W5C](https://www.rcsb.org/structure/7W5C), [6RFP](https://www.rcsb.org/structure/6RFP), [2B9F](https://www.rcsb.org/structure/2B9F)—were retrieved from the RCSB PDB database using the 'Fetch by ID' tool in ChimeraX. To ensure a clean structural environment for modeling, all non-standard residues, including ligands and water molecules, were identified and deleted (Actions > Atoms/Bonds > Delete). A structural superposition was then performed using the Match->Align tool to achieve a preliminary spatial orientation of the templates.
 
-The target sequence, MoHog1, was imported from a .fasta file and integrated into the alignment using the 'Best-aligning pair of chains' protocol. Within the Multalign Viewer, a sequence realignment was executed to optimize the residues' positioning. Every template structure was then manually associated with its corresponding sequence in the alignment, ensuring that the MoHog1 sequence remained unassociated ('None') as the target for homology.
+The target sequence, MoHog1, was imported from a *.fasta* file and integrated into the alignment using the 'Best-aligning pair of chains' protocol. Within the Multalign Viewer, a sequence realignment was executed to optimize the residues' positioning. Every template structure was then manually associated with its corresponding sequence in the alignment, ensuring that the MoHog1 sequence remained unassociated ('None') as the target for homology.
 
-For the modeling phase, all six structures were selected as templates. The homology modeling was performed via the Modeller (homology) interface, utilizing the academic web service (Key: MODELIRANJE). Advanced configuration parameters were adjusted to define the total number of models to be generated, ensuring a robust sampling of the conformational space for the final MoHog1 structure.
-Proteinsa con más del 30% (y de 40%) de identidad con estructura resuelta de manera experimental:
+For the modeling phase, all six structures were selected as templates. The homology modeling was performed via the Modeller (homology) interface. Advanced configuration parameters were adjusted to define the total number of models to be generated, ensuring a robust sampling of the conformational space for the final MoHog1 structure.
 
-https://www.rcsb.org/structure/3P5K
+The structural integrity of the best-ranking MoHog1 model was validated using the zDOPE (Discrete Optimized Protein Energy) score. The model achieved a zDOPE value of -1.45, which is significantly below the -1.0 threshold typically used to identify high-quality, native-like folds. This score confirms that the spatial arrangement of residues is energetically favorable and statistically consistent with experimental protein structures, further supporting the reliability of the homology modeling process.
 
-https://www.rcsb.org/structure/3K3I
+#### Results
 
-https://www.rcsb.org/structure/8H59
+PONER EN INGLES*** FIX ME
 
-https://www.rcsb.org/structure/7W5C
+Analizando el sitio TXY de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
 
-https://www.rcsb.org/structure/6RFP
+¿Por qué NO es un análisis sesgado?
+El modelado por homología se basa en la premisa de que "estructura se conserva más que secuencia". Si tu modelo se parece mucho a los templates en el "core" (el núcleo de la proteína), significa que Modeller ha hecho bien su trabajo de mantener la arquitectura plegada.
 
-https://www.rcsb.org/structure/2B9F 
+Lo que buscas: Que el esqueleto (backbone) coincida en las hélices alfa y láminas beta.
 
+Donde esperas diferencias: En los loops (bucles). Si tu modelo es idéntico a los templates en los loops, ahí sí podría haber un sesgo (Modeller simplemente copió algo que quizás en tu proteína es distinto).
 
-
-@@@martaA:
-Para poder hacer el modeller (y escribirlo en métodos) exactamente he seguido las intsrucciones de carlota del .txt, y luego he seleccionado como template todas las estructuras.
-Correr en web y contraseña: MODELIRANJE
-he hecho el modeller y me da cinco modelos (captura:)
-
-![capturamodeller](../pics/Protein3/catpuraModeller_todoslosmodelos.png) 
+#### Interpretation of the results (Discussion)
 
 
-(esa foto es pa quitarla pero bueno para q la veas carlota)
 
-me dice gemini que hay que seleccionar por el zDOPE (que es la unica metrica que tenemos realmente)
-a zDOPE más negativo mejor modelo (más estable es la estructura físicamente)
 
- Busca el valor más negativo (por ejemplo, -1.2 es mejor que -0.8). Cuanto más bajo sea, más estable es la estructura físicamente.
- asi q selecciono el 6.4 (-1.45 de zDOPE)
 
-*OJO, aun así ya he aprendido a hacerlo y solo le he pedido 5 modelos, se podrían pedir más si eso (se tarda aprox 20 mins desde q empiezas a abrir chimerax y meter todas las cosas)
-
-he dejado el modelo guardado en:
-(../models/hog1_modeller/finalmodel/structure_modeller.pdb)
+# COMPARACION i-TASSER - MODELLER
+The structural reliability of the MoHog1 models was corroborated through two independent computational approaches. On one hand, the I-TASSER prediction yielded a C-score of 0.90, which significantly exceeds the -1.5 threshold, indicating a high-confidence global fold with a high probability of correct topology. On the other hand, the Modeller homology modeling process produced a best-ranking model with a zDOPE score of -1.45. Since a zDOPE value below -1.0 is characteristic of native-like structures, the convergence of these two distinct metrics—one based on threading and the other on statistical potential energy—strongly supports the accuracy and stability of the generated 3D structures
