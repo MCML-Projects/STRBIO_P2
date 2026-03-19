@@ -1,7 +1,7 @@
 **background**: acabar de redactar o redactar bien
 
 - proteína 1 -- HECHO
-- proteína 2
+- proteína 2 -- HECHO
 - proteína 3 -- HECHO
 
 **caracteristicas 1D**:
