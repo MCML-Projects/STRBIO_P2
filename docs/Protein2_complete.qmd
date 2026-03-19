@@ -35,6 +35,9 @@ However, since no information regarding the quaternary structure was available a
 #### Results 
 
 ***AÑADIR .PNG AF2 monomero
+
+To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1.
+
 Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.
 
 For AlphaFold3, the predicted trimeric models and the results extracted from the output JSON files are summarized in ***
