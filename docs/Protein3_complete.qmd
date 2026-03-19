@@ -73,7 +73,9 @@ The top-ranked Model 0 was selected as the reference structure based on its supe
 |-----------|-------|--------------------------|
 | **Ranking Score** | 0.89 | 0.3 | Overall confidence score of the model |
 | **ipTM** | Null | 0.22 | Interface predicted TM-score |
-| **pTM** | 0.87 | 0.55 | Predicted TM-score for the global topology |
+| **pair ipTM** | 0.87 | 0.83 | Interface predicted TM-score between both chains |
+| **pTM** | 0.87 | 0.83 | Predicted TM-score for the global topology |
+| **pair PAE** | 0.76 | ~21 | Predicted Aligned Error mínimo
 | **Fraction Disordered** | 0.04 | 0.03 | Fraction of residues predicted as disordered |
 | **Has Clash** | 0.0 | 0.0 | Number of steric clashes detected |
 | **Recycles** | 10.0 | 10.0 | Number of internal refinement cycles used |
