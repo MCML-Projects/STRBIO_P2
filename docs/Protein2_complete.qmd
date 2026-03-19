@@ -38,6 +38,8 @@ However, since no information regarding the quaternary structure was available a
 
 To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1).
 
+The alignments of models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 1.49 Å (ranging from 1.04 Å to 1.99 Å). Out of the 14,244 total atoms in each model, an average of approximately 9,751 atoms were used for the final calculation.
+
 Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.
 
 For AlphaFold3, the predicted trimeric models and the results extracted from the output JSON files are summarized in ***

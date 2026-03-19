@@ -15,13 +15,13 @@ zoom Osm1_quarternarystate_PTMs
 # Colorear modelos (IMPORTANTE EL ORDEN)
 
 # Color para Baja Confianza (< 50)
-color orange, (Osm1Mono_bothP and b < 50)
+color orange, (p2_models and b < 50)
 # Color para Confianza Media (50 a 70)
-color yellow, (Osm1Dimer_171P and b > 50)
+color yellow, (p2_models and b > 50)
 # Color para Confianza Alta (70 a 90)
-color lightteal, (Osm1Dimer_171P and b > 70)
+color lightteal, (p2_models and b > 70)
 # Color para confianza muy alta
-color marine, (Osm1Dimer_171P and b > 90)
+color marine, (p2_models and b > 90)
 
 # TGY MOTIF 
 select Osm1Dimer_171P_TGY, Osm1Dimer_171P and resi 171+173
