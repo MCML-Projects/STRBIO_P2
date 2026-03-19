@@ -57,9 +57,21 @@ For publication-quality figure export, the following environment settings and hi
 
 #### Results 
 
+The structural evaluation of MoOsm1 across different phosphorylation states shows that all models exceed the 0.5 threshold for the predicted Template Modeling (pTM) score, confirming that the global kinase fold was correctly predicted in all cases (@tbl-pTM). However, a significant disparity was observed in local confidence: the doubly phosphorylated monomer (Thr171P/Thr173P) achieved a near-native score of 0.87, whereas the other monomeric and dimeric variants yielded lower values ranging from 0.53 to 0.58. Regarding the interface predicted Template Modeling (ipTM) scores, all results remained significantly below the 0.6 threshold (@tbl-ipTM). Specifically, the Monomer_171P variant returned a value of 0.18, identifying it as a computational artifact of the multimeric protocol, while the dimeric models reached only 0.22 and 0.19, indicating a lack of structural consistency in the predicted relative orientation of the subunits.
+
 | ipTM | Monomer | Dimer |
 | 171P | 0.18 | 0.22 |
-|
+| 171P/173P | - | 0.19 |
+
+: Interface predicted Template Modeling (ipTM) scores for monomeric and dimeric MoOsm1 phosphorylation states.
+{#tbl-ipTM}
+
+| pTM | Monomer | Dimer |
+| 171P | 0.53 | 0.58 |
+| 171P/173P | 0.87 | 0.53 |
+
+: Predicted Template Modeling (pTM) scores for monomeric and dimeric MoOsm1 variants.
+{#tbl-pTM}
 
 For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
@@ -99,6 +111,8 @@ These calculations were applied to both dimeric states: the mono-phosphorylated 
 -- 
 
 #### Interpretation of results (Discussion)
+
+In the first place, the pTM and ipTM scores collectively indicate that while the global kinase fold is consistently maintained, the local and interfacial stability varies significantly depending on the phosphorylation state. The high reliability of the Thr171P/Thr173P monomer suggests that the simultaneous presence of both phosphate groups acts as a critical stabilizing factor for the activation loop, likely supported by the availability of dually phosphorylated homologous templates in experimental databases. In contrast, the lower pTM values for the monophosphorylated monomer and the dimeric models reflect a higher degree of localized structural uncertainty. The slightly higher pTM of the monophosphorylated dimer (0.58) compared to the diphosphorylated versions suggests that the accumulation of four phosphate groups in the dimer may introduce electrostatic or steric instability that the model cannot resolve as a rigid complex. Consequently, while phosphorylation clearly stabilizes the monomeric activation loop, these computational results do not provide evidence that double phosphorylation enhances the stability of the dimeric interface beyond previously reported experimental observations, suggesting instead a highly dynamic or transient interaction.
 
 The alignment of the models of the dual-phosphorylated monomer (@fig_P3_monomer_AFcolored_bothP) indicates a highly robust and virtually identical conformational landscape across all iterations, suggesting a stable and well-defined fold for the activation loop in this state. 
 
