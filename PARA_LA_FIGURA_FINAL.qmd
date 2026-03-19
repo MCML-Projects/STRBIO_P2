@@ -1,0 +1,34 @@
+### una linea por comando:
+
+bg white
+
+# si teneis oligómero, para la foto he hecho dos paneles:
+# a) pintado por cadenas
+# b) pintado por estructura secundaria
+
+# a) para el pintado por cadenas:
+
+hide everything
+show cartoon
+set cartoon_fancy_helices, 1 
+set ray_shadows, 0
+color blue, chain A
+color green, chain B
+color purple, chain C
+
+### Creo que no teneis más que tres cadenas como máximo (máx un trimero). pero vaya, los colores que querais y seguido lo de chain A..
+
+## yo he hecho captura de la proteína en horizonatl y otra para q se viera el poro pq ORAI1 tiene poro y sino no se ve. pero haced lo q os salga del xirri q estará bien:D
+
+
+# b) para pintar por estructura secundaria
+
+color red, ss l+
+color green, ss s
+color marine, ss h
+
+## he puesto laminas beta en verde, en rojo loops + desorden y en azul marino hélices alfa
+# ahí le volveis a sacar captura y ya
+
+### fijaos en la proteína uno para la leyenda y eso que lo dejo hecho para q solo tengais q copiar y pegar
+
