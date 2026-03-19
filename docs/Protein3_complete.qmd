@@ -35,13 +35,13 @@ Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detai
 
 ::: {#fig-params-AFServer-Osm1 layout-ncol=1}
 
-![](../pics/Protein3/ParamsAF3/Osm1_Monomer_171P.png){#fig-params-Osm1-AF3monomer1P height=250px}
+![](/pics/Protein3/ParamsAF3/Osm1_Monomer_171P.png){#fig-params-Osm1-AF3monomer1P height=250px}
 
-![](../pics/Protein3/ParamsAF3/Osm1_Monomer_BothP.png){#fig-params-Osm1-AF3monomer2P height=250px}
+![](/pics/Protein3/ParamsAF3/Osm1_Monomer_BothP.png){#fig-params-Osm1-AF3monomer2P height=250px}
 
-![](../pics/Protein3/ParamsAF3/Osm1_Dimer_171P.png){#fig-params-Osm1-AF3dimer1P height=250px}
+![](/pics/Protein3/ParamsAF3/Osm1_Dimer_171P.png){#fig-params-Osm1-AF3dimer1P height=250px}
 
-![](../pics/Protein3/ParamsAF3/Osm1_Dimer_BothP.png){#fig-params-Osm1-AF3dimer2P height=250px}
+![](/pics/Protein3/ParamsAF3/Osm1_Dimer_BothP.png){#fig-params-Osm1-AF3dimer2P height=250px}
 
 **AlphaFold Server parameters selected for the structural modeling of MoOsm1 conformations.** **A.** Parameters used for the pT171 mono-phosphorylated monomer. **B.** Parameters used for the pT171/pY173 dual-phosphorylated monomer. **C.** Parameters used for the pT171 mono-phosphorylated dimer. **D.** Parameters used for the pT171/pY173 dual-phosphorylated dimer.
 
@@ -59,11 +59,11 @@ For publication-quality figure export, the following environment settings and hi
 
 For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alignment of models 1 through 4 against the top-ranked Model 0 demonstrated a mean RMSD of 0.37 Å.
 
-![Monomer structure modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](../pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig_P3_Osm1Mono_bothP_AFcolored}
+![Monomer structure modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig_P3_Osm1Mono_bothP_AFcolored}
 
 The dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a bifurcated behavior in their convergence; while the first two subsequent models showed high structural similarity to Model 0 with a mean RMSD of 0.54 Å, the final two models displayed a drastic divergence, reaching an RMSD of nearly 30 Å.
 
-![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](../pics/Protein3/Dimer_171P/dimer_T171P_red.png.png){#fig_P3_dimer_171P_AFcolored}
+![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](/pics/Protein3/Dimer_171P/dimer_T171P_red.png.png){#fig_P3_dimer_171P_AFcolored}
 
 The top-ranked Model 0 was selected as the reference structure based on its superior convergence and global scoring. The key validation parameters, are summarized in @tbl-prot3-af3.
 
