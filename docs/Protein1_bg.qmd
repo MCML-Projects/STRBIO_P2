@@ -1,66 +1,16 @@
 # Background information
 
+[ORAI1](https://www.uniprot.org/uniprotkb/Q96D31/entry) is the essential pore-forming subunit of the Store-Operated Calcium (SOC) channel, specifically the Calcium Release-Activated Calcium (CRAC) channel (@Yeung2020). Located in the plasma membrane, it mediates highly selective Ca2+ influx triggered by the depletion of endoplasmic reticulum calcium stores. This influx is vital for diverse cellular processes, including gene transcription and exocytosis(@Derler2012).
 
-## Protein 1. ORAI1 protein
+Structurally, each human ORAI1 subunit consists of four transmembrane domains connected by two extracellular loops, one intracellular loop, and flanqued by two cytosolic strands (N- and C- terminus) (@Derler2012, @Tiffner2021). The functional ORAI1 channel operates as a hexameric complex, as its biological activity depends on the precise assembly of multiple subunits rather than the individual monomer (@Tiffner2021). The central pore is formed by six TM1 domains and it is indispensable for the gating mechanism and overall stability of the Orai1 channel.
 
-**PDB_entry**: [ORAI1](https://www.uniprot.org/uniprotkb/Q96D31/entry)
+While ORAI1 is the primary focus of this study, it belongs to a family of three isoforms (ORAI1–3) that share a conserved topology of four transmembrane (TM) domains but exhibit distinct regulatory profiles (@Tiffner2021).
+The ORAI1 homohexamer is characterized by high Ca2+ selectivity and robust ion influx; however, the functional channel in vivo often exists as a heteromeric complex. For instance, ORAI1/ORAI3 heteropentamers or ORAI1/ORAI2 heterohexamers significantly alter calcium sensitivity and inactivation rates compared to the homomeric form (@Derler2012). These stoichiometric variations suggest that the optimal modeling target must be carefully selected based on the specific physiological context.
 
-The ORAI1 protein, serves as the essential pore-forming subunit of the calcium release-activated calcium (CRAC) channel and is a critical target for structural bioinformatics studies due to its complex regulatory mechanism. This entry corresponds to the human version; however, there is a high degree of evolutionary conservation with numerous orthologs present in both vertebrates and invertebrates.. It is vital to consider its quaternary structure, as ORAI1 does not function as a monomer but assembles into **hexameric homomers** to form the CRAC channel or **heteropentamers with ORAI3** to form arachidonate-regulated calcium (ARC) channels. The protein’s topology consists of **four transmembrane helical segments** with both the **N-terminus and C-terminus located in the cytoplasm**, which is a key consideration for docking since these **terminal regions are the primary binding sites for regulatory proteins like STIM1 and STIM2**. 
->>its biological activity depends on the correct assembly of multiple subunits rather than on the structure of a single monomer.
-The protein undergoes several **post-translational modifications (PTMs)**, such as N-glycosylation at D223, which regulates its functional activity, and oxidation at C195, which serves as a channel inactivation mechanism. Also, N-glycosylation inhibits channel activity in T cells
+The biological activity of ORAI1 is strictly dependent on its physical coupling with STIM1, an endoplasmic reticulum (ER) calcium sensor. At resting state, STIM1 is uniformly distributed within the ER membrane; however, upon store depletion, it undergoes a conformational change to interact directly with ORAI1 (@Derler2012). Both the N- and C-terminal cytosolic extensions of ORAI1 are essential for this process, acting as the primary docking sites. his physical coupling stabilizes the hexameric assembly and 'forces' the conformational change required to open the pore.
 
-There are **two known isoforms** of this protein, **alpha** and **beta**; while the alpha isoform acts as a pore-forming subunit for both CRAC and ARC channels, the beta isoform is exclusively involved in forming CRAC channels.
+The functional state of the channel is heavily influenced by specific chemical environments and molecular partners that should be accounted for in any simulation. For example, terminal regions bind Calmodulin, which mediates calcium-dependent inactivation (@Derler2012). Additionaly, cholesterol acts as a negative regulator of ORAI1 becase it suppresses CRAC channel activity (@Derler2016).
 
-Ligands: Calcium ion (Ca2+)
+The extracellular loops of ORAI1 provide critical regulatory sites: the first loop (TM1-TM2) facilitates electrostatic Ca2+ attraction, while the third loop contains the sole glycosylation site at N223. This cell-type-specific modification enables interaction with lectins that attenuate store-operated calcium entry (@Humer2022). Additionally, cysteine residues at the domain interfaces (C126, C143, and C195) mediate redox regulation, where H2O2 exposure imposes a state-dependent inhibitory effect (@Humer2022).
 
-@@@ para citar esta foto: @fig-resolution-quality
-
-!["Methods of resolution and qualityy"](../pics/MethodsResolution.png){#fig-resolution-quality}
-
-The canonical isoform is the alpha isoform, which will be used for the structural modeling.
-
-
-
-***From a modeling perspective, the initial N-terminal region (residues 1-51) is predicted to be disordered, potentially requiring specialized ab initio modeling or extended molecular dynamics to achieve a stable conformation.***
-
-**CdlCR: Creo que esto no es tán importante porque no tiene que ver mucho con el modelaje, tipo si tiene que ver pero lo dejaria como indicado con bbl y ya así solo tendríamos que elegir un estado del ambiente y de ahí modelarlo como abierto o cerrado. No se que sería mejor si el estado oxidado y el reducido o tambien intentar simularlo en presencia de colesterol. Sinceramente yo no lo pondría, indicaría que la presencia de colesterol y pip2 afecta pero no modelaria. ponemos bbl de eso y ya. Me he repetido una barbaridad pero que no haria 25 modelajes en las distintas condiciones, indicaria los ligandos que afectan a la actividad.**
-**MA: opino igual, nos dejamos de chorradas je**
-
-
-### Activity regulation
-
-The functional state of the channel is heavily influenced by specific chemical environments and molecular partners that should be accounted for in any simulation. The pore’s selectivity for calcium ions is governed by the highly conserved Glu-106 residue, and its activity can be modulated by the redox state of ***Cys-195, whose oxidation leads to channel inactivation***. Furthermore, ORAI1’s localization within lipid rafts implies that the surrounding membrane composition, particularly the presence of ***cholesterol and PIP2, significantly impacts its structural stability and gating***. In addition to ion permeation, modeling ORAI1 often involves its interactome, specifically the STIM1 protein which triggers channel opening through physical coupling, and ***Calmodulin***, which mediates calcium-dependent inactivation. Finally, incorporating known disease-associated variants such as the R91W loss-of-function mutation or the constitutively active G98S and V107M mutations can provide valuable insights into the channel's conformational landscape and its role in calcium-related pathologies. Both CRAC and ARC channels are ***inhibited by lanthanides including La3+ and Gd3+ ions***
-
-
-
-Nota de modesto: Consider alternative quaternary structures in order to obtain the best holoprotein channel.
-
-The **** protein has X ligand ...
-
-
-CUIDADO TENER EN CUENTA(es de gema pero hay que añadirlo o considerarlo en el análisis)
-
-1. La transición de Dímero a Hexámero
-Aunque el canal activo en la membrana plasmática es un hexámero, las unidades básicas de ensamblaje son dímeros.
-
-Dinámica de ensamblaje: En reposo, ORAI1 puede existir en estados de oligomerización menores.
-
-Interacción con STIM1: Es la unión con la proteína STIM1 (del retículo endoplásmico) la que estabiliza y "fuerza" la conformación hexamérica final para abrir el poro. Estudiar configuraciones intermedias ayuda a entender la eficiencia de la apertura.
-
-2. Heterooligómeros (Orai1 + Orai2/Orai3)
-Aquí es donde la "estructura cuaternaria alternativa" se pone interesante. ORAI1 no siempre trabaja solo:
-
-Ajuste de la conductancia: En muchos tejidos humanos, ORAI1 se mezcla con sus hermanos ORAI2 y ORAI3.
-
-Propiedades del canal: Un heterohexámero (por ejemplo, 4 unidades de Orai1 y 2 de Orai2) tiene una sensibilidad al calcio y una tasa de inactivación distinta a la del homohexámero puro.
-
-El "Mejor" Holoproteína: Dependiendo del contexto celular (sistema inmune vs. músculo), el "mejor" canal podría no ser el homohexámero de Orai1, sino una combinación que evite la toxicidad por exceso de calcio.
-
-3. Variantes de Splicing y Mutaciones
-Existen isoformas como Orai1 alpha y Orai1 beta.
-
-La versión beta carece de un dominio N-terminal largo.
-
-Si intentas modelar o cristalizar el canal, la proporción de estas variantes en el complejo cuaternario altera drásticamente la arquitectura del poro y su regulación por fosforilación.
-
-
+Finally, it is essential to note that native cells express two distinct variants of the Orai1 protein: alpha and beta. The alpha isoform is the full-length, canonical version of the protein. In contrast, the beta isoform lacks the long N-terminal domain (residues 1-63) (@Fukushima2012). Due to its complete regulatory sequence and role in both channel types, the alpha isoform is utilized as the template for the structural modeling in this study.
