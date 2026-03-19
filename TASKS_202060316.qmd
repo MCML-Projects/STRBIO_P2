@@ -25,15 +25,12 @@
 - voromqa (o el programa q sea) proteína 2
 - voromqa (o el programa q sea) proteína 3
 
-- MA: lucía, para swissmodel elegiste una única template para modelar? la proteína 1 está modelada con solo una template ns!!!!!
-
 **modelo final**: Hacer las estructuras bien con pymol de los modelos elegidos de las tres 
 - prot1
 - prot2
 - prot3
 
-**cambios proteina 1** he añadido una cosa al final del doc de bg que hay que tener en cuenta sobre ORAI1
-
+**falta en la proteína 2 añadir lo de alingment de AF3 de los mdoelos**
 
 Soy **Carlota**, me tengo que ir al fisio pero tengo apuntados los siguientes pasos:
 

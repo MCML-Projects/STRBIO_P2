@@ -15,6 +15,10 @@ zoom Osm1_quarternarystate_PTMs
 # Colorear modelos (IMPORTANTE EL ORDEN)
 
 # Color para Baja Confianza (< 50)
+color orange, (Osm1Mono_bothP and b < 50)
+@martaA: a mi estos comandos me funcionan así:
+color orange, b < 50´
+
 color orange, (p2_models and b < 50)
 # Color para Confianza Media (50 a 70)
 color yellow, (p2_models and b > 50)
