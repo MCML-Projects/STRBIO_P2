@@ -197,6 +197,17 @@ The structural integrity of the best-ranking MoHog1 model was validated using th
 
 The structural integrity of the unphosphorylated MoHog1 monomer was validated through a comprehensive alignment against the six experimental templates used in the homology modeling process. The structural convergence was highly consistent across all templates, with Root Mean Square Deviation (RMSD) values ranging from 0.759 Å to 1.113 Å. Specifically, the closest structural proximity was observed with template 6RFP (0.759 Å over 1,743 atoms), while the maximum deviation was found with 3P5K (1.113 Å over 1,910 atoms). These low RMSD values, calculated over a significant fraction of the 2,897 total atoms in the predicted monomer, demonstrate a high degree of conformational conservation and confirm that the modeled kinase core strictly maintains the canonical architecture observed in homologous X-ray structures.
 
+The structure is color-coded by transferred B-factors, ranging from cool tones (marine, B $\approx$ 25) to warm tones (orange, B $\ge$ 100). The visualization shows greater stability and a well-folded catalytic core (partially blue), which is consistent with the robust global zDOPE score of -1.45. In contrast, the activation loop (central region) appears prominently in orange, reflecting the exceptionally high transferred mobility observed in experimental templates (e.g., B=509.37 at Thr171). This graphical representation confirms that the orange-colored regions identify a site of high intrinsic flexibility, a structural feature necessary to facilitate the occurrence of phosphorylation events. The low rigidity observed in this area suggests that the activation loop is conformationally dynamic, which enables the addition of phosphate groups to significantly alter its stability and conformation, thereby allowing the transition toward a functionally active state
+
+::: {#fig-modeller-comparision layout-ncol=3}
+![](/pics/Protein3/ModellerPics/Modeller_comparision_alltemplates.png ){#all-templates-grey height=250px}
+![](/pics/Protein3/ModellerPics/Modeller_comparision_2b9f_3k3i_3p5k_6rfp_templates.png){#best-templates-grey height=250px}
+![](/pics/Protein3/ModellerPics/Modeller_Colored_basedon_flex.png/){#just-Osm1-colored-modeller height=250px}
+
+**Structural quality assessment of the MoOsm1 homology model**. **A.** Structural comparison of the MoOsm1 predicted model (dark green) against the structural templates (gray transparent structures). **B.** Structural comparison of the MoOsm1 predicted model (dark green) against the structural templates 2B9F, 3K3I, 3P5K, and 6RFP (gray transparent structures). **C.** Three-dimensional representation of the MoOsm1 monomer modeled via MODELLER using six experimental templates. The structure is color-coded by transferred B-factors, representing the thermal mobility and intrinsic flexibility inherited from the templates; cool tones (marine/lightteal) indicate the rigid catalytic core, while warm tones (yellow/orange) highlight the extreme flexibility of the activation loop (Thr171 region). 
+
+:::
+
 PONER EN INGLES*** FIX ME
 
 **Analizando el sitio TXY** de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
@@ -220,7 +231,7 @@ numero de atomos total de la estructura predicha:  2897 atoms
 #### Interpretation of the results (Discussion)
 
 
-
+This graphical representation (@just-Osm1-colored-modeller) confirms that the orange-colored regions identify a site of high intrinsic flexibility, a structural feature necessary to allow phosphorylation events that subsequently trigger conformational and stability changes. Consequently, the structural rigidity in this specific area is low, facilitating its functional transition
 
 
 # COMPARACION i-TASSER - MODELLER
