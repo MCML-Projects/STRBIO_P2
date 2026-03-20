@@ -129,8 +129,6 @@ The B-factor measures the inherent thermal mobility of residues, here reported a
 
 The predicted solvent accessibility values reveal a high proportion of buried residues throughout the protein structure (@fig-pred-solvacc), with the functional TGY motif showing remarkably low accessibility scores of 1, 2, and 0, respectively. These results contrast with experimental expectations, as these specific residues must maintain a degree of surface exposure to remain accessible for phosphorylation by upstream kinases. Overall, the predominance of low accessibility values across the sequence suggests a highly compact structural core, indicating that significant conformational rearrangements might be necessary to facilitate post-translational modifications at the activation loop.
 
-(I-tasser value - 5)
-
 ::: {#fig-pnorm-Bfactor-p3 layout-ncol=1}
 
 ![](/models/Hog1/S822579_results_Itasser/RSQ_1.png){#fig-Itasser_ResQ_graph height=250px}
@@ -142,7 +140,24 @@ The predicted solvent accessibility values reveal a high proportion of buried re
 
 :::
 
-##FIX ME faltaria la parte de cofactores y demás
+Among the top 10 threading templates identified by I-TASSER (@tbl-threading-templates-itasser), only the highest-scoring structural alignment (PDB entry: [3itzA](https://www.rcsb.org/structure/3ITZ)) features a conserved TGY motif, whereas the remaining templates contain a TEY motif. Although this represents a single amino acid substitution, the glutamic acid (E) side chain is significantly bulkier than glycine (G) and possesses distinct physicochemical properties; such differences in the activation loop could impose structural constraints not present in our target, potentially leading to suboptimal modeling of the MoOsm1 local architecture. 
+
+| Rank | PDB Hit | Iden1 | Iden2 | Cov | Norm. Z-score |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | 3itzA | 0.51 | 0.49 | 0.96 | 3.16 |
+| 2 | 7e73A | 0.47 | 0.47 | 0.94 | 2.76 |
+| 3 | 5z33 | 0.43 | 0.44 | 0.99 | 0.69 |
+| 4 | 5z33 | 0.43 | 0.44 | 0.99 | 0.70 |
+| 5 | 3itzA | 0.51 | 0.49 | 0.96 | 3.40 |
+| 6 | 5z33 | 0.43 | 0.44 | 0.99 | 0.79 |
+| 7 | 5z33A | 0.43 | 0.44 | 0.99 | 9.87 |
+| 8 | 7opmA | 0.46 | 0.47 | 0.97 | 4.04 |
+| 9 | 5z33A | 0.43 | 0.44 | 0.99 | 3.20 |
+| 10 | 5v60A | 0.48 | 0.47 | 0.93 | 5.89 |
+
+: Top 10 threading templates identified by I-TASSER for the structural modeling of MoOsm1. {#tbl-threading-templates-itasser}
+
+
 
 #### **Discusion**
 
