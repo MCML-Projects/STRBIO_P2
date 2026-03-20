@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.28">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>protein2_complete</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Protein2_complete_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Protein2_complete_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Protein2_complete_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Protein2_complete_files/libs/quarto-html/popper.min.js"></script>
+<script src="Protein2_complete_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Protein2_complete_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Protein2_complete_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Protein2_complete_files/libs/quarto-html/quarto-syntax-highlighting-49e51e44f424ea8c7044b429bdbbbfe2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Protein2_complete_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Protein2_complete_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Protein2_complete_files/libs/bootstrap/bootstrap-3c1c57978ab0bec4592971ba053a111a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sequence used to model Protein2 is:</p>
+<p>MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANTGSYVVSTMSELRALEPRESSALVVLKGYHSANDGGGGTFYYDAASELEPDGALVIKCESTGGRFVRDREENYVNVKWFGAKGDGKTDDTAALQAAISSLGTGGGTVSLPGGNYAISAPLTIGDGDSGEKVSSTHGVKLIGMGGGFSHNVAAATTIKATAEIDNMLVLRGRISDCEIGGIYFNANNKAKTCLSLNSFSGCYFHNVKAMGFTDIGIKAIAGTAPTGNYNIYNRFESVNVTCLSDKTTGILFDGHYGDHNDTWLTVLSDCRFDTAQSENSVAAHFKFVDSISFYRCHFNTYKESSTGAVFDALDNHNFPCGMAFHDCSMTSHDVWEDSTHTIRKQYFYGFGTYDNEQIPTHPKLIGMTDMGDFFNIDAIDLLLSGNKGEDGTEEDNGEFTLPAKSGRVDTDNSTGASEHHNLKNGDKLAVLVNAKNKLVGGSFYLSSYDNSIGTIKFDVYKWDTDYATTVAGEILASDTALNFKDNSQFEAKFDGLSSGYYLIVISGTAPDDDFGVAVWTRGKSMTSVTFKNGNRIEAGLRGQFITE</p>
+</div>
+</div>
+<section id="deep-learning---alphafold2-alphafold3" class="level3">
+<h3 class="anchored" data-anchor-id="deep-learning---alphafold2-alphafold3">Deep Learning - AlphaFold2 &amp; AlphaFold3</h3>
+<p>To predict the initial 3D structure of the sequence, we used <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW">AlphaFold2 ColabFold</a>. Since no information regarding the quaternary structure was available at the beginning of the study, the protein was assumed to act individually, and a monomeric approach was initially justified. ColabFold provides an efficient implementation of AlphaFold2 with optimized multiple sequence alignment (MSA) generation, allowing reliable prediction of the individual chain and its distinct functional domains.</p>
+<p>However, subsequent homology analysis (see Swiss-ModeL section, <a href="#sec-swissmodel-prot2" class="quarto-xref">Section&nbsp;0.2</a>) strongly indicated that the biologically active state of this enzyme is a homo-trimer. Due to the hardware limitations, we employed <a href="https://alphafoldserver.com/">AlphaFold3 server</a>, following the same strategy as in the protein 1, ORAI 1.</p>
+<section id="methods" class="level4">
+<h4 class="anchored" data-anchor-id="methods"><strong>Methods</strong></h4>
+<section id="alphafold-2-monomer" class="level5">
+<h5 class="anchored" data-anchor-id="alphafold-2-monomer">AlphaFold 2 (Monomer)</h5>
+<p>For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed and the execution parameters stablished where: <code>num_relax = 1</code>, <code>template_mode: pdb100</code>, <code>msa_mode: mmseqs2_uniref_env</code>, <code>relax_max_iterations = 200</code>, <code>max_msa: auto</code>, <code>num_seeds = 1</code>, <code>use_dropout = false</code>. Also, since no information regarding the quaternary structure was available, the following strategic parameters were applied: - <code>model_type = alphafold2_ptm</code> optimized option for the folding of single chains (monomers). - <code>num_recycles = 6</code> The rationale for this value lies in the results of our prior 1D topological analysis. Having detected an intrinsically disordered region (IDR), more refinement cycles facilitate the structural convergence of these highly flexible zones. Being a single chain, this increase did not compromise computational feasibility.</p>
+<p>While the AlphaFold2 protocol generated a standard ensemble of five monomeric models, a structural convergence analysis was not performed at this stage. Since subsequent homology analysis identified the biologically active state of the enzyme as a homo-trimer, the isolated monomer was recognized as a non-physiological state. Consequently, the rigorous five-model evaluation was exclusively reserved for the AlphaFold3 trimeric prediction. This decision was made to maintain methodological concordance across the study.</p>
+</section>
+<section id="alphafold-3-homotrimer" class="level5">
+<h5 class="anchored" data-anchor-id="alphafold-3-homotrimer">AlphaFold 3 (Homotrimer)</h5>
+<p>Using the <a href="https://alphafoldserver.com/">AlphaFold3 server</a>, as previously detailed, structural modeling was performed. To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1, ORAI 1.</p>
+</section>
+</section>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results"><strong>Results</strong></h4>
+<p>Using AlphaFold2, several diagnostic plots were obtained to help evaluate the expected reliability of the monomeric model (<strong>?@fig-seq2-AFSeqCoverage</strong>, <strong>?@fig-seq2-AFpLDDT</strong>, <strong>?@fig-seq2-AFPAE</strong>). The predicted 3D structure of the monomer, colored by local confidence (pLDDT), is shown in <strong>?@fig-seq2-af2-structure</strong>.</p>
+<div id="fig-Trimer-Protein2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Trimer-Protein2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<img src="./pics/Protein2/Pics_P2_Pymol/p2_trimmer_bottom_consensus.png" id="fig-p2-trimerbottom" class="img-fluid figure-img">
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Trimer-Protein2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <strong>View of the structural modeling of protein 2 trimer conformation.</strong> <strong>A.</strong> Protein 2 trimer conformation bottom view. <strong>B.</strong> Protein 2 trimer conformation top view. <strong>C.</strong> Protein 2 trimer conformation side view.
+</figcaption>
+</figure>
+</div>
+<p>Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50. The comprehensive assessment results, including the Local Quality Estimate, the QMEAN Z-score comparison, and the Ramachandran plot, are detailed in <strong>?@fig-p2-af2-assessment</strong>.</p>
+<div id="fig-p2-af2-assesment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p2-af2-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./pics/Protein2/P2/M%C3%A9tricas_AF/AF2/Local_quality_estimate%20(1).png" id="fig-p2-af2-localquality" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p2-af2-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Swiss-Model Assesment results for Protein 2 modelled with AlphaFold2
+</figcaption>
+</figure>
+</div>
+<p>To evaluate the quaternary structure, AlphaFold3 was utilized to predict the trimeric complex. The alignments of models 1 through 4 against the top-ranked model 0 (<a href="#fig-p2-alignmentAF3" class="quarto-xref">Figure&nbsp;3</a>) exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 1.50 Å (ranging from 1.04 Å to 1.99 Å). Out of the 14,244 total atoms aligned in each model, an average of approximately 9,751 atoms were used for the final calculation.</p>
+<div id="fig-p2-alignmentAF3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p2-alignmentAF3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pics/Protein2/Alignment_models0-4_AF4_P2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p2-alignmentAF3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Structure of protein 2 modeled with AF3 visualization. The coloring color code follows next code: (Dark Blue, pLDDT &gt; 90; Light Blue/Cyan, 70 &lt; pLDDT &lt; 90; Yellow, 50 &lt; pLDDT &lt; 70; Orange, pLDDT &lt; 50)
+</figcaption>
+</figure>
+</div>
+<p>The output metrics extracted from the output files are summarized in <a href="#tbl-seq2-af3" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-seq2-af3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-seq2-af3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Structural quality metrics obtained for the predicted Sequence 2 trimeric model (AlphaFold3).
+</figcaption>
+<div aria-describedby="tbl-seq2-af3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ranking Score</strong></td>
+<td>0.77</td>
+<td>Overall confidence score of the model</td>
+</tr>
+<tr class="even">
+<td><strong>ipTM</strong></td>
+<td>0.70</td>
+<td>Interface predicted TM-score</td>
+</tr>
+<tr class="odd">
+<td><strong>pTM</strong></td>
+<td>0.71</td>
+<td>Predicted TM-score for the global topology</td>
+</tr>
+<tr class="even">
+<td><strong>Fraction Disordered</strong></td>
+<td>0.12</td>
+<td>Fraction of residues predicted as disordered</td>
+</tr>
+<tr class="odd">
+<td><strong>Has Clash</strong></td>
+<td>0.0</td>
+<td>Number of steric clashes detected</td>
+</tr>
+<tr class="even">
+<td><strong>Recycles</strong></td>
+<td>10.0</td>
+<td>Number of internal refinement cycles used</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The complete trimeric .pdb generated by AF3 was also submitted to the SWISS-MODEL Assessment tool to evaluate the stereochemical quality of the multimeric assembly. The assessment plots for the complex (<strong>?@fig-seq2-af3-assessment</strong>) demonstrate consistent evaluation across all three chains.</p>
+<div id="fig-p2-af3-assesment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p2-af3-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./pics/Protein2/P2/M%C3%A9tricas_AF/AF3/Local_quality_estimate%20(1).png" id="fig-p2-af3-localquality" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p2-af3-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Swiss-Model Assesment results for Protein 2 modelled with AlphaFold3
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="discussion" class="level4">
+<h4 class="anchored" data-anchor-id="discussion"><strong>Discussion</strong></h4>
+<p>The AlphaFold2 monomeric model perfectly aligns with prior 1D predictions, revealing a highly confident parallel beta-helix core that is interrupted by a highly flexible N-terminal linker (residues 1–85) and a large internal protruding loop. This intrinsic flexibility introduces significant stereochemical strain when the chain is modeled in isolation, a fact corroborated by the SWISS-MODEL assessment, which highlights geometric outliers and yields a highly penalized global QMEAN Z-score of -3.43.</p>
+<p>Conversely, the AlphaFold3 prediction robustly validates the homo-trimeric functional state, supported by high interface confidence (ipTM 0.70). By assembling into a tightly intertwined complex, the structural tension of the isolated monomer is largely resolved. This stabilization is mathematically evidenced by a drastically improved QMEAN Z-score of -1.44, confirming that the trimeric assembly is the true, thermodynamically stable native conformation of the enzyme, while still accommodating the dynamic outward-projecting loops.</p>
+<p>Finally, the high structural deviation (RMSD of 6.46 Å) observed when aligning the AF2 monomer against a single chain of the AF3 trimer highlights the dynamic nature of the protein. This variance demonstrates that the intrinsically disordered regions adopt vastly different random coil trajectories, and that the catalytic core itself undergoes significant conformational rearrangements, pointing to a strong induced-fit mechanism upon oligomerization.</p>
+</section>
+</section>
+<section id="sec-swissmodel-prot2" class="level3">
+<h3 class="anchored" data-anchor-id="sec-swissmodel-prot2">Homology based - Swiss-Model</h3>
+<p><a href="https://swissmodel.expasy.org/interactive">Swiss-Model</a> was chosen as a second modeling approach to provide a classical, template-based structural perspective to complement the deep learning predictions. Importantly, its automated search process acted as a crucial discovery tool by revealing the homo-trimeric biological assembly of the enzyme.</p>
+<section id="methods-1" class="level4">
+<h4 class="anchored" data-anchor-id="methods-1"><strong>Methods</strong></h4>
+<p>For Swiss-Model, the sequence was submitted to the “Search for Templates” tool. During the analysis, we discovered that all top-scoring templates exhibited a homo-trimeric oligomeric state.</p>
+<p>Among the available templates, we focused on selecting a structure that provided the best structural coverage and biological relevance. We selected the template 6tgf.1.A (an exopolysaccharide biosynthesis protein from Pantoea stewartii with a bacteriophage tailspike-like parallel beta-helix fold). Although the sequence identity fell strictly within the “Twilight Zone” (~17%), this template was strategically chosen because its viral origin strongly supported our evolutionary hypothesis of horizontal gene transfer.</p>
+</section>
+<section id="results-1" class="level4">
+<h4 class="anchored" data-anchor-id="results-1"><strong>Results</strong></h4>
+<p>The structural prediction generated by SWISS-MODEL was evaluated using its built-in Structure Assessment workspace. The key modeling parameters and global quality metrics are summarized in <a href="#tbl-seq2-swiss" class="quarto-xref">Table&nbsp;2</a>.</p>
+<div id="tbl-seq2-swiss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-seq2-swiss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Key parameters and global quality metrics for the SWISS-MODEL trimeric prediction.
+</figcaption>
+<div aria-describedby="tbl-seq2-swiss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Template</strong></td>
+<td>6tgf.1.A</td>
+<td>Bacteriophage tailspike-like parallel beta-helix fold</td>
+</tr>
+<tr class="even">
+<td><strong>Oligomeric State</strong></td>
+<td>Homo-trimer</td>
+<td>Biologically functional assembly discovered</td>
+</tr>
+<tr class="odd">
+<td><strong>Sequence Identity</strong></td>
+<td>17.34%</td>
+<td>Sequence identity with target Sequence 2</td>
+</tr>
+<tr class="even">
+<td><strong>GMQE</strong></td>
+<td>0.28</td>
+<td>Global Model Quality Estimation</td>
+</tr>
+<tr class="odd">
+<td><strong>QMEANDisCo Global</strong></td>
+<td>0.47 ± 0.05</td>
+<td>QMEANDisCo score for overall structural quality</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>{#fig-seq2-swiss-structure}</p>
+<p>The comprehensive suite of diagnostic plots detailing the stereochemical and local geometric quality of the trimeric assembly is presented in <strong>?@fig-p2-swiss-assessment</strong>.</p>
+<div id="fig-p2-swissmodel-assesment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p2-swissmodel-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./pics/Protein2/P2/M%C3%A9tricas_SwissModel/Local_quality_estimate%20(1).png" id="fig-p2-swiss-localquality" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p2-swissmodel-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Swiss-Model Assesment results for Protein 2 modelled with SWISS-MODEL
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="discussion-1" class="level4">
+<h4 class="anchored" data-anchor-id="discussion-1"><strong>Discussion</strong></h4>
+<p>The GMQE and QMEANDisCo Global scores accurately reflect the severe limitations inherent to modeling targets deep within the “Twilight Zone” of sequence identity (17.34%). This poor global confidence is vividly corroborated by the QMEAN Z-score plot (<strong>?@fig-p2-swiss-qualitycomparison</strong>), where the model (red star) falls drastically below the reference cloud of high-resolution experimental structures. The Local Quality Estimate plot (<strong>?@fig-p2-swiss-localquality</strong>) dissects the origin of this low score. It displays a periodic pattern of moderate confidence peaks strictly corresponding to the conserved beta-strands of the core. However, this core is heavily interrupted by deep orange valleys (similarity &lt; 0.4), indicating massive structural failure when attempting to model the large, flexible protruding loops that are likely unique to our target sequence and absent in the viral template. Furthermore, the missing data at the N-terminus confirms that the server entirely truncated the highly flexible signal peptide and linker region due to a lack of template alignment. The stereochemical consequence of forcing this low-identity alignment is evident in the Ramachandran plot (<strong>?@fig-p2-swiss-ramachandran</strong>), which exhibits numerous geometric outliers (<span class="math inline">\(\phi\)</span> and <span class="math inline">\(\psi\)</span> angles in disallowed white regions). The homology algorithm forcibly imposed unrealistic structural constraints to bridge gaps, leading to severe geometric strain (torsion score of -3.82).</p>
+</section>
+</section>
+<section id="protein-language-based-model---esmfold" class="level3">
+<h3 class="anchored" data-anchor-id="protein-language-based-model---esmfold">Protein language based model - ESMFold</h3>
+<p>As mentioned before, <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/ESMFold.ipynb">ESMFold</a> is a protein language based model, predicting the protein 3D structure directly from de amino acid sequence.</p>
+<p>By operating independently of evolutionary alignments, it provides an unbiased structural perspective to contrast with both AlphaFold and SWISS-MODEL. This makes it an ideal third tool to validate the protein’s topology and its intrinsically disordered regions based purely on linguistic sequence patterns.</p>
+<section id="methods-2" class="level4">
+<h4 class="anchored" data-anchor-id="methods-2"><strong>Methods</strong></h4>
+<p>Due to memory limitations encountered previously when attempting to model the 1872-residue trimer, the ESMFold prediction was performed strictly on the monomeric sequence. This strategy ensures a viable computational cost while providing a direct one-to-one topological comparison against the AF2 monomeric model.</p>
+<p>The sequence was analyzed via the ColabFold environment using one copy (<code>copies: 1</code>) and three recycling cycles (<code>num_recycles: 3</code>) to refine internal geometry. The resulting .pdb file was submitted to the SWISS-MODEL Structure Assessment tool for universal scoring (QMEANDisCo). Finally, pair-wise structural alignments were performed in PyMOL against both the SWISS-MODEL and AlphaFold2 predictions to calculate the RMSD.</p>
+</section>
+<section id="results-2" class="level4">
+<h4 class="anchored" data-anchor-id="results-2"><strong>Results</strong></h4>
+<p>The structural prediction generated by ESMFold was evaluated using the universal SWISS-MODEL Structure Assessment metric. The key parameters are summarized in <a href="#tbl-seq2-esm" class="quarto-xref">Table&nbsp;3</a>. The predicted 3D structure of the monomer, colored by local quality estimate, is shown in <strong>?@fig-seq2-esm-structure</strong>.</p>
+<div id="tbl-seq2-esm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-seq2-esm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Key parameters and global quality metrics for the ESMFold monomeric prediction.
+</figcaption>
+<div aria-describedby="tbl-seq2-esm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Oligomeric State</strong></td>
+<td>Monomer</td>
+<td>Single chain modeled due to hardware constraints</td>
+</tr>
+<tr class="even">
+<td><strong>QMEANDisCo Global</strong></td>
+<td>0.48 ± 0.05</td>
+<td>Universal score for overall structural quality</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>To ensure a standardized and direct comparison with the AlphaFold2 and SWISS-MODEL predictions, the ESMFold .pdb file was passed through the complete suite of diagnostic plots detailing stereochemical and local geometric quality (<strong>?@fig-p2-fig-p2-esmfold-assesment-assessment</strong>).</p>
+<div id="fig-p2-esmfold-assesment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p2-esmfold-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./pics/Protein2/P2/M%C3%A9tricas_ESMFold/Local_quality_estimate%20(1).png" id="fig-p2-esm-localquality" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p2-esmfold-assesment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Swiss-Model Assesment results for Protein 2 modelled with ESMFold
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="discussion-2" class="level4">
+<h4 class="anchored" data-anchor-id="discussion-2"><strong>Discussion</strong></h4>
+<p>The QMEANDisCo Global score of 0.48 is heavily penalized by the pronounced drop in predicted similarity for the first ~85 residues (orange regions in <strong>?@fig-p2-esm-localquality</strong>). This is a critical independent validation: ESMFold, operating without any evolutionary databases, correctly identified this N-terminal region as intrinsically disordered, matching our initial 1D hypotheses and AlphaFold’s pLDDT profile.</p>
+<p>Furthermore, the ESMFold Local Quality plot displays a second severe drop in predicted similarity spanning residues ~420 to ~550 (deep orange valley). This perfectly corroborates AlphaFold’s prediction of a highly flexible, large protruding loop interrupting the rigid core domain. Additionally, the periodic, narrow drops in similarity observed throughout the core domain perfectly reflect the repeating structural motif of a parallel beta-helix.</p>
+<p>However, because ESMFold lacks the evolutionary constraints provided by MSAs, the ab initio geometric folding of these massive unstructured regions resulted in severe stereochemical strain. This is evident in the highly penalized global QMEAN Z-score of -7.24, placing the model below the reference cloud (<strong>?@fig-esm-qualitycomparison</strong>). It is also visually corroborated by the Ramachandran plot (<strong>?@fig-esm-ramachandran</strong>), where forced stereochemistry in the random coil regions resulted in numerous geometric outliers.</p>
+</section>
+</section>
+<section id="methodological-justification-for-protein-2" class="level3">
+<h3 class="anchored" data-anchor-id="methodological-justification-for-protein-2">Methodological Justification for Protein 2</h3>
+<p>Unlike Protein 1 (ORAI1), which benefits from well-characterized experimental homologs allowing for energy and atomic packing evaluations. Protein 2 represents a completely uncharacterized target falling deep within the ‘Twilight Zone’ of sequence identity (~17%). In the absence of reliable structural templates or prior functional annotations, computational predictions are highly susceptible to severe geometric and stereochemical artifacts. Consequently, the structural validation for Protein 2 necessitated a fundamentally different and more exhaustive approach. Our analysis strictly prioritized stereochemical viability—utilizing universal metrics such as QMEAN Z-scores, Ramachandran plots, and torsional penalties—to rigorously confirm that the ab initio and Deep Learning predictions were not merely algorithmic artifacts, but physically and thermodynamically plausible native states.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
