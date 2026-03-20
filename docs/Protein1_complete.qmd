@@ -10,7 +10,7 @@ MHPEPAPPPSRSSPELPPSGGSTTSGSRRSRRRSGDGEPPGAPPPPPSAVTYPDWIGQSYSEVMSLNEHSMQALSWRKLY
 
 To model the oligomeric structure of ORAI1, AlphaFold2 Multimer was initially considered. However, due to the hardware limitations, AlphaFold3 was used instead, enabling more efficient modeling of large multimeric assemblies. Although AF3’s black box nature limits control over intermediate steps, it offers faster processing, support for larger complexes, and improved refinement of inter-chain interactions, providing reliable structural insights under restricted computational resources.
 
-#### **Methods**
+#### **Methods** {#sec-prot1-methods}
 
 The sequence was entered into the [AlphaFold 3 server](https://alphafoldserver.com/) (`copies: 6`) to represent the hexameric assembly. 
 
