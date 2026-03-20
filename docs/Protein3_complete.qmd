@@ -219,20 +219,17 @@ Lo que buscas: Que el esqueleto (backbone) coincida en las hélices alfa y lámi
 
 Donde esperas diferencias: En los loops (bucles). Si tu modelo es idéntico a los templates en los loops, ahí sí podría haber un sesgo (Modeller simplemente copió algo que quizás en tu proteína es distinto).
 
-numero de atomos total de la estructura predicha:  2897 atoms
-
-8H59_2_0: 0.930 (1863 to 1863 atoms)
-2B9F_5_0: 0.811 (1723 to 1723 atoms)
-3K3I_1_0: 0.972 (1908 to 1908 atoms
-6RFP_4_0: 0.759 (1743 to 1743 atoms)
-7W5C_3_0: 1.023 (1886 to 1886 atoms)
-3P5K_0_0: 1.113 (1910 to 1910 atoms)
-
 #### Interpretation of the results (Discussion)
-
 
 This graphical representation (@just-Osm1-colored-modeller) confirms that the orange-colored regions identify a site of high intrinsic flexibility, a structural feature necessary to allow phosphorylation events that subsequently trigger conformational and stability changes. Consequently, the structural rigidity in this specific area is low, facilitating its functional transition
 
+As visually demonstrated in the results (@all-templates-grey), the structural similarity between the predicted MoOsm1 model and the templates 2B9F ($RMSD = 0.811$ Å; $1,723/2,897$ atoms), 3K3I ($RMSD = 0.972$ Å; $1,908/2,897$ atoms), 3P5K ($RMSD = 1.113$ Å; $1,910/2,897$ atoms), and 6RFP ($RMSD = 0.759$ Å; $1,743/2,897$ atoms) is notably higher (@best-templates-grey) than the visual correspondence observed with 8H59 ($RMSD = 0.930$ Å; $1,863/2,897$ atoms) and 7W5C ($RMSD = 1.023$ Å; $1,886/2,897$ atoms).
+
+It is important to note that the templates showing the highest visual similarity correspond to those with the best X-ray resolution and the highest sequence identity percentages, specifically 3P5K (*Mus musculus*) and 3K3I (*Homo sapiens*). Furthermore, these two structures possess a conserved TGY motif, providing a more biologically realistic framework than templates with a TXY site (specifically TEY) or those lacking the conserved motif (e.g., 6RFP).
+
+Consequently, a refined modeling approach focusing on template 3K3I could be considered; although 3P5K also contains the conserved TGY motif, its higher RMSD ($> 1$ Å) suggests a slightly lower global structural correspondence. Such a refinement would be expected to yield a lower average RMSD across templates and more realistic flexibility values. While the catalytic core remains highly conserved across all structures, the TGY site exhibits high flexibility. This mobility may either be an intrinsic requirement for protein activation or a result of using a diverse set of templates without a conserved TGY motif. Despite this, the global fold's stability confirms the reliability of the current modeling process.
+
+Such a refinement, by restricting the coordinates to a single high-resolution human template, would be expected to yield a more consistent local geometry and more realistic flexibility values. While the catalytic core remains highly conserved across all multi-template structures, the TGY site currently exhibits high flexibility (B-factor $\approx 509$). This extreme mobility may either be an intrinsic requirement for protein activation or a structural bias introduced by using a diverse set of templates lacking the conserved TGY motif. Despite these local variations, the overall stability of the global fold confirms the reliability of the current modeling process.
 
 # COMPARACION i-TASSER - MODELLER
 The structural reliability of the MoHog1 models was corroborated through two independent computational approaches. On one hand, the I-TASSER prediction yielded a C-score of 0.90, which significantly exceeds the -1.5 threshold, indicating a high-confidence global fold with a high probability of correct topology. On the other hand, the Modeller homology modeling process produced a best-ranking model with a zDOPE score of -1.45. Since a zDOPE value below -1.0 is characteristic of native-like structures, the convergence of these two distinct metrics—one based on threading and the other on statistical potential energy—strongly supports the accuracy and stability of the generated 3D structures
