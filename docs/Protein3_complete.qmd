@@ -190,7 +190,6 @@ To ensure the highest modeling accuracy, six high-quality templates were identif
 : PDB codes of homologous sequences of Osm1 sequence obtained by BlastP.
 {#tbl-PDB-codes-homology}
 
-
 Subsequently, the structural data for the six selected templates—[3P5K](https://www.rcsb.org/structure/3P5K), [3K3I](https://www.rcsb.org/structure/3K3I), [8H59](https://www.rcsb.org/structure/8H59), [7W5C](https://www.rcsb.org/structure/7W5C), [6RFP](https://www.rcsb.org/structure/6RFP), [2B9F](https://www.rcsb.org/structure/2B9F)—were retrieved from the RCSB PDB database using the 'Fetch by ID' tool in ChimeraX. To ensure a clean structural environment for modeling, all non-standard residues, including ligands and water molecules, were identified and deleted (Actions > Atoms/Bonds > Delete). A structural superposition was then performed using the Match->Align tool to achieve a preliminary spatial orientation of the templates.
 
 The target sequence, MoHog1, was imported from a *.fasta* file and integrated into the alignment using the 'Best-aligning pair of chains' protocol. Within the Multalign Viewer, a sequence realignment was executed to optimize the residues' positioning. Every template structure was then manually associated with its corresponding sequence in the alignment, ensuring that the MoHog1 sequence remained unassociated ('None') as the target for homology.
@@ -213,17 +212,6 @@ The structure is color-coded by transferred B-factors, ranging from cool tones (
 **Structural quality assessment of the MoOsm1 homology model**. **A.** Structural comparison of the MoOsm1 predicted model (dark green) against the structural templates (gray transparent structures). **B.** Structural comparison of the MoOsm1 predicted model (dark green) against the structural templates 2B9F, 3K3I, 3P5K, and 6RFP (gray transparent structures). **C.** Three-dimensional representation of the MoOsm1 monomer modeled via MODELLER using six experimental templates. The structure is color-coded by transferred B-factors, representing the thermal mobility and intrinsic flexibility inherited from the templates; cool tones (marine/lightteal) indicate the rigid catalytic core, while warm tones (yellow/orange) highlight the extreme flexibility of the activation loop (Thr171 region). 
 
 :::
-
-PONER EN INGLES*** FIX ME
-
-**Analizando el sitio TXY** de las proteinas seleccionadas como homólogas, cuando este está presnete (todos menos rattus), se encuentra en regiones unmodeled. Problema a la hora de modelar pero el resto de la proteina se encontrara resuelta de manera correcta. Dada la similitud de secuencia y de funcion, consideramos correcto utilizar modeller como herramienta para el modelado por homología. (La zona de TXy será modelado con modelado de novo o ab initio mediante I-tasser)
-
-¿Por qué NO es un análisis sesgado?
-El modelado por homología se basa en la premisa de que "estructura se conserva más que secuencia". Si tu modelo se parece mucho a los templates en el "core" (el núcleo de la proteína), significa que Modeller ha hecho bien su trabajo de mantener la arquitectura plegada.
-
-Lo que buscas: Que el esqueleto (backbone) coincida en las hélices alfa y láminas beta.
-
-Donde esperas diferencias: En los loops (bucles). Si tu modelo es idéntico a los templates en los loops, ahí sí podría haber un sesgo (Modeller simplemente copió algo que quizás en tu proteína es distinto).
 
 #### **Discussion**
 
