@@ -40,3 +40,11 @@ VoroMQA structural quality assessment for the three predicted models (AlphaFold3
 :::
 
 These results support the previous evaluations based on QMEANDisCo and RMSD, confirming that AlphaFold 3 provides the most reliable structural model of the protein.
+
+:::
+
+![](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_chains.png){}
+![](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_ss.png){}
+
+
+:::
