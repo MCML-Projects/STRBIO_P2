@@ -45,6 +45,17 @@ This is a CASP-like exercise. The objective of this contest is to achieve the be
 {{< include docs/Protein3_complete.qmd >}}
 {{< include docs/Protein3_evaluation.qmd >}}
 
-# Results
+# Conclusion
+
+Across the three proteins analyzed in this study, AlphaFold3 was consistently selected as the primary model, despite the disparate methodological approaches employed for structural generation and prediction. Although AF3 operates as a "black box" with proprietary architectural constraints, its predictive power offers significant advantages for future structural biology workflows, particularly regarding the integration of post-translational modifications (PTMs) in Protein 3.
+
+However, other computational approaches demonstrated high predictive accuracy as well:
+For Protein 1 (ORAI1), Swiss-Model yielded highly robust results. Due to the availability of high-identity templates, template-based homology modeling provided an exceptionally accurate representation of the protein’s native fold.
+
+In the case of Protein 2, modeling within the "Twilight Zone" (low sequence identity, typically below 25-30%) presented significant challenges for traditional methods. Por ello, both ESMFold and AlphaFold3 achieved superior structural accuracy, overcoming the limitations of template dependency to reach optimal stereochemical refinement.
+
+For Protein 3, MODELLER produced high-quality results; however, it was not the final selection. The stability and biological relevance of the model could potentially be enhanced by the incorporation of PTMs and template optimization (more selective subset of templates to reduce structural noise).
+
+Taken together, these results highlight the overall robustness of AlphaFold3 while also demonstrating that classical and hybrid modeling approaches can still provide highly reliable structural predictions depending on the availability of templates and the complexity of the target protein.
 
 # References
