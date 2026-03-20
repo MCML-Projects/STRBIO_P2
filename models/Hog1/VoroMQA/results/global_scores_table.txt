@@ -1,0 +1,4 @@
+model                                    global_score  residues  atoms  interface_score  interface_atoms  interface_contacts  interface_area  interface_energy
+af3_fold_osm1_monomer_bothp_model_0.pdb  0.536095      355       2878   0                0                0                   0               0
+itasser_model1.pdb                       0.328796      357       2897   0                0                0                   0               0
+structure_modeller.pdb                   0.514908      357       2897   0                0                0                   0               0

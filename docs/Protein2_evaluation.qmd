@@ -1,9 +1,57 @@
-# Evaluation of models between methods of protein 2
+### Cross-method evaluation of Protein 2 models
 
-# Methods
+#### **Methods**
 
-same as...
+As in the previous protein, a standardized cross-method evaluation protocol was applied to ensure a robust and unbiased comparison among the different predictive algorithms.
 
-# Evaluation
+#### **Final model selection**
 
-..
+The universal assessment using the QMEANDisCo Global metric yielded nearly identical, moderate scores across all three methodologies: AlphaFold2 (0.50), ESMFold (0.48), and SWISS-MODEL (0.47). As previously analyzed, these scores do not represent an algorithmic failure, but rather the mathematical artifact of evaluating a protein possessing a massive, intrinsically disordered N-terminal tail and a highly dynamic internal loop. However, evaluating the QMEAN Z-score provides a much clearer thermodynamic distinction. While the isolated monomers exhibited severe stereochemical strain (AF2: -3.43; SWISS: -5.19; ESMFold: -7.24), the AlphaFold3 trimeric assembly significantly improved to a Z-score of -1.44. This confirms that the quaternary assembly resolves the structural tension, representing the most biologically plausible and stable state.
+
+The PyMOL pair-wise alignments yielded profound structural insights into the limitations of modeling "Twilight Zone" proteins. The global alignment between the SWISS-MODEL trimer and the AlphaFold3 trimer yielded a high RMSD of 6.96 Å. To determine if this deviation was merely an artifact of the flexible N-terminal "tails" (truncated in SWISS-MODEL), a localized alignment of the rigid catalytic core (residues 100-600) was performed, sustaining a high deviation of 6.63 Å. Subsequent single-chain alignments between the AF3 monomer and SWISS-MODEL yielded a much lower RMSD of 4.05 Å. This computationally demonstrates that SWISS-MODEL, strongly biased by the low-identity viral template (17%), forcibly imposed the specific multimeric twist and interfacial angles of the phage protein onto the target sequence. Interestingly, aligning the ESMFold monomer against a single chain of SWISS-MODEL resulted in a nearly identical RMSD of 4.14 Å, confirming mathematically across two distinct AI architectures that the homology model's quaternary assembly was improperly biased.
+
+Finally, comparing the two AI methods against each other (ESMFold vs. AF2 full monomers) yielded a high global RMSD of 7.11 Å, largely driven by the highly flexible 85-residue tail diverging into different random coil trajectories. When restricted strictly to the rigid catalytic core, the RMSD decreased to 5.42 Å. This 5.42 Å variance beautifully illustrates the inherent algorithmic differences between the models. AlphaFold utilizes deep evolutionary co-variation, which is crucial for defining the exact pitch, twist, and curvature of highly repetitive structures like parallel beta-helices. In contrast, ESMFold correctly predicts the general beta-helix topology without evolutionary databases but diverges in the fine-grained geometric twist.
+
+
+The results of the VoroMQA evaluation are summarized in the @tbl-model-comparison-protein2.
+
+| Model | Global score | Interface i_score | i_energy |
+|------|-------------|------------------|---------|
+| AlphaFold 3 | 0.524 | 0.579 | -4028.0 |
+| AlphaFold 2 | 0.496 | - | - |
+| ESMFold | 0.477 | - | - |
+| Swiss-Model | 0.410 | 0.304 | -1182.8 |
+
+: Comparison of the structural quality and interface scores obtained for the models generated with AlphaFold3, AlphaFold2, ESMFold and Swiss-Model for Protein 2. {#tbl-model-comparison-protein2}
+
+The evaluated models differ in their oligomeric state, (trimer in AF3/Swiss-Model vs. monomer in AF2/ESMFold). However, VoroMQA analysis allows a normalized assessment of atomic packing quality, allowing comparison across models despite their oligomeric state. 
+For this reason, the monomeric models do not have interface-related scores (`i_score` and `i_energy`), as they do not have inter-chain interactions.
+
+The AlphaFold 3 model had the highest global score, as is shown in @tbl-model-comparison-protein2. Its score is notably higher than those obtained for the monomeric models, suggesting that the protein has a more favorable atomic packing when it oligomerizes. 
+This observation supports the hypothesis that oligomerization is required to achieve the thermodynamically stable native conformation.
+
+In addition, the Local Score profiles (upper panels in @fig-voromqa-panels-protein2) show a highly consistent structural pattern across all models, where the high-confidence (blue) and low-confidence (red) regions occur at the same positions in the first three models, except for Swiss-Model.
+Notably, the AlphaFold 3 model exhibits a smoother and higher profile, suggesting that oligomerization stabilizes flexible regions. In contrast, the Swiss-Model profile displays increased noise and local disruptions, reflecting the limitations of template-based modeling under low sequence identity conditions.
+
+::: {#fig-voromqa-panels-protein2 layout-ncol=1}
+
+![a) AlphaFold3 VoroMQA evaluation](pics/Protein2/VoroMQA/Voro_AF3.png){#a}
+
+![b) AlphaFold2 VoroMQA evaluation](../pics/Protein2/VoroMQA/Voro_AF2.png){#a}
+
+![c) ESMFold VoroMQA evaluation](../pics/Protein2/VoroMQA/Voro_ESM.png){#c}
+
+![d) Swiss-Model VoroMQA evaluation](../pics/Protein2/VoroMQA/Voro_Swiss.png){#b}
+
+
+VoroMQA structural quality assessment for the three predicted models (AlphaFold3, AlphaFold2, ESMFold and Swiss-Model)
+:::
+
+Focusing on the trimeric models, AlphaFold 3 model has a higher score in both interface-related metrics.
+The interface score of the AlphaFold 3 model is notably higher than the Swiss-Model one, supporting a more realistic and a better interaction surface between subunits.
+
+In addition, the interface energy is significantly more favorable in the AlphaFold 3 model compared to Swiss-Model. The large difference indicates that the interactions predicted by the first server are not only higher but also energetically more stable.
+
+The poorest performance of Swiss-Model compared with the other models can be explained to the limitations of the template-based modeling, which is notable under low sequence identity conditions, as in this particular case. The lack of strong templates in disordered or flexible regions, forces Swiss-Model to eliminate these regions. As a result of the structural restrictions from the template, the interface geometry and the interaction stability are worse.
+
+For all these reasons, AlphaFold 3 generated the most reliable model, both globally and at interface level, giving evidence that the trimeric assembly is the more stable state for Protein 2.

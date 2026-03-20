@@ -35,12 +35,15 @@ This is a CASP-like exercise. The objective of this contest is to achieve the be
 
 ## Protein 2
 
+{{< include docs/Protein2_1Dfeatures.qmd >}}
 {{< include docs/Protein2_complete.qmd >}}
+{{< include docs/Protein2_evaluation.qmd >}}
 
 ## Protein 3: Osm1
 
 {{< include docs/Protein3_1Dfeatures.qmd >}}
 {{< include docs/Protein3_complete.qmd >}}
+{{< include docs/Protein3_evaluation.qmd >}}
 
 # Results
 

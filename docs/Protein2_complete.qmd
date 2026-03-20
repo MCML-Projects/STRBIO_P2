@@ -1,42 +1,33 @@
 ::: {.callout-note}
 The sequence used to model Protein2 is: 
 
-
 MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANTGSYVVSTMSELRALEPRESSALVVLKGYHSANDGGGGTFYYDAASELEPDGALVIKCESTGGRFVRDREENYVNVKWFGAKGDGKTDDTAALQAAISSLGTGGGTVSLPGGNYAISAPLTIGDGDSGEKVSSTHGVKLIGMGGGFSHNVAAATTIKATAEIDNMLVLRGRISDCEIGGIYFNANNKAKTCLSLNSFSGCYFHNVKAMGFTDIGIKAIAGTAPTGNYNIYNRFESVNVTCLSDKTTGILFDGHYGDHNDTWLTVLSDCRFDTAQSENSVAAHFKFVDSISFYRCHFNTYKESSTGAVFDALDNHNFPCGMAFHDCSMTSHDVWEDSTHTIRKQYFYGFGTYDNEQIPTHPKLIGMTDMGDFFNIDAIDLLLSGNKGEDGTEEDNGEFTLPAKSGRVDTDNSTGASEHHNLKNGDKLAVLVNAKNKLVGGSFYLSSYDNSIGTIKFDVYKWDTDYATTVAGEILASDTALNFKDNSQFEAKFDGLSSGYYLIVISGTAPDDDFGVAVWTRGKSMTSVTFKNGNRIEAGLRGQFITE
 
 :::
 
-### Deep Learning (AlphaFold2 + AlphaFold3)
+### Deep Learning - AlphaFold2 & AlphaFold3
 
-https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW - AF2
+To predict the initial 3D structure of the sequence, we used [AlphaFold2 ColabFold](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW). Since no information regarding the quaternary structure was available at the beginning of the study, the protein was assumed to act individually, and a monomeric approach was initially justified. ColabFold provides an efficient implementation of AlphaFold2 with optimized multiple sequence alignment (MSA) generation, allowing reliable prediction of the individual chain and its distinct functional domains.
 
-https://alphafoldserver.com/ - AF3
-
-#### Justification of the method
-
-To predict the initial 3D structure of the sequence, we used AlphaFold2 implemented through ColabFold. Since no information regarding the quaternary structure was available at the beginning of the study, the protein was assumed to act individually, and a monomeric approach was initially justified. ColabFold provides an efficient implementation of AlphaFold2 with optimized multiple sequence alignment (MSA) generation, allowing reliable prediction of the individual chain and its distinct functional domains.
-
-However, subsequent homology analysis (see SWISS-MODEL section) strongly indicated that the biologically active state of this enzyme is a homo-trimer. Due to the hardware limitations (VRAM Out-of-Memory errors) imposed by the computational requirements of AlphaFold2-Multimer when attempting to model a massive 1872-residue complex, we strategically employed AlphaFold3. AF3 allows for highly efficient modeling of large multimeric assemblies using an advanced diffusion-based architecture, overcoming local hardware restrictions and providing reliable insights into the inter-chain interactions that stabilize the quaternary structure.
+However, subsequent homology analysis (see Swiss-ModeL section, @sec-swissmodel-prot2) strongly indicated that the biologically active state of this enzyme is a homo-trimer. Due to the hardware limitations, we employed [AlphaFold3 server](https://alphafoldserver.com/), following the same strategy as in the protein 1, ORAI 1 (**REFERENCIAR**)
 
 #### **Methods** 
 
 ##### AlphaFold 2 (Monomer)
-For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed via the ColabFold environment. The general execution parameters were kept (`num_relax = 1`, `template_mode: pdb100`, `msa_mode: mmseqs2_uniref_env`, `relax_max_iterations = 200`, `max_msa: auto`, `num_seeds = 1`, `use_dropout = false`).
 
-However, since no information regarding the quaternary structure was available at this initial stage and the protein was assumed to act individually, the following strategic modifications were applied:
+For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed and the execution parameters stablished where: `num_relax = 1`, `template_mode: pdb100`, `msa_mode: mmseqs2_uniref_env`, `relax_max_iterations = 200`, `max_msa: auto`, `num_seeds = 1`, `use_dropout = false`. Also,  since no information regarding the quaternary structure was available, the following strategic parameters were applied:
+- `model_type = alphafold2_ptm` optimized option for the folding of single chains (monomers). 
+- `num_recycles = 6` The rationale for this value lies in the results of our prior 1D topological analysis. Having detected an intrinsically disordered region (IDR), more refinement cycles facilitate the structural convergence of these highly flexible zones. Being a single chain, this increase did not compromise computational feasibility.
 
-- Sequence input: The sequence was entered only once.
-
-- model_type: The multimer version was replaced by alphafold2_ptm. This option is optimized for the folding of single chains (monomers) and allows for the accurate calculation of the Predicted Aligned Error (PAE) for individual domains.
-
-- num_recycles: This parameter was increased from 3 to 6. The rationale for this increase lies in the results of our prior 1D topological analysis. Having detected an intrinsically disordered region (IDR) acting as a linker (residues 60-85) following the signal peptide, more refinement cycles were granted to the neural network to facilitate the structural convergence of these highly flexible zones. Being a single chain, this increase did not compromise computational feasibility.
+While the AlphaFold2 protocol generated a standard ensemble of five monomeric models, a structural convergence analysis was not performed at this stage. Since subsequent homology analysis identified the biologically active state of the enzyme as a homo-trimer, the isolated monomer was recognized as a non-physiological state. Consequently, the rigorous five-model evaluation was exclusively reserved for the AlphaFold3 trimeric prediction. This decision was made to maintain methodological concordance across the study. 
 
 ##### AlphaFold 3 (Homotrimer)
 
 Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed.
-To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1).
+To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1) (**REFERENCIAR**).
 
-#### Results 
+#### **Results**
+
 Using AlphaFold2, several diagnostic plots were obtained to help evaluate the expected reliability of the monomeric model (@fig-seq2-AFSeqCoverage, @fig-seq2-AFpLDDT, @fig-seq2-AFPAE). The predicted 3D structure of the monomer, colored by local confidence (pLDDT), is shown in @fig-seq2-af2-structure.
 
 ::: {#fig-Trimer-Protein2 layout-ncol=3}
@@ -49,9 +40,7 @@ Using AlphaFold2, several diagnostic plots were obtained to help evaluate the ex
 
 :::
 
-Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.
-
-Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.The comprehensive assessment results, including the Local Quality Estimate, the QMEAN Z-score comparison, and the Ramachandran plot, are detailed in @fig-seq2-af2-assessment.
+Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50. The comprehensive assessment results, including the Local Quality Estimate, the QMEAN Z-score comparison, and the Ramachandran plot, are detailed in @fig-seq2-af2-assessment.
 
 ::: {#fig-seq2-af2-assessment layout-ncol=2}
 
@@ -64,13 +53,14 @@ Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was ev
 {#fig-af2-qmeanscores}
 
 Structural assessment metrics for the AF2 monomeric model obtained via the SWISS-MODEL assessment tool.
+::: 
 
 To evaluate the quaternary structure, AlphaFold3 was utilized to predict the trimeric complex. 
 The alignments of models 1 through 4 against the top-ranked model 0 (@fig-p2-alignmentAF3) exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 1.50 Å (ranging from 1.04 Å to 1.99 Å). Out of the 14,244 total atoms aligned in each model, an average of approximately 9,751 atoms were used for the final calculation.
 
 ![Structure of protein 2 modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](pics/Protein2/Alignment_models0-4_AF4_P2.png){#fig-p2-alignmentAF3}
 
-The output metrics extracted from the JSON files are summarized in @tbl-seq2-af3. The predicted 3D structure of the trimer, vividly displaying the confidence and flexibility of the assembled complex, is shown in @fig-seq2-af3-structure.
+The output metrics extracted from the output files are summarized in @tbl-seq2-af3. 
 
 | Parameter | Value | Description |
 |-----------|-------|--------------------------|
@@ -82,8 +72,6 @@ The output metrics extracted from the JSON files are summarized in @tbl-seq2-af3
 | **Recycles** | 10.0 | Number of internal refinement cycles used |
 
 : Structural quality metrics obtained for the predicted Sequence 2 trimeric model (AlphaFold3). {#tbl-seq2-af3}
-
-{#fig-seq2-af3-structure}
 
 The complete trimeric .pdb generated by AF3 was also submitted to the SWISS-MODEL Assessment tool to evaluate the stereochemical quality of the multimeric assembly. The assessment plots for the complex (@fig-seq2-af3-assessment) demonstrate consistent evaluation across all three chains.
 
@@ -99,7 +87,9 @@ The complete trimeric .pdb generated by AF3 was also submitted to the SWISS-MODE
 Structural assessment metrics for the AF3 trimeric model.
 :::
 
-#### Interpretation of results (Discussion)
+#### **Discussion**
+
+>> RESUMIR 
 
 The diagnostic plots generated by AlphaFold2 perfectly align with the predictions made during the initial 1D sequence analysis. The pLDDT plot exhibits very low confidence scores (pLDDT < 40) for the first ~85 amino acids, providing strong structural evidence supporting the presence of a highly flexible N-terminal linker. In contrast, the core domain (residues ~100 to 624) shows exceptionally high confidence (pLDDT > 90), indicating a reliable prediction of the catalytic parallel beta-helix fold.
 
@@ -111,15 +101,15 @@ This structural dichotomy is mathematically supported by the SWISS-MODEL assessm
 
 Finally, the PyMOL structural alignment between the AF2 monomer and a single chain of the AF3 trimer yielded a high RMSD of 6.46 Å. This significant deviation indicates that the highly flexible, intrinsically disordered regions adopt vastly different random coil trajectories in isolation versus within the complex. More importantly, it suggests that the monomer undergoes structural rearrangements within its catalytic core to accommodate the trimeric interface, demonstrating a strong induced-fit mechanism upon oligomerization.
 
-### SWISS-MODEL (Homology based)
-https://swissmodel.expasy.org/interactive
+### Homology based - Swiss-Model {#sec-swissmodel-prot2}
 
-#### Justification of the method
-***Unificar con la justificacion de la proteína 1 (gold standar, etc.)
+[Swiss-Model](https://swissmodel.expasy.org/interactive) was chosen as a second modeling approach to provide a classical, template-based structural perspective to complement the deep learning predictions. Importantly, its automated search process acted as a crucial discovery tool by revealing the homo-trimeric biological assembly of the enzyme.
+
+## ME HE QUEDADO REVISANDO POR AQUÍ ##
 
 For this specific sequence, SWISS-MODEL was crucial not only for comparative assessment but as a discovery tool: it was through the automated template selection process that the homo-trimeric biological assembly of the target protein was originally identified.
 
-#### Method
+#### **Methods**
 
 For SWISS-MODEL, the sequence was submitted to the "Search for Templates" tool. During the analysis, we discovered that all top-scoring templates exhibited a homo-trimeric oligomeric state.
 
@@ -127,7 +117,7 @@ Among the available templates, we focused on selecting a structure that provided
 
 To quantitatively evaluate the structural differences between this homology approach and the Deep Learning method, pair-wise alignments (global and core-only) were performed in PyMOL against the AlphaFold3 trimer.
 
-#### Results
+#### **Results**
 The structural prediction generated by SWISS-MODEL was evaluated using its built-in Structure Assessment workspace. The key modeling parameters and global quality metrics are summarized in @tbl-seq2-swiss. The predicted 3D structure of the trimer, colored by local quality estimate, is shown in @fig-seq2-swiss-structure.
 
 | Parameter | Value | Description |
@@ -157,24 +147,24 @@ Structural assessment metrics for the SWISS-MODEL trimeric prediction.
 
 (Note: Additional individual chain quality estimates, such as chainA.png, Local_quality_estimate (2).png, and Local_quality_estimate (3).png, demonstrate consistent low-quality patterns across all subunits).
 
-#### Interpretation of results (Discussion)
+#### **Discussion**
 
 The GMQE (0.28) and QMEANDisCo Global (0.47) scores accurately reflect the severe limitations inherent to modeling targets deep within the "Twilight Zone" of sequence identity (17.34%). This poor global confidence is vividly corroborated by the QMEAN Z-score plot (@fig-swiss-zscore), where the model (red star) falls drastically below the reference cloud of high-resolution experimental structures, yielding a highly penalized overall QMEAN score of -5.19 (@fig-swiss-qmeanscores).The Local Quality Estimate plot (@fig-swiss-localquality) dissects the origin of this low score. It displays a periodic pattern of moderate confidence peaks strictly corresponding to the conserved beta-strands of the core. However, this core is heavily interrupted by deep orange valleys (similarity < 0.4), indicating massive structural failure when attempting to model the large, flexible protruding loops that are likely unique to our target sequence and absent in the viral template. Furthermore, the missing data at the N-terminus confirms that the server entirely truncated the highly flexible signal peptide and linker region due to a lack of template alignment. The stereochemical consequence of forcing this low-identity alignment is evident in the Ramachandran plot (@fig-swiss-ramachandran), which exhibits numerous geometric outliers ($\phi$ and $\psi$ angles in disallowed white regions). The homology algorithm forcibly imposed unrealistic structural constraints to bridge gaps, leading to severe geometric strain (torsion score of -3.82).
 
-### ESMFold
+### Protein language based model - ESMFold
+
 https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/ESMFold.ipynb
 
-#### Justification of the method
 ....Lo mismo que para la proteína 1...
 
 By using ESMFold as a third protocol, we establish a robust comparative framework involving the three major structural biology paradigms: homology modeling (SWISS-MODEL), MSA-based Deep Learning (AlphaFold), and pLM-based single-sequence prediction (ESMFold). This allows us to evaluate whether a linguistic algorithm can independently resolve the intrinsically disordered region (IDR) and the core beta-helix topology of this "Twilight Zone" protein.
 
-#### Methods
+#### **Methods**
 Due to the severe VRAM memory limitations encountered previously when attempting to model the 1872-residue trimer, the ESMFold prediction was performed strictly on the monomeric sequence. This strategy ensures a viable computational cost while providing a direct one-to-one topological comparison against the AF2 monomeric model.
 
 The sequence was analyzed via the ColabFold environment using one copy (`copies: 1`) and three recycling cycles (`num_recycles: 3`) to refine internal geometry. The resulting .pdb file was submitted to the SWISS-MODEL Structure Assessment tool for universal scoring (QMEANDisCo). Finally, pair-wise structural alignments were performed in PyMOL against both the SWISS-MODEL and AlphaFold2 predictions to calculate the RMSD.
 
-#### Results
+#### **Results**
 
 The structural prediction generated by ESMFold was evaluated using the universal SWISS-MODEL Structure Assessment metric. The key parameters are summarized in @tbl-seq2-esm. The predicted 3D structure of the monomer, colored by local quality estimate, is shown in @fig-seq2-esm-structure.
 
@@ -201,7 +191,7 @@ To ensure a standardized and direct comparison with the AlphaFold2 and SWISS-MOD
 Structural assessment metrics for the ESMFold monomeric model.
 :::
 
-#### Interpretation of results (Discussion)
+#### **Discussion**
 The QMEANDisCo Global score of 0.48 is heavily penalized by the pronounced drop in predicted similarity for the first ~85 residues (orange regions in @fig-esm-localquality). This is a critical independent validation: ESMFold, operating without any evolutionary databases, correctly identified this N-terminal region as intrinsically disordered, matching our initial 1D hypotheses and AlphaFold's pLDDT profile.
 
 Furthermore, the ESMFold Local Quality plot displays a second severe drop in predicted similarity spanning residues ~420 to ~550 (deep orange valley). This perfectly corroborates AlphaFold's prediction of a highly flexible, large protruding loop interrupting the rigid core domain. Additionally, the periodic, narrow drops in similarity observed throughout the core domain perfectly reflect the repeating structural motif of a parallel beta-helix.
@@ -211,4 +201,4 @@ However, because ESMFold lacks the evolutionary constraints provided by MSAs, th
 
 ### Methodological Justification for Protein 2
 
-"Unlike Protein 1 (ORAI1), which benefits from well-characterized experimental homologs allowing for energy and atomic packing evaluations, Protein 2 represents a completely uncharacterized target falling deep within the 'Twilight Zone' of sequence identity (~17%). In the absence of reliable structural templates or prior functional annotations, computational predictions are highly susceptible to severe geometric and stereochemical artifacts. Consequently, the structural validation for Protein 2 necessitated a fundamentally different and more exhaustive approach. Our analysis strictly prioritized stereochemical viability—utilizing universal metrics such as QMEAN Z-scores, Ramachandran plots, and torsional penalties—to rigorously confirm that the ab initio and Deep Learning predictions were not merely algorithmic artifacts, but physically and thermodynamically plausible native states."
+Unlike Protein 1 (ORAI1), which benefits from well-characterized experimental homologs allowing for energy and atomic packing evaluations, Protein 2 represents a completely uncharacterized target falling deep within the 'Twilight Zone' of sequence identity (~17%). In the absence of reliable structural templates or prior functional annotations, computational predictions are highly susceptible to severe geometric and stereochemical artifacts. Consequently, the structural validation for Protein 2 necessitated a fundamentally different and more exhaustive approach. Our analysis strictly prioritized stereochemical viability—utilizing universal metrics such as QMEAN Z-scores, Ramachandran plots, and torsional penalties—to rigorously confirm that the ab initio and Deep Learning predictions were not merely algorithmic artifacts, but physically and thermodynamically plausible native states.
