@@ -48,6 +48,7 @@ For publication-quality figure export, the following environment settings and hi
 The structural evaluation of MoOsm1 across different phosphorylation states shows that all models exceed the 0.5 threshold for the predicted Template Modeling (pTM) score, confirming that the global kinase fold was correctly predicted in all cases (@tbl-pTM). However, a significant disparity was observed in local confidence, the doubly phosphorylated monomer (Thr171P/Thr173P) achieved a near-native score of 0.87, whereas the other monomeric and dimeric variants yielded lower values ranging from 0.53 to 0.58 (@tbl-ipTM). Regarding the interface predicted Template Modeling (ipTM) scores, all results remained significantly below the 0.6 threshold. Specifically, the Monomer_171P variant returned a value of 0.18, identifying it as a computational artifact of the multimeric protocol, while the dimeric models reached only 0.22 and 0.19, indicating a lack of structural consistency in the predicted relative orientation of the subunits.
 
 | ipTM | Monomer | Dimer |
+|------|--------|-------|
 | 171P | 0.18 | 0.22 |
 | 171P/173P | - | 0.19 |
 
@@ -55,6 +56,7 @@ The structural evaluation of MoOsm1 across different phosphorylation states show
 {#tbl-ipTM}
 
 | pTM | Monomer | Dimer |
+|------|--------|-------|
 | 171P | 0.53 | 0.58 |
 | 171P/173P | 0.87 | 0.53 |
 
@@ -98,13 +100,13 @@ These calculations were applied to both dimeric states: the mono-phosphorylated 
 
 -- 
 
-#### Interpretation of results (Discussion)
+#### **Discussion**
 
 In the first place, the pTM and ipTM scores collectively indicate that while the global kinase fold is consistently maintained, the local and interfacial stability varies significantly depending on the phosphorylation state. The high reliability of the Thr171P/Thr173P monomer suggests that the simultaneous presence of both phosphate groups acts as a critical stabilizing factor for the activation loop, likely supported by the availability of dually phosphorylated homologous templates in experimental databases. In contrast, the lower pTM values for the monophosphorylated monomer and the dimeric models reflect a higher degree of localized structural uncertainty. The slightly higher pTM of the monophosphorylated dimer (0.58) compared to the diphosphorylated versions suggests that the accumulation of four phosphate groups in the dimer may introduce electrostatic or steric instability that the model cannot resolve as a rigid complex. Consequently, while phosphorylation clearly stabilizes the monomeric activation loop, these computational results do not provide evidence that double phosphorylation enhances the stability of the dimeric interface beyond previously reported experimental observations, suggesting instead a highly dynamic or transient interaction.
 
-The alignment of the models of the dual-phosphorylated monomer (@fig_P3_monomer_AFcolored_bothP) indicates a highly robust and virtually identical conformational landscape across all iterations, suggesting a stable and well-defined fold for the activation loop in this state. 
+The alignment of the models of the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored) indicates a highly robust and virtually identical conformational landscape across all iterations, suggesting a stable and well-defined fold for the activation loop in this state. 
 
-In contrast, the dimeric models (@fig_P3_dimer_AFcolored_171P) exhibited a significant structural deviation in the lower-ranked models. It suggests that, although the primary prediction for the dimer remains relatively stable, the overall modeling robustness is lower than that of the monomer. The 30 Å shift likely reflects a failure of the algorithm to consistently resolve the dimeric interface under the tension of the phosphate group, highlighting a higher degree of uncertainty or potential conformational instability in the dimeric assembly compared to the monomeric state.
+In contrast, the dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a significant structural deviation in the lower-ranked models. It suggests that, although the primary prediction for the dimer remains relatively stable, the overall modeling robustness is lower than that of the monomer. The 30 Å shift likely reflects a failure of the algorithm to consistently resolve the dimeric interface under the tension of the phosphate group, highlighting a higher degree of uncertainty or potential conformational instability in the dimeric assembly compared to the monomeric state.
 
 Regarding the results obtained (@tbl-prot3-af3), the ranking score of 0.89 for the monomer indicates very high confidence in the predicted structure. In contrast, the dimer shows a much lower ranking score (0.30), suggesting that the overall prediction is significantly less robust in the oligomeric state. The pTM value of 0.87 for the monomer further supports the reliability of the global fold. In the same line, the ipTM value of 0.22 for the dimer indicates weak confidence in the predicted interface between the two subunits, suggesting that the inter-chain interactions are not consistently resolved by the algorithm.
 It is also noteworthy that the fraction of disordered residues is very low in both cases (0.04 for the monomer and 0.03 for the dimer), indicating that most of the structure is predicted to adopt a stable folded conformation. In addition, no steric clashes were detected in either model, confirming that the atomic geometry of the structures is physically plausible.
@@ -119,24 +121,24 @@ It is also noteworthy that the fraction of disordered residues is very low in bo
 
 In the specific case of MoOsm1, although several experimentally resolved homologs exist, sequence identities generally hover around 40%. While this level is acceptable for classical homology modeling, a threading-based approach was employed to gain an independent structural perspective. By integrating fragment-based ab initio folding, I-TASSER can better resolve regions where evolutionary divergence might lead to local structural variations. Additionally, the detailed Multiple Sequence Alignment (MSA) provided during the threading process allows for verification of the conserved TGY motif across selected templates, ensuring the structural integrity of this critical functional domain in the final model.
 
-#### Methods
+#### **Methods**
 
 The structural modeling of the protein was conducted using the I-TASSER suite under its default parameters, allowing for an unbiased exploration of the conformational space. The process integrated LOMETS meta-threading for template identification with iterative Monte Carlo simulations for fragment assembly. By adhering to the server’s standardized protocols, the final models were refined through FG-MD and REMO, ensuring a high-confidence structural ensemble validated by their respective C-scores and estimated TM-scores.
 
-#### Results
+#### **Results**
 
 The I-TASSER structural prediction for MoOsm1 yielded high-confidence results, particularly for the top two models. Model 2 exhibited the highest convergence (C-score = 0.44), closely followed by Model 1 (C-score = 0.35). The estimated TM-score of 0.76 ± 0.10 for the primary model confirms a high topological accuracy, significantly exceeding the 0.5 threshold for correct global folding. Given the sharp decline in confidence scores for Models 3 and 4, subsequent structural analysis was focused exclusively on the high-ranking models to ensure biological relevance.
 
-The local reliability of I-TASSER structural models is represented by the ResQ (Residue-specific Quality)  by providing a statistical estimation of the distance error (in Ångströms) for each residue relative to its native position(which is estimated based on model convergence, consistency with structural templates, and threading uncertainty). Therefore, low values indicate high precision and confidence, while high values signal regions of greater structural uncertainty. Given that the estimated local accuracy threshold in the ResQ plot (@fig-Itasser_ResQ_graph) is predominantly situated around 3 Å, this same value was established as the cutoff for the structural color-coding to ensure visual consistency between the quantitative graph and the 3D model.
+The local reliability of I-TASSER structural models is represented by the ResQ (Residue-specific Quality)  by providing a statistical estimation of the distance error (in Ångströms) for each residue relative to its native position(which is estimated based on model convergence, consistency with structural templates, and threading uncertainty). Therefore, low values indicate high precision and confidence, while high values signal regions of greater structural uncertainty. Given that the estimated local accuracy threshold in the ResQ plot (@fig-pnorm-Bfactor-p3-1) is predominantly situated around 3 Å, this same value was established as the cutoff for the structural color-coding to ensure visual consistency between the quantitative graph and the 3D model.
 
-Although ResQ and AlphaFold's pLDDT are different metrics, a similar color scale has been implemented for visual consistency: marine (dark blue) represents the areas of highest reliability and orange indicates lower modeling quality (@fig-Itasser_ResQ). To apply this representation in PyMOL, the following commands were used: `color marine, Itasser_model1`, `color lightteal, Itasser_model1 and b > 3`, `color yellow, Itasser_model1 and b > 5.5`, `color orange, Itasser_model1 and b > 9`, and `color red, resi 171` to specifically highlight the position of interest. 
+Although ResQ and AlphaFold's pLDDT are different metrics, a similar color scale has been implemented for visual consistency: marine (dark blue) represents the areas of highest reliability and orange indicates lower modeling quality (@fig-pnorm-Bfactor-p3-2). To apply this representation in PyMOL, the following commands were used: `color marine, Itasser_model1`, `color lightteal, Itasser_model1 and b > 3`, `color yellow, Itasser_model1 and b > 5.5`, `color orange, Itasser_model1 and b > 9`, and `color red, resi 171` to specifically highlight the position of interest. 
 
-The B-factor measures the inherent thermal mobility of residues, here reported as a normalized profile ($B = (B' - \mu) / \sigma$) to identify regions of relative flexibility or stability throughout the protein sequence (@fig-pnorm-Bfactor-p3).
+The B-factor measures the inherent thermal mobility of residues, here reported as a normalized profile ($B = (B' - \mu) / \sigma$) to identify regions of relative flexibility or stability throughout the protein sequence (@fig-pnorm-Bfactor-p3-3).
 
 ::: {#fig-pnorm-Bfactor-p3 layout-ncol=1}
 ![](/models/Hog1/S822579_results_Itasser/RSQ_1.png){#fig-Itasser_ResQ_graph height=250px}
 ![](/pics/Protein3/I-tasser/Itasser_colored_byResQ.png){#fig-Itasser_ResQ height=250px}
-![](/pics/Protein3/I-tasser/Predicted_Normalized_Bfactor.png){#fig-pnorm-Bfactor-p3 height=250px}
+![](/pics/Protein3/I-tasser/Predicted_Normalized_Bfactor.png){#fig-pnorm-Bfactor height=250px}
 
 **Structural quality assessment of the MoOsm1 model**. **A** Local accuracy profile generated by ResQ, showing the estimated distance error (Å) per residue. **B** Three-dimensional representation of the top-ranking I-TASSER model, color-coded by ResQ values to highlight regions of high (marine/lightteal) and low (orange) structural confidence. **C** Predicted normalized B-factor profile, indicating the relative vibrational motion and flexibility of each residue.
 
