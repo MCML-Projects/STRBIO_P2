@@ -169,6 +169,8 @@ The predicted normalized B-factor profile (@fig-pnorm-Bfactor-p3) indicates high
 
 The structural and functional predictions obtained through COFACTOR, COACH, and EC numbering provide robust evidence for the catalytic viability of the MoOsm1 model. The identification of a high-confidence ATP-binding site ($Cscore = 0.99$) and its classification as a mitogen-activated protein kinase (EC 2.7.11.24) based on a high TM-score of 0.853, confirm that the model accurately preserves the global architecture and active site residues (141–146) characteristic of the MAP kinase family. These findings, supported by the high convergence of structural templates such as 3nayA and 2ewaA, demonstrate that the modeled protein is structurally capable of performing its essential phosphotransferase activity.
 
+The consensus GO term prediction assigns high-confidence scores to ATP binding (GO:0005524, 0.95) and MAP kinase activity (GO:0004708, 0.87) as the primary molecular functions. Regarding biological processes, the model is strongly linked to stress-activated MAPK cascades (GO:0033523, 0.87), localized within the cytoplasm and nucleus. These comprehensive annotations corroborate the structural findings, confirming that the MoOsm1 model accurately represents a functional protein kinase involved in signal transduction.
+
 Despite the discrepancy between the predicted solvent accessibility and the expected exposure of the activation loop, the remaining functional annotations show high consistency with the known biological role of MoOsm1
 
 ### Modeller
