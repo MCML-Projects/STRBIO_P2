@@ -2,7 +2,7 @@
 
 #### **Methods**
 
-To perform an additional level of structural validation, all generated models were evaluated using the VoroMQA method. The analysis was done following the same configuration applied to Protein 1.
+As in the previous protein, a standardized cross-method evaluation protocol was applied to ensure a robust and unbiased comparison among the different predictive algorithms.
 
 #### **Final model selection**
 
