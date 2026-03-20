@@ -1,37 +1,25 @@
-## Protein 3
+::: {.callout-note}
+The sequence used to model MoOsm1/MoHog1 is: 
 
--- FIX ME HASTA
-Previous analysis:
-ProtSA
-Solvent radius ($\text{\AA}$)Parámetro: 1.4Por qué: Es el radio estándar de una molécula de agua. Se utiliza para simular una esfera que "rueda" sobre la superficie de la proteína; el área que esta esfera puede tocar es el Área de Superficie Accesible (SASA). Si usaras un valor distinto, tus resultados no serían comparables con el umbral del 16% de PROFacc.
+**sp|Q9UV51|HOG1_PYRO7 Mitogen-activated protein kinase HOG1** OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=HOG1 PE=1 SV=1
 
-Unfolded conformations to generate
-Parámetro: 2000
+MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ
 
-Por qué: ProtSA calcula la accesibilidad relativa comparando tu modelo (estado plegado) con un estado teóricamente desplegado. Para que ese estado desplegado sea estadísticamente fiable, necesita generar miles de conformaciones al azar (Monte Carlo). 2000 es el número sugerido para que el cálculo sea robusto sin que el servidor tarde horas. No me llega el correo de que hestá hecho :/
--- AQUI-- Cuando salgan los resultados de ProtSA
+:::
 
-Selected models:
-
-To capture the dual nature of MoHog1—which alternates between a monomeric inactive state and a dimeric active state regulated by Y173 phosphorylation—a multi-platform approach was employed. AlphaFold 3 was selected for its superior accuracy in predicting the activation loop's local environment, while Modeller allowed for template-driven constraints to explore the monomeric interface based on experimental homologs.
-
-I-TASSER was selected due to its hybrid methodology, which combines threading and ab initio modeling. While MoHog1/MoOsm1 has several homologs that have been experimentally resolved, the sequence identities generally hover around 40%. Although this level of identity is acceptable for generating reliable models via classical homology modeling, we decided to employ a threading-based approach to gain an independent structural perspective. By integrating fragment-based ab initio folding, I-TASSER can better resolve regions where evolutionary divergence might lead to local structural variations that traditional homology modeling might overlook. Furthermore, I-TASSER was also employed to determine solvent accessibility (ASA), providing a comparative baseline against ProtSA and NetSurfP-3.0 results. Furthermore, as I-TASSER reports the specific Multiple Sequence Alignment (MSA) used during the threading process, it allows for a detailed verification of whether the main residues (TGY motif) are conserved across the selected templates, ensuring the structural integrity of the functional domains in the final model. 
+To capture the dual nature of MoHog1—which alternates between a monomeric inactive state and a dimeric active state regulated by Y173 phosphorylation—a multi-platform approach was employed. AlphaFold 3 was selected for its superior accuracy in predicting the activation loop's local environment, while Modeller allowed for template-driven constraints to explore the monomeric interface based on experimental homologs. I-TASSER was selected due to its hybrid methodology, which combines threading and ab initio modeling. Furthermore, I-TASSER was also employed to determine solvent accessibility (ASA), providing a comparative baseline against NetSurfP-3.0 result. 
 
 ### Deep Learning (AlphaFold3)
 
 Although the structural analysis could have been performed using AlphaFold 2 by employing phosphomimetic mutations—such as the Y173D substitution used in in vivo experiments to demonstrate the impact of phosphorylation—this approach has inherent limitations. While aspartic acid partially mimics the negative charge of a phosphorylated tyrosine, it remains a surrogate that does not fully capture the specific steric and chemical properties of a true phosphate group. Consequently, AlphaFold 3 was selected for this study, as it has been specifically trained on datasets containing Post-Translational Modifications (PTMs). This allows for a more biophysically accurate representation of the monomeric state of MoOsm1, providing deeper insights into the precise structural hindrances and conformational changes triggered by actual phosphorylation at the Y173 position.
 
-Consequently, we opted to model both the monomeric (`copies: 1`) and dimeric (`copies: 2`) states in their phosphorylated and unphosphorylated forms. In a biological context, MoOsm1/MoHog1 naturally exists as a phosphorylated monomer (inactive/signaling state) or an unphosphorylated dimer (active state). The phosphorylated dimer model was specifically generated to analyze the steric hindrance caused by the phosphate group, which prevents stable dimerization in vivo. Conversely, the unphosphorylated monomer was modeled to establish the baseline localization of the TGY motif in its basal state.
+Consequently, both states were modeled. Analysis of these models reveals two key structural requirements that must be met. First, in the unphosphorylated monomer, the activation site must be solvent-accessible to allow the upstream kinase to perform the phosphorylation. Additionally, in the unphosphorylated dimer, the TGY motif is expected to be buried within the complex interface, specifically at the protein-protein interaction site. This configuration explains why phosphorylation at this position prevents dimerization, as the addition of bulky, negatively charged phosphate groups would physically and energetically disrupt the assembly of the dimeric interface.
 
-When analyzing these models, two key structural requirements must be met. First, in the phosphorylated monomer, the activation site must be solvent-accessible to allow for its upstream kinase to perform the phosphorylation. In addition, in the unphosphorylated dimer, the TGY motif is expected to be located within the buried interface of the complex, specifically at the protein-protein interaction site. This configuration would explain why phosphorylation at this position prevents dimerization, as the addition of a bulky, negatively charged phosphate group would physically and energetically disrupt the assembly of the dimeric interface."
- 
-#### Justification of the method
+#### **Methods**
 
-We also employed [AlphaFold 3 server](https://alphafoldserver.com/), which we had used previously, to model this protein. Our first strategy involved generating the initial structure with AF3, which performs exceptionally well in modeling the kinase domain.
+Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed for both the monomeric (`copies: 1`) and dimeric (`copies: 2`) states of the MoOsm1/MoHog1 protein. In all generated models, phosphorylation at Threonine 171 (T171) was maintained as a constant modification. Additionally, both the monomer and the dimer were modeled with and without the phosphorylation at Tyrosine 173 (Y173)(@fig-params-AFServer-Osm1). While the phosphorylated dimeric state does not occur naturally in vivo, it was explicitly modeled to analyze how this specific post-translational modification (PTM) affects the structural integrity and regulation of the complex.
 
-#### Methods
-
-Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed for both the monomeric and dimeric states of the MoOsm1/MoHog1 protein, considering both their phosphorylated and unphosphorylated forms. Given that the most critical post-translational modification (PTM) affecting the structural integrity and regulation of the complex is the phosphorylation of Tyrosine 173 (Y173), this specific PTM was explicitly defined within the AlphaFold 3 (AF3) input parameters for that position (@fig-params-AFServer-Osm1). This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of the phosphate group in the activation loop.
+This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of phosphate groups in the activation loop. Specifically, the phosphorylated dimer model was generated to examine the steric hindrance caused by the phosphate group at Y173, which is known to prevent stable dimerization. Conversely, the unphosphorylated monomer (at Y173) was modeled to establish the baseline localization of the TGY motif in its basal, yet T171-phosphorylated, state.
 
 ::: {#fig-params-AFServer-Osm1 layout-ncol=1}
 
@@ -49,7 +37,7 @@ Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detai
 
 The structural consistency of the models generated by AF3 was evaluated by comparing the five independent ranked outputs for both the dual-phosphorylated monomer (pT171/pY173) and the phosphorylated dimer (pT171), using a Root Mean Square Deviation (RMSD) threshold of < 1 Å to define high-confidence convergence. 
 
-To analyze the MoOsm1 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1).
+To analyze the MoOsm1 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1) (@sec-prot1-methods).
 
 The TGY activation motif was specifically isolated for detailed inspection by creating a dedicated selection: `select Osm1Mono_bothP_TGY, quarternarystate_PTMs and resi 171+173`. To facilitate structural analysis, these residues were rendered as sticks with `show sticks, Osm1Mono_bothP_TGY` and highlighted in `color red, Osm1Mono_bothP_TGY`. Furthermore, the phosphate groups were emphasized by rendering phosphorus atoms as spheres with `show spheres, (Osm1Mono_bothP_TGY and name P)` and a scale adjustment of `set sphere_scale, 0.3, (Osm1Mono_bothP_TGY and name P)`.
 
@@ -127,15 +115,15 @@ It is also noteworthy that the fraction of disordered residues is very low in bo
 
 #### Justification of the method
 
-[I-TASSER](https://aideepmed.com/I-TASSER/) was selected for its robust fragment assembly approach guided by threading techniques, a methodology that enables the prediction of protein structures even when close homologs are limited (@Zheng2021, @Zhang2017, @Yang2015). While the computational process is more time-intensive than AlphaFold, it offers significant advantages for proteins with catalytic functions, such as kinases, due to its specialized modeling of active sites and functional domains. Furthermore, the integration of C-I-TASSER provides essential confidence scores and structural templates that validate the predicted models, making it a highly reliable tool for challenging targets where precision in functional regions is critical. 
+[I-TASSER](https://aideepmed.com/I-TASSER/) was selected for its robust fragment assembly approach guided by threading techniques, a methodology that enables the prediction of protein structures even when close homologs are limited (@Zheng2021, @Zhang2017, @Yang2015). While more computationally intensive than AlphaFold, it offers significant advantages for enzymes like kinases due to its specialized modeling of active sites and functional domains. Furthermore, the integration of C-I-TASSER provides essential confidence scores and structural templates that validate the predicted models, making it a highly reliable tool for targets where precision in functional regions is critical
+
+In the specific case of MoOsm1, although several experimentally resolved homologs exist, sequence identities generally hover around 40%. While this level is acceptable for classical homology modeling, a threading-based approach was employed to gain an independent structural perspective. By integrating fragment-based ab initio folding, I-TASSER can better resolve regions where evolutionary divergence might lead to local structural variations. Additionally, the detailed Multiple Sequence Alignment (MSA) provided during the threading process allows for verification of the conserved TGY motif across selected templates, ensuring the structural integrity of this critical functional domain in the final model.
 
 #### Methods
 
-"The structural modeling of the protein was conducted using the I-TASSER suite under its default parameters, allowing for an unbiased exploration of the conformational space. The process integrated LOMETS meta-threading for template identification with iterative Monte Carlo simulations for fragment assembly. By adhering to the server’s standardized protocols, the final models were refined through FG-MD and REMO, ensuring a high-confidence structural ensemble validated by their respective C-scores and estimated TM-scores
+The structural modeling of the protein was conducted using the I-TASSER suite under its default parameters, allowing for an unbiased exploration of the conformational space. The process integrated LOMETS meta-threading for template identification with iterative Monte Carlo simulations for fragment assembly. By adhering to the server’s standardized protocols, the final models were refined through FG-MD and REMO, ensuring a high-confidence structural ensemble validated by their respective C-scores and estimated TM-scores.
 
 #### Results
-
-**Link de la solucion de I-tasser**: https://aideepmed.com/I-TASSER/output/S822579/
 
 The I-TASSER structural prediction for MoOsm1 yielded high-confidence results, particularly for the top two models. Model 2 exhibited the highest convergence (C-score = 0.44), closely followed by Model 1 (C-score = 0.35). The estimated TM-score of 0.76 ± 0.10 for the primary model confirms a high topological accuracy, significantly exceeding the 0.5 threshold for correct global folding. Given the sharp decline in confidence scores for Models 3 and 4, subsequent structural analysis was focused exclusively on the high-ranking models to ensure biological relevance.
 
