@@ -84,21 +84,17 @@ The top-ranked Model 0 was selected as the reference structure based on its supe
 
 : Structural quality metrics obtained by AlphaFold3 for de monomer and the dimer. {#tbl-prot3-af3}
 
-To analyze the effect of phosphorylation on the dimerization interface, the distance between specific residues across the chains was quantified. We employed the command `distance dist_171P, (Osm1Dimer_171P_0 and chain A and resi 171 and element P), (Osm1Dimer_171P_0 and chain B and resi 171 and element P)` to measure the inter-chain separation between the phosphorus atoms of residue 171. Similar measurements were performed for residue 173 by adjusting the residue index accordingly.
+To analyze the effect of phosphorylation on the dimerization interface, the distance between specific residues across the chains was quantified. We employed the command `distance dist_171P_CA, (Osm1Dimer_171P_0 and chain A and resi 171 and name CA), (Osm1Dimer_171P_0 and chain B and resi 171 and name CA)` to measure the inter-chain separation between the $C_{\alpha}$ of residues 171 and 173.
 
-These calculations were applied to both dimeric states: the mono-phosphorylated dimer (pT171) and the dual-phosphorylated dimer (pT171/pY173). The resulting data, presented in @tbl-distances-171P-173P, are expected to reveal a greater distance between residues 173 in the phosphorylated state compared to the non-phosphorylated state. Furthermore, if the distance between the pT171 residues is significantly higher in the dual-phosphorylated dimer, it would suggest that the presence of the phosphate group on residue 173 induces additional structural tension or steric repulsion at the dimeric interface.
+The resulting data, presented in @tbl-distances-171P-173P, show a similar distance between residues 171 and 173 in both the phosphorylated and unphosphorylated states. Although these findings support the fact that phosphorylation at residue 173 prevents dimerization, the results suggest that the presence of the phosphate group acts as a steric hindrance that likely affects the orientation or interaction of neighboring residues. However, this modification was expected to induce a global displacement of the protein backbone, specifically regarding the phosphorylated residues.
 
---FIX ME si hay tiempo
+| Distance between $C_{\alpha}$ (Chain A- Chain B) [Å] | Osm1 Dimer 171P | Osm1 Dimer 171P and 173P | 
+|-----------|-----------|-----------|
+| **171** | 31.2 | 31.3 | 
+| **173** | 24.8 | 24.7 | 
 
-| Distance between residues of both chains | Osm1 Dimer 171P | Osm1 Dimer 171P and 173P | 
-|-----------|-------|--------------------------|
-| **171** | 28.8 | - | 
-| **173** | 24.8 | - | 
-
-: Phosphorilated residues distance on dimer structures of the Osm1 modeled structure.
-{#tbl-distances-171P-173}
-
--- 
+: Distance (Å) between the $C_{\alpha}$ atoms of residues 171 and 173 for chains A and B in the modeled MoOsm1 structure.
+{#tbl-distances-171P-173P}
 
 #### **Discussion**
 
