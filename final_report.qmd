@@ -8,6 +8,7 @@ format:
     toc-location: left
     code-fold: true
     number-sections: true
+    number-depth: 3
 authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
 date: 10/03/2026
 bibliography: bibliografia.bib
@@ -25,6 +26,8 @@ This is a CASP-like exercise. The objective of this contest is to achieve the be
 {{< include docs/Protein3_bg.qmd >}}
 
 # Protein modeling
+
+## Protein 1: ORAI1
 
 {{< include docs/Protein1_1Dfeatures.qmd >}}
 {{< include docs/Protein1_complete.qmd >}}

@@ -4,8 +4,6 @@
 
 Each ORAI1 subunit contains four transmembrane domains connected by two extracellular loops, one intracellular loop, and two cytosolic strands (N- and C- terminus) [@Derler2012; @Tiffner2021]. The functional ORAI1 channel operates as a hexameric complex, with the central pore formed by six transmembrane domains, critical for gating and stability @Tiffner2021. ORAI1 is part of a three-isoform family (ORAI1-3) with conserved topology but distinct regulatory profiles @Tiffner2021. Heteromeric assemblies (ORAI1/ORAI2 hexamer or ORAI1/ORAI3 pentamer) exhibit reduced calcium sensitivity and slower inactivation compared  to the homomer @Derler2012.
 
-ORAI1 activity requires coupling with STIM1, an ER calcium sensor. Upon store depletion, STIM1 interacts with ORAI1 via its N- and C-terminal regions, stabilizing the hexamer and triggering pore opening @Derler2012. Channel function is influenced by molecular partners, including calmodulin (mediating calcium-dependent inactivation) and cholesterol (a negative regulator) [@Derler2012; @Derler2016].
-
-Extracellular loops provide key regulatory sites: the first loop (TM1-TM2) attracts Ca²⁺, while the third contains the glycosylation site N223, modulating lectin interactions @Humer2022. Cysteine residues (C126, C143, C195) mediate redox regulation, where H₂O₂ exerts inhibitory effects @Humer2022.
+ORAI1 activity requires coupling with STIM1, an ER calcium sensor. Upon store depletion, STIM1 interacts with ORAI1 via its N- and C-terminal regions, stabilizing the hexamer and triggering pore opening @Derler2012. 
 
 Native cells express two ORAI1 variants: alpha (full-length) and beta (lacking residues 1–63) @Fukushima2012. The alpha isoform, containing the full regulatory sequence, is used as the template for structural modeling in this study.
