@@ -157,7 +157,9 @@ Among the top 10 threading templates identified by I-TASSER (@tbl-threading-temp
 
 : Top 10 threading templates identified by I-TASSER for the structural modeling of MoOsm1 (The presence of duplicate PDB entries in the top threading templates is attributed to the integration of multiple alignment algorithms, the generation of alternative structural alignments for the same template, and the distinct selection of either full crystals or specific polypeptide chains). {#tbl-threading-templates-itasser}
 
+Functional annotation using COFACTOR and COACH identified a high-confidence ligand-binding site (C-score = 0.99) with the ATP-analog [MP6](https://aideepmed.com/BioLiP/sym.cgi?code=MP6) (Methylphosphonic acid adenylate ester) as the top-ranking ligand. This binding site, modeled after the template PDB [3nayA](https://www.rcsb.org/structure/3NAY), involves key residues in the 26–159 range, consistent with the highly conserved catalytic pocket of MAP kinases. The high convergence of this prediction (cluster size = 3950) reinforces the structural integrity of the MoOsm1 model and confirms its potential for ATP binding and catalytic activity.
 
+The functional classification through Enzyme Commission (EC) numbering further supports the model's validity, assigning it to the EC 2.7.11.24 (mitogen-activated protein kinase) and EC 2.7.1.37 (protein kinase) categories with high confidence ($Cscore^{EC} = 0.705$). Structural alignment with the top hit (PDB [2ewaA](https://www.rcsb.org/structure/2EWA)) shows a high TM-score of 0.853, indicating nearly identical global folding. Furthermore, the identification of residues 141, 143, 145, and 146 as the active site residues confirms that the model correctly positions the catalytic machinery essential for its phosphotransferase activity.
 
 #### **Discusion**
 
