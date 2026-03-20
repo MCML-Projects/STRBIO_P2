@@ -15,6 +15,7 @@ Based on this comprehensive evaluation, AlphaFold3 emerges as the superior model
 Finally, the results of the VoroMQA evaluation are summarized in the @tbl-model-comparison-Hog1.
 
 | Model | Global score | 
+|--------------|--------------|
 | AlphaFold 3 | 0.536 |
 | Modeller | 0.515 | 
 | I-TASSER | 0.329 |
@@ -41,10 +42,11 @@ VoroMQA structural quality assessment for the three predicted models (AlphaFold3
 
 These results support the previous evaluations based on QMEANDisCo and RMSD, confirming that AlphaFold 3 provides the most reliable structural model of the protein.
 
+:::{#fig-Osm1-final layout-ncol=2}
+
+![*AlphaFold3**. Colored by chains](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_chains.png){#fig-a}
+![[*AlphaFold3**. Colored by secondaty structure](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_ss.png){#fig-b}
+
+Final AlphaFold3 model of the Osm1 monomeric kinase. (a) Side view of the structure colored by chains, showing the monomer subunit. (b) (c) Side view colored by secondary structure, where α-helices are shown in navy blue, β-sheets in green, and loops or disordered regions in red.
 :::
 
-![](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_chains.png){}
-![](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_ss.png){}
-
-
-:::
