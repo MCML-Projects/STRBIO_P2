@@ -1,8 +1,10 @@
-## Protein 2
+::: {.callout-note}
+The sequence used to model Protein2 is: 
+
 
 MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANTGSYVVSTMSELRALEPRESSALVVLKGYHSANDGGGGTFYYDAASELEPDGALVIKCESTGGRFVRDREENYVNVKWFGAKGDGKTDDTAALQAAISSLGTGGGTVSLPGGNYAISAPLTIGDGDSGEKVSSTHGVKLIGMGGGFSHNVAAATTIKATAEIDNMLVLRGRISDCEIGGIYFNANNKAKTCLSLNSFSGCYFHNVKAMGFTDIGIKAIAGTAPTGNYNIYNRFESVNVTCLSDKTTGILFDGHYGDHNDTWLTVLSDCRFDTAQSENSVAAHFKFVDSISFYRCHFNTYKESSTGAVFDALDNHNFPCGMAFHDCSMTSHDVWEDSTHTIRKQYFYGFGTYDNEQIPTHPKLIGMTDMGDFFNIDAIDLLLSGNKGEDGTEEDNGEFTLPAKSGRVDTDNSTGASEHHNLKNGDKLAVLVNAKNKLVGGSFYLSSYDNSIGTIKFDVYKWDTDYATTVAGEILASDTALNFKDNSQFEAKFDGLSSGYYLIVISGTAPDDDFGVAVWTRGKSMTSVTFKNGNRIEAGLRGQFITE
 
-Selected models:
+:::
 
 ### Deep Learning (AlphaFold2 + AlphaFold3)
 
@@ -16,7 +18,7 @@ To predict the initial 3D structure of the sequence, we used AlphaFold2 implemen
 
 However, subsequent homology analysis (see SWISS-MODEL section) strongly indicated that the biologically active state of this enzyme is a homo-trimer. Due to the hardware limitations (VRAM Out-of-Memory errors) imposed by the computational requirements of AlphaFold2-Multimer when attempting to model a massive 1872-residue complex, we strategically employed AlphaFold3. AF3 allows for highly efficient modeling of large multimeric assemblies using an advanced diffusion-based architecture, overcoming local hardware restrictions and providing reliable insights into the inter-chain interactions that stabilize the quaternary structure.
 
-#### Methods 
+#### **Methods** 
 
 ##### AlphaFold 2 (Monomer)
 For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed via the ColabFold environment. The general execution parameters were kept (`num_relax = 1`, `template_mode: pdb100`, `msa_mode: mmseqs2_uniref_env`, `relax_max_iterations = 200`, `max_msa: auto`, `num_seeds = 1`, `use_dropout = false`).
