@@ -155,7 +155,7 @@ Among the top 10 threading templates identified by I-TASSER (@tbl-threading-temp
 | 9 | 5z33A | 0.43 | 0.44 | 0.99 | 3.20 |
 | 10 | 5v60A | 0.48 | 0.47 | 0.93 | 5.89 |
 
-: Top 10 threading templates identified by I-TASSER for the structural modeling of MoOsm1. {#tbl-threading-templates-itasser}
+: Top 10 threading templates identified by I-TASSER for the structural modeling of MoOsm1 (The presence of duplicate PDB entries in the top threading templates is attributed to the integration of multiple alignment algorithms, the generation of alternative structural alignments for the same template, and the distinct selection of either full crystals or specific polypeptide chains). {#tbl-threading-templates-itasser}
 
 
 
