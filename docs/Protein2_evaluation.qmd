@@ -30,7 +30,7 @@ Notably, the AlphaFold 3 model exhibits a smoother and higher profile, suggestin
 
 ::: {#fig-voromqa-panels-protein2 layout-ncol=1}
 
-![a) AlphaFold3 VoroMQA evaluation](../pics/Protein2/VoroMQA/Voro_AF3.png){#a}
+![a) AlphaFold3 VoroMQA evaluation](pics/Protein2/VoroMQA/Voro_AF3.png){#a}
 
 ![b) AlphaFold2 VoroMQA evaluation](../pics/Protein2/VoroMQA/Voro_AF2.png){#a}
 

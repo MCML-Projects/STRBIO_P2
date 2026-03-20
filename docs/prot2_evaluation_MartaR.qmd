@@ -1,0 +1,39 @@
+---
+title: "Untitled"
+format: html
+---
+
+# Methods
+
+
+@@lucia escribe los métodos que hayas usado para comparar los modelos (ponlo a nivel general para que sirva para todas ls proteínas y ya en el resto se diga q se haga como en la uno)
+
+Additionally, VoroMQA [VoroMQA](https://bioinformatics.lt/wtsam/voromqa)(Voronoi Tessellation-based Model Quality Assessment) was employed for third-level structural validation. Unlike tools such as AlphaFold or Swiss-Model, which assess the confidence of their own predictions, VoroMQA evaluates structural quality based purely on geometric criteria, using Voronoi tessellation to assess atomic packing and detect potential structural inconsistencies.
+
+For this analysis, `Input biological assemblies` was selected to evaluate the complete oligomeric state of the protein, rather than individual chains, ensuring a comprehensive assessment of the quaternary structure.
+The `Enable evaluation of inter-chain interfaces` was enabled to specifically assess the quality of interactions at the subunit interfaces.
+
+# Evaluation
+
+@@@evaluaciondelucia
+
+The results of the VoroMQA evaluation are summarized in the @tbl-model-compartision-Protein2.
+
+| Model | Global score | Interface i_score | i_energy |
+|------|-------------|------------------|---------|
+| AlphaFold2 | 0.496 | - | - |
+| ESMFold | 0.477 | - | - |
+| SwissModel | 0.477 | - | - |
+| AlphaFold3 | 0.496 | - | - |
+
+
+: Comparison of the structural quality and interface scores obtained for the models generated with AlphaFold2 and ESMFold for Protein 2. {#tbl-model-comparison-Protein2}
+
+Both monomer models, as is shown in the @tbl-model-comparison-Protein2, has a similar VoroMQA gobal scores. However, AlphaFold2 model have a higher score, suggesting a more favorableinteratomic contact geometry, probably thanks to taking into account evolutuionary information throguh multiple sequence alignments.
+
+This scores are characteristic of medium quality models, which is consistent with the expected models of large proteins with disordered regions and limited structural templates to be compared (twiligh zone). 
+
+Results:https://bioinformatics.lt/wtsam/voromqa/job-voromqa-ZLECHU 
+
+
+In contrast, the homotrimers........
