@@ -31,6 +31,8 @@ However, since no information regarding the quaternary structure was available a
 
 - num_recycles: This parameter was increased from 3 to 6. The rationale for this increase lies in the results of our prior 1D topological analysis. Having detected an intrinsically disordered region (IDR) acting as a linker (residues 60-85) following the signal peptide, more refinement cycles were granted to the neural network to facilitate the structural convergence of these highly flexible zones. Being a single chain, this increase did not compromise computational feasibility.
 
+While the AlphaFold2 protocol generated a standard ensemble of five monomeric models, a structural convergence analysis was not performed at this stage. This decision was made to maintain methodological concordance across the study. Since subsequent homology analysis identified the biologically active state of the enzyme as a homo-trimer, the isolated monomer was recognized as a non-physiological state. Consequently, the rigorous five-model evaluation was exclusively reserved for the AlphaFold3 trimeric prediction. The top-ranked AF2 monomer (Model 0) was retained solely as a structural baseline to evaluate local confidence (pLDDT) and quantify conformational rearrangements upon oligomerization.
+
 ##### AlphaFold 3 (Homotrimer)
 
 Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed.
@@ -48,8 +50,6 @@ Using AlphaFold2, several diagnostic plots were obtained to help evaluate the ex
 **View of the structural modeling of protein 2 trimer conformation.** **A.** Protein 2 trimer conformation bottom view. **B.** Protein 2 trimer conformation top view. **C.** Protein 2 trimer conformation side view.
 
 :::
-
-Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.
 
 Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50.The comprehensive assessment results, including the Local Quality Estimate, the QMEAN Z-score comparison, and the Ramachandran plot, are detailed in @fig-seq2-af2-assessment.
 
