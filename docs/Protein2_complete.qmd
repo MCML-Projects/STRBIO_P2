@@ -9,7 +9,7 @@ MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANT
 
 To predict the initial 3D structure of the sequence, we used [AlphaFold2 ColabFold](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=ADDuaolKmjGW). Since no information regarding the quaternary structure was available at the beginning of the study, the protein was assumed to act individually, and a monomeric approach was initially justified. ColabFold provides an efficient implementation of AlphaFold2 with optimized multiple sequence alignment (MSA) generation, allowing reliable prediction of the individual chain and its distinct functional domains.
 
-However, subsequent homology analysis (see Swiss-ModeL section, @sec-swissmodel-prot2) strongly indicated that the biologically active state of this enzyme is a homo-trimer. Due to the hardware limitations, we employed [AlphaFold3 server](https://alphafoldserver.com/), following the same strategy as in the protein 1, ORAI 1 (**REFERENCIAR**)
+However, subsequent homology analysis (see Swiss-ModeL section, @sec-swissmodel-prot2) strongly indicated that the biologically active state of this enzyme is a homo-trimer. Due to the hardware limitations, we employed [AlphaFold3 server](https://alphafoldserver.com/), following the same strategy as in the protein 1, ORAI 1.
 
 #### **Methods** 
 
@@ -24,7 +24,7 @@ While the AlphaFold2 protocol generated a standard ensemble of five monomeric mo
 ##### AlphaFold 3 (Homotrimer)
 
 Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed.
-To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1) (**REFERENCIAR**).
+To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1, ORAI 1.
 
 #### **Results**
 
@@ -152,4 +152,4 @@ However, because ESMFold lacks the evolutionary constraints provided by MSAs, th
 
 ### Methodological Justification for Protein 2
 
-Unlike Protein 1 (ORAI1), which benefits from well-characterized experimental homologs allowing for energy and atomic packing evaluations, Protein 2 represents a completely uncharacterized target falling deep within the 'Twilight Zone' of sequence identity (~17%). In the absence of reliable structural templates or prior functional annotations, computational predictions are highly susceptible to severe geometric and stereochemical artifacts. Consequently, the structural validation for Protein 2 necessitated a fundamentally different and more exhaustive approach. Our analysis strictly prioritized stereochemical viability—utilizing universal metrics such as QMEAN Z-scores, Ramachandran plots, and torsional penalties—to rigorously confirm that the ab initio and Deep Learning predictions were not merely algorithmic artifacts, but physically and thermodynamically plausible native states.
+Unlike Protein 1 (ORAI1), which benefits from well-characterized experimental homologs allowing for energy and atomic packing evaluations. Protein 2 represents a completely uncharacterized target falling deep within the 'Twilight Zone' of sequence identity (~17%). In the absence of reliable structural templates or prior functional annotations, computational predictions are highly susceptible to severe geometric and stereochemical artifacts. Consequently, the structural validation for Protein 2 necessitated a fundamentally different and more exhaustive approach. Our analysis strictly prioritized stereochemical viability—utilizing universal metrics such as QMEAN Z-scores, Ramachandran plots, and torsional penalties—to rigorously confirm that the ab initio and Deep Learning predictions were not merely algorithmic artifacts, but physically and thermodynamically plausible native states.
