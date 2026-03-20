@@ -74,7 +74,7 @@ The dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a bifurcated behavio
 The top-ranked Model 0 was selected as the reference structure based on its superior convergence and global scoring. The key validation parameters, are summarized in @tbl-prot3-af3.
 
 | Parameter | Monomer value | Dimer value | Description |
-|-----------|-------|--------------------------|
+|-----------|-------|-------|--------------------------|
 | **Ranking Score** | 0.89 | 0.3 | Overall confidence score of the model |
 | **ipTM** | Null | 0.22 | Interface predicted TM-score |
 | **pTM** | 0.87 | 0.55 | Predicted TM-score for the global topology |
