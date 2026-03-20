@@ -6,13 +6,14 @@ Consistent with the previous proteins, a standardized cross-method evaluation pr
 
 #### **Final model selection**
 
-To establish a definitive comparison across the three predictive methodologies (AlphaFold3, I-TASSER, and Modeller), all generated .pdb files for the monomeric state were submitted to the SWISS-MODEL Structure Assessment tool to extract their universal QMEANDisCo Global scores. The evaluation yielded highly consistent scores for AlphaFold3 (0.77) and Modeller (0.75), indicating excellent, native-like stereochemical quality and geometric packing. In contrast, I-TASSER achieved a significantly lower score of 0.46. This penalty is a common artifact of its hybrid ab initio fragment assembly approach, which often introduces slight geometric strains or suboptimal packing in flexible loop regions compared to pure homology or advanced deep learning models.
+The evaluation performed using the Swiss-Model Structure Assessment tool revealed very similar and high structural quality for AlphaFold3 (0.77) and Modeller (0.75). In contrast, I-TASSER obtained a much lower score (0.46), most likely due to geometric strain associated with its ab initio modeling approach.
 
-The pairwise structural alignments performed in PyMOL strongly support these quality metrics. The most remarkable consensus was observed between the deep learning model (AlphaFold3 dual-phosphorylated monomer) and the classical homology model (Modeller), yielding an exceptionally low RMSD of 1.06 Å across their conserved cores. This near-perfect superposition confirms that the AlphaFold3 prediction strictly respects the canonical kinase architecture defined by experimental templates. Conversely, when comparing I-TASSER against the other models, the structural deviation increased slightly: AF3 vs. I-TASSER yielded an RMSD of 1.74 Å, and Modeller vs. I-TASSER resulted in 1.84 Å. While an RMSD under 2.0 Å still confirms that all three algorithms correctly folded the global kinase domain, the slight divergence of I-TASSER further highlights its ab initio nature, which allowed more conformational freedom in the less conserved regions.
+Pairwise structural alignments in PyMOL strongly supported these results. AlphaFold3 and Modeller showed excellent agreement, with an RMSD of 1.06 Å, whereas comparisons involving I-TASSER resulted in slightly higher deviations (1.74–1.84 Å). Nevertheless, an RMSD below 2.0 Å still indicates that all three methods correctly reproduced the overall kinase fold. The slightly larger deviation observed for I-TASSER further reflects its ab initio nature, which allows greater conformational flexibility in less conserved regions. 
+<h1 style="color:red;"> FALTAN LOS ÁTOMOS LUCIA JIJI </h1>
 
-Based on this comprehensive evaluation, AlphaFold3 emerges as the superior model. Not only does it boast the highest global stereochemical quality (QMEANDisCo 0.77) and a near-perfect structural consensus with classical homology modeling (RMSD 1.06 Å), but it also provides a critical biological advantage: the ability to accurately incorporate and evaluate Post-Translational Modifications. Unlike Modeller, which failed to natively resolve the flexible TXY activation loop due to missing template coordinates, AF3 successfully modeled the dual-phosphorylated state (pT171/pY173) without algorithmic bias, allowing for a precise biophysical analysis of the active kinase. Therefore, the AlphaFold3 dual-phosphorylated monomer is selected as the definitive structural model for MoOsm1/MoHog1.
+Based on this comprehensive evaluation, AlphaFold3 emerges as the most reliable model. It not only shows the highest global stereochemical quality (QMEANDisCo 0.77) and an almost perfect structural agreement with the homology model (RMSD 1.06 Å), but also provides an important biological advantage: the ability to accurately model post-translational modifications. Unlike Modeller, which failed to properly resolve the flexible TXY activation loop due to missing template coordinates, AlphaFold3 successfully modeled the dual-phosphorylated state (pT171/pY173) without structural bias. Therefore, the AlphaFold3 dual-phosphorylated monomer was selected as the final structural model for MoOsm1/MoHog1.
 
-Finally, the results of the VoroMQA evaluation are summarized in the @tbl-model-comparison-Hog1.
+Finally, the results of the VoroMQA evaluation are summarized in the @tbl-model-comparison-Osm1.
 
 | Model | Global score | 
 |--------------|--------------|
@@ -31,22 +32,23 @@ In addition, the Local Score profiles (upper panels in @fig-voromqa-panels-Osm1)
 
 ::: {#fig-voromqa-panels-Osm1 layout-ncol=1}
 
-![a) AlphaFold3 VoroMQA evaluation](../pics/Protein3/VoroMQA/Voro_AF3.png){#a}
+![a) AlphaFold3 VoroMQA evaluation](pics/Protein3/VoroMQA/Voro_AF3.png){#a}
 
-![b) Modeller VoroMQA evaluation](../pics/Protein3/VoroMQA/Voro_Modeller.png){#b}
+![b) Modeller VoroMQA evaluation](pics/Protein3/VoroMQA/Voro_Modeller.png){#b}
 
-![c) I-TASSER VoroMQA evaluation](../pics/Protein3/VoroMQA/Voro_ITASSER.png){#c}
+![c) I-TASSER VoroMQA evaluation](pics/Protein3/VoroMQA/Voro_ITASSER.png){#c}
 
 VoroMQA structural quality assessment for the three predicted models (AlphaFold3, Modeller and I-TASSER)
 :::
 
-These results support the previous evaluations based on QMEANDisCo and RMSD, confirming that AlphaFold 3 provides the most reliable structural model of the protein.
+These results are consistent with the previous evaluations based on QMEANDisCo and RMSD, confirming that AlphaFold3 provides the most reliable structural model of the protein. The selected model is shown in @fig-Osm1-final.
 
 :::{#fig-Osm1-final layout-ncol=2}
 
-![*AlphaFold3**. Colored by chains](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_chains.png){#fig-a}
-![[*AlphaFold3**. Colored by secondaty structure](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_ss.png){#fig-b}
+![*AlphaFold3**. Colored by chains](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_chains.png){#a}
 
-Final AlphaFold3 model of the Osm1 monomeric kinase. (a) Side view of the structure colored by chains, showing the monomer subunit. (b) (c) Side view colored by secondary structure, where α-helices are shown in navy blue, β-sheets in green, and loops or disordered regions in red.
+![*AlphaFold3**. Colored by secondaty structure](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_ss.png){#b}
+
+Final AlphaFold3 model of the Osm1 monomeric kinase. (a) Side view of the structure colored by chains, showing the monomer subunit. (b) Side view colored by secondary structure, where α-helices are shown in navy blue, β-sheets in green, and loops or disordered regions in red.
 :::
 
