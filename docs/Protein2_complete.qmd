@@ -64,6 +64,7 @@ Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was ev
 {#fig-af2-qmeanscores}
 
 Structural assessment metrics for the AF2 monomeric model obtained via the SWISS-MODEL assessment tool.
+::: 
 
 To evaluate the quaternary structure, AlphaFold3 was utilized to predict the trimeric complex. 
 The alignments of models 1 through 4 against the top-ranked model 0 (@fig-p2-alignmentAF3) exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 1.50 Å (ranging from 1.04 Å to 1.99 Å). Out of the 14,244 total atoms aligned in each model, an average of approximately 9,751 atoms were used for the final calculation.
