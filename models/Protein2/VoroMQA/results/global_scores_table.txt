@@ -1,0 +1,5 @@
+model                                                                                   global_score  residues  atoms  interface_score  interface_atoms  interface_contacts  interface_area  interface_energy
+af2_hypothetical_protein2_8029e_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb  0.495961      624       4747   0                0                0                   0               0
+af3_fold_protein2_model_0.pdb                                                           0.524204      1872      14244  0.578675         2116             3851                8519            -4027.96
+ESMfold_ptm0.612_r3_default.pdb                                                         0.476936      624       4747   0                0                0                   0               0
+swissmodel_model_01.pdb                                                                 0.410094      1117      8470   0.303537         866              1414                3499.18         -1182.77
