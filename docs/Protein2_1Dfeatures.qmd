@@ -1,4 +1,4 @@
-# 1d features of protein 2
+### 1D Features
 
 Before initiating the 3D modeling protocols, a comprehensive 1D sequence analysis was performed to understand the structural context of the protein and anticipate potential modeling challenges.
 
@@ -16,7 +16,7 @@ Evolutionary Link: Interestingly, InterProScan also reported structural domain m
 > Biological Hypothesis
 The integration of these findings provides a cohesive functional and evolutionary hypothesis. Pectate lyases and phage tail spike proteins frequently share a similar structural architecture, specifically the parallel beta-helix fold, which is highly efficient at binding and cleaving complex carbohydrates. Given that the source organism, Oscillospiraceae, is a known resident of the mammalian gut microbiome, we hypothesize that this target is a secreted enzyme. It is likely utilized by the bacterium to degrade complex plant polysaccharides (such as pectin from the host's diet) to obtain nutrients. The structural similarity to phage tail proteins suggests a fascinating evolutionary history, potentially involving a horizontal gene transfer event where a viral carbohydrate-degrading structural gene was co-opted by the bacterium for metabolic purposes.
 
-#### Predicted Topology (DeepTMHMM)
+#### **Predicted Topology** (DeepTMHMM)
 Predicted Topologies
 >Sequence | SP
 MRSTYRDRSLRQRFVFLPYQMKNIDTNINIKEKAMKKALLALLTLGTIITLLLCGCSSEGKEPAATEGQTQKPTEQGANTGSYVVSTMSELRALEPRESSALVVLKGYHSANDGGGGTFYYDAASELEPDGALVIKCESTGGRFVRDREENYVNVKWFGAKGDGKTDDTAALQAAISSLGTGGGTVSLPGGNYAISAPLTIGDGDSGEKVSSTHGVKLIGMGGGFSHNVAAATTIKATAEIDNMLVLRGRISDCEIGGIYFNANNKAKTCLSLNSFSGCYFHNVKAMGFTDIGIKAIAGTAPTGNYNIYNRFESVNVTCLSDKTTGILFDGHYGDHNDTWLTVLSDCRFDTAQSENSVAAHFKFVDSISFYRCHFNTYKESSTGAVFDALDNHNFPCGMAFHDCSMTSHDVWEDSTHTIRKQYFYGFGTYDNEQIPTHPKLIGMTDMGDFFNIDAIDLLLSGNKGEDGTEEDNGEFTLPAKSGRVDTDNSTGASEHHNLKNGDKLAVLVNAKNKLVGGSFYLSSYDNSIGTIKFDVYKWDTDYATTVAGEILASDTALNFKDNSQFEAKFDGLSSGYYLIVISGTAPDDDFGVAVWTRGKSMTSVTFKNGNRIEAGLRGQFITE

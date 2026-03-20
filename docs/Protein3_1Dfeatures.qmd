@@ -1,6 +1,8 @@
-## Protein 3
+### 1D Features
 
 The primary sequence of MoHog1/MoOsm1 (357 aa) exhibits the classic architecture of a MAP kinase. The catalytic domain (residues 23-311) contains all the conserved motifs necessary for phosphotransferase activity. Notably, the activation loop features the TGY motif (T171/Y173), characteristic of the stress-activated protein kinase (SAPK) family (@dixon1999, @liu2020). The activation of this motif through dual phosphorylation has been experimentally validated under osmotic and oxidative stress conditions, as well as in response to fungicide exposure (@motoyama2008). 
+
+#### **Solvent accessibility (NetSurfP)**
 
 Building upon previous structural studies of p38 MAPKs, which demonstrated the formation of dimers through the swapping of activation segments (@rothweiler2011), the oligomeric state of MoOsm1 was experimentally evaluated. Functional assays confirmed that MoHog1/MoOsm1 exists in both monomeric and dimeric forms. However, the ability to dimerize is strictly regulated by the phosphorylation state of the activation loop. Specific point mutations which mimic different phosphorylation states shows that phosphorilation on Tyr173 serves as a molecular switch that inhibits the dimerization, the simulated phosphorilation on T171 does not shown any effect on dimerization. These findings imply that *in silico* phosphorylation on Tyr173 of the MoHog1/MoOsm1 dimer would likely result in steric clashes or significant conformational instability. Since the phosphorylated state (simulated by the Y173D mutation) prevents dimerization *in vivo*, any structural model attempting to force a phosphorylated activation loop into a dimeric interface would likely exhibit an energetically unfavorable or distorted geometry (@liu2020, @zhang2024). 
 
