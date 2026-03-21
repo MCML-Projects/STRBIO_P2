@@ -37,7 +37,7 @@ The N-terminal region is highly flexible, the central region alternates structur
 
 Additional structural features were analysed using [NetSurfP](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/) to evaluate solvent accessibility along the ORAI1 sequence (@fig-NetSurfP-ORAI1). 
 
-![Orai1 solvent accesibility prediction by NetSurfP"](../pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
+![Orai1 solvent accesibility prediction by NetSurfP"](/pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
 
 The N-terminal region is highly solvent-exposed, indicating a flexible cytoplasmic segment. The central transmembrane regions are buried and have a low accesibility values, with short exposed loops connecting them. The C-terminal region shows higher accessibility and lower helix propensity, supporting its role as a flexible regulatory cytoplasmic domain. Additionaly, these positions also display very high α-helix probabilities.
 Between these helices, short regions with increased solvent accessibility are observed, which likely correspond to loops connecting the transmembrane segments. Finally, the C-terminal region again shows higher accessibility and lower helix propensity, supporting its role as a cytoplasmic and flexible regulatory domain.
