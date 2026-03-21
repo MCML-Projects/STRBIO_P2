@@ -47,7 +47,9 @@ This is a CASP-like exercise. The objective of this contest is to achieve the be
 
 # Conclusion
 
-Across the three proteins analyzed in this study, AlphaFold3 was consistently selected as the primary model, despite the disparate methodological approaches employed for structural generation and prediction. Although AF3 operates as a "black box" with proprietary architectural constraints, its predictive power offers significant advantages for future structural biology workflows, particularly regarding the integration of post-translational modifications (PTMs) in Protein 3.
+Across the three proteins analyzed in this study, AlphaFold3 was consistently selected as the primary structural model, despite the different methodological approaches used for structure generation and prediction. Although AF3 operates as a “black box” with proprietary architectural constraints, its predictive performance offers clear advantages for future structural biology workflows. This is particularly evident in its ability to incorporate biologically relevant information, such as post-translational modifications (PTMs) in Protein 3, or the inclusion of essential ions required for protein function, as observed for Proteins 1 and 2.
+
+In other words, the predictive accuracy of AlphaFold3 improves substantially when all available biological information is provided, for example the presence of phosphate groups in the monomer of the third sequence or other functionally relevant structural components.
 
 However, other computational approaches demonstrated high predictive accuracy as well:
 For Protein 1 (ORAI1), Swiss-Model yielded highly robust results. Due to the availability of high-identity templates, template-based homology modeling provided an exceptionally accurate representation of the protein’s native fold.
