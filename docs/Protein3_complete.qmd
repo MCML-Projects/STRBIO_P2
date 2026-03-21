@@ -51,7 +51,7 @@ For the dual-phosphorylated monomer (@fig_P3_Osm1Mono_bothP_AFcolored), the alig
 
 The dimeric models (@fig_P3_dimer_171P_AFcolored) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.
 
-![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](/pics/Protein3/Dimer_171P/dimer_T171P_red.png.png){#fig_P3_dimer_171P_AFcolored}
+![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](/pics/Protein3/Dimer_171P/dimer_T171P_red.png){#fig_P3_dimer_171P_AFcolored}
 
 The top-ranked Model 0 was selected as the reference structure based on its superior convergence and global scoring. The key validation parameters, are summarized in @tbl-prot3-af3.
 
