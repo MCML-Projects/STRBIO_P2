@@ -111,7 +111,7 @@ The B-factor measures the inherent thermal mobility of residues, here reported a
 
 The predicted solvent accessibility values reveal a high proportion of buried residues throughout the protein structure (@fig-pred-solvacc), with the functional TGY motif showing remarkably low accessibility scores of 1, 2, and 0, respectively. These results contrast with experimental expectations, as these specific residues must maintain a degree of surface exposure to remain accessible for phosphorylation by upstream kinases. Overall, the predominance of low accessibility values across the sequence suggests a highly compact structural core, indicating that significant conformational rearrangements might be necessary to facilitate post-translational modifications at the activation loop.
 
-::: {#fig-pnorm-Bfactor-p3 layout=[[1,1],[1,1]]}
+::: {#fig-pnorm-Bfactor-p3 layout-ncol=1}
 
 ![](/models/Hog1/S822579_results_Itasser/RSQ_1.png){#fig-Itasser_ResQ_graph height=250px}
 
@@ -189,7 +189,7 @@ The structural integrity of the unphosphorylated MoHog1 monomer was validated th
 
 The structure is color-coded by transferred B-factors, ranging from cool tones (marine, B $\approx$ 25) to warm tones (orange, B $\ge$ 100). The visualization shows greater stability and a well-folded catalytic core (partially blue), which is consistent with the robust global zDOPE score of -1.45. In contrast, the activation loop (central region) appears prominently in orange, reflecting the exceptionally high transferred mobility observed in experimental templates (e.g., B=509.37 at Thr171). This graphical representation confirms that the orange-colored regions identify a site of high intrinsic flexibility, a structural feature necessary to facilitate the occurrence of phosphorylation events. The low rigidity observed in this area suggests that the activation loop is conformationally dynamic, which enables the addition of phosphate groups to significantly alter its stability and conformation, thereby allowing the transition toward a functionally active state
 
-::: {#fig-modeller-comparision layout-ncol=3}
+::: {#fig-modeller-comparision layout=[[1,1],[1,0]]}
 ![](/pics/Protein3/ModellerPics/Modeller_comparision_alltemplates.png ){#fig-all-templates-grey height=250px}
 
 ![](/pics/Protein3/ModellerPics/Modeller_comparision_2b9f_3k3i_3p5k_6rfp_templates.png){#fig-best-templates-grey height=250px}
