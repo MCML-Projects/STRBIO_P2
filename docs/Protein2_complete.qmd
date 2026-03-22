@@ -25,7 +25,7 @@ While the AlphaFold2 protocol generated a standard ensemble of five monomeric mo
 
 Using the [AlphaFold3 server](https://alphafoldserver.com/), as previously detailed, structural modeling was performed.Additionally, guided by structural homology suggesting potential metal dependency, a supplementary prediction was executed incorporating a Calcium ion ($Ca^{2+}$) to evaluate the Holo-complex. However, to maintain a standardized baseline across all modeling tools (which lacked ligand prediction capabilities), the Apo (ligand-free) trimer was strictly selected as the primary model for the comprehensive stereochemical evaluation.
 
-To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1, ORAI 1.
+To analyze the protein 2 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1, ORAI 1 (@sec-prot1-methods).
 
 #### **Results**
 
