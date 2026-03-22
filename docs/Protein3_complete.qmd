@@ -179,7 +179,7 @@ The high-confidence scores assigned to GO terms for ATP binding (GO:0005524) and
 
 ### Homology based - Modeller
 
-Due to the lack of an experimental structure for the target protein, the Modeller algorithm was selected for structural prediction. 
+Due to the lack of an experimental structure for the target protein Osm1, the Modeller algorithm was selected for structural prediction. 
 
 #### **Methods**
 To ensure the highest modeling accuracy, six high-quality templates were identified based on sequence similarity and high coverage, as detailed in @tbl-PDB-codes-homology. These templates correspond to X-ray diffraction-resolved structures from various organisms. To enhance alignment resolution and similarity detection, a specialized template search was conducted using two iterations of PSI-BLAST. The selection process strictly prioritized templates maintaining at least 50% Sequence Identity and a Query Coverage (QCoverage) exceeding 90%, ensuring a robust structural foundation for the homology modeling process.
