@@ -70,7 +70,7 @@ The top-ranked Model 0 was selected as the reference structure based on its supe
 | **Has Clash** | 0.0 | 0.0 | Number of steric clashes detected |
 | **Recycles** | 10.0 | 10.0 | Number of internal refinement cycles used |
 
-: Structural quality metrics obtained by AlphaFold3 for de monomer and the dimer. {#tbl-prot3-af3}
+: Structural quality metrics obtained by AlphaFold3 for the dual-phosphorilated monomer and the mono-phosphorilated dimer. {#tbl-prot3-af3}
 
 To analyze the effect of phosphorylation on the dimerization interface, the distance between specific residues across the chains was quantified. We employed the command `distance dist_171P_CA, (Osm1Dimer_171P_0 and chain A and resi 171 and name CA), (Osm1Dimer_171P_0 and chain B and resi 171 and name CA)` to measure the inter-chain separation between the $C_{\alpha}$ of residues 171 and 173.
 
