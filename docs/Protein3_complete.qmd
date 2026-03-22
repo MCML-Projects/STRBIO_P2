@@ -89,7 +89,7 @@ The resulting data, presented in @tbl-distances-171P-173P, show a similar distan
 : Distance (Å) between the $C_{\alpha}$ atoms of residues 171 and 173 for chains A and B in the modeled MoOsm1 structure.
 {#tbl-distances-171P-173P}
 
-Finally, the stereochemical quality of the AF3 mono-phosphorylated model was evaluated. The Ramachandran plots (@fig-Ramachandran-plots), obtained through the Swiss-Model assessment tool, shows that the vast majority of residues fall within the favored regions, confirming high stereochemical quality. The few observed outliers are primarily located in flexible loop regions or correspond to Glycine residues, which are inherently more flexible due to the absence of a side chain.
+Finally, the stereochemical quality of the AF3 mono-phosphorylated model was evaluated. The Ramachandran plots (@fig-Ramachandran-plots), obtained through the [Swiss-Model assessment](https://swissmodel.expasy.org/assess) tool, shows that the vast majority of residues fall within the favored regions, confirming high stereochemical quality. The few observed outliers are primarily located in flexible loop regions or correspond to Glycine residues, which are inherently more flexible due to the absence of a side chain.
 
 ::: {#fig-Ramachandran-plots layout-ncol=3}
 ![General Ramachandran plot](/pics/Protein3/Monomer_BothP/RamachandranPlot_AF3MonPP.png){#fig-RamachandranPlotOsm1MonoPP}
