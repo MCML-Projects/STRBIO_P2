@@ -53,11 +53,11 @@ The structural evaluation of MoOsm1 across different phosphorylation states show
 
 For the dual-phosphorylated monomer (@fig-P3-Osm1Mono-bothP-AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
-![Monomer structure modeled with AF3 visualization. The coloring color code follows next code:  (Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50)](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig-P3-Osm1Mono-bothP-AFcolored}
+![**Dual-phosphorylated monomeric structure modeled with AF3.** The structures (models 0, 1, 2, 3, 4) are colored according to the pLDDT confidence score: dark blue (pLDDT > 90), cyan (70 < pLDDT < 90), yellow (50 < pLDDT < 70), and orange (pLDDT < 50). The phosphate groups are highlighted in red.](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig-P3-Osm1Mono-bothP-AFcolored}
 
 The dimeric models (@fig-P3-dimer-171P-AFcolored) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.
 
-![Dimer structure modeled with AF3 visualization. The coloring color code follows next code: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange/Red, pLDDT < 50)](/pics/Protein3/Dimer_171P/dimer_T171P_red.png){#fig-P3-dimer-171P-AFcolored}
+![**Dual-phosphorylated monomeric structure modeled with AF3.** The structures (models 0, 1, 2) are colored according to the pLDDT confidence score: dark blue (pLDDT > 90), cyan (70 < pLDDT < 90), yellow (50 < pLDDT < 70), and orange (pLDDT < 50). The phosphate groups are highlighted in red.](/pics/Protein3/Dimer_171P/dimer_T171P_red.png){#fig-P3-dimer-171P-AFcolored}
 
 The top-ranked Model 0 was selected as the reference structure based on its superior convergence and global scoring. The key validation parameters, are summarized in @tbl-prot3-af3.
 
