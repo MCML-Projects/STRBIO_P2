@@ -15,7 +15,7 @@ However, subsequent homology analysis (see Swiss-ModeL section, @sec-swissmodel-
 
 ##### AlphaFold 2 (Monomer)
 
-For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed and the execution parameters stablished where: `num_relax = 1`, `template_mode: pdb100`, `msa_mode: mmseqs2_uniref_env`, `relax_max_iterations = 200`, `max_msa: auto`, `num_seeds = 1`, `use_dropout = false`. Also,  since no information regarding the quaternary structure was available, the following strategic parameters were applied:
+For the initial prediction of Sequence 2, the AlphaFold2 Deep Learning protocol was employed and the execution parameters established were: `num_relax = 1`, `template_mode: pdb100`, `msa_mode: mmseqs2_uniref_env`, `relax_max_iterations = 200`, `max_msa: auto`, `num_seeds = 1`, `use_dropout = false`. Also,  since no information regarding the quaternary structure was available, the following strategic parameters were applied:
 - `model_type = alphafold2_ptm` optimized option for the folding of single chains (monomers). 
 - `num_recycles = 6` The rationale for this value lies in the results of our prior 1D topological analysis. Having detected an intrinsically disordered region (IDR), more refinement cycles facilitate the structural convergence of these highly flexible zones. Being a single chain, this increase did not compromise computational feasibility.
 
