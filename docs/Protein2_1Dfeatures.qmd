@@ -2,7 +2,7 @@
 The primary sequence of Protein 2 (624 aa) from Oscillospiraceae suggests its role as a secreted carbohydrate-degrading enzyme. Unlike integral membrane proteins, its architecture points towards a highly structured catalytic core flanked by flexible regions, essential for operating in the extracellular or periplasmic space to metabolize complex plant polysaccharides from the host's diet.
 
 #### **Transmembrane topology (DeepTMHMM)**
-In order to predict the transmembrane topology of Protein 2, the server of DeepTMHMM was used as it is a well-known deep-learning based tool designed to identify transmembrane helices and signal peptides from the amino acid sequence.
+In order to predict the transmembrane topology of Protein 2, the server of [DeepTMHMM](https://dtu.biolib.com/DeepTMHMM) was used as it is a well-known deep-learning based tool designed to identify transmembrane helices and signal peptides from the amino acid sequence.
 
 The analysis revealed a complete absence of Transmembrane Regions (TMRs). Instead, a well-defined N-terminal signal peptide was identified spanning residues 1 to 55. The remaining sequence (residues 56-624) is predicted to be located on the outside (extracellular space). This topology confirms that the target is not a membrane-resident protein, but rather a secreted molecule whose signal peptide is cleaved prior to its functional maturation (@fig-DeepTMHMM-Protein2).
 
