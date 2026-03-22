@@ -1,6 +1,6 @@
 ## Protein 1: ORAI1
 
-[ORAI1](https://www.uniprot.org/uniprotkb/Q96D31/entry) is the essential pore-forming subunit of the Store-Operated Calcium (SOC) channel, specifically the Calcium Release-Activated Calcium (CRAC) channel @Yeung2020. Located in the plasma membrane, it mediates highly selective Ca2+ influx triggered by the depletion of endoplasmic reticulum calcium stores,supportin esential cell processes @Derler2012.
+[ORAI1](https://www.uniprot.org/uniprotkb/Q96D31/entry) is the essential pore-forming subunit of the Store-Operated Calcium (SOC) channel, specifically the Calcium Release-Activated Calcium (CRAC) channel @Yeung2020. Located in the plasma membrane, it mediates highly selective Ca2+ influx triggered by the depletion of endoplasmic reticulum calcium stores, supporting esential cell processes @Derler2012.
 
 Each ORAI1 subunit contains four transmembrane domains connected by two extracellular loops, one intracellular loop, and two cytosolic strands (N- and C- terminus) [@Derler2012; @Tiffner2021]. The functional ORAI1 channel operates as a hexameric complex, with the central pore formed by six transmembrane domains, critical for gating and stability @Tiffner2021. ORAI1 is part of a three-isoform family (ORAI1-3) with conserved topology but distinct regulatory profiles @Tiffner2021. Heteromeric assemblies (ORAI1/ORAI2 hexamer or ORAI1/ORAI3 pentamer) exhibit reduced calcium sensitivity and slower inactivation compared  to the homomer @Derler2012.
 
