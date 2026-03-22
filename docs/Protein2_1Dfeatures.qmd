@@ -9,14 +9,14 @@ The analysis revealed a complete absence of Transmembrane Regions (TMRs). Instea
 ![DeepTMHMM Most Likely Topology and Posterior probabilities for Protein 2](/pics/Protein2/plot_prediction_protein2.png){#fig-DeepTMHMM-Protein2}
 
 #### **Intrinsic disorder prediction (IUPred3)**
-To predict the propensity of each amino acid to be located in intrinsically disordered regions, IUPred3 was used. The results are shown in @fig-IUPred3-Protein2.
+To predict the propensity of each amino acid to be located in intrinsically disordered regions, [IUPred3](https://iupred3.elte.hu/) was used. The results are shown in @fig-IUPred3-Protein2.
 
 The prediction highlighted two main regions of intrinsic disorder. The most prominent peak (score > 0.8) occurs between residues 60 and 85, immediately following the signal peptide cleavage site, likely acting as a highly flexible linker. A secondary disordered loop was predicted around residues 470-500. Identifying these flexible regions is crucial, as they are expected to display low confidence scores (e.g., low pLDDT) in subsequent Deep Learning 3D models, reflecting their natural structural flexibility rather than an algorithm failure.
 
 ![IUPred3 Intrinsic disorder regions prediction for Protein 2](/pics/Protein2/plot_disorded_protein2_iupred3.png){#fig-IUPred3-Protein2}
 
 #### **Functional annotation and domain architecture (InterProScan)**
-To infer the biological role and structural domains of this uncharacterized protein, InterProScan was utilized as an additional 1D sequence analysis tool.
+To infer the biological role and structural domains of this uncharacterized protein, [InterProScan](https://www.ebi.ac.uk/interpro/about/interproscan/) was utilized as an additional 1D sequence analysis tool.
 
 The analysis yielded highly informative matches. A highly stable, structured central domain (residues 152-392) was confidently annotated as belonging to the Pectate Lyase family (Pectate_lyase_3 / Pectin lyase-like) @fig-InterPro-Protein2. Interestingly, structural domain matches corresponding to Phage tail proteins (Phage_tail_b) were also reported. Both families frequently share a similar structural architecture, specifically the parallel beta-helix fold, which is highly efficient at binding and cleaving complex carbohydrates.
 
