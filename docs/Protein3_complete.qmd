@@ -9,7 +9,7 @@ MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVI
 
 To capture the dual nature of MoHog1—which alternates between a monomeric inactive state and a dimeric active state regulated by Y173 phosphorylation—a multi-platform approach was employed. AlphaFold 3 was selected for its superior accuracy in predicting the activation loop's local environment, while Modeller allowed for template-driven constraints to explore the monomeric interface based on experimental homologs. I-TASSER was selected due to its hybrid methodology, which combines threading and ab initio modeling. Furthermore, I-TASSER was also employed to determine solvent accessibility (ASA), providing a comparative baseline against NetSurfP-3.0 result. 
 
-### Deep Learning (AlphaFold3)
+### Deep Learning - AlphaFold3
 
 Although the structural analysis could have been performed using AlphaFold 2 by employing phosphomimetic mutations—such as the Y173D substitution used in *in vivo* experiments to demonstrate the impact of phosphorylation—this approach has inherent limitations. While aspartic acid partially mimics the negative charge of a phosphorylated tyrosine, it remains a surrogate that does not fully capture the specific steric and chemical properties of a true phosphate group. Consequently, AlphaFold 3 was selected for this study, as it has been specifically trained on datasets containing Post-Translational Modifications (PTMs). This allows for a more biophysically accurate representation of the monomeric state of MoOsm1, providing deeper insights into the precise structural hindrances and conformational changes triggered by actual phosphorylation at the Y173 position.
 
@@ -29,21 +29,27 @@ The TGY activation motif was specifically isolated for detailed inspection by cr
 
 The structural evaluation of MoOsm1 across different phosphorylation states shows that all models exceed the 0.5 threshold for the predicted Template Modeling (pTM) score, confirming that the global kinase fold was correctly predicted in all cases (@tbl-pTM). However, a significant disparity was observed in local confidence, the doubly phosphorylated monomer (Thr171P/Thr173P) achieved a near-native score of 0.87, whereas the other monomeric and dimeric variants yielded lower values ranging from 0.53 to 0.58 (@tbl-ipTM). Regarding the interface predicted Template Modeling (ipTM) scores, all results remained significantly below the 0.6 threshold. Specifically, the Monomer_171P variant returned a value of 0.18, identifying it as a computational artifact of the multimeric protocol, while the dimeric models reached only 0.22 and 0.19, indicating a lack of structural consistency in the predicted relative orientation of the subunits.
 
-| ipTM | Monomer | Dimer |
-|------|--------|-------|
-| 171P | 0.18 | 0.22 |
-| 171P/173P | - | 0.19 |
+::: {style="max-width: 60%; margin: auto;"}
 
-: Interface predicted Template Modeling (ipTM) scores for monomeric and dimeric MoOsm1 phosphorylation states.
-{#tbl-ipTM}
-
-| pTM | Monomer | Dimer |
-|------|--------|-------|
+| Phosphorilation states | Monomer | Dimer |
+|------|------|------|
 | 171P | 0.53 | 0.58 |
 | 171P/173P | 0.87 | 0.53 |
 
 : Predicted Template Modeling (pTM) scores for monomeric and dimeric MoOsm1 variants.
 {#tbl-pTM}
+:::
+
+::: {style="max-width: 60%; margin: auto;"}
+
+| Phosphorilation states | Monomer | Dimer |
+|------|------|------|
+| 171P | 0.18 | 0.22 |
+| 171P/173P | - | 0.19 |
+
+: Interface predicted Template Modeling (ipTM) scores for monomeric and dimeric MoOsm1 phosphorylation states.
+{#tbl-ipTM}
+:::
 
 For the dual-phosphorylated monomer (@fig-P3-Osm1Mono-bothP-AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
@@ -89,7 +95,7 @@ In contrast, the dimeric models (@fig-P3-dimer-171P-AFcolored) exhibited a signi
 Regarding the results obtained (@tbl-prot3-af3), the ranking score of 0.89 for the monomer indicates very high confidence in the predicted structure. In contrast, the dimer shows a much lower ranking score (0.30), suggesting that the overall prediction is significantly less robust in the oligomeric state. The pTM value of 0.87 for the monomer further supports the reliability of the global fold. In the same line, the ipTM value of 0.22 for the dimer indicates weak confidence in the predicted interface between the two subunits, suggesting that the inter-chain interactions are not consistently resolved by the algorithm.
 It is also noteworthy that the fraction of disordered residues is very low in both cases (0.04 for the monomer and 0.03 for the dimer), indicating that most of the structure is predicted to adopt a stable folded conformation. In addition, no steric clashes were detected in either model, confirming that the atomic geometry of the structures is physically plausible.
 
-### I-Tasser
+### Threading method - I-Tasser
 
 [I-TASSER](https://aideepmed.com/I-TASSER/) was selected for its robust fragment assembly approach guided by threading techniques, a methodology that enables the prediction of protein structures even when close homologs are limited (@Zheng2021, @Zhang2017, @Yang2015). While more computationally intensive than AlphaFold, it offers significant advantages for enzymes like kinases due to its specialized modeling of active sites and functional domains. Furthermore, the integration of C-I-TASSER provides essential confidence scores and structural templates that validate the predicted models, making it a highly reliable tool for targets where precision in functional regions is critical
 
@@ -156,7 +162,7 @@ The structural and functional predictions obtained through COFACTOR, COACH, and 
 
 The consensus GO term prediction assigns high-confidence scores to ATP binding (GO:0005524, 0.95) and MAP kinase activity (GO:0004708, 0.87) as the primary molecular functions. These comprehensive annotations corroborate the structural findings, confirming that the MoOsm1 model accurately represents a functional protein kinase involved in signal transduction. Despite the discrepancy between the predicted solvent accessibility (which do not align with the predictions generated by NetSurfP) and the expected exposure of the activation loop, the remaining functional annotations show high consistency with the known biological role of MoOsm1
 
-### Modeller
+### Homology based - Modeller
 
 Due to the lack of an experimental structure for the target protein, the Modeller algorithm was selected for structural prediction. 
 
