@@ -12,7 +12,7 @@ The analysis classified ORAI1 as a transmembrane protein containing four transme
 In adittion, both the N-terminal (residues 92-105) and the C-terminal (residues 256-301) regions, and the loop connecting TM2-TM3, are located in the cytoplasmic side, whereas the loops that links TM1-TM2 an TM3-TM4 are predicted to be located in the extracellular side.
 This topology matches with the known organization of ORAI1 in the membrane and is related with its function as the pore of the CRAC channel [@prakriya2006; @hou2012].
 
-The high posterior probabilities observed for all transmembrane segments (@fig-DeepTMHMM-ORAI1) indicate a good prediction, this means that this regions are likely to be prediced with higher confidence than the loops regions.
+The high posterior probabilities observed for all transmembrane segments (@fig-DeepTMHMM-ORAI1) indicate a good prediction, this means that this regions are likely to be predicted with higher confidence than the loops regions.
 
 ![DeepTMHMM Most Likely Topology and Posterior probabilities for ORAI1](pics/ORAI1/ORAI1_DeepTMHMM.png){#fig-DeepTMHMM-ORAI1}
 
