@@ -14,7 +14,7 @@ This topology matches with the known organization of ORAI1 in the membrane and i
 
 The high posterior probabilities observed for all transmembrane segments (@fig-DeepTMHMM-ORAI1) indicate a good prediction, this means that this regions are likely to be predicted with higher confidence than the loops regions.
 
-![DeepTMHMM Most Likely Topology and Posterior probabilities for ORAI1](pics/ORAI1/ORAI1_DeepTMHMM.png){#fig-DeepTMHMM-ORAI1}
+![**DeepTMHMM Most Likely Topology and Posterior probabilities for ORAI1**](pics/ORAI1/ORAI1_DeepTMHMM.png){#fig-DeepTMHMM-ORAI1}
 
 #### **Secondary structure prediction (PSIPRED)**
 
@@ -23,13 +23,13 @@ Secondary structure prediction of the ORAI1 protein was performed using [PSIPRED
 The analysis, represented in @fig-PSIPRED-ORAI1, shows that the N-terminal portion of the protein is composed of coil structures, suggesting that it corresponds to a cytoplasmic segment. In contrast, the central part of the sequence contains four well-defined α-helical regions connected by short coil segments. These helices match with the transmembrane regions previously predicted by DeepTMHMM, whereas the coil regions correspond to extracellular and intracellular loops. 
 Finally, the C-terminal region is also predicted to adopt mainly coil conformations, supporting its role as a flexible cytoplasmic domain involved in regulatory interactions.
 
-![ORAI1 secondary structure prediction by PSIPRED](pics/ORAI1/ORAI1_PSIPRED.png){#fig-PSIPRED-ORAI1}
+![**ORAI1 secondary structure prediction by PSIPRED**](pics/ORAI1/ORAI1_PSIPRED.png){#fig-PSIPRED-ORAI1}
 
 #### **Intrinsic disorder prediction (IUPred3)**
 
 To predict the propensity of each amino acid to be located in intrinsically disordered regions, [IUPred3](https://iupred3.elte.hu/) was used. The results are shown in @fig-IUPred3-ORAI1.
 
-![Orai1 intrinsic disorder prediction by IUPred3](pics/ORAI1/ORAI1_IUPred3.png){#fig-IUPred3-ORAI1}
+![**Orai1 intrinsic disorder prediction by IUPred3**](pics/ORAI1/ORAI1_IUPred3.png){#fig-IUPred3-ORAI1}
 
 The N-terminal region is highly flexible, the central region alternates structured transmembrane domains with flexible loops, and the C-terminal region shows moderate flexibility, consistent with its regulatory role.
 
@@ -37,7 +37,7 @@ The N-terminal region is highly flexible, the central region alternates structur
 
 Additional structural features were analysed using [NetSurfP](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/) to evaluate solvent accessibility along the ORAI1 sequence (@fig-NetSurfP-ORAI1). 
 
-![Orai1 solvent accesibility prediction by NetSurfP"](/pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
+![**Orai1 solvent accesibility prediction by NetSurfP**](/pics/ORAI1/ORAI1_NetSurfP.png){#fig-NetSurfP-ORAI1}
 
 The N-terminal region is highly solvent-exposed, indicating a flexible cytoplasmic segment. The central transmembrane regions are buried and have a low accesibility values, with short exposed loops connecting them. The C-terminal region shows higher accessibility and lower helix propensity, supporting its role as a flexible regulatory cytoplasmic domain. Additionaly, these positions also display very high α-helix probabilities.
 Between these helices, short regions with increased solvent accessibility are observed, which likely correspond to loops connecting the transmembrane segments. Finally, the C-terminal region again shows higher accessibility and lower helix propensity, supporting its role as a cytoplasmic and flexible regulatory domain.

@@ -48,6 +48,6 @@ These results are consistent with the previous evaluations based on QMEANDisCo a
 
 ![*AlphaFold3**. Colored by secondaty structure](/pics/Protein3/FinalPics_AF3/AF3_MonomerBothP_final_ss.png){#b}
 
-Final AlphaFold3 model of the Osm1 monomeric kinase. (a) Side view of the structure colored by chains, showing the monomer subunit. (b) Side view colored by secondary structure, where α-helices are shown in navy blue, β-sheets in green, and loops or disordered regions in red.
+**Final AlphaFold3 model of the Osm1 monomeric kinase.** (a) Side view of the structure colored by chains, showing the monomer subunit. (b) Side view colored by secondary structure, where α-helices are shown in navy blue, β-sheets in green, and loops or disordered regions in red.
 :::
 
