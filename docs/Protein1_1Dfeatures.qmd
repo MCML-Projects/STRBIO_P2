@@ -9,7 +9,7 @@ Furthermore, extracellular loops provide key regulatory sites: the first loop (T
 In order to predict the transmembrane topology of ORAI1, the [DeepTMHMM server](https://dtu.biolib.com/DeepTMHMM) was used, as is a well-known deep-learning-based tool designed specifically to identify transmembrane helices with high accuracy from the aminoacid sequence. 
 
 The analysis classified ORAI1 as a transmembrane protein containing four transmembrane helices, consistent with the topology described for CRAC channel subunits. Specifically, the helices were located at residues 92-105, 120-140, 175-196 and 234-255. 
-In adittion, both the N-terminal (residues 92-105) and the C-terminal (residues 256-301) regions, and the loop connecting TM2-TM3, are located in the cytoplasmic side, whereas the loops that links TM1-TM2 an TM3-TM4 are predicted to be located in the extracellular side.
+In adittion, both the N-terminal (residues 92-105) and the C-terminal (residues 256-301) regions, and the loop connecting TM2-TM3, are located in the cytoplasmic side, whereas the loops that link TM1-TM2 and TM3-TM4 are predicted to be located on the extracellular side.
 This topology matches with the known organization of ORAI1 in the membrane and is related with its function as the pore of the CRAC channel [@prakriya2006; @hou2012].
 
 The high posterior probabilities observed for all transmembrane segments (@fig-DeepTMHMM-ORAI1) indicate a good prediction. This means that these regions are likely to be predicted with higher confidence than the loops regions.
