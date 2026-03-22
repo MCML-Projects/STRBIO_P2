@@ -125,7 +125,7 @@ To visualize the predicted models, the hexameric assembly was manually reconstru
 
 ESMFold provides a confidence plot (@fig-confidenceplot-ESMFold) composed of three complementary panels that allow evaluation of both the structural reliability and the predicted inter-chain interactions.
 
-![ORAI1 Confidence Plot](pics/ORAI1/ORAI1_confidenceplot_ESMFold.png){#fig-confidenceplot-ESMFold}
+![**ORAI1 Confidence Plot**](pics/ORAI1/ORAI1_confidenceplot_ESMFold.png){#fig-confidenceplot-ESMFold}
 
 The predicted model by ESMFold is shown in @fig-orai1-ESMfold-structure.
 
