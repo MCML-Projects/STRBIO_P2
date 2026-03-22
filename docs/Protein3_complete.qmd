@@ -92,13 +92,13 @@ The resulting data, presented in @tbl-distances-171P-173P, show a similar distan
 Finally, the stereochemical quality of the AF3 mono-phosphorylated model was evaluated. The Ramachandran plots (@fig-Ramachandran-plots), obtained through the Swiss-Model assessment tool, shows that the vast majority of residues fall within the favored regions, confirming high stereochemical quality. The few observed outliers are primarily located in flexible loop regions or correspond to Glycine residues, which are inherently more flexible due to the absence of a side chain.
 
 ::: {#fig-Ramachandran-plots layout-ncol=3}
-![](/pics/Protein3/Monomer_BothP/RamachandranPlot_AF3MonPP.png){#fig-RamachandranPlotOsm1MonoPP}
+![General Ramachandran plot](/pics/Protein3/Monomer_BothP/RamachandranPlot_AF3MonPP.png){#fig-RamachandranPlotOsm1MonoPP}
 
-![](/pics/Protein3/Monomer_BothP/Gly_RamachandranPlot_AF3MonPP.png){#fig-Gly-RamachandranPlotOsm1MonoPP}
+![Glycine Ramachandran plot](/pics/Protein3/Monomer_BothP/Gly_RamachandranPlot_AF3MonPP.png){#fig-Gly-RamachandranPlotOsm1MonoPP}
 
-![](/pics/Protein3/Monomer_BothP/Pro_RamachandranPlot_AF3MonPP.png){#fig-Pro-RamachandranPlotOsm1MonoPP}
+![Proline Ramachandran plot](/pics/Protein3/Monomer_BothP/Pro_RamachandranPlot_AF3MonPP.png){#fig-Pro-RamachandranPlotOsm1MonoPP}
 
-**Ramachandran plot of the MoOsm1 dual-phosphorylated monomer predicted by AlphaFold3.** The plot illustrates the stereochemical quality of the model by analyzing the backbone dihedral angles $\Phi$ and $\Psi$.  (a) General Ramachandran plot. The dark green areas represent the favored regions, corresponding to the most energetically stable conformations for $\alpha$-helices and $\beta$-sheets.The individual points represent the specific residues of the protein; their high density within the colored regions confirms that the model maintains a high-quality, native-like geometry. Residues located in the lighter green or white areas typically correspond to flexible loops, which possess higher conformational freedom. (b) Glycine Ramachandran plot. The dark green areas represent the favored regions, corresponding to the most energetically stable conformations for glycine residues.The individual points represent the glycine residues (c) Proline Ramachandran plot. The individual points represents the proline residues. The dark green areas represent the favored regions, corresponding to the most energetically stable conformations for proline residues.
+**Ramachandran plot of the MoOsm1 dual-phosphorylated monomer predicted by AlphaFold3.** The plot illustrates the stereochemical quality of the model by analyzing the backbone dihedral angles $\Phi$ and $\Psi$. (a) The dark green areas represent the favored regions, corresponding to the most energetically stable conformations for $\alpha$-helices and $\beta$-sheets.The individual points represent the specific residues of the protein; their high density within the colored regions confirms that the model maintains a high-quality, native-like geometry. Residues located in the lighter green or white areas typically correspond to flexible loops, which possess higher conformational freedom. (b) The dark green areas represent the favored regions, corresponding to the most energetically stable conformations for glycine residues.The individual points represent the glycine residues (c)The individual points represents the proline residues. The dark green areas represent the favored regions, corresponding to the most energetically stable conformations for proline residues.
 
 :::
 
