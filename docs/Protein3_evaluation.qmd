@@ -16,9 +16,9 @@ Finally, the results of the VoroMQA evaluation are summarized in the @tbl-model-
 
 | Model | Global score | 
 |--------------|--------------|
-| AlphaFold 3 | 0.536 |
-| Modeller | 0.515 | 
-| I-TASSER | 0.329 |
+| **AlphaFold 3** | 0.536 |
+| **Modeller** | 0.515 | 
+| **I-TASSER** | 0.329 |
 
 : Comparison of the structural quality and interface scores obtained for the models generated with AlphaFold3, Modeller and I-TASSER for Osm1 (MoHog1). {#tbl-model-comparison-Osm1}
 
