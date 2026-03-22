@@ -13,7 +13,7 @@ The PyMOL pair-wise alignments yielded profound structural insights into the lim
 Finally, comparing the two AI methods against each other (ESMFold vs. AF2 full monomers) yielded a high global RMSD of 7.11 Å, largely driven by the highly flexible 85-residue tail diverging into different random coil trajectories. When restricted strictly to the rigid catalytic core, the RMSD decreased to 5.42 Å. This 5.42 Å variance beautifully illustrates the inherent algorithmic differences between the models. AlphaFold utilizes deep evolutionary co-variation, which is crucial for defining the exact pitch, twist, and curvature of highly repetitive structures like parallel beta-helices. In contrast, ESMFold correctly predicts the general beta-helix topology without evolutionary databases but diverges in the fine-grained geometric twist.
 
 
-The results of the VoroMQA evaluation are summarized in the @tbl-model-comparison-protein2.
+The results of the [VoroMQA](https://bioinformatics.lt/wtsam/voromqa) evaluation are summarized in the @tbl-model-comparison-protein2.
 
 | Model | Global score | Interface i_score | i_energy |
 |------|-------------|------------------|---------|

@@ -12,7 +12,7 @@ Pairwise structural alignments in PyMOL strongly supported these results. AlphaF
 
 Based on this comprehensive evaluation, AlphaFold3 emerges as the most reliable model. It not only shows the highest global stereochemical quality (QMEANDisCo 0.77) and an almost perfect structural agreement with the homology model (RMSD 1.06 Å), but also provides an important biological advantage: the ability to accurately model post-translational modifications. Unlike Modeller, which failed to properly resolve the flexible TXY activation loop due to missing template coordinates, AlphaFold3 successfully modeled the dual-phosphorylated state (pT171/pY173) without structural bias. Therefore, the AlphaFold3 dual-phosphorylated monomer was selected as the final structural model for MoOsm1/MoHog1.
 
-Finally, the results of the VoroMQA evaluation are summarized in the @tbl-model-comparison-Osm1.
+Finally, the results of the [VoroMQA](https://bioinformatics.lt/wtsam/voromqa) evaluation are summarized in the @tbl-model-comparison-Osm1.
 
 | Model | Global score | 
 |--------------|--------------|
