@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>protein3_complete</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Protein3_complete_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Protein3_complete_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Protein3_complete_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Protein3_complete_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Protein3_complete_files/libs/quarto-html/popper.min.js"></script>
+<script src="Protein3_complete_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Protein3_complete_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Protein3_complete_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Protein3_complete_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Protein3_complete_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Protein3_complete_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Protein3_complete_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sequence used to model MoOsm1/MoHog1 is:</p>
+<p><strong>sp|Q9UV51|HOG1_PYRO7 Mitogen-activated protein kinase HOG1</strong> OS=Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) OX=242507 GN=HOG1 PE=1 SV=1</p>
+<p>MAEFVRAQIFGTTFEITSRYSDLQPVGMGAFGLVCSARDQLTNQNVAIKKIMKPFSTPVLAKRTYRELKLLKHLKHENVISLSDIFISPLEDIYFVTELLGTDLHRLLTSRPLEKQFIQYFLYQIMRGLKYVHSAGVVHRDLKPSNILVNENCDLKICDFGLARIQDPQMTGYVSTRYYRAPEIMLTWQKYDVEVDIWSAGCIFAEMLEGKPLFPGKDHVNQFSIITELLGTPPDDVINTIASENTLRFVKSLPKRERQPLKNKFKNADPSAIDLLERMLVFDPKKRITATEALAHEYLTPYHDPTDEPIAEEKFDWSFNDADLPVDTWKIMMYSEILDYHNAEAGMQQMDDQFTGQ</p>
+</div>
+</div>
+<p>To capture the dual nature of MoHog1—which alternates between a monomeric inactive state and a dimeric active state regulated by Y173 phosphorylation—a multi-platform approach was employed. AlphaFold 3 was selected for its superior accuracy in predicting the activation loop’s local environment, while Modeller allowed for template-driven constraints to explore the monomeric interface based on experimental homologs. I-TASSER was selected due to its hybrid methodology, which combines threading and ab initio modeling. Furthermore, I-TASSER was also employed to determine solvent accessibility (ASA), providing a comparative baseline against NetSurfP-3.0 result.</p>
+<section id="deep-learning---alphafold3" class="level3">
+<h3 class="anchored" data-anchor-id="deep-learning---alphafold3">Deep Learning - AlphaFold3</h3>
+<p>Although the structural analysis could have been performed using AlphaFold 2 by employing phosphomimetic mutations—such as the Y173D substitution used in <em>in vivo</em> experiments to demonstrate the impact of phosphorylation—this approach has inherent limitations. While aspartic acid partially mimics the negative charge of a phosphorylated tyrosine, it remains a surrogate that does not fully capture the specific steric and chemical properties of a true phosphate group. Consequently, AlphaFold 3 was selected for this study, as it has been specifically trained on datasets containing Post-Translational Modifications (PTMs). This allows for a more biophysically accurate representation of the monomeric state of MoOsm1, providing deeper insights into the precise structural hindrances and conformational changes triggered by actual phosphorylation at the Y173 position.</p>
+<p>Consequently, both states were modeled. Analysis of these models reveals two key structural requirements that must be met. First, in the unphosphorylated monomer, the activation site must be solvent-accessible to allow the upstream kinase to perform the phosphorylation. Additionally, in the unphosphorylated dimer, the TGY motif is expected to be buried within the complex interface, specifically at the protein-protein interaction site. This configuration explains why phosphorylation at this position prevents dimerization, as the addition of bulky, negatively charged phosphate groups would physically and energetically disrupt the assembly of the dimeric interface.</p>
+<section id="methods" class="level4">
+<h4 class="anchored" data-anchor-id="methods"><strong>Methods</strong></h4>
+<p>Using the <a href="https://alphafoldserver.com/">AlphaFold3 server</a>, structural modeling was performed for both the monomeric (<code>copies: 1</code>) and dimeric (<code>copies: 2</code>) states of the MoOsm1/MoHog1 protein. In all generated models, phosphorylation at Threonine 171 (T171) was maintained as a constant modification (PTM: <code>171T : Phosphothreonine</code>). Additionally, both the monomer and the dimer were modeled with and without the phosphorylation at Tyrosine 173 (Y173)(PTM: <code>173Y: O-Phospho-L-tyrosine</code> as PTM). While the phosphorylated dimeric state does not occur naturally in vivo, it was explicitly modeled to analyze how this specific post-translational modification (PTM) affects the structural integrity and regulation of the complex.</p>
+<p>This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of phosphate groups in the activation loop. Specifically, the phosphorylated dimer model was generated to examine the steric hindrance caused by the phosphate group at Y173, which is known to prevent stable dimerization. Conversely, the unphosphorylated monomer (at Y173) was modeled to establish the baseline localization of the TGY motif in its basal, yet T171-phosphorylated, state.</p>
+<p>The structural consistency of the models generated by AF3 was evaluated by comparing the five independent ranked outputs using a Root Mean Square Deviation (RMSD) threshold of &lt; 1 Å to define high-confidence convergence. To analyze the MoOsm1 structural models, a standardized PyMOL workflow was implemented, following the same evaluation protocol and modeling confidence standards established for the study of Protein 1 (ORAI1) (<strong>?@sec-prot1-methods</strong>).</p>
+<p>The TGY activation motif was specifically isolated for detailed inspection by creating a dedicated selection: <code>select Osm1Mono_bothP_TGY, Osm1Mono_bothP and resi 171+173</code>. To facilitate structural analysis, these residues were rendered as sticks with <code>show sticks, Osm1Mono_bothP_TGY</code> and highlighted in <code>color red, Osm1Mono_bothP_TGY</code>. Furthermore, the phosphate groups were emphasized by rendering phosphorus atoms as spheres with <code>show spheres, (Osm1Mono_bothP_TGY and name P)</code> and a scale adjustment of <code>set sphere_scale, 0.3, (Osm1Mono_bothP_TGY and name P)</code>.</p>
+</section>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results"><strong>Results</strong></h4>
+<p>The structural evaluation of MoOsm1 across different phosphorylation states shows that all models exceed the 0.5 threshold for the predicted Template Modeling (pTM) score, confirming that the global kinase fold was correctly predicted in all cases (<a href="#tbl-pTM" class="quarto-xref">Table&nbsp;1</a>). However, a significant disparity was observed in local confidence, the doubly phosphorylated monomer (Thr171P/Thr173P) achieved a near-native score of 0.87, whereas the other monomeric and dimeric variants yielded lower values ranging from 0.53 to 0.55 (<a href="#tbl-ipTM" class="quarto-xref">Table&nbsp;2</a>). Regarding the interface predicted Template Modeling (ipTM) scores, all results remained significantly below the 0.6 threshold. Specifically, the Monomer_171P variant returned a value of 0.18, identifying it as a computational artifact of the multimeric protocol, while the dimeric models reached only 0.22 and 0.19, indicating a lack of structural consistency in the predicted relative orientation of the subunits.</p>
+<div style="max-width: 60%; margin: auto;">
+<div id="tbl-pTM" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pTM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Predicted Template Modeling (pTM) scores for monomeric and dimeric MoOsm1 variants.
+</figcaption>
+<div aria-describedby="tbl-pTM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Phosphorilation states</th>
+<th>Monomer</th>
+<th>Dimer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>171P</td>
+<td>0.53</td>
+<td>0.55</td>
+</tr>
+<tr class="even">
+<td>171P/173P</td>
+<td>0.87</td>
+<td>0.53</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<div style="max-width: 60%; margin: auto;">
+<div id="tbl-ipTM" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ipTM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Interface predicted Template Modeling (ipTM) scores for monomeric and dimeric MoOsm1 phosphorylation states.
+</figcaption>
+<div aria-describedby="tbl-ipTM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Phosphorilation states</th>
+<th>Monomer</th>
+<th>Dimer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>171P</td>
+<td>0.18</td>
+<td>0.22</td>
+</tr>
+<tr class="even">
+<td>171P/173P</td>
+<td>-</td>
+<td>0.19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<p>For the dual-phosphorylated monomer (<a href="#fig-P3-Osm1Mono-bothP-AFcolored" class="quarto-xref">Figure&nbsp;1</a>), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.</p>
+<div id="fig-P3-Osm1Mono-bothP-AFcolored" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-P3-Osm1Mono-bothP-AFcolored-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-P3-Osm1Mono-bothP-AFcolored-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <strong>Dual-phosphorylated monomeric structure modeled with AF3.</strong> The structures (models 0, 1, 2, 3, 4) are colored according to the pLDDT confidence score: dark blue (pLDDT &gt; 90), cyan (70 &lt; pLDDT &lt; 90), yellow (50 &lt; pLDDT &lt; 70), and orange (pLDDT &lt; 50). The phosphate groups are highlighted in red.
+</figcaption>
+</figure>
+</div>
+<p>The dimeric models (<a href="#fig-P3-dimer-171P-AFcolored" class="quarto-xref">Figure&nbsp;2</a>) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.</p>
+<div id="fig-P3-dimer-171P-AFcolored" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-P3-dimer-171P-AFcolored-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/Dimer_171P/dimer_T171P_red.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-P3-dimer-171P-AFcolored-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: <strong>Dual-phosphorylated monomeric structure modeled with AF3.</strong> The structures (models 0, 1, 2) are colored according to the pLDDT confidence score: dark blue (pLDDT &gt; 90), cyan (70 &lt; pLDDT &lt; 90), yellow (50 &lt; pLDDT &lt; 70), and orange (pLDDT &lt; 50). The phosphate groups are highlighted in red.
+</figcaption>
+</figure>
+</div>
+<p>The top-ranked Model 0 was selected as the reference structure based on its superior convergence and global scoring. The key validation parameters, are summarized in <a href="#tbl-prot3-af3" class="quarto-xref">Table&nbsp;3</a>.</p>
+<div id="tbl-prot3-af3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prot3-af3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Structural quality metrics obtained by AlphaFold3 for the dual-phosphorilated monomer and the mono-phosphorilated dimer.
+</figcaption>
+<div aria-describedby="tbl-prot3-af3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Monomer value</th>
+<th>Dimer value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ranking Score</strong></td>
+<td>0.89</td>
+<td>0.3</td>
+<td>Overall confidence score of the model</td>
+</tr>
+<tr class="even">
+<td><strong>ipTM</strong></td>
+<td>Null</td>
+<td>0.22</td>
+<td>Interface predicted TM-score</td>
+</tr>
+<tr class="odd">
+<td><strong>pTM</strong></td>
+<td>0.87</td>
+<td>0.55</td>
+<td>Predicted TM-score for the global topology</td>
+</tr>
+<tr class="even">
+<td><strong>Fraction Disordered</strong></td>
+<td>0.04</td>
+<td>0.03</td>
+<td>Fraction of residues predicted as disordered</td>
+</tr>
+<tr class="odd">
+<td><strong>Has Clash</strong></td>
+<td>0.0</td>
+<td>0.0</td>
+<td>Number of steric clashes detected</td>
+</tr>
+<tr class="even">
+<td><strong>Recycles</strong></td>
+<td>10.0</td>
+<td>10.0</td>
+<td>Number of internal refinement cycles used</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>To analyze the effect of phosphorylation on the dimerization interface, the distance between specific residues across the chains was quantified. We employed the command <code>distance dist_171P_CA, (Osm1Dimer_171P_0 and chain A and resi 171 and name CA), (Osm1Dimer_171P_0 and chain B and resi 171 and name CA)</code> to measure the inter-chain separation between the <span class="math inline">\(C_{\alpha}\)</span> of residues 171 and 173.</p>
+<p>The resulting data, presented in <a href="#tbl-distances-171P-173P" class="quarto-xref">Table&nbsp;4</a>, show a similar distance between residues 171 and 173 in both the phosphorylated and unphosphorylated states. Although these findings support the fact that phosphorylation at residue 173 prevents dimerization, the results suggest that the presence of the phosphate group acts as a steric hindrance that likely affects the orientation or interaction of neighboring residues. However, this modification was expected to induce a global displacement of the protein backbone, specifically regarding the phosphorylated residues.</p>
+<div id="tbl-distances-171P-173P" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-distances-171P-173P-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Distance (Å) between the <span class="math inline">\(C_{\alpha}\)</span> atoms of residues 171 and 173 for chains A and B in the modeled MoOsm1 structure.
+</figcaption>
+<div aria-describedby="tbl-distances-171P-173P-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distance between <span class="math inline">\(C_{\alpha}\)</span> (Chain A- Chain B) [Å]</th>
+<th>Osm1 Dimer 171P</th>
+<th>Osm1 Dimer 171P and 173P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>171</strong></td>
+<td>31.2</td>
+<td>31.3</td>
+</tr>
+<tr class="even">
+<td><strong>173</strong></td>
+<td>24.8</td>
+<td>24.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="discussion" class="level4">
+<h4 class="anchored" data-anchor-id="discussion"><strong>Discussion</strong></h4>
+<p>The pTM and ipTM scores indicate that while the global kinase fold remains consistent, structural stability varies significantly with phosphorylation state (<a href="#tbl-pTM" class="quarto-xref">Table&nbsp;1</a>, <a href="#tbl-ipTM" class="quarto-xref">Table&nbsp;2</a>). The high reliability of the Thr171P/Tyr173P monomer suggests that the simultaneous presence of both phosphate groups is a critical stabilizing factor for the activation loop, yielding a robust and virtually identical conformational landscape across all iterations (<a href="#fig-P3-Osm1Mono-bothP-AFcolored" class="quarto-xref">Figure&nbsp;1</a>). Conversely, the lower scores for the monophosphorylated monomer and dimeric models reflect increased structural uncertainty, where the slightly higher pTM of the monophosphorylated dimer (0.55) suggests that the accumulation of four phosphate groups may introduce electrostatic or steric instabilities that the model cannot fully resolve.</p>
+<p>In contrast to the dual-phosphorilated monomer, the mono-phosphorilated dimeric models (<a href="#fig-P3-dimer-171P-AFcolored" class="quarto-xref">Figure&nbsp;2</a>) exhibit significant structural deviations in lower-ranked iterations, including a 30 Å shift that likely reflects a failure to consistently resolve the interface under the tension of the phosphate groups. Consequently, these computational results do not provide evidence that double phosphorylation enhances dimeric stability beyond experimental observations; instead, they suggest a highly dynamic or transient interaction, indicating that the overall modeling robustness for the dimer is substantially lower than that of the monomeric state.</p>
+<p>Focusing on the structural quality metrics obtained by AlphaFold3 (<a href="#tbl-prot3-af3" class="quarto-xref">Table&nbsp;3</a>), the ranking score of 0.89 for the monomer indicates very high confidence in the predicted structure. In contrast, the dimer shows a much lower ranking score (0.30), suggesting that the overall prediction is significantly less robust in the oligomeric state. The pTM value of 0.87 for the monomer further supports the reliability of the global fold. In the same line, the ipTM value of 0.22 for the dimer indicates weak confidence in the predicted interface between the two subunits, suggesting that the inter-chain interactions are not consistently resolved by the algorithm. It is also noteworthy that the fraction of disordered residues is very low in both cases (0.04 for the monomer and 0.03 for the dimer), indicating that most of the structure is predicted to adopt a stable folded conformation. In addition, no steric clashes were detected in either model, confirming that the atomic geometry of the structures is physically plausible.</p>
+</section>
+</section>
+<section id="threading-method---i-tasser" class="level3">
+<h3 class="anchored" data-anchor-id="threading-method---i-tasser">Threading method - I-Tasser</h3>
+<p><a href="https://aideepmed.com/I-TASSER/">I-TASSER</a> was selected for its robust fragment assembly approach guided by threading techniques, a methodology that enables the prediction of protein structures even when close homologs are limited (<span class="citation" data-cites="Zheng2021">@Zheng2021</span>, <span class="citation" data-cites="Zhang2017">@Zhang2017</span>, <span class="citation" data-cites="Yang2015">@Yang2015</span>). While more computationally intensive than AlphaFold, it offers significant advantages for enzymes like kinases due to its specialized modeling of active sites and functional domains. Furthermore, the integration of C-I-TASSER provides essential confidence scores and structural templates that validate the predicted models, making it a highly reliable tool for targets where precision in functional regions is critical</p>
+<p>In the specific case of MoOsm1, although several experimentally resolved homologs exist, sequence identities generally hover around 40%. While this level is acceptable for classical homology modeling, a threading-based approach was employed to gain an independent structural perspective. By integrating fragment-based ab initio folding, I-TASSER can better resolve regions where evolutionary divergence might lead to local structural variations. Additionally, the detailed Multiple Sequence Alignment (MSA) provided during the threading process allows for verification of the conserved TGY motif across selected templates, ensuring the structural integrity of this critical functional domain in the final model.</p>
+<section id="methods-1" class="level4">
+<h4 class="anchored" data-anchor-id="methods-1"><strong>Methods</strong></h4>
+<p>The structural modeling of the protein was conducted using the I-TASSER suite under its default parameters, allowing for an unbiased exploration of the conformational space. The process integrated LOMETS meta-threading for template identification with iterative Monte Carlo simulations for fragment assembly. By adhering to the server’s standardized protocols, the final models were refined through FG-MD and REMO, ensuring a high-confidence structural ensemble validated by their respective C-scores and estimated TM-scores.</p>
+</section>
+<section id="results-1" class="level4">
+<h4 class="anchored" data-anchor-id="results-1"><strong>Results</strong></h4>
+<p>The I-TASSER structural prediction for MoOsm1 yielded high-confidence results, particularly for the top two models. Model 2 exhibited the highest convergence (C-score = 0.44), closely followed by Model 1 (C-score = 0.35). The estimated TM-score of 0.76 ± 0.10 for the primary model confirms a high topological accuracy, significantly exceeding the 0.5 threshold for correct global folding. Given the sharp decline in confidence scores for Models 3 and 4, subsequent structural analysis was focused exclusively on the high-ranking models to ensure biological relevance.</p>
+<p>The local reliability of I-TASSER structural models is represented by the ResQ (Residue-specific Quality) by providing a statistical estimation of the distance error (in Ångströms) for each residue relative to its native position(which is estimated based on model convergence, consistency with structural templates, and threading uncertainty). Therefore, low values indicate high precision and confidence, while high values signal regions of greater structural uncertainty. Given that the estimated local accuracy threshold in the ResQ plot (<a href="#fig-Itasser_ResQ_graph" class="quarto-xref">Figure&nbsp;3 (a)</a>) is predominantly situated around 3 Å, this same value was established as the cutoff for the structural color-coding to ensure visual consistency between the quantitative graph and the 3D model. Although most of the predicted structure maintains a ResQ value near or below 3 Å, it rises drastically in the region corresponding to residues 170–180 and at the C-terminus of the sequence.</p>
+<p>Although ResQ and AlphaFold’s pLDDT are different metrics, a similar color scale has been implemented for visual consistency: marine (dark blue) represents the areas of highest reliability and orange indicates lower modeling quality (<a href="#fig-Itasser_ResQ" class="quarto-xref">Figure&nbsp;3 (b)</a>). To apply this representation in PyMOL, the following commands were used: <code>color marine, Itasser_model1</code>, <code>color lightteal, Itasser_model1 and b &gt; 3</code>, <code>color yellow, Itasser_model1 and b &gt; 5.5</code>, <code>color orange, Itasser_model1 and b &gt; 9</code>, and <code>color red, resi 171</code> to specifically highlight the position of interest.</p>
+<p>The B-factor measures the inherent thermal mobility of residues, here reported as a normalized profile (<span class="math inline">\(B = (B' - \mu) / \sigma\)</span>) to identify regions of relative flexibility or stability throughout the protein sequence (<a href="#fig-pnorm-Bfactor" class="quarto-xref">Figure&nbsp;3 (c)</a>).</p>
+<p>The predicted solvent accessibility values reveal a high proportion of buried residues throughout the protein structure (<a href="#fig-pred-solvacc" class="quarto-xref">Figure&nbsp;3 (d)</a>), with the functional TGY motif showing remarkably low accessibility scores, reaching values near -5.</p>
+<div id="fig-pnorm-Bfactor-p3" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pnorm-Bfactor-p3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pnorm-Bfactor-p3" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Itasser_ResQ_graph" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Itasser_ResQ_graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\models/Hog1/S822579_results_Itasser/RSQ_1.png" id="fig-Itasser_ResQ_graph" class="img-fluid figure-img" data-ref-parent="fig-pnorm-Bfactor-p3">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Itasser_ResQ_graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pnorm-Bfactor-p3" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-Itasser_ResQ" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-Itasser_ResQ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/I-tasser/Itasser_colored_byResQ.png" id="fig-Itasser_ResQ" class="img-fluid figure-img" data-ref-parent="fig-pnorm-Bfactor-p3">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-Itasser_ResQ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pnorm-Bfactor-p3" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-pnorm-Bfactor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-pnorm-Bfactor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/I-tasser/Predicted_Normalized_Bfactor.png" id="fig-pnorm-Bfactor" class="img-fluid figure-img" data-ref-parent="fig-pnorm-Bfactor-p3">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pnorm-Bfactor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pnorm-Bfactor-p3" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-pred-solvacc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-pred-solvacc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/I-tasser/Predicted_Solvent_Accesibility.png" id="fig-pred-solvacc" class="img-fluid figure-img" data-ref-parent="fig-pnorm-Bfactor-p3">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pred-solvacc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pnorm-Bfactor-p3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: <strong>Structural quality assessment of the MoOsm1 model</strong>. <strong>A</strong> Local accuracy profile generated by ResQ, showing the estimated distance error (Å) per residue. <strong>B</strong> Three-dimensional representation of the top-ranking I-TASSER model, color-coded by ResQ values to highlight regions of high (marine/lightteal) and low (orange) structural confidence. <strong>C</strong> Predicted normalized B-factor profile, indicating the relative vibrational motion and flexibility of each residue. <strong>D</strong>. Predicted Solvent Accessibility profile for MoOsm1. The X-axis represents the position of each amino acid in the protein sequence. The Y-axis displays normalized accessibility values (ranging from -5 to +4), where the original I-TASSER scores (0–9) were centered on 0. Values shown in blue indicate buried regions (original scores &lt; 5), while values in red highlight exposed residues (original scores &gt; 5).
+</figcaption>
+</figure>
+</div>
+<p>Among the top 10 threading templates identified by I-TASSER (<a href="#tbl-threading-templates-itasser" class="quarto-xref">Table&nbsp;5</a>), only the highest-scoring structural alignment (PDB entry: <a href="https://www.rcsb.org/structure/3ITZ">3itzA</a>) features a conserved TGY motif, whereas the remaining templates contain a TEY motif. Although this represents a single amino acid substitution, the glutamic acid (E) side chain is significantly bulkier than glycine (G) and possesses distinct physicochemical properties; such differences in the activation loop could impose structural constraints not present in our target, potentially leading to suboptimal modeling of the MoOsm1 local architecture.</p>
+<div id="tbl-threading-templates-itasser" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-threading-templates-itasser-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Top 10 threading templates identified by I-TASSER for the structural modeling of MoOsm1 (The presence of duplicate PDB entries in the top threading templates is attributed to the integration of multiple alignment algorithms, the generation of alternative structural alignments for the same template, and the distinct selection of either full crystals or specific polypeptide chains).
+</figcaption>
+<div aria-describedby="tbl-threading-templates-itasser-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Rank</th>
+<th style="text-align: center;">PDB Hit</th>
+<th style="text-align: center;">Iden1</th>
+<th style="text-align: center;">Iden2</th>
+<th style="text-align: center;">Cov</th>
+<th style="text-align: center;">Norm. Z-score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3itzA</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">3.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7e73A</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;">2.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5z33</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">0.69</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5z33</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">0.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3itzA</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">3.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">5z33</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">0.79</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">5z33A</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">9.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">7opmA</td>
+<td style="text-align: center;">0.46</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">4.04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">5z33A</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">3.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">5v60A</td>
+<td style="text-align: center;">0.48</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">5.89</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Functional annotation using COFACTOR and COACH identified a high-confidence ligand-binding site (C-score = 0.99) with the ATP-analog <a href="https://aideepmed.com/BioLiP/sym.cgi?code=MP6">MP6</a> (Methylphosphonic acid adenylate ester) as the top-ranking ligand. This binding site, modeled after the template PDB <a href="https://www.rcsb.org/structure/3NAY">3nayA</a>, involves key residues in the 26–159 range, consistent with the highly conserved catalytic pocket of MAP kinases.</p>
+<p>The functional classification through Enzyme Commission (EC) numbering further supports the model’s validity, assigning it to the EC 2.7.11.24 (mitogen-activated protein kinase) and EC 2.7.1.37 (protein kinase) categories with high confidence (<span class="math inline">\(Cscore^{EC} = 0.705\)</span>). Structural alignment with the top hit (PDB <a href="https://www.rcsb.org/structure/2EWA">2ewaA</a>) shows a high TM-score of 0.853, indicating nearly identical global folding. Furthermore, the identification of residues 141, 143, 145, and 146 as the active site residues confirms that the model correctly positions the catalytic machinery essential for its phosphotransferase activity.</p>
+<p>The consensus GO term prediction assigns high-confidence scores to ATP binding (GO:0005524, 0.95) and MAP kinase activity (GO:0004708, 0.87) as the primary molecular functions.</p>
+</section>
+<section id="discusion" class="level4">
+<h4 class="anchored" data-anchor-id="discusion"><strong>Discusion</strong></h4>
+<p>The structural analysis of the MoOsm1 model, color-coded according to ResQ values, reveals a high-confidence catalytic core characterized by a predominance of marine and lightteal hues, indicating an estimated distance error below 3–4 Å and validating the precision of the global fold. While the kinase’s main body shows robust structural stability supported by model convergence and template consistency, peripheral regions such as the N-terminal tail and specific surface loops exhibit yellow and orange colors (with estimated errors &gt; 9 Å), reflecting greater statistical uncertainty due to the lack of rigid experimental templates in these intrinsically flexible areas. Residue 171, highlighted in red for its biological relevance, is located precisely within one of these transitional regions of lower local precision, which is consistent with its function in the activation loop where structural plasticity is required to accommodate conformational changes during phosphorylation events. Overall, the model’s reliability is confirmed by a C-score of 0.90 and an estimated TM-score of 0.84, placing this prediction in an excellent accuracy category despite the detected local quality variations.</p>
+<p>The predicted normalized B-factor profile (<a href="#fig-pnorm-Bfactor-p3" class="quarto-xref">Figure&nbsp;3</a>) indicates high overall structural stability for the monomer, as evidenced by the prevalence of negative values throughout the chain. However, a detailed analysis of the 170–175 residue range reveals positive normalized B-factor values, indicating enhanced local flexibility. This observed mobility in the 171 and 173 positions is consistent with their biological role as key phosphorylation sites, where structural plasticity is required to accommodate the transition between different activation states.</p>
+<p>The predicted solvent accessibility results (<a href="#fig-pred-solvacc" class="quarto-xref">Figure&nbsp;3 (d)</a>) contrast with experimental expectations, as these specific residues must maintain a degree of surface exposure to remain accessible for phosphorylation by upstream kinases. Overall, the predominance of low accessibility values across the sequence suggests a highly compact structural core, indicating that significant conformational rearrangements might be necessary to facilitate post-translational modifications at the activation loop.</p>
+<p>The structural and functional predictions obtained through COFACTOR, COACH, and EC numbering provide robust evidence for the catalytic viability of the MoOsm1 model. The identification of a high-confidence ATP-binding site (<span class="math inline">\(Cscore = 0.99\)</span>) and its classification as a mitogen-activated protein kinase (EC 2.7.11.24) based on a high TM-score of 0.853, confirm that the model accurately preserves the global architecture and active site residues (141–146) characteristic of the MAP kinase family. These findings, supported by the high convergence of structural templates such as 3nayA and 2ewaA, demonstrate that the modeled protein is structurally capable of performing its essential phosphotransferase activity.</p>
+<p>The high-confidence scores assigned to GO terms for ATP binding (GO:0005524) and MAP kinase activity (GO:0004708) as primary functions corroborate the structural findings, confirming that the MoOsm1 model accurately represents a functional protein kinase involved in signal transduction. Despite the discrepancy between the predicted solvent accessibility (which does not align with the predictions generated by NetSurfP) and the expected exposure of the activation loop, the remaining functional annotations show high consistency with the known biological role of MoOsm1.</p>
+</section>
+</section>
+<section id="homology-based---modeller" class="level3">
+<h3 class="anchored" data-anchor-id="homology-based---modeller">Homology based - Modeller</h3>
+<p>Due to the lack of an experimental structure for the target protein, the Modeller algorithm was selected for structural prediction.</p>
+<section id="methods-2" class="level4">
+<h4 class="anchored" data-anchor-id="methods-2"><strong>Methods</strong></h4>
+<p>To ensure the highest modeling accuracy, six high-quality templates were identified based on sequence similarity and high coverage, as detailed in <a href="#tbl-PDB-codes-homology" class="quarto-xref">Table&nbsp;6</a>. These templates correspond to X-ray diffraction-resolved structures from various organisms. To enhance alignment resolution and similarity detection, a specialized template search was conducted using two iterations of PSI-BLAST. The selection process strictly prioritized templates maintaining at least 50% Sequence Identity and a Query Coverage (QCoverage) exceeding 90%, ensuring a robust structural foundation for the homology modeling process.</p>
+<div id="tbl-PDB-codes-homology" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20,20,20,20,20]">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-PDB-codes-homology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: PDB codes of homologous sequences of Osm1 sequence obtained by BlastP (ordered by TXY site presence and e-value).
+</figcaption>
+<div aria-describedby="tbl-PDB-codes-homology-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PDB code</th>
+<th style="text-align: center;">% identity</th>
+<th style="text-align: center;">% coverage</th>
+<th style="text-align: center;">e-value</th>
+<th style="text-align: center;">Organism</th>
+<th style="text-align: center;">Resolution method</th>
+<th style="text-align: center;">Resolution (Å)</th>
+<th style="text-align: center;">TXY site presence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3K3I</td>
+<td style="text-align: center;">51.17 %</td>
+<td style="text-align: center;">94 %</td>
+<td style="text-align: center;">5e-178</td>
+<td style="text-align: center;"><em>Homo sapiens</em></td>
+<td style="text-align: center;">X-ray diffraction</td>
+<td style="text-align: center;">1.70</td>
+<td style="text-align: center;">TGY</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3P5K</td>
+<td style="text-align: center;">51.17 %</td>
+<td style="text-align: center;">94 %</td>
+<td style="text-align: center;">1e-136</td>
+<td style="text-align: center;"><em>Mus musculus</em></td>
+<td style="text-align: center;">X-ray diffraction</td>
+<td style="text-align: center;">2.09</td>
+<td style="text-align: center;">TGY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8H59</td>
+<td style="text-align: center;">44.06 %</td>
+<td style="text-align: center;">93 %</td>
+<td style="text-align: center;">2e-185</td>
+<td style="text-align: center;"><em>Magnaporthe oryzae</em></td>
+<td style="text-align: center;">X-ray diffraction</td>
+<td style="text-align: center;">2.15</td>
+<td style="text-align: center;">TEY</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7W5C</td>
+<td style="text-align: center;">47.41 %</td>
+<td style="text-align: center;">95 %</td>
+<td style="text-align: center;">1e-173</td>
+<td style="text-align: center;"><em>Arabidopsis thaliana</em></td>
+<td style="text-align: center;">X-ray diffraction</td>
+<td style="text-align: center;">2.20</td>
+<td style="text-align: center;">TEY</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2B9F</td>
+<td style="text-align: center;">45.27 %</td>
+<td style="text-align: center;">92 %</td>
+<td style="text-align: center;">3e-154</td>
+<td style="text-align: center;"><em>Saccharomyces cerevisiae</em></td>
+<td style="text-align: center;">X-ray diffraction</td>
+<td style="text-align: center;">1.80</td>
+<td style="text-align: center;">TEY</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6RFP</td>
+<td style="text-align: center;">47.95 %</td>
+<td style="text-align: center;">93 %</td>
+<td style="text-align: center;">3e-167</td>
+<td style="text-align: center;"><em>Rattus norvegicus</em></td>
+<td style="text-align: center;">X-ray diffraction</td>
+<td style="text-align: center;">1.74</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Subsequently, the structural data for the six selected templates—<a href="https://www.rcsb.org/structure/3K3I">3K3I</a>,<a href="https://www.rcsb.org/structure/3P5K">3P5K</a>, <a href="https://www.rcsb.org/structure/8H59">8H59</a>, <a href="https://www.rcsb.org/structure/7W5C">7W5C</a>, <a href="https://www.rcsb.org/structure/2B9F">2B9F</a>, <a href="https://www.rcsb.org/structure/6RFP">6RFP</a>—were retrieved from the RCSB PDB database using the <code>Fetch by ID</code> tool in ChimeraX. To ensure a clean structural environment for modeling, all non-standard residues, including ligands and water molecules, were identified and deleted (<code>Actions &gt; Atoms/Bonds &gt; Delete</code>). A structural superposition was then performed using the <code>Match-&gt;Align</code> tool to achieve a preliminary spatial orientation of the templates.</p>
+<p>The target sequence, MoHog1, was imported from a <em>.fasta</em> file and integrated into the alignment using the <code>Best-aligning pair of chains</code> protocol. Within the Multalign Viewer, a sequence realignment was executed to optimize the residues positioning. Every template structure was then manually associated with its corresponding sequence in the alignment, ensuring that the MoHog1 sequence remained unassociated (<code>None</code>) as the target for homology.</p>
+<p>For the modeling phase, all six structures were selected as templates. The homology modeling was performed via the Modeller (homology) interface. Advanced configuration parameters were adjusted to define the total number of models to be generated, ensuring a robust sampling of the conformational space for the final MoHog1 structure.</p>
+<p>The structural integrity of the best-ranking MoHog1 model was validated using the zDOPE (Discrete Optimized Protein Energy) score. The zDOPE values obtained after modeling were -1.31, -1.37, -1.40, -1.45, and -1.39. Since every value was below the -1.0 threshold typically used to identify high-quality structures, the models can be considered as native-like folds.</p>
+</section>
+<section id="results-2" class="level4">
+<h4 class="anchored" data-anchor-id="results-2"><strong>Results</strong></h4>
+<p>The selected reference model achieved a zDOPE value of -1.45, the best among all iterations. This score confirms that the spatial arrangement of residues is energetically favorable and statistically consistent with experimental protein structures, further supporting the reliability of the homology modeling process and its use as the structural baseline for this study.</p>
+<p>The structural integrity of the unphosphorylated MoHog1 monomer (zDOPE = -1.45) was validated through a comprehensive alignment against the six experimental templates used in the homology modeling process. The structural convergence was highly consistent across all templates, with Root Mean Square Deviation (RMSD) values ranging from 0.759 Å to 1.113 Å. Specifically, the closest structural proximity was observed with template 6RFP (0.759 Å over 1,743 atoms), while the maximum deviation was found with 3P5K (1.113 Å over 1,910 atoms). These low RMSD values, calculated over a significant fraction of the 2,897 total atoms in the predicted monomer, demonstrate a high degree of conformational conservation and confirm that the modeled kinase core strictly maintains the canonical architecture observed in homologous X-ray structures.</p>
+<p>The structure is color-coded by transferred B-factors, ranging from cool tones (marine, B <span class="math inline">\(\approx\)</span> 25) to warm tones (orange, B <span class="math inline">\(\ge\)</span> 100). The visualization shows greater stability and a well-folded catalytic core (partially blue), which is consistent with the robust global zDOPE score of -1.45. In contrast, the activation loop (central region) appears prominently in orange, reflecting the exceptionally high transferred mobility observed in experimental templates (e.g., B=509.37 at Thr171). This graphical representation confirms that the orange-colored regions identify a site of high intrinsic flexibility, a structural feature necessary to facilitate the occurrence of phosphorylation events. The low rigidity observed in this area suggests that the activation loop is conformationally dynamic, which enables the addition of phosphate groups to significantly alter its stability and conformation, thereby allowing the transition toward a functionally active state</p>
+<div id="fig-modeller-comparision" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-modeller-comparision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-modeller-comparision" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-all-templates-grey" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-all-templates-grey-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/ModellerPics/Modeller_comparision_alltemplates.png" id="fig-all-templates-grey" data-ref-parent="fig-modeller-comparision" height="250" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-all-templates-grey-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-modeller-comparision" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-best-templates-grey" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-best-templates-grey-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/ModellerPics/Modeller_comparision_2b9f_3k3i_3p5k_6rfp_templates.png" id="fig-best-templates-grey" data-ref-parent="fig-modeller-comparision" height="250" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-best-templates-grey-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-modeller-comparision" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-just-Osm1-colored-modeller" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-just-Osm1-colored-modeller-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".\pics/Protein3/ModellerPics/Modeller_Colored_basedon_flex.png" id="fig-just-Osm1-colored-modeller" data-ref-parent="fig-modeller-comparision" height="250" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-just-Osm1-colored-modeller-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modeller-comparision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: <strong>Structural quality assessment of the MoOsm1 homology model</strong>. <strong>A.</strong> Structural comparison of the MoOsm1 predicted model (dark green) against the structural templates (gray transparent structures). <strong>B.</strong> Structural comparison of the MoOsm1 predicted model (dark green) against the structural templates 2B9F, 3K3I, 3P5K, and 6RFP (gray transparent structures). <strong>C.</strong> Three-dimensional representation of the MoOsm1 monomer modeled via MODELLER using six experimental templates. The structure is color-coded by transferred B-factors, representing the thermal mobility and intrinsic flexibility inherited from the templates; cool tones (marine/lightteal) indicate the rigid catalytic core, while warm tones (yellow/orange) highlight the extreme flexibility of the activation loop (Thr171 region).
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="discussion-1" class="level4">
+<h4 class="anchored" data-anchor-id="discussion-1"><strong>Discussion</strong></h4>
+<p>This graphical representation (<a href="#fig-just-Osm1-colored-modeller" class="quarto-xref">Figure&nbsp;4 (c)</a>) confirms that the orange-colored regions identify a site of high intrinsic flexibility, a structural feature necessary to allow phosphorylation events that subsequently trigger conformational and stability changes. Consequently, the structural rigidity in this specific area is low, facilitating its functional transition</p>
+<p>As visually demonstrated in the results (<a href="#fig-all-templates-grey" class="quarto-xref">Figure&nbsp;4 (a)</a>), the structural similarity between the predicted MoOsm1 model and the templates 2B9F (<span class="math inline">\(RMSD = 0.811\)</span> Å; <span class="math inline">\(1,723/2,897\)</span> atoms), 3K3I (<span class="math inline">\(RMSD = 0.972\)</span> Å; <span class="math inline">\(1,908/2,897\)</span> atoms), 3P5K (<span class="math inline">\(RMSD = 1.113\)</span> Å; <span class="math inline">\(1,910/2,897\)</span> atoms), and 6RFP (<span class="math inline">\(RMSD = 0.759\)</span> Å; <span class="math inline">\(1,743/2,897\)</span> atoms) is notably higher (<a href="#fig-best-templates-grey" class="quarto-xref">Figure&nbsp;4 (b)</a>) than the visual correspondence observed with 8H59 (<span class="math inline">\(RMSD = 0.930\)</span> Å; <span class="math inline">\(1,863/2,897\)</span> atoms) and 7W5C (<span class="math inline">\(RMSD = 1.023\)</span> Å; <span class="math inline">\(1,886/2,897\)</span> atoms).</p>
+<p>It is important to note that the templates showing the highest visual similarity correspond to those with the best X-ray resolution and the highest sequence identity percentages, specifically 3P5K (<em>Mus musculus</em>) and 3K3I (<em>Homo sapiens</em>). Furthermore, these two structures possess a conserved TGY motif, providing a more biologically realistic framework than templates with a TXY site (specifically TEY) or those lacking the conserved motif (e.g., 6RFP).</p>
+<p>Consequently, a refined modeling approach focusing on template 3K3I could be considered; although 3P5K also contains the conserved TGY motif, its higher RMSD (<span class="math inline">\(&gt; 1\)</span> Å) suggests a slightly lower global structural correspondence. Such a refinement would be expected to yield a lower average RMSD across templates and more realistic flexibility values. While the catalytic core remains highly conserved across all structures, the TGY site exhibits high flexibility. This mobility may either be an intrinsic requirement for protein activation or a result of using a diverse set of templates without a conserved TGY motif. Despite this, the global fold’s stability confirms the reliability of the current modeling process.</p>
+<p>Such a refinement, by restricting the coordinates to a single high-resolution human template, would be expected to yield a more consistent local geometry and more realistic flexibility values. While the catalytic core remains highly conserved across all multi-template structures, the TGY site currently exhibits high flexibility (B-factor <span class="math inline">\(\approx 509\)</span>). This extreme mobility may either be an intrinsic requirement for protein activation or a structural bias introduced by using a diverse set of templates lacking the conserved TGY motif. Despite these local variations, the overall stability of the global fold confirms the reliability of the current modeling process.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
