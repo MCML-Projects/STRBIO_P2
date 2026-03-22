@@ -52,6 +52,10 @@ The predicted models and the results extracted from the output files are summari
 
 : Structural quality metrics obtained for the predicted ORAI1 hexameric model. {#tbl-orai1-af3}
 
+Additionally, as previously reported in the literature, a strong interaction between the calcium ion and the Glu106 residues of each monomer is well established. This interaction is represented in @fig-Glu106.
+
+![**Detailed view of the ORAI1 selectivity filter showing the coordination of a calcium ion (pink)**. The six essential Glu106 residues from the TM1 helices are shown as yellow sticks (oxygen atoms in red). The distance between the ion and the coordinating oxygens is indicated in Å](pics/ORAI1/ORAI1_Glu106.png){#fig-Glu106}
+
 #### **Discussion**
 
 In @fig-ORAI1-aligmentAF3-general, blue regions (high confidence) correspond to the four transmembrane helices of each subunit, confirming the channel pore architecture. Cyan to yellow areas indicate good confidence in the connecting loops. In contrast, the cytoplasmic N- and C-terminal tails appear in orange, reflecting high flexibility and structural uncertainty consistent with intrinsically disordered regions.
@@ -59,6 +63,8 @@ In @fig-ORAI1-aligmentAF3-general, blue regions (high confidence) correspond to 
 Regarding the results (@tbl-orai1-af3), the ranking score of 0.81–0.80 indicates high confidence in the overall hexameric architecture. The fact that both the ipTM (0.65) and pTM (0.66) values remain unchanged suggests that the hexamer is structurally robust and that the presence of the calcium ion does not distort the helical arrangement. The ipTM value reflects generally consistent interactions between the six chains, supporting a stable and coherent central pore, while the pTM confirms a reliable global fold.
 
 A slight reduction in the fraction of disordered residues (from 0.32 to 0.29) can be observed, and it indicates that the addition of calcium leads to a small increase in structural order, corresponding to approximately 3% of the protein becoming less disordered. This observation is consistent with a possible ligand-induced stabilization of the pore region. Overall, the prediction that approximately 29–32% of residues are disordered agrees with the known flexibility of the cytoplasmic N- and C-terminal regions of human ORAI1.
+
+Visual inspection of the ORAI1 selectivity filter (@fig-Glu106) confirms the correct symmetric arrangement of the Glu106 residues around the calcium ion. However, the measured distance of ~3.8 Å between the ion and the carboxylate oxygens suggests that, although the architecture is correct, the structure predicted by AlphaFold3 corresponds to an open-conducting conformation rather than a tightly coordinated state.
 
 ### Homology based - Swiss-Model
 
