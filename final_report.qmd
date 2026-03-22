@@ -10,7 +10,7 @@ format:
     number-sections: true
     number-depth: 3
 authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
-date: 10/03/2026
+date: 03/10/2026
 bibliography: bibliografia.bib
 csl: vancouver.csl  
 ---
