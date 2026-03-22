@@ -135,7 +135,7 @@ The predicted model by ESMFold is shown in @fig-orai1-ESMfold-structure.
 
 ![Hexameric assembly manually reconstructed](pics/ORAI1/ESMFold_hexamer.png){#fig-panel-b-ESMstructure}
 
-ESMFold structural predictions for ORAI1.
+**ESMFold structural predictions for ORAI1.**
 :::
 
 #### **Discussion**
