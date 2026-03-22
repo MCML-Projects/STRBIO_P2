@@ -55,7 +55,7 @@ For the dual-phosphorylated monomer (@fig-P3-Osm1Mono-bothP-AFcolored), the alig
 
 The dimeric models (@fig-P3-dimer-171P-AFcolored) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.
 
-::: {fig-AF3-plDDT-colored layout-ncol=2}
+::: {#fig-AF3-plDDT-colored layout-ncol=2}
 
 ![Dual-phosphorylated monomeric structure modeled with AF3.](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig-P3-Osm1Mono-bothP-AFcolored}
 
