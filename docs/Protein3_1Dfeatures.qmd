@@ -10,7 +10,7 @@ Mutational analysis revealed that phosphorylation at Tyr173 acts as a molecular 
 
 The solvent accessibility of MoOsm1/MoHog1 were evaluated using the [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/) algorithm (@fig-NetSurfP-MoOsm1). 
 
-!["MoOsm1/MoHog1 solvent accesibility prediction by NetSurfP"](/pics/Protein3/NetSurf_aa_chain.png){#fig-NetSurfP-MoOsm1}
+![**MoOsm1/MoHog1 solvent accesibility prediction by NetSurfP**](/pics/Protein3/NetSurf_aa_chain.png){#fig-NetSurfP-MoOsm1}
 
 The secondary structure prediction revealed a distinct modular organization: the N-terminal half of the sequence is characterized by a high density of $\beta$-sheets (interrupted by a single $\alpha$-helix), whereas the C-terminal half exhibits a predominant representation of $\alpha$-helices, interspersed with unstructured regions categorized as coils. The protein core shows low disorder probability, while significant disorder is present only at the flexible N- and C-terminal ends.
 
