@@ -19,9 +19,7 @@ Using the [AlphaFold3 server](https://alphafoldserver.com/), structural modeling
 
 This approach allows for a precise characterization of the conformational shifts and potential steric clashes induced by the addition of phosphate groups in the activation loop. Specifically, the phosphorylated dimer model was generated to examine the steric hindrance caused by the phosphate group at Y173, which is known to prevent stable dimerization. Conversely, the unphosphorylated monomer (at Y173) was modeled to establish the baseline localization of the TGY motif in its basal, yet T171-phosphorylated, state.
 
-The structural consistency of AF3 models was assessed using the same protocol. MoOsm1 models were analyzed with the standardized PyMOL workflow (@sec-prot1-methods).
-
-The TGY activation motif was specifically isolated for detailed inspection by creating a dedicated selection and were rendered as sticks with `show sticks`. Furthermore, the phosphate groups were emphasized by rendering phosphorus atoms as spheres (`show spheres`) and a scale adjustment of `set sphere_scale, 0.3`.
+The structural consistency of AF3 models was assessed using the same protocol. MoOsm1 models were analyzed with the standardized PyMOL workflow (@sec-prot1-methods). The TGY activation motif was specifically isolated for detailed inspection by creating a dedicated selection and were rendered as sticks with `show sticks` and colored red with `color red`.
 
 #### **Results** 
 
