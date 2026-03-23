@@ -82,7 +82,7 @@ The output metrics extracted from the output files are summarized in @tbl-p2-af3
 | **Has clash** | 0.0 | 0.0 | Number of steric clashes detected |
 | **Recycles** | 10.0 | 10.0 | Number of internal refinement cycles used |
 
-: Structural quality metrics obtained for the predicted Protein 2 trimeric model (Apo vs Holo state). {#tbl-p2-af3-holo}
+: Structural quality metrics obtained for the predicted Protein 2 trimeric model (Apo vs Holo state). {#tbl-p2-af3}
 
 : Structural quality metrics obtained for the predicted Protein 2 trimeric model without ion ($Ca^{2+}$) (AlphaFold3). {#tbl-p2-af3}
 
