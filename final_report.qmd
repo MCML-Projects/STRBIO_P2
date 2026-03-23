@@ -9,6 +9,10 @@ format:
     code-fold: true
     number-sections: true
     number-depth: 3
+    code-links:
+      - text: "GitHub Repository"
+        icon: github
+        href: https://github.com/MCML-Projects/STRBIO_P2.git
 authors: "Marta Aransay, Carlota de la Concepción, Marta Rodrigo, Lucía Santos"
 date: 03/10/2026
 bibliography: bibliografia.bib

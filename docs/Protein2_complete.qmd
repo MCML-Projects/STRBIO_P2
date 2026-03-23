@@ -29,7 +29,7 @@ Protein 2 structural models were analyzed using the same PyMOL workflow and conf
 
 Using AlphaFold2, several diagnostic plots were obtained to help evaluate the expected reliability of the monomeric model (@fig-metrics-p2-af2). The predicted 3D structure of the monomer, colored by local confidence (pLDDT), is shown in @fig-p2-af2-structure.
 
-:::{#fig-metrics-p2-af2 layout-nrow="3"}
+::: {#fig-metrics-p2-af2 layout-nrow="3"}
 
 ![Structure Coverage](/pics/Protein2/hypothetical_protein2_8029e_coverage.png){#fig-p2-AFSeqCoverage}
 
@@ -83,8 +83,6 @@ The output metrics extracted from the output files are summarized in @tbl-p2-af3
 | **Recycles** | 10.0 | 10.0 | Number of internal refinement cycles used |
 
 : Structural quality metrics obtained for the predicted Protein 2 trimeric model (Apo vs Holo state). {#tbl-p2-af3}
-
-: Structural quality metrics obtained for the predicted Protein 2 trimeric model without ion ($Ca^{2+}$) (AlphaFold3). {#tbl-p2-af3}
 
 Notably, the supplementary AF3 prediction incorporating a calcium ion (@fig-p2-af3-ca) to test the metalloenzyme hypothesis yielded a significant stabilization of the complex, increasing the ipTM to 0.80 and the pTM to 0.81. However, to ensure a fair and equitable comparison with the ligand-free templates used in Swiss-Model and ESMFold models, the rigorous stereochemical assessment was exclusively performed on the structure without the calcium ion.
 

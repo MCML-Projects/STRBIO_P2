@@ -1,8 +1,8 @@
 ### 1D Features
 
-The primary sequence of human ORAI1 (301 aa) exhibits the characteristic architecture of a store-operated calcium channel pore-forming subunit: four transmembrane helices that assemble to form the central ion-conducting pore of the CRAC channel [@prakriya2006; @hou2012]. Among these segments, TM1 forms the channel pore and contains the highly conserved Glu106 residue, plays a key role in the strong Ca²⁺ selectivity of the channel @prakriya2006. 
+The primary sequence of human ORAI1 (301 aa) exhibits the characteristic architecture of a store-operated calcium channel pore-forming subunit: four transmembrane helices that assemble to form the central ion-conducting pore of the CRAC channel [@prakriya2006; @hou2012]. Among these segments, TM1 forms the channel pore and contains the highly conserved Glu106 residue, plays a key role in the strong $Ca^{2+}$ selectivity of the channel @prakriya2006. 
 
-Furthermore, extracellular loops provide key regulatory sites: the first loop (TM1-TM2) attracts Ca²⁺, while the third contains the glycosylation site N223, modulating lectin interactions @Humer2022. Cysteine residues (C126, C143, C195) mediate redox regulation, where H₂O₂ exerts inhibitory effects [@soboloff2012; @uniprot_orai1_2024]. 
+Furthermore, extracellular loops provide key regulatory sites: the first loop (TM1-TM2) attracts $Ca^{2+}$, while the third contains the glycosylation site N223, modulating lectin interactions @Humer2022. Cysteine residues (C126, C143, C195) mediate redox regulation, where H₂O₂ exerts inhibitory effects [@soboloff2012; @uniprot_orai1_2024]. 
 
 #### **Transmembrane topology (DeepTMHMM)**
 
