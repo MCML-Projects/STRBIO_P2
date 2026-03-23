@@ -125,7 +125,7 @@ Finally, the high structural deviation (RMSD of 6.46 Å) observed when aligning 
 
 For Swiss-Model, the sequence was submitted to the `Search for Templates` tool. During the analysis, it was discovered that all top-scoring templates exhibited a homo-trimeric oligomeric state.
 
-Among the available templates, priority was given to structural coverage and biological relevance. The 6tgf.1.A template was selected: an exopolysaccharide biosynthesis protein from *Pantoea stewartii* with a bacteriophage tailspike-like parallel β-helix fold. Although the sequence identity fell strictly within the "Twilight Zone" (17%), this template was strategically chosen because its viral origin strongly supported our evolutionary hypothesis of horizontal gene transfer.
+Among the available templates, priority was given to structural coverage and biological relevance. The 6tgf.1.A template was selected: an exopolysaccharide biosynthesis protein from *Pantoea stewartii* with a bacteriophage tailspike-like parallel β-helix fold. 
 
 #### **Results**
 The SWISS-MODEL structure generated is shown in @fig-p2-swissmodel-structure
