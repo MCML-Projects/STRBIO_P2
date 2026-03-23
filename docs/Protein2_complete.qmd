@@ -73,14 +73,16 @@ The alignments of models 1 through 4 against the top-ranked model 0 (@fig-p2-ali
 
 The output metrics extracted from the output files are summarized in @tbl-p2-af3. 
 
-| Parameter | Value | Description |
-|-----------|-------|--------------------------|
-| **Ranking Score** | 0.77 | Overall confidence score of the model |
-| **ipTM** | 0.70 | Interface predicted TM-score |
-| **pTM** | 0.71 | Predicted TM-score for the global topology |
-| **Fraction Disordered** | 0.12 | Fraction of residues predicted as disordered |
-| **Has Clash** | 0.0 | Number of steric clashes detected |
-| **Recycles** | 10.0 | Number of internal refinement cycles used |
+| Parameter | Without calcium ion | With calcium ion | Description |
+|----------|--------------------|-----------------|-------------|
+| **Ranking score** | 0.77 | 0.86 | Overall confidence score of the model |
+| **ipTM** | 0.70 | 0.80 | Interface predicted TM-score |
+| **pTM** | 0.71 | 0.81 | Predicted TM-score for the global topology |
+| **Fraction disordered** | 0.12 | 0.12 | Fraction of residues predicted as disordered |
+| **Has clash** | 0.0 | 0.0 | Number of steric clashes detected |
+| **Recycles** | 10.0 | 10.0 | Number of internal refinement cycles used |
+
+: Structural quality metrics obtained for the predicted Protein 2 trimeric model (Apo vs Holo state). {#tbl-p2-af3-holo}
 
 : Structural quality metrics obtained for the predicted Protein 2 trimeric model without ion ($Ca^{2+}$) (AlphaFold3). {#tbl-p2-af3}
 
