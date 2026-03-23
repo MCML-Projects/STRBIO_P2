@@ -37,7 +37,7 @@ Using AlphaFold2, several diagnostic plots were obtained to help evaluate the ex
 
 ![PAE](/pics/Protein2/hypothetical_protein2_8029e_pae.png){#fig-p2-AFPAE}
 
-**Evaluation metrics for the predicted 3D structure of the monomer (Protein 2) with AlphaFold 2.**
+**Evaluation metrics for the predicted 3D structure of the monomer (Protein 2) with AlphaFold 2.** (top panel) Sequence coverage across the protein sequence. (central panel) pLDDT scores per position for the five top-ranked models. (bottom panel) Predicted Aligned Error (PAE) matrices showing high (blue) or low (red) error in the relative positioning of residues within each model.
 :::
 
 ![**Structure of protein 2 (monomer) modeled with AF2 visualization.** The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is shown in pink.](/pics/Protein2/af2_model.png){#fig-p2-af2-structure}

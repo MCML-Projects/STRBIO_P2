@@ -8,10 +8,18 @@ As in the previous protein, a standardized cross-method evaluation protocol was 
 
 The universal QMEANDisCo scores (AF2: 0.50; ESMFold: 0.48; SWISS-MODEL: 0.47) reflect the expected penalty from the massive intrinsically disordered N-terminal tail and internal loop, rather than algorithmic failures. However, the QMEAN Z-score clearly highlights the thermodynamic superiority of the multimeric state: while isolated monomers exhibited severe stereochemical strain (Z-scores from -3.43 to -7.24), the AlphaFold3 trimeric assembly completely resolved this tension, drastically improving to -1.44.
 
-Pairwise PyMOL alignments further exposed the limitations of homology modeling in the "Twilight Zone". The structural deviation between the SWISS-MODEL and AF3 trimers was massive (RMSD 6.96 Å across 6,967 aligned atoms), indicating that SWISS-MODEL improperly imposed the multimeric twist of its viral template. This bias is corroborated at the monomeric level, where AF3 and ESMFold yielded much closer alignments against the SWISS-MODEL single chain (RMSDs of 4.05 Å and 4.14 Å, respectively).
+Pairwise PyMOL alignments, summarized in @tbl-rmsd-comparisons-protein2, further exposed the limitations of homology modeling in the "Twilight Zone". The structural deviation between the SWISS-MODEL and AF3 trimers was massive (RMSD 6.96 Å across 6,967 aligned atoms), indicating that SWISS-MODEL improperly imposed the multimeric twist of its viral template. This bias is corroborated at the monomeric level, where AF3 and ESMFold yielded much closer alignments against the SWISS-MODEL single chain (RMSDs of 4.05 Å and 4.14 Å, respectively).
 
 Finally, comparing the two AI models (ESMFold vs. AF2 full monomers) yielded a high global RMSD of 7.11 Å (across 3,742 atoms). This variance is heavily driven by diverging random coil trajectories in the flexible tail, but it also perfectly illustrates their algorithmic differences: AlphaFold relies on evolutionary co-variation to accurately predict the fine geometric twist of the parallel beta-helix, whereas ESMFold successfully captures the general topology ab initio, but lacks the evolutionary data for fine-grained structural constraints.
 
+| Pairwise alignment | Structural level | RMSD (Å) |
+|---|---|---:|
+| SWISS-MODEL vs. AlphaFold 3 | Trimer | 6.96 |
+| SWISS-MODEL vs. AlphaFold 3 | Monomer | 4.05 |
+| SWISS-MODEL vs. ESMFold | Monomer | 4.14 |
+| ESMFold vs. AlphaFold 2 | Monomer | 7.11 |
+
+: RMSD values obtained from pairwise PyMOL alignments. {#tbl-rmsd-comparisons-protein2}
 
 The results of the [VoroMQA](https://bioinformatics.lt/wtsam/voromqa) evaluation are summarized in the @tbl-model-comparison-protein2.
 
@@ -31,20 +39,20 @@ The AlphaFold 3 model had the highest global score, as is shown in @tbl-model-co
 This observation supports the hypothesis that oligomerization is required to achieve the thermodynamically stable native conformation.
 
 In addition, the Local Score profiles (upper panels in @fig-voromqa-panels-protein2) show a highly consistent structural pattern across all models, where the high-confidence (blue) and low-confidence (red) regions occur at the same positions in the first three models, except for Swiss-Model.
-Notably, the AlphaFold 3 model exhibits a smoother and higher profile, suggesting that oligomerization stabilizes flexible regions. In contrast, the Swiss-Model profile displays increased noise and local disruptions, reflecting the limitations of template-based modeling under low sequence identity conditions.
+Notably, the AlphaFold models exhibit a higher profile, suggesting that oligomerization stabilizes flexible regions. In contrast, the Swiss-Model profile displays increased noise and local disruptions, reflecting the limitations of template-based modeling under low sequence identity conditions.
 
 ::: {#fig-voromqa-panels-protein2 layout-ncol=1}
 
-![a) AlphaFold3 VoroMQA evaluation](pics/Protein2/VoroMQA/Voro_AF3.png){#a}
+![a) AlphaFold 3 VoroMQA evaluation](pics/Protein2/VoroMQA/Voro_AF3.png){#a}
 
-![b) AlphaFold2 VoroMQA evaluation](/pics/Protein2/VoroMQA/Voro_AF2.png){#a}
+![b) AlphaFold 2 VoroMQA evaluation](/pics/Protein2/VoroMQA/Voro_AF2.png){#a}
 
 ![c) ESMFold VoroMQA evaluation](/pics/Protein2/VoroMQA/Voro_ESM.png){#c}
 
 ![d) Swiss-Model VoroMQA evaluation](/pics/Protein2/VoroMQA/Voro_Swiss.png){#b}
 
 
-**VoroMQA structural quality assessment for the three predicted models**(AlphaFold3, AlphaFold2, ESMFold and Swiss-Model)
+**VoroMQA structural quality assessment for the three predicted models**(AlphaFold 3, AlphaFold 2, ESMFold and Swiss-Model). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values indicate better predicted local quality, whereas lower values indicate less reliable regions.
 :::
 
 Focusing on the trimeric models, AlphaFold 3 model has a higher score in both interface-related metrics.
