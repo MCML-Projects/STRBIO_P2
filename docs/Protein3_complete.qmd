@@ -207,7 +207,7 @@ The structural integrity of the best-ranking MoHog1 model was validated using th
 
 #### **Results**
 
-The selected reference model achieved a zDOPE value of -1.45, the best among all iterations. This score confirms that the spatial arrangement of residues is energetically favorable and statistically consistent with experimental protein structures, further supporting the reliability of the homology modeling process and its use as the structural baseline for this study ().
+The selected reference model achieved a zDOPE value of -1.45, the best among all iterations. This score confirms that the spatial arrangement of residues is energetically favorable and statistically consistent with experimental protein structures, further supporting the reliability of the homology modeling process and its use as the structural baseline for this study.
 
 The structural integrity of the unphosphorylated MoHog1 monomer (zDOPE = -1.45) was validated through a comprehensive alignment against the six experimental templates used in the homology modeling process (@fig-all-templates-grey, @fig-best-templates-grey). The structural convergence was highly consistent across all templates, with Root Mean Square Deviation (RMSD) values ranging from 0.759 Å to 1.113 Å. Specifically, the closest structural proximity was observed with template 6RFP (0.759 Å over 1,743 atoms), while the maximum deviation was found with 3P5K (1.113 Å over 1,910 atoms). These low RMSD values, calculated over a significant fraction of the 2,897 total atoms in the predicted monomer, demonstrate a high degree of conformational conservation and confirm that the modeled kinase core strictly maintains the canonical architecture observed in homologous X-ray structures.
 
