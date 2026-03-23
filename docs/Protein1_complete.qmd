@@ -38,7 +38,7 @@ In the modeling performed without the calcium ion (@fig-ORAI1-AF3-figureA), the 
 The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is shown in pink.
 :::
 
-The predicted models and the results extracted from the output files are summarized in @tbl-orai1-af3.
+The predicted models and the results extracted from the output files are summarized in @tbl-p2-af3.
 
 | Parameter | Without calcium ion | With calcium ion | Description |
 |----------|--------------------|-----------------|-------------|
@@ -49,7 +49,7 @@ The predicted models and the results extracted from the output files are summari
 | **Has clash** | 0.0 | 0.0 | Number of steric clashes detected |
 | **Recycles** | 10.0 | 10.00 | Number of internal refinement cycles used |
 
-: Structural quality metrics obtained for the predicted ORAI1 hexameric model. {#tbl-orai1-af3}
+: Structural quality metrics obtained for the predicted ORAI1 hexameric model. {#tbl-p2-af3}
 
 Additionally, as previously reported in the literature, a strong interaction between the calcium ion and the Glu106 residues of each monomer is well established. This interaction is represented in @fig-Glu106.
 
