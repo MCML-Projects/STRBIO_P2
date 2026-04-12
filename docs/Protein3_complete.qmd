@@ -55,7 +55,7 @@ For the dual-phosphorylated monomer (@fig-P3-Osm1Mono-bothP-AFcolored), the alig
 
 ![Mono-phosphorylated dimeric structure modeled with AF3.](/pics/Protein3/Dimer_171P/dimer_T171P_red.png){#fig-P3-dimer-171P-AFcolored}
 
-**Structural alignment of Osm1 models generated using AF3**. (a) Alignment of models 1–4 against the top-ranked model 0 of monomeric predicted structures (b) Alignment of models 1 and 2 against the top-ranked model 0 dimeric predicted structures.The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is shown in pink.
+**Structural alignment of Osm1 models generated using AF3**. (a) Alignment of models 1–4 against the top-ranked model 0 of monomeric predicted structures (b) Alignment of models 1 and 2 against the top-ranked model 0 dimeric predicted structures.The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is represented in pink.
 :::
 
 The dimeric models (@fig-P3-dimer-171P-AFcolored) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.

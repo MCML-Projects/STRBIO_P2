@@ -35,7 +35,7 @@ In the modeling performed without the calcium ion (@fig-ORAI1-AF3-figureA), the 
 **Structural alignment of ORAI1 models generated using AF3.**  
 (a) Alignment of models 1–4 against the top-ranked model 0 without the calcium ion.  
 (b) Alignment of models 1–4 against the top-ranked model 0 including a calcium ion.  
-The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is shown in pink.
+The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is represented in pink.
 :::
 
 The predicted models and the results extracted from the output files are summarized in @tbl-orai1-af3.
