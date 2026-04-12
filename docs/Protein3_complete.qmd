@@ -49,7 +49,7 @@ The structural evaluation of MoOsm1 across different phosphorylation states show
 
 For the dual-phosphorylated monomer (@fig-P3-Osm1Mono-bothP-AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
-::: {#fig-AF3-plDDT-colored layout-ncol=2}
+::: {#fig-AF3-plDDT-colored layout-ncol=2 layout-valign="bottom"}
 
 ![Dual-phosphorylated monomeric structure modeled with AF3.](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig-P3-Osm1Mono-bothP-AFcolored}
 
