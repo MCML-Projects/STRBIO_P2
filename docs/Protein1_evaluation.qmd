@@ -47,7 +47,7 @@ In addition, the Local Score profiles (upper panels in @fig-voromqa-panels) show
 
 ![c) ESMFold VoroMQA evaluation](/pics/ORAI1/VoroMQA/Voro_ESM.png){#c}
 
-**VoroMQA structural quality assessment for the three predicted models** (AlphaFold3, Swiss-Model and ESMFold). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values indicate better predicted local quality, whereas lower values indicate less reliable regions.
+**VoroMQA structural quality assessment for the three predicted models** (AlphaFold3, Swiss-Model and ESMFold). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values (blue) indicate better predicted local quality, whereas lower values (red) indicate less reliable regions.
 :::
 
 Based on this analysis, the Swiss-Model structure achieves the highest global score, but for the same reasons discussed previously. In contrast, AlphaFold3 reflects the biologically realistic situation more accurately: clearly shows that the N- and C-terminal tails are flexible (which is penalized by VoroMQA).

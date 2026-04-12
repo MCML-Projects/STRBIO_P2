@@ -81,7 +81,7 @@ Templates with the highest sequence identity were prioritized. The top hit (Q96D
 
 The homology model generated using SWISS-MODEL (@fig-orai1-swissmodel) was based on the crystal structure of the Orai protein from Drosophila melanogaster (PDB ID: [4HKS](https://www.rcsb.org/structure/4HKS)), which shares 62.43% sequence identity with the human protein.
 
-![**Homology model of ORAI1 generated with SWISS-MODEL**](pics/ORAI1/ORAI1_SWISSMODEL_Captura.png){#fig-orai1-swissmodel}
+![**Homology model of ORAI1 generated with SWISS-MODEL**. The model is colored by the QMEAN local score, where blue indicates regions of high structural reliability (values near 1) and orange/red highlights areas with lower confidence, such as flexible loops or regions with low template consensus.](pics/ORAI1/ORAI1_SWISSMODEL_Captura.png){#fig-orai1-swissmodel}
 
 The results of the model, including the quality metrics, are summarized in @tbl-orai1-swissmodel.
 
