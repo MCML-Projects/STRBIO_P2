@@ -37,21 +37,21 @@ Using AlphaFold2, several diagnostic plots were obtained to help evaluate the ex
 
 ![PAE](/pics/Protein2/hypothetical_protein2_8029e_pae.png){#fig-p2-AFPAE}
 
-**Evaluation metrics for the predicted 3D structure of the monomer (Protein 2) with AlphaFold 2.** (top panel) Sequence coverage across the protein sequence. (central panel) pLDDT scores per position for the five top-ranked models. (bottom panel) Predicted Aligned Error (PAE) matrices showing high (blue) or low (red) error in the relative positioning of residues within each model.
+**Evaluation metrics for the predicted 3D structure of the monomer (Protein 2) with AlphaFold 2.** (a) Sequence coverage across the protein sequence. (b) pLDDT scores per position for the five top-ranked models. (c) Predicted Aligned Error (PAE) matrices showing high (blue) or low (red) error in the relative positioning of residues within each model.
 :::
 
 ![**Structure of protein 2 (monomer) modeled with AF2 visualization.** The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is represented in pink.](/pics/Protein2/af2_model.png){#fig-p2-af2-structure}
 
 Furthermore, the resulting .pdb file of the top-ranked AlphaFold2 monomer was evaluated using the universal SWISS-MODEL Structure Assessment tool, yielding a QMEANDisCo Global score of 0.50. The comprehensive assessment results, including the Local Quality Estimate, the QMEAN Z-score comparison, and the Ramachandran plot, are detailed in @fig-p2-af2-assesment.
 
-::: {#fig-p2-af2-assesment layout-ncol="3"}
+::: {#fig-p2-af2-assesment layout-ncol="3" layout-valign="bottom"}
 ![Local Quality Estimate](/pics/Protein2/P2/M%C3%A9tricas_AF/AF2/Local_quality_estimate%20(1).png){#fig-p2-af2-localquality}
 
 ![Quality Comparison](/pics/Protein2/P2/M%C3%A9tricas_AF/AF2/Quality_comparison.png){#fig-p2-af2-qualitycomparison}
 
 ![Ramachandran Map](/pics/Protein2/P2/M%C3%A9tricas_AF/AF2/01_general_A.png){#fig-p2-af2-ramachandran}
 
-**Swiss-Model Assesment results for Protein 2 modelled with AlphaFold2**
+**Swiss-Model Assesment results for Protein 2 modelled with AlphaFold2**. (a) Local quality estimate for Protein 2. Per-residue confidence plot, where blue peaks indicate regions with high predicted quality and red dips show areas of lower structural consensus (b) Quality Comparison: a global Z-score analysis comparing the modeled protein against a non-redundant set of high-resolution PDB structures; the red star (red star icon) indicates the position of the AlphaFold2 model relative to known structures of similar size, (c) Ramachandran Map: visual representation of the backbone dihedral angles, illustrating the distribution of residues within the allowed (dark green), favored (light green), and disallowed regions.
 :::
 
 To evaluate the quaternary structure, AlphaFold3 was utilized to predict the trimeric complex. 
