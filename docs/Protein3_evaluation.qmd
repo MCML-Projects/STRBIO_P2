@@ -45,7 +45,7 @@ In addition, the Local Score profiles (upper panels in @fig-voromqa-panels-Osm1)
 
 ![c) I-TASSER VoroMQA evaluation](pics/Protein3/VoroMQA/Voro_ITASSER.png){#c}
 
-**VoroMQA structural quality assessment for the three predicted models**(AlphaFold3, Modeller and I-TASSER). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values (blue) indicate better predicted local quality, whereas lower values (red) indicate less reliable regions.
+**VoroMQA structural quality assessment for the three predicted models** (AlphaFold3, Modeller and I-TASSER). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values (blue) indicate better predicted local quality, whereas lower values (red) indicate less reliable regions.
 :::
 
 These results are consistent with the previous evaluations based on QMEANDisCo and RMSD, confirming that AlphaFold3 provides the most reliable structural model of the protein. The selected model is shown in @fig-Osm1-final.
