@@ -58,9 +58,13 @@ In other words, the predictive accuracy of AlphaFold3 improves substantially whe
 However, other computational approaches demonstrated high predictive accuracy as well:
 For Protein 1 (ORAI1), Swiss-Model yielded highly robust results. Due to the availability of high-identity templates, template-based homology modeling provided an exceptionally accurate representation of the protein’s native fold.
 
-In the case of Protein 2, modeling within the "Twilight Zone" (low sequence identity, typically below 25-30%) presented significant challenges for traditional methods. Consequently, both ESMFold and AlphaFold 2 achieved superior structural accuracy, overcoming the limitations of template dependency to reach optimal stereochemical refinement.
+In the case of Protein 2, modeling within the "Twilight Zone" (low sequence identity, typically below 25-30%) presented significant challenges for traditional methods. Consequently, both ESMFold and AlphaFold 2 achieved superior structural accuracy, overcoming the limitations of template dependency to reach optimal stereochemical refinement. 
+
+FIX ME - Carlota, no se si ponerlo aqui porque nos ha puesto discusion pero realmente de las demás tampooc hemos puesto potencial biotec:*Regarding the potential of Protein 2, protein engineering could reveal novel properties within this structural class. Its utility may be inferred by analyzing homologous structures and their respective biological functions*
 
 For Protein 3, MODELLER produced high-quality results; however, it was not the final selection. The stability and biological relevance of the model could potentially be enhanced by the incorporation of PTMs and template optimization (more selective subset of templates to reduce structural noise).
+
+Although the models predicted by AF3 showed high accuracy, these hypotheses require experimental validation (such as Cryo-EM) to confirm the structures. Furthermore, template-dependent analysis could bias the results toward specific conformational states (which might represent inactive forms).
 
 Taken together, these results highlight the overall robustness of AlphaFold3 while also demonstrating that classical and hybrid modeling approaches can still provide highly reliable structural predictions depending on the availability of templates and the complexity of the target protein.
 
