@@ -52,7 +52,7 @@ Notably, the AlphaFold models exhibit a higher profile, suggesting that oligomer
 ![d) Swiss-Model VoroMQA evaluation](/pics/Protein2/VoroMQA/Voro_Swiss.png){#b}
 
 
-**VoroMQA structural quality assessment for the three predicted models**(AlphaFold 3, AlphaFold 2, ESMFold and Swiss-Model). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values indicate better predicted local quality, whereas lower values indicate less reliable regions.
+**VoroMQA structural quality assessment for the three predicted models** (AlphaFold 3, AlphaFold 2, ESMFold and Swiss-Model). For each figure, the upper tracks show local structural quality and sequence annotations, while the lower plot shows the residue-wise quality score. Higher values (blue) indicate better predicted local quality, whereas lower values (red) indicate less reliable regions.
 :::
 
 Focusing on the trimeric models, AlphaFold 3 model has a higher score in both interface-related metrics.

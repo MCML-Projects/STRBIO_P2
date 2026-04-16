@@ -49,13 +49,13 @@ The structural evaluation of MoOsm1 across different phosphorylation states show
 
 For the dual-phosphorylated monomer (@fig-P3-Osm1Mono-bothP-AFcolored), the alignments of the Osm1 monomer models 1 through 4 against the top-ranked model 0 exhibited a high degree of structural similarity in their conserved cores, with a mean refined RMSD of 0.37 Å (ranging from 0.28 Å to 0.45 Å). Out of the 2,905 total atoms in each model, an average of approximately 2,274 atoms were used for the final calculation.
 
-::: {#fig-AF3-plDDT-colored layout-ncol=2}
+::: {#fig-AF3-plDDT-colored layout-ncol=2 layout-valign="bottom"}
 
 ![Dual-phosphorylated monomeric structure modeled with AF3.](/pics/Protein3/Monomer_BothP/Osm1Mono_bothP_5models_aligned.png){#fig-P3-Osm1Mono-bothP-AFcolored}
 
 ![Mono-phosphorylated dimeric structure modeled with AF3.](/pics/Protein3/Dimer_171P/dimer_T171P_red.png){#fig-P3-dimer-171P-AFcolored}
 
-**Structural alignment of Osm1 models generated using AF3**. (a) Alignment of models 1–4 against the top-ranked model 0 of monomeric predicted structures (b) Alignment of models 1 and 2 against the top-ranked model 0 dimeric predicted structures.The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is shown in pink.
+**Structural alignment of Osm1 models generated using AF3**. (a) Alignment of models 1–4 against the top-ranked model 0 of monomeric predicted structures (b) Alignment of models 1 and 2 against the top-ranked model 0 dimeric predicted structures.The coloring code follows the pLDDT confidence score: Dark Blue, pLDDT > 90; Light Blue/Cyan, 70 < pLDDT < 90; Yellow, 50 < pLDDT < 70; Orange, pLDDT < 50. The calcium ion is represented in pink.
 :::
 
 The dimeric models (@fig-P3-dimer-171P-AFcolored) exhibited a bifurcated behavior in their structural convergence. While the alignments of models 1 and 2 against the top-ranked model 0 remained highly stable with an RMSD below 0.6 Å, models 3 and 4 showed an extreme displacement, reaching 28.99 Å and 29.55 Å, respectively. This disparity resulted in an overall mean refined RMSD of 14.91 Å, calculated from an average of 5,372 atoms out of the 5,802 total atoms in each dimeric model. This significant divergence in the lower-ranked models suggests a lack of conformational consensus in the dimeric interface.
@@ -165,13 +165,14 @@ The functional classification through Enzyme Commission (EC) numbering further s
 
 The consensus GO term prediction assigns high-confidence scores to ATP binding (GO:0005524, 0.95) and MAP kinase activity (GO:0004708, 0.87) as the primary molecular functions.
 
-#### **Discusion**
+#### **Discussion**
 
 The structural analysis of the MoOsm1 model, color-coded according to ResQ values, reveals a high-confidence catalytic core characterized by a predominance of marine and lightteal hues, indicating an estimated distance error below 3–4 Å and validating the precision of the global fold. While the kinase's main body shows robust structural stability supported by model convergence and template consistency, peripheral regions such as the N-terminal tail and specific surface loops exhibit yellow and orange colors (with estimated errors > 9 Å), reflecting greater statistical uncertainty due to the lack of rigid experimental templates in these intrinsically flexible areas. Residue 171, highlighted in red for its biological relevance, is located precisely within one of these transitional regions of lower local precision, which is consistent with its function in the activation loop where structural plasticity is required to accommodate conformational changes during phosphorylation events. Overall, the model’s reliability is confirmed by a C-score of 0.90 and an estimated TM-score of 0.84, placing this prediction in an excellent accuracy category despite the detected local quality variations.
 
 The predicted normalized B-factor profile (@fig-pnorm-Bfactor-p3) indicates high overall structural stability for the monomer, as evidenced by the prevalence of negative values throughout the chain. However, a detailed analysis of the 170–175 residue range reveals positive normalized B-factor values, indicating enhanced local flexibility. This observed mobility in the 171 and 173 positions is consistent with their biological role as key phosphorylation sites, where structural plasticity is required to accommodate the transition between different activation states. 
 
 The predicted solvent accessibility results (@fig-pred-solvacc) contrast with experimental expectations, as these specific residues must maintain a degree of surface exposure to remain accessible for phosphorylation by upstream kinases. Overall, the predominance of low accessibility values across the sequence suggests a highly compact structural core, indicating that significant conformational rearrangements might be necessary to facilitate post-translational modifications at the activation loop.
+The discrepancy between I-TASSER and NetSurfP can be explained by methodological differences. I-TASSER predicts accessibility from a single conformation driven by templates (most of them with TEY motif), while NetSurfP predicts the intrinsic tendency of the TGY motif to be solvent-exposed independently of a specific structural state. 
 
 The structural and functional predictions obtained through COFACTOR, COACH, and EC numbering provide robust evidence for the catalytic viability of the MoOsm1 model. The identification of a high-confidence ATP-binding site ($Cscore = 0.99$) and its classification as a mitogen-activated protein kinase (EC 2.7.11.24) based on a high TM-score of 0.853, confirm that the model accurately preserves the global architecture and active site residues (141–146) characteristic of the MAP kinase family. These findings, supported by the high convergence of structural templates such as 3nayA and 2ewaA, demonstrate that the modeled protein is structurally capable of performing its essential phosphotransferase activity.
 
